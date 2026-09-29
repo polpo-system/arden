@@ -20,4 +20,4 @@ display = 0.1.0
 display-x11 = 0.1.0
 
 [MODULES]
-all = "src/desktop/POLPO.SXL.Display.Mod src/desktop/POLPO.SXL.Input.Mod"
+all = "/x src/desktop/POLPO.SXL.Display.Mod src/desktop/POLPO.SXL.Input.Mod"
