@@ -1,0 +1,17 @@
+[PACKAGE]
+name        = toml
+category    = lib
+version     = 0.1.0
+author      = noch
+license     = GPL-3
+description = "a small TOML reader, from github.com/norayr/toml"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+
+[MODULES]
+all = "src/lib/toml/TOML.Mod"

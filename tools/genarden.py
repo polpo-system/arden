@@ -19,7 +19,9 @@ def package(path):
     if b in core: return 'core'
     if b in console and d in ('src/cli', 'src/common') or b == 'system': return 'console'
     if b == 'xxs': return 'xxs'
-    if b in ('TOML', 'Versions', 'portia'): return 'portia'
+    if b == 'TOML': return 'toml'
+    if b == 'Versions': return 'versions'
+    if b == 'portia': return 'portia'
     if b in ('bdffont', 'grep', 'rx'): return 'console-tools'
     if d == 'src/cli/x86': return 'compiler-x86'
     if d == 'src/cli/arm': return 'compiler-arm'
@@ -77,7 +79,9 @@ INFO = {
  'desktop-compiler-x86': ('the x86 compiler, boot linker, decoder and browser in the desktop', ['desktop-tools', 'compiler-x86']),
  'desktop-compiler-arm': ('the ARM compiler, decoder and browser in the desktop', ['desktop-tools', 'compiler-arm']),
  'desktop-compiler-rop2': ('the ROP2 compilers and decoders in the desktop', ['desktop-tools', 'compiler-rop2']),
- 'portia': ('portia, the package manager, with its TOML reader and version comparison', ['console']),
+ 'toml': ('a small TOML reader, from github.com/norayr/toml', []),
+ 'versions': ('comparing version numbers like 1.2.10 and 0.3.0-rc1', []),
+ 'portia': ('portia, the package manager', ['console', 'toml', 'versions']),
 }
 FILES = {
  'core': {'x86': 'bin/x86/loksh', 'arm': 'bin/arm/loksh', 'riscv': 'bin/riscv/loksh',
@@ -97,11 +101,13 @@ CATEGORY = {  # linux: produces Linux executables; system; devel: compilers; app
  'core': 'linux',
  'console': 'system', 'desktop-base': 'system', 'desktop': 'system', 'desktop-system': 'system',
  'display-x11': 'system', 'display-sixel': 'system', 'portia': 'system',
+ 'toml': 'lib', 'versions': 'lib',
  'compiler-x86': 'devel', 'compiler-arm': 'devel', 'compiler-rop2': 'devel', 'compiler-riscv': 'devel',
  'compiler-mips': 'devel', 'compiler-armv7': 'devel', 'desktop-compiler-x86': 'devel',
  'desktop-compiler-arm': 'devel', 'desktop-compiler-rop2': 'devel',
  'xxs': 'apps', 'console-tools': 'apps', 'desktop-tools': 'apps',
 }
+LICENSE = {'toml': 'GPL-3'}  # others: the license of polpo
 PROVIDES = {'display-x11': ('display', 'display-sixel'), 'display-sixel': ('display', 'display-x11')}
 
 os.makedirs(OUT, exist_ok=True)
@@ -111,7 +117,8 @@ for pkg in INFO:
     cat = CATEGORY[pkg]
     d = os.path.join(OUT, cat, pkg); os.makedirs(d, exist_ok=True)
     f = open(os.path.join(d, pkg + '-0.1.0.arden'), 'w')
-    f.write('[PACKAGE]\nname        = %s\ncategory    = %s\nversion     = 0.1.0\nauthor      = polpo\nlicense     = ETH Oberon\n' % (pkg, cat))
+    f.write('[PACKAGE]\nname        = %s\ncategory    = %s\nversion     = 0.1.0\nauthor      = %s\nlicense     = %s\n'
+            % (pkg, cat, 'noch' if pkg == 'toml' else 'polpo', LICENSE.get(pkg, 'ETH Oberon')))
     f.write('description = "%s"\n\n' % desc)
     f.write('[REMOTE]\ntype = git\nuri  = https://github.com/norayr/polpo\ntag  = main\n\n')
     f.write('[DEPS]\n')

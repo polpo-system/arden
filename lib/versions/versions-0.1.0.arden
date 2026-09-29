@@ -1,10 +1,10 @@
 [PACKAGE]
-name        = portia
-category    = system
+name        = versions
+category    = lib
 version     = 0.1.0
 author      = polpo
 license     = ETH Oberon
-description = "portia, the package manager"
+description = "comparing version numbers like 1.2.10 and 0.3.0-rc1"
 
 [REMOTE]
 type = git
@@ -12,9 +12,6 @@ uri  = https://github.com/norayr/polpo
 tag  = main
 
 [DEPS]
-console = 0.1.0
-toml = 0.1.0
-versions = 0.1.0
 
 [MODULES]
-all = "src/cli/portia.Mod"
+all = "src/lib/versions/Versions.Mod"

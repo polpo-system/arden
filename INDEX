@@ -17,4 +17,6 @@ apps/desktop-tools 0.1.0
 devel/desktop-compiler-x86 0.1.0
 devel/desktop-compiler-arm 0.1.0
 devel/desktop-compiler-rop2 0.1.0
+lib/toml 0.1.0
+lib/versions 0.1.0
 system/portia 0.1.0
