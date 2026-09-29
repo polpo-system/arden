@@ -1,0 +1,17 @@
+[PACKAGE]
+name        = console-tools
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "grep, rx (regular expressions), bdffont"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+console = 0.1.0
+
+[MODULES]
+x86 = "src/cli/bdffont.Mod src/cli/grep.Mod src/cli/rx.Mod"

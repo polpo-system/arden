@@ -1,0 +1,28 @@
+[PACKAGE]
+name        = core
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "the boot image: runtime, files, module loader and the loksh binary"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+
+[MODULES]
+all = "src/common/Root.Mod src/common/Reals.Mod src/common/POLPO.Files.Mod src/cli/loksh.Mod"
+x86 = "src/cli/x86/Linux0.Mod src/cli/x86/Kernel.Mod src/cli/x86/Modules0.Mod"
+arm = "src/cli/arm/Linux0.Mod src/cli/arm/Kernel.Mod src/cli/arm/Modules0.Mod"
+riscv = "src/cli/riscv/Linux0.Mod src/cli/rop2/Kernel.Mod src/cli/rop2/Modules0.Mod"
+mips = "src/cli/rop2/Kernel.Mod src/cli/rop2/Modules0.Mod src/cli/mips/Linux0.Mod"
+armv7 = "src/cli/rop2/Kernel.Mod src/cli/rop2/Modules0.Mod src/cli/armv7/Linux0.Mod"
+
+[FILES]
+x86 = "bin/x86/loksh"
+arm = "bin/arm/loksh"
+riscv = "bin/riscv/loksh"
+mips = "bin/mips/loksh"
+armv7 = "bin/armv7/loksh"

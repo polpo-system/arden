@@ -1,0 +1,21 @@
+[PACKAGE]
+name        = compiler-armv7
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "the ARMv7 back end of ROP2"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+compiler-rop2 = 0.1.0
+
+[MODULES]
+x86 = "src/cli/armv7/AOPL.Mod src/cli/armv7/AOPC.Mod src/cli/armv7/AOPV.Mod src/cli/armv7/a7compiler.Mod"
+armv7 = "src/cli/armv7/AOPL.Mod src/cli/armv7/AOPC.Mod src/cli/armv7/AOPV.Mod src/cli/armv7/a7compiler.Mod src/cli/armv7/compiler.Mod src/cli/armv7/linker.Mod"
+
+[FILES]
+all = "tools/armv7.Tool"

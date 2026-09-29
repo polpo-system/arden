@@ -1,0 +1,20 @@
+[PACKAGE]
+name        = desktop-tools
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "Edit, Script, Styles and other desktop tools"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+desktop-system = 0.1.0
+
+[MODULES]
+all = "src/desktop/Edit.Mod src/desktop/Styles.Mod src/desktop/ScriptFrames.Mod src/desktop/Script.Mod src/desktop/Dates.Mod src/desktop/Strings.Mod src/desktop/POLPO.Compiler.Mod src/desktop/POLPO.FileTools.Mod"
+
+[FILES]
+all = "tools/System.Tool tools/Edit.Tool"

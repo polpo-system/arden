@@ -1,0 +1,21 @@
+[PACKAGE]
+name        = desktop
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "the Oberon desktop: display space, fonts, texts, viewers"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+console = 0.1.0
+display = 0.1.0
+
+[MODULES]
+all = "src/desktop/POLPO.Objects.Mod src/desktop/POLPO.FileDir.Mod src/desktop/POLPO.Fonts.Mod src/desktop/POLPO.Texts.Mod src/desktop/Viewers.Mod src/desktop/Oberon.Mod src/desktop/POLPO.In.Mod src/desktop/MenuViewers.Mod src/desktop/POLPO.TextFrames.Mod src/desktop/POLPO.Bitmaps.Mod src/desktop/Out.Mod src/desktop/Pictures.Mod src/desktop/POLPO.Centronics.Mod src/desktop/POLPO.V24.Mod src/desktop/Printer.Mod"
+
+[FILES]
+all = "share/* fonts/* texts/*"
