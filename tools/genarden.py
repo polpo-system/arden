@@ -87,7 +87,7 @@ INFO = {
  'portia': ('portia, the package manager', ['console', 'toml', 'versions']),
  'sockets': ('TCP and UDP over IPv4 and IPv6', ['core']),
  'dns': ('host names to addresses: /etc/hosts and DNS over UDP, A and AAAA', ['core', 'sockets']),
- 'net': ('minimal network tools: Get, Send, Echo, UDP, Lookup, Address', ['console', 'sockets', 'dns']),
+ 'net': ('minimal network tools: Get, Send, Echo, UDP, Lookup, Resolve, Address', ['console', 'sockets', 'dns']),
 }
 FILES = {
  'core': {'x86': 'bin/x86/loksh', 'arm': 'bin/arm/loksh', 'riscv': 'bin/riscv/loksh',

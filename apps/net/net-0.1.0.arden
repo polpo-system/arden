@@ -4,7 +4,7 @@ category    = apps
 version     = 0.1.0
 author      = polpo
 license     = ETH Oberon
-description = "minimal network tools: Get, Send, Echo, UDP, Lookup, Address"
+description = "minimal network tools: Get, Send, Echo, UDP, Lookup, Resolve, Address"
 
 [REMOTE]
 type = git
