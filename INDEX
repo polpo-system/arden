@@ -8,6 +8,7 @@ compiler-rop2 0.1.0
 compiler-riscv 0.1.0
 compiler-mips 0.1.0
 compiler-armv7 0.1.0
+desktop-base 0.1.0
 desktop 0.1.0
 desktop-system 0.1.0
 display-x11 0.1.0
@@ -16,3 +17,4 @@ desktop-tools 0.1.0
 desktop-compiler-x86 0.1.0
 desktop-compiler-arm 0.1.0
 desktop-compiler-rop2 0.1.0
+portia 0.1.0

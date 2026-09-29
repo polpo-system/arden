@@ -11,7 +11,7 @@ uri  = https://github.com/norayr/polpo
 tag  = main
 
 [DEPS]
-core = 0.1.0
+desktop-base = 0.1.0
 
 [PROVIDES]
 display = 0.1.0

@@ -11,11 +11,11 @@ uri  = https://github.com/norayr/polpo
 tag  = main
 
 [DEPS]
-console = 0.1.0
+desktop-base = 0.1.0
 display = 0.1.0
 
 [MODULES]
-all = "src/desktop/POLPO.Objects.Mod src/desktop/POLPO.FileDir.Mod src/desktop/POLPO.Fonts.Mod src/desktop/POLPO.Texts.Mod src/desktop/Viewers.Mod src/desktop/Oberon.Mod src/desktop/POLPO.In.Mod src/desktop/MenuViewers.Mod src/desktop/POLPO.TextFrames.Mod src/desktop/POLPO.Bitmaps.Mod src/desktop/Out.Mod src/desktop/Pictures.Mod src/desktop/POLPO.Centronics.Mod src/desktop/POLPO.V24.Mod src/desktop/Printer.Mod"
+all = "src/desktop/POLPO.Fonts.Mod src/desktop/POLPO.Texts.Mod src/desktop/Viewers.Mod src/desktop/Oberon.Mod src/desktop/POLPO.In.Mod src/desktop/MenuViewers.Mod src/desktop/POLPO.TextFrames.Mod src/desktop/POLPO.Bitmaps.Mod src/desktop/Out.Mod src/desktop/Pictures.Mod src/desktop/POLPO.Centronics.Mod src/desktop/POLPO.V24.Mod src/desktop/Printer.Mod"
 
 [FILES]
-all = "share/* fonts/* texts/*"
+all = "share/ARM.OberonErrors.Text share/Default.Pal share/OPA.Data share/System.Text share/V24.Panel fonts/Oberon10.Scn.Fnt fonts/Oberon10b.Scn.Fnt fonts/Oberon10i.Scn.Fnt fonts/Oberon12.Scn.Fnt fonts/Oberon12b.Scn.Fnt fonts/Oberon12i.Scn.Fnt fonts/Oberon14.Scn.Fnt fonts/Oberon14b.Scn.Fnt fonts/Oberon14i.Scn.Fnt fonts/Oberon16.Scn.Fnt fonts/Oberon16b.Scn.Fnt fonts/Oberon16i.Scn.Fnt fonts/Oberon20.Scn.Fnt fonts/Oberon20b.Scn.Fnt fonts/Oberon20i.Scn.Fnt fonts/Oberon24.Scn.Fnt fonts/Oberon24b.Scn.Fnt fonts/Oberon24i.Scn.Fnt fonts/Oberon8.Scn.Fnt fonts/Oberon8b.Scn.Fnt fonts/Oberon8i.Scn.Fnt fonts/Syntax20.Scn.Fnt fonts/Ttyp0-11-Unicode.Scn.Fnt fonts/Ttyp0-11b-Unicode.Scn.Fnt fonts/Ttyp0-12-Unicode.Scn.Fnt fonts/Ttyp0-12b-Unicode.Scn.Fnt fonts/Ttyp0-13-Unicode.Scn.Fnt fonts/Ttyp0-13b-Unicode.Scn.Fnt fonts/Ttyp0-14-Unicode.Scn.Fnt fonts/Ttyp0-14b-Unicode.Scn.Fnt fonts/Ttyp0-15-Unicode.Scn.Fnt fonts/Ttyp0-15b-Unicode.Scn.Fnt fonts/Ttyp0-15i-Unicode.Scn.Fnt fonts/Ttyp0-16-Unicode.Scn.Fnt fonts/Ttyp0-16b-Unicode.Scn.Fnt fonts/Ttyp0-16i-Unicode.Scn.Fnt fonts/Ttyp0-17-Unicode.Scn.Fnt fonts/Ttyp0-17b-Unicode.Scn.Fnt fonts/Ttyp0-17i-Unicode.Scn.Fnt fonts/Ttyp0-18-Unicode.Scn.Fnt fonts/Ttyp0-18b-Unicode.Scn.Fnt fonts/Ttyp0-18i-Unicode.Scn.Fnt fonts/Ttyp0-22-Unicode.Scn.Fnt fonts/Ttyp0-22b-Unicode.Scn.Fnt fonts/Ttyp0-30-Unicode.Scn.Fnt fonts/Ttyp0-30b-Unicode.Scn.Fnt fonts/Ttyp0-30i-Unicode.Scn.Fnt fonts/Ttyp0-40-Unicode.Scn.Fnt fonts/Ttyp0-40b-Unicode.Scn.Fnt fonts/Ttyp0-40i-Unicode.Scn.Fnt fonts/armvga16.Scn.Fnt fonts/armvga32.Scn.Fnt fonts/armvga48.Scn.Fnt texts/System.Text texts/UserGuide.Text"

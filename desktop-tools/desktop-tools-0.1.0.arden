@@ -17,4 +17,4 @@ desktop-system = 0.1.0
 all = "src/desktop/Edit.Mod src/desktop/Styles.Mod src/desktop/ScriptFrames.Mod src/desktop/Script.Mod src/desktop/Dates.Mod src/desktop/Strings.Mod src/desktop/POLPO.Compiler.Mod src/desktop/POLPO.FileTools.Mod"
 
 [FILES]
-all = "tools/System.Tool tools/Edit.Tool"
+all = "tools/System.Tool tools/Edit.Tool tools/Script.Tool"
