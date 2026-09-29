@@ -1,0 +1,18 @@
+[PACKAGE]
+name        = base64
+category    = lib
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "Base64 encoding and decoding, shared with voc"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+console = 0.1.0
+
+[MODULES]
+all = "src/lib/base64/Base64.Mod"

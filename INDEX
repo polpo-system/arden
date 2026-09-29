@@ -22,4 +22,10 @@ lib/versions 0.1.0
 system/portia 0.1.0
 lib/sockets 0.1.0
 lib/dns 0.1.0
+lib/ooc 0.1.0
+lib/strutils 0.1.0
+lib/base64 0.1.0
+lib/internet 0.1.0
+lib/http 0.1.0
+apps/fetch 0.1.0
 apps/net 0.1.0

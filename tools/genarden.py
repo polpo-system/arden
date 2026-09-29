@@ -24,6 +24,12 @@ def package(path):
     if b == 'portia': return 'portia'
     if b == 'Sockets': return 'sockets'
     if b == 'DNS': return 'dns'
+    if d == 'src/lib/ooc': return 'ooc'
+    if d == 'src/lib/strutils': return 'strutils'
+    if b == 'Base64': return 'base64'
+    if b == 'Internet': return 'internet'
+    if d == 'src/lib/http': return 'http'
+    if b == 'fetch': return 'fetch'
     if b == 'net': return 'net'
     if b in ('bdffont', 'grep', 'rx'): return 'console-tools'
     if d == 'src/cli/x86': return 'compiler-x86'
@@ -87,6 +93,12 @@ INFO = {
  'portia': ('portia, the package manager', ['console', 'toml', 'versions']),
  'sockets': ('TCP and UDP over IPv4 and IPv6', ['core']),
  'dns': ('host names to addresses: /etc/hosts and DNS over UDP, A and AAAA', ['core', 'sockets']),
+ 'ooc': ('oocIntStr and what it needs from the OOC library (as in voc)', []),
+ 'strutils': ('strTypes and strUtils, string helpers shared with voc', ['console']),
+ 'base64': ('Base64 encoding and decoding, shared with voc', ['console']),
+ 'internet': ('TCP by host name and port, the Internet interface of voc', ['console', 'sockets', 'dns']),
+ 'http': ('an HTTP/1.1 client, shared with voc', ['console', 'ooc', 'strutils', 'base64', 'internet']),
+ 'fetch': ('fetch.Get and fetch.Show: HTTP downloads', ['console', 'http']),
  'net': ('minimal network tools: Get, Send, Echo, UDP, Lookup, Resolve, Address', ['console', 'sockets', 'dns']),
 }
 FILES = {
@@ -108,12 +120,13 @@ CATEGORY = {  # linux: produces Linux executables; system; devel: compilers; app
  'console': 'system', 'desktop-base': 'system', 'desktop': 'system', 'desktop-system': 'system',
  'display-x11': 'system', 'display-sixel': 'system', 'portia': 'system',
  'toml': 'lib', 'versions': 'lib', 'sockets': 'lib', 'dns': 'lib', 'net': 'apps',
+ 'ooc': 'lib', 'strutils': 'lib', 'base64': 'lib', 'internet': 'lib', 'http': 'lib', 'fetch': 'apps',
  'compiler-x86': 'devel', 'compiler-arm': 'devel', 'compiler-rop2': 'devel', 'compiler-riscv': 'devel',
  'compiler-mips': 'devel', 'compiler-armv7': 'devel', 'desktop-compiler-x86': 'devel',
  'desktop-compiler-arm': 'devel', 'desktop-compiler-rop2': 'devel',
  'xxs': 'apps', 'console-tools': 'apps', 'desktop-tools': 'apps',
 }
-LICENSE = {'toml': 'GPL-3'}  # others: the license of polpo
+LICENSE = {'toml': 'GPL-3', 'ooc': 'LGPL-2+', 'strutils': 'GPL-3'}  # others: the license of polpo
 PROVIDES = {'display-x11': ('display', 'display-sixel'), 'display-sixel': ('display', 'display-x11')}
 
 os.makedirs(OUT, exist_ok=True)
