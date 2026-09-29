@@ -1,0 +1,22 @@
+[PACKAGE]
+name        = compiler-arm
+category    = devel
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "the ARM OB compiler and linkers (native on ARM, cross on x86)"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+console = 0.1.0
+
+[MODULES]
+x86 = "src/cli/arm/OBM.Mod src/cli/arm/OBS.Mod src/cli/arm/OBT.Mod src/cli/arm/OBC.Mod src/cli/arm/OBE.Mod src/cli/arm/OBH.Mod src/cli/arm/OBA.Mod src/cli/arm/OBP.Mod src/cli/arm/acompiler.Mod src/cli/arm/alinker.Mod"
+arm = "src/cli/arm/OBM.Mod src/cli/arm/OBS.Mod src/cli/arm/OBT.Mod src/cli/arm/OBC.Mod src/cli/arm/OBE.Mod src/cli/arm/OBH.Mod src/cli/arm/OBA.Mod src/cli/arm/OBP.Mod src/cli/arm/acompiler.Mod src/cli/arm/alinker.Mod src/cli/arm/compiler.Mod src/cli/arm/linker.Mod"
+
+[FILES]
+all = "tools/arm.Tool tools/arm-cross.Tool"

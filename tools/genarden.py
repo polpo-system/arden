@@ -77,7 +77,7 @@ INFO = {
  'desktop-compiler-x86': ('the x86 compiler, boot linker, decoder and browser in the desktop', ['desktop-tools', 'compiler-x86']),
  'desktop-compiler-arm': ('the ARM compiler, decoder and browser in the desktop', ['desktop-tools', 'compiler-arm']),
  'desktop-compiler-rop2': ('the ROP2 compilers and decoders in the desktop', ['desktop-tools', 'compiler-rop2']),
- 'portia': ('portia, the package manager, and the TOML reader shared with vipak', ['console']),
+ 'portia': ('portia, the package manager, with its TOML reader and version comparison', ['console']),
 }
 FILES = {
  'core': {'x86': 'bin/x86/loksh', 'arm': 'bin/arm/loksh', 'riscv': 'bin/riscv/loksh',
@@ -93,15 +93,25 @@ FILES = {
  'desktop-tools': {'all': 'tools/System.Tool tools/Edit.Tool tools/Script.Tool'},
  'console-tools': {'all': 'tools/rx.Tool'},
 }
+CATEGORY = {  # linux: produces Linux executables; system; devel: compilers; apps; lib
+ 'core': 'linux',
+ 'console': 'system', 'desktop-base': 'system', 'desktop': 'system', 'desktop-system': 'system',
+ 'display-x11': 'system', 'display-sixel': 'system', 'portia': 'system',
+ 'compiler-x86': 'devel', 'compiler-arm': 'devel', 'compiler-rop2': 'devel', 'compiler-riscv': 'devel',
+ 'compiler-mips': 'devel', 'compiler-armv7': 'devel', 'desktop-compiler-x86': 'devel',
+ 'desktop-compiler-arm': 'devel', 'desktop-compiler-rop2': 'devel',
+ 'xxs': 'apps', 'console-tools': 'apps', 'desktop-tools': 'apps',
+}
 PROVIDES = {'display-x11': ('display', 'display-sixel'), 'display-sixel': ('display', 'display-x11')}
 
 os.makedirs(OUT, exist_ok=True)
 index = []
 for pkg in INFO:
     desc, deps = INFO[pkg]
-    d = os.path.join(OUT, pkg); os.makedirs(d, exist_ok=True)
+    cat = CATEGORY[pkg]
+    d = os.path.join(OUT, cat, pkg); os.makedirs(d, exist_ok=True)
     f = open(os.path.join(d, pkg + '-0.1.0.arden'), 'w')
-    f.write('[PACKAGE]\nname        = %s\nversion     = 0.1.0\nauthor      = polpo\nlicense     = ETH Oberon\n' % pkg)
+    f.write('[PACKAGE]\nname        = %s\ncategory    = %s\nversion     = 0.1.0\nauthor      = polpo\nlicense     = ETH Oberon\n' % (pkg, cat))
     f.write('description = "%s"\n\n' % desc)
     f.write('[REMOTE]\ntype = git\nuri  = https://github.com/norayr/polpo\ntag  = main\n\n')
     f.write('[DEPS]\n')
@@ -134,6 +144,6 @@ for pkg in INFO:
                     out.append(w)
             f.write('%s = "%s"\n' % (k, ' '.join(out)))
     f.close()
-    index.append('%s 0.1.0' % pkg)
+    index.append('%s/%s 0.1.0' % (cat, pkg))
 open(os.path.join(OUT, 'INDEX'), 'w').write('\n'.join(index) + '\n')
 print('\n'.join(index))

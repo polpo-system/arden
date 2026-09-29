@@ -1,0 +1,24 @@
+[PACKAGE]
+name        = display-sixel
+category    = system
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "Display and Input for xterm (sixel)"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+desktop-base = 0.1.0
+
+[PROVIDES]
+display = 0.1.0
+
+[CONFLICTS]
+display-x11 = 0.1.0
+
+[MODULES]
+all = "/x src/desktop/POLPO.SXL.Display.Mod src/desktop/POLPO.SXL.Input.Mod"

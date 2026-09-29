@@ -1,0 +1,21 @@
+[PACKAGE]
+name        = compiler-x86
+category    = devel
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "the x86 OP2 compiler, linker and browser"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+console = 0.1.0
+
+[MODULES]
+x86 = "src/cli/x86/OPM.Mod src/cli/x86/OPS.Mod src/cli/x86/OPT.Mod src/cli/x86/OPB.Mod src/cli/x86/OPA.Mod src/cli/x86/OPP.Mod src/cli/x86/OPO.Mod src/cli/x86/OPL.Mod src/cli/x86/OPC.Mod src/cli/x86/OPV.Mod src/cli/x86/compiler.Mod src/cli/x86/linker.Mod src/cli/x86/browser.Mod"
+
+[FILES]
+all = "tools/build.Tool"

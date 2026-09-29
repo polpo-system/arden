@@ -1,0 +1,22 @@
+[PACKAGE]
+name        = desktop-compiler-rop2
+category    = devel
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "the ROP2 compilers and decoders in the desktop"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+desktop-tools = 0.1.0
+compiler-rop2 = 0.1.0
+
+[MODULES]
+x86 = "src/desktop/rop2/RCompiler.Mod src/desktop/riscv/VDecoder.Mod src/desktop/mips/M2Decoder.Mod src/desktop/armv7/A32Decoder.Mod"
+riscv = "src/desktop/rop2/RCompiler.Mod src/desktop/riscv/VDecoder.Mod"
+mips = "src/desktop/rop2/RCompiler.Mod src/desktop/mips/M2Decoder.Mod"
+armv7 = "src/desktop/rop2/RCompiler.Mod src/desktop/armv7/A32Decoder.Mod"

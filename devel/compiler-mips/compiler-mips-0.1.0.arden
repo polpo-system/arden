@@ -1,0 +1,22 @@
+[PACKAGE]
+name        = compiler-mips
+category    = devel
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "the MIPS back end of ROP2"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+compiler-rop2 = 0.1.0
+
+[MODULES]
+x86 = "src/cli/mips/MOPL.Mod src/cli/mips/MOPC.Mod src/cli/mips/MOPV.Mod src/cli/mips/mcompiler.Mod"
+mips = "src/cli/mips/MOPL.Mod src/cli/mips/MOPC.Mod src/cli/mips/MOPV.Mod src/cli/mips/mcompiler.Mod src/cli/mips/compiler.Mod src/cli/mips/linker.Mod"
+
+[FILES]
+all = "tools/mips.Tool"
