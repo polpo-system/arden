@@ -20,3 +20,5 @@ devel/desktop-compiler-rop2 0.1.0
 lib/toml 0.1.0
 lib/versions 0.1.0
 system/portia 0.1.0
+lib/sockets 0.1.0
+apps/net 0.1.0
