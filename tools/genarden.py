@@ -23,6 +23,7 @@ def package(path):
     if b == 'Versions': return 'versions'
     if b == 'portia': return 'portia'
     if b == 'Sockets': return 'sockets'
+    if b == 'DNS': return 'dns'
     if b == 'net': return 'net'
     if b in ('bdffont', 'grep', 'rx'): return 'console-tools'
     if d == 'src/cli/x86': return 'compiler-x86'
@@ -85,7 +86,8 @@ INFO = {
  'versions': ('comparing version numbers like 1.2.10 and 0.3.0-rc1', []),
  'portia': ('portia, the package manager', ['console', 'toml', 'versions']),
  'sockets': ('TCP and UDP over IPv4 and IPv6', ['core']),
- 'net': ('minimal network tools: Get, Send, Echo, UDP, Address', ['console', 'sockets']),
+ 'dns': ('host names to addresses: /etc/hosts and DNS over UDP, A and AAAA', ['core', 'sockets']),
+ 'net': ('minimal network tools: Get, Send, Echo, UDP, Lookup, Address', ['console', 'sockets', 'dns']),
 }
 FILES = {
  'core': {'x86': 'bin/x86/loksh', 'arm': 'bin/arm/loksh', 'riscv': 'bin/riscv/loksh',
@@ -105,7 +107,7 @@ CATEGORY = {  # linux: produces Linux executables; system; devel: compilers; app
  'core': 'linux',
  'console': 'system', 'desktop-base': 'system', 'desktop': 'system', 'desktop-system': 'system',
  'display-x11': 'system', 'display-sixel': 'system', 'portia': 'system',
- 'toml': 'lib', 'versions': 'lib', 'sockets': 'lib', 'net': 'apps',
+ 'toml': 'lib', 'versions': 'lib', 'sockets': 'lib', 'dns': 'lib', 'net': 'apps',
  'compiler-x86': 'devel', 'compiler-arm': 'devel', 'compiler-rop2': 'devel', 'compiler-riscv': 'devel',
  'compiler-mips': 'devel', 'compiler-armv7': 'devel', 'desktop-compiler-x86': 'devel',
  'desktop-compiler-arm': 'devel', 'desktop-compiler-rop2': 'devel',
