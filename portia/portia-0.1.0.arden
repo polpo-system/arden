@@ -14,4 +14,4 @@ tag  = main
 console = 0.1.0
 
 [MODULES]
-all = "src/cli/TOML.Mod src/cli/portia.Mod"
+all = "src/cli/TOML.Mod src/cli/Versions.Mod src/cli/portia.Mod"
