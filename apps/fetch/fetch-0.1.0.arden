@@ -4,7 +4,7 @@ category    = apps
 version     = 0.1.0
 author      = polpo
 license     = ETH Oberon
-description = "fetch.Get and fetch.Show: HTTP downloads"
+description = "fetch.Get and fetch.Show: HTTP and HTTPS downloads"
 
 [REMOTE]
 type = git
@@ -14,6 +14,7 @@ tag  = main
 [DEPS]
 console = 0.1.0
 http = 0.1.0
+tls = 0.1.0
 
 [MODULES]
 all = "src/cli/fetch.Mod"

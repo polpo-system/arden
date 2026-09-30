@@ -1,0 +1,22 @@
+[PACKAGE]
+name        = tls
+category    = lib
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "TLS 1.3 in Oberon (AES-128-GCM, X25519, RSA chains) and https over http, shared with voc"
+
+[REMOTE]
+type = git
+uri  = https://github.com/norayr/polpo
+tag  = main
+
+[DEPS]
+console = 0.1.0
+sockets = 0.1.0
+internet = 0.1.0
+http = 0.1.0
+strutils = 0.1.0
+
+[MODULES]
+all = "src/lib/tls/TLSBytes.Mod src/lib/tls/TLSSHA256.Mod src/lib/tls/TLSHKDF.Mod src/lib/tls/TLSX25519.Mod src/lib/tls/TLSAESGCM.Mod src/lib/tls/TLS13Records.Mod src/lib/tls/TLS13Handshake.Mod src/lib/tls/TLS13Keys.Mod src/lib/tls/TLS13Finished.Mod src/lib/tls/TLSBase64.Mod src/lib/tls/TLSPEM.Mod src/lib/tls/TLS13Certs.Mod src/lib/tls/TLSASN1.Mod src/lib/tls/TLSX509.Mod src/lib/tls/TLSBigInt.Mod src/lib/tls/TLSRSAVerify.Mod src/lib/tls/TLSX509Validity.Mod src/lib/tls/TLSX509Trust.Mod src/lib/tls/TLSX509Chain.Mod src/lib/tls/TLSX509Names.Mod src/lib/tls/TLS13EncHandshake.Mod src/lib/tls/TLS13ClientFinished.Mod src/lib/tls/TLS13Application.Mod src/lib/tls/TLS13Random.Mod src/lib/tls/TLSCABundle.Mod src/lib/tls/TLSNow.Mod src/lib/tls/TLS13Live.Mod src/lib/tls/httpsPure.Mod"
