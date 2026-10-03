@@ -31,6 +31,7 @@ def package(path):
     if d == 'src/lib/http': return 'http'
     if d == 'src/lib/tls': return 'tls'
     if b == 'fetch': return 'fetch'
+    if b == 'gemini': return 'gemini'
     if b == 'net': return 'net'
     if b in ('bdffont', 'grep', 'rx'): return 'console-tools'
     if d == 'src/cli/x86': return 'compiler-x86'
@@ -99,8 +100,9 @@ INFO = {
  'base64': ('Base64 encoding and decoding, shared with voc', ['console']),
  'internet': ('TCP by host name and port, the Internet interface of voc', ['console', 'sockets', 'dns']),
  'http': ('an HTTP/1.1 client, shared with voc', ['console', 'ooc', 'strutils', 'base64', 'internet']),
- 'tls': ('TLS 1.3 in Oberon (AES-128-GCM, X25519, RSA chains) and https over http, shared with voc', ['console', 'sockets', 'internet', 'http', 'strutils']),
+ 'tls': ('TLS 1.3 in Oberon (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc', ['console', 'sockets', 'internet', 'http', 'strutils']),
  'fetch': ('fetch.Get and fetch.Show: HTTP and HTTPS downloads', ['console', 'http', 'tls']),
+ 'gemini': ('gemini.Get and gemini.Show: Gemini downloads, keys trusted on first use', ['console', 'tls']),
  'net': ('minimal network tools: Get, Send, Echo, UDP, Lookup, Resolve, Address', ['console', 'sockets', 'dns']),
 }
 FILES = {
@@ -122,7 +124,7 @@ CATEGORY = {  # linux: produces Linux executables; system; devel: compilers; app
  'console': 'system', 'desktop-base': 'system', 'desktop': 'system', 'desktop-system': 'system',
  'display-x11': 'system', 'display-sixel': 'system', 'portia': 'system',
  'toml': 'lib', 'versions': 'lib', 'sockets': 'lib', 'dns': 'lib', 'net': 'apps',
- 'ooc': 'lib', 'strutils': 'lib', 'base64': 'lib', 'internet': 'lib', 'http': 'lib', 'tls': 'lib', 'fetch': 'apps',
+ 'ooc': 'lib', 'strutils': 'lib', 'base64': 'lib', 'internet': 'lib', 'http': 'lib', 'tls': 'lib', 'fetch': 'apps', 'gemini': 'apps',
  'compiler-x86': 'devel', 'compiler-arm': 'devel', 'compiler-rop2': 'devel', 'compiler-riscv': 'devel',
  'compiler-mips': 'devel', 'compiler-armv7': 'devel', 'desktop-compiler-x86': 'devel',
  'desktop-compiler-arm': 'devel', 'desktop-compiler-rop2': 'devel',
