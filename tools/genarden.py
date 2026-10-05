@@ -132,6 +132,39 @@ CATEGORY = {  # linux: produces Linux executables; system; devel: compilers; app
 }
 LICENSE = {'toml': 'GPL-3', 'ooc': 'LGPL-2+', 'strutils': 'GPL-3'}  # others: the license of polpo
 PROVIDES = {'display-x11': ('display', 'display-sixel'), 'display-sixel': ('display', 'display-x11')}
+# packages whose sources are in another repository: [REMOTE] uri is the base of the
+# https links of the files of the package, which portia downloads when they are missing
+EXTERNAL = {
+ 'coco': ('devel', '''[PACKAGE]
+name        = coco
+category    = devel
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "Coco/R 2012.01, the compiler generator of A. V. Shiryaev, for polpo"
+
+[REMOTE]
+type = files
+uri  = https://raw.githubusercontent.com/norayr/polpo-coco/master
+tag  = master
+
+[DEPS]
+console      = 0.1.0
+desktop      = 0.1.0
+
+[MODULES]
+all = "src/common/Sets.Mod src/common/CRS.Mod src/common/CRT.Mod src/common/CRA.Mod src/common/CRX.Mod src/common/CRP.Mod src/common/CRD.Mod src/cli/coco.Mod src/ui/Coco.Mod"
+
+[FILES]
+all = "CR.ATG Parser.FRM Scanner.FRM Driver.FRM"
+
+[TESTS]
+copy  = "examples/A.ATG=A.ATG examples/A.ob=A.ob Parser.FRM Scanner.FRM Driver.FRM"
+cmds  = "coco.Compile A.ATG; compiler.Compile /s AS.Mod; compiler.Compile /s AP.Mod; compiler.Compile /s ACompile.Mod; ACompile.Do A.ob"
+ok    = "0 errors"
+clean = "A.ATG A.ob Parser.FRM Scanner.FRM Driver.FRM AS.Mod AP.Mod ACompile.Mod AS AP ACompile"
+'''),
+}
 
 os.makedirs(OUT, exist_ok=True)
 index = []
@@ -143,7 +176,7 @@ for pkg in INFO:
     f.write('[PACKAGE]\nname        = %s\ncategory    = %s\nversion     = 0.1.0\nauthor      = %s\nlicense     = %s\n'
             % (pkg, cat, 'noch' if pkg == 'toml' else 'polpo', LICENSE.get(pkg, 'ETH Oberon')))
     f.write('description = "%s"\n\n' % desc)
-    f.write('[REMOTE]\ntype = git\nuri  = https://github.com/norayr/polpo\ntag  = main\n\n')
+    f.write('[REMOTE]\ntype = git\nuri  = https://raw.githubusercontent.com/norayr/polpo/main\ntag  = main\n\n')
     f.write('[DEPS]\n')
     for dep in deps: f.write('%s = 0.1.0\n' % dep)
     if pkg in PROVIDES:
@@ -174,6 +207,10 @@ for pkg in INFO:
                     out.append(w)
             f.write('%s = "%s"\n' % (k, ' '.join(out)))
     f.close()
+    index.append('%s/%s 0.1.0' % (cat, pkg))
+for pkg, (cat, text) in EXTERNAL.items():
+    d = os.path.join(OUT, cat, pkg); os.makedirs(d, exist_ok=True)
+    open(os.path.join(d, pkg + '-0.1.0.arden'), 'w').write(text)
     index.append('%s/%s 0.1.0' % (cat, pkg))
 open(os.path.join(OUT, 'INDEX'), 'w').write('\n'.join(index) + '\n')
 print('\n'.join(index))

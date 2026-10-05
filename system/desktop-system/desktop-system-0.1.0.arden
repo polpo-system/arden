@@ -8,7 +8,7 @@ description = "the System module of the desktop"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

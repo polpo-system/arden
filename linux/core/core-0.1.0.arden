@@ -8,7 +8,7 @@ description = "the boot image: runtime, files, module loader and the loksh binar
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

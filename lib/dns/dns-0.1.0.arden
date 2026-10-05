@@ -8,7 +8,7 @@ description = "host names to addresses: /etc/hosts and DNS over UDP, A and AAAA"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

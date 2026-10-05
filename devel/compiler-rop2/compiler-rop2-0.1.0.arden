@@ -8,7 +8,7 @@ description = "the ROP2 compiler front end and boot linker"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

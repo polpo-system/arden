@@ -8,7 +8,7 @@ description = "the ARM OB compiler and linkers (native on ARM, cross on x86)"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

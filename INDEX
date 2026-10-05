@@ -31,3 +31,4 @@ lib/tls 0.1.0
 apps/fetch 0.1.0
 apps/gemini 0.1.0
 apps/net 0.1.0
+devel/coco 0.1.0

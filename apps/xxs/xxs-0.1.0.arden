@@ -8,7 +8,7 @@ description = "a nano-like console editor for plain files and Oberon texts"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

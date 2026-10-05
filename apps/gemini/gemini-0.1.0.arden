@@ -8,7 +8,7 @@ description = "gemini.Get and gemini.Show: Gemini downloads, keys trusted on fir
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

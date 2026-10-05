@@ -8,7 +8,7 @@ description = "minimal network tools: Get, Send, Echo, UDP, Lookup, Resolve, Add
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

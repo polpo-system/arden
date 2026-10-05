@@ -8,7 +8,7 @@ description = "a small TOML reader, from github.com/norayr/toml"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

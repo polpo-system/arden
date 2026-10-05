@@ -8,7 +8,7 @@ description = "comparing version numbers like 1.2.10 and 0.3.0-rc1"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

@@ -1,0 +1,28 @@
+[PACKAGE]
+name        = coco
+category    = devel
+version     = 0.1.0
+author      = polpo
+license     = ETH Oberon
+description = "Coco/R 2012.01, the compiler generator of A. V. Shiryaev, for polpo"
+
+[REMOTE]
+type = files
+uri  = https://raw.githubusercontent.com/norayr/polpo-coco/master
+tag  = master
+
+[DEPS]
+console      = 0.1.0
+desktop      = 0.1.0
+
+[MODULES]
+all = "src/common/Sets.Mod src/common/CRS.Mod src/common/CRT.Mod src/common/CRA.Mod src/common/CRX.Mod src/common/CRP.Mod src/common/CRD.Mod src/cli/coco.Mod src/ui/Coco.Mod"
+
+[FILES]
+all = "CR.ATG Parser.FRM Scanner.FRM Driver.FRM"
+
+[TESTS]
+copy  = "examples/A.ATG=A.ATG examples/A.ob=A.ob Parser.FRM Scanner.FRM Driver.FRM"
+cmds  = "coco.Compile A.ATG; compiler.Compile /s AS.Mod; compiler.Compile /s AP.Mod; compiler.Compile /s ACompile.Mod; ACompile.Do A.ob"
+ok    = "0 errors"
+clean = "A.ATG A.ob Parser.FRM Scanner.FRM Driver.FRM AS.Mod AP.Mod ACompile.Mod AS AP ACompile"

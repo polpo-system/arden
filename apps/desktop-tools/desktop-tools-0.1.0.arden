@@ -8,7 +8,7 @@ description = "Edit, Script, Styles and other desktop tools"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

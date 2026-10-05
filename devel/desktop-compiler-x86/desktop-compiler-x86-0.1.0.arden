@@ -8,7 +8,7 @@ description = "the x86 compiler, boot linker, decoder and browser in the desktop
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

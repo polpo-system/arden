@@ -8,7 +8,7 @@ description = "fetch.Get and fetch.Show: HTTP and HTTPS downloads"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]

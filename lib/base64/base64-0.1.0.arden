@@ -8,7 +8,7 @@ description = "Base64 encoding and decoding, shared with voc"
 
 [REMOTE]
 type = git
-uri  = https://github.com/norayr/polpo
+uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]
