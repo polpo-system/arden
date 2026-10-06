@@ -3,7 +3,7 @@ name        = "compiler-rop2"
 category    = "devel"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "the ROP2 compiler front end and boot linker"
 
 [REMOTE]

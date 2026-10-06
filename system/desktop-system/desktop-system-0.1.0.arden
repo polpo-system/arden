@@ -3,7 +3,7 @@ name        = "desktop-system"
 category    = "system"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "the System module of the desktop"
 
 [REMOTE]

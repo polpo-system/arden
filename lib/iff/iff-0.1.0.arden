@@ -3,13 +3,13 @@ name        = "iff"
 category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "IFF: Amiga IFF ILBM pictures for Pictures and Iris"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/picture-formats/cf7bff46b9fc56e8d23a5b22bb5fb34037f3a551"
-tag  = "cf7bff46b9fc56e8d23a5b22bb5fb34037f3a551"
+uri  = "https://raw.githubusercontent.com/polpo-system/picture-formats/5db84f8f772be2cf2812b47db32f4501454731ea"
+tag  = "5db84f8f772be2cf2812b47db32f4501454731ea"
 
 [DEPS]
 desktop = "0.1.0"
@@ -20,7 +20,7 @@ all = ["src/IFF.Mod"]
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["test/sample.iff", "test/PictTest.Mod", "README.md", "LICENSE"]
+all = ["test/sample.iff", "test/PictTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
 
 # the tests need the desktop (DISPLAY set; an Xvnc will do)
 [TESTS]
@@ -34,5 +34,6 @@ display = true
 "src/IFF.Mod" = "sha256:f9fc32d1f38d473569fb7bb9dea7f3914369ff990ebc0e055bb3deb4a12b7872"
 "test/sample.iff" = "sha256:769dda15209b6fcee5ea5d78e802bbc26f9c4fd619246a01275c671f155f8571"
 "test/PictTest.Mod" = "sha256:7acad9b46eff042a6bffeb7ef03f33283096ec975b33a04ae85bd32d340e5142"
-"README.md" = "sha256:cfa4d2b5d7746a5ec46d4dcc2200d99bcc1a60227a06ff6af1fb3c02ce124f87"
-"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+"README.md" = "sha256:0e543fc81cc742f87a1bc1577a72805c86a6ce5cc350877bb07323f73bf03cde"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

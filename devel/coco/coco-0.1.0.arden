@@ -3,13 +3,13 @@ name        = "coco"
 category    = "devel"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "Coco/R, the compiler generator of H. Moessenboeck, as improved by A. V. Shiryaev (2012.01)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/polpo-coco/32cd4e80ec11a329f1f4ef1678817b03b7cee940"
-tag  = "32cd4e80ec11a329f1f4ef1678817b03b7cee940"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo-coco/b73c4d497dbc34237853ffadc43c9c0bdbcab60f"
+tag  = "b73c4d497dbc34237853ffadc43c9c0bdbcab60f"
 
 [DEPS]
 console = "0.1.0"
@@ -42,6 +42,7 @@ all = [
   "examples/A.ob",
   "README.md",
   "LICENSE",
+  "LICENSE.ETH",
 ]
 
 # coco builds the compiler of examples/A.ATG, which is compiled and run
@@ -73,5 +74,6 @@ bad  = ["TRAP"]
 "CR.ATG" = "sha256:6810d2af45c4c59e27c1eafc4cd774426f560c73bb6e678638fa8f012556632d"
 "examples/A.ATG" = "sha256:db13da3dfbde22c52994ac2f01783852aa9c27050b5cb47b8c813fa61820696f"
 "examples/A.ob" = "sha256:4903c1b5d3e1e7ee5ca507ef22ae1fae67d8238c9870096ebda41a291a4cde66"
-"README.md" = "sha256:a5daf89df7d3479d30c7f797377acd0be7c06d6fada9e9a7064ee4a3008b6567"
-"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+"README.md" = "sha256:f4c66a53fa3f699e109b76625e90d2c33eb2416242ba7b20eefa3741b0341c60"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

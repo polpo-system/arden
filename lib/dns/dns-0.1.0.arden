@@ -3,7 +3,7 @@ name        = "dns"
 category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "host names to addresses: /etc/hosts and DNS over UDP, A and AAAA"
 
 [REMOTE]

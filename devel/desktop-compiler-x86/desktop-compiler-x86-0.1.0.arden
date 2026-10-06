@@ -3,7 +3,7 @@ name        = "desktop-compiler-x86"
 category    = "devel"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "the x86 compiler, boot linker, decoder and browser in the desktop"
 
 [REMOTE]

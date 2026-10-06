@@ -156,7 +156,7 @@ for pkg in INFO:
     d = os.path.join(OUT, cat, pkg); os.makedirs(d, exist_ok=True)
     f = open(os.path.join(d, pkg + '-0.1.0.arden'), 'w')
     f.write('[PACKAGE]\nname        = %s\ncategory    = %s\nversion     = "0.1.0"\nauthor      = %s\nlicense     = %s\n'
-            % (q(pkg), q(cat), q('noch' if pkg == 'toml' else 'polpo'), q(LICENSE.get(pkg, 'ETH Oberon'))))
+            % (q(pkg), q(cat), q('noch' if pkg == 'toml' else 'polpo'), q(LICENSE.get(pkg, 'GPL-3'))))
     f.write('description = %s\n\n' % q(desc))
     f.write('[REMOTE]\ntype = "git"\nuri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"\ntag  = "main"\n\n')
     f.write('[DEPS]\n')

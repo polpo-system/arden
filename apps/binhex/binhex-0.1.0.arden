@@ -3,13 +3,13 @@ name        = "binhex"
 category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "binhex: decoding BinHex 4.0 (.hqx) files in the console"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/binhex/2bab81ecb658164e2dcf1ebc54e2e46df8d624d1"
-tag  = "2bab81ecb658164e2dcf1ebc54e2e46df8d624d1"
+uri  = "https://raw.githubusercontent.com/polpo-system/binhex/c85829e013e309779c1eb7dfa705175e770591a6"
+tag  = "c85829e013e309779c1eb7dfa705175e770591a6"
 
 [DEPS]
 console = "0.1.0"
@@ -19,7 +19,7 @@ all = ["BinHex0.Mod", "binhex.Mod"]
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["test/sample.bin", "test/sample.hqx", "test/BinHexTest.Mod", "README.md", "LICENSE"]
+all = ["test/sample.bin", "test/sample.hqx", "test/BinHexTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
 
 [TESTS]
 copy = ["test/sample.bin", "test/sample.hqx", "test/BinHexTest.Mod"]
@@ -33,5 +33,6 @@ bad  = ["TRAP", "  err ", "different"]
 "test/sample.bin" = "sha256:6992b176cfe85e70bfdbed6c8b6ca2a2fe1c4da23012572720a3208005047a6b"
 "test/sample.hqx" = "sha256:8119490a1632c729217c592348b5bf0dfee152c438c11fe6ae10370f204a188c"
 "test/BinHexTest.Mod" = "sha256:ddb506fa2e2854d62415301f08b5af7ebdc6b04006422de799a3ad87b81bbac0"
-"README.md" = "sha256:15b6d9419fb9461ac888233006526553418c5f00d17375532cafdaa8e690ca1d"
-"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+"README.md" = "sha256:1d85051394b8849c898e7ee386db0791550fa19e697ac8c4443b72dba0a6b1b1"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

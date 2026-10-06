@@ -3,13 +3,13 @@ name        = "calc-desktop"
 category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "Calc: the Oberon calculator in the desktop, with Calc.Tool"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/calc/dbafa40ebc51a201135e67ad716cd5273f6b6a8a"
-tag  = "dbafa40ebc51a201135e67ad716cd5273f6b6a8a"
+uri  = "https://raw.githubusercontent.com/polpo-system/calc/33a6b50152ca7adab79b66662bbf7cd05f4fb7e5"
+tag  = "33a6b50152ca7adab79b66662bbf7cd05f4fb7e5"
 
 [DEPS]
 calc = "0.1.0"

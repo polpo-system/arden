@@ -3,13 +3,13 @@ name        = "binhex-desktop"
 category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "BinHex: decoding BinHex 4.0 (.hqx) files in the desktop"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/binhex/2bab81ecb658164e2dcf1ebc54e2e46df8d624d1"
-tag  = "2bab81ecb658164e2dcf1ebc54e2e46df8d624d1"
+uri  = "https://raw.githubusercontent.com/polpo-system/binhex/c85829e013e309779c1eb7dfa705175e770591a6"
+tag  = "c85829e013e309779c1eb7dfa705175e770591a6"
 
 [DEPS]
 binhex = "0.1.0"

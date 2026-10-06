@@ -3,7 +3,7 @@ name        = "desktop-compiler-arm"
 category    = "devel"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "the ARM compiler, decoder and browser in the desktop"
 
 [REMOTE]

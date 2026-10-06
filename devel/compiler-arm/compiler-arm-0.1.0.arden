@@ -3,7 +3,7 @@ name        = "compiler-arm"
 category    = "devel"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "the ARM OB compiler and linkers (native on ARM, cross on x86)"
 
 [REMOTE]

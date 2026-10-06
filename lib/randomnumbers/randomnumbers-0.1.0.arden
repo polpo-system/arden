@@ -3,13 +3,13 @@ name        = "randomnumbers"
 category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "RandomNumbers: uniform and exponential random numbers"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/randomnumbers/ee1cb4e6729032b6177a4f5823520379054015cf"
-tag  = "ee1cb4e6729032b6177a4f5823520379054015cf"
+uri  = "https://raw.githubusercontent.com/polpo-system/randomnumbers/6782b533b2c2f4744d41b4c231a5c63088bd3ae1"
+tag  = "6782b533b2c2f4744d41b4c231a5c63088bd3ae1"
 
 [DEPS]
 desktop = "0.1.0"
@@ -20,7 +20,7 @@ all = ["RandomNumbers.Mod"]
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["test/RNTest.Mod", "README.md", "LICENSE"]
+all = ["test/RNTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
 
 # the tests need the desktop (DISPLAY set; an Xvnc will do)
 [TESTS]
@@ -33,5 +33,6 @@ display = true
 [SUMS]
 "RandomNumbers.Mod" = "sha256:12152238614495f9c857eb19ded6c3cfb465cea19dfd82afefb9320a0cd56415"
 "test/RNTest.Mod" = "sha256:8c7ac715707360b7415e67aa79ca9ca2b23343bfc5b2751f9b86720963a51b81"
-"README.md" = "sha256:01a191e25d7fe65fef6edacd22ab9886278f4bbe883ef5be4fc289a05d6689a7"
-"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+"README.md" = "sha256:0e1190d6b9dca7148900f37e15268ba6b888ce025db9a79f8e2d7f99e988ce11"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

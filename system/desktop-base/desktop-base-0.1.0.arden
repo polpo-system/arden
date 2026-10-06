@@ -3,7 +3,7 @@ name        = "desktop-base"
 category    = "system"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "objects and the file directory, below the display"
 
 [REMOTE]

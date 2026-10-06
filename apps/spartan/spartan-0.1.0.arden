@@ -3,7 +3,7 @@ name        = "spartan"
 category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "spartan.Get and spartan.Show: Spartan downloads"
 
 [REMOTE]

@@ -3,7 +3,7 @@ name        = "desktop-compiler-rop2"
 category    = "devel"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "the ROP2 compilers and decoders in the desktop"
 
 [REMOTE]

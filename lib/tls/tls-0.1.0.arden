@@ -3,7 +3,7 @@ name        = "tls"
 category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "TLS 1.3 in Oberon (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc"
 
 [REMOTE]

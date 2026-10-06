@@ -3,13 +3,13 @@ name        = "calc"
 category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "calc: the Oberon calculator in the console (calc.Dec 2^10, calc.Hex ...)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/calc/dbafa40ebc51a201135e67ad716cd5273f6b6a8a"
-tag  = "dbafa40ebc51a201135e67ad716cd5273f6b6a8a"
+uri  = "https://raw.githubusercontent.com/polpo-system/calc/33a6b50152ca7adab79b66662bbf7cd05f4fb7e5"
+tag  = "33a6b50152ca7adab79b66662bbf7cd05f4fb7e5"
 
 [DEPS]
 console = "0.1.0"
@@ -20,7 +20,7 @@ all = ["Calc0.Mod", "calc.Mod"]
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["README.md", "LICENSE"]
+all = ["README.md", "LICENSE", "LICENSE.ETH"]
 
 [TESTS]
 cmds = ["calc.Set alpha := 33H beta := 1000H ~", "calc.Hex alpha + beta", "calc.Dec 1000*sqrt 2", "calc.Char \"j\" + 7"]
@@ -30,5 +30,6 @@ bad  = ["TRAP", "  err "]
 [SUMS]
 "Calc0.Mod" = "sha256:b8225bb689a75b8e8f4ff1020d44cf745947bd0ac6245483b2f70845c34171f7"
 "calc.Mod" = "sha256:06b608d0d6a81a7fd0aee2aa55befa0f7cabce62f4fea3d7d44293eaae9a2081"
-"README.md" = "sha256:dbf4491c1cdcb5d73ead944a0d226e6cf93a01ffe6aad8ad83d12eb67df31c9a"
-"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+"README.md" = "sha256:ee2c76a08bd6a8db146cfb0c8b414d03a8a1b1813c9a1f112ac71b370b8a32d4"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

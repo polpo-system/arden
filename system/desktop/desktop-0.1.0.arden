@@ -3,7 +3,7 @@ name        = "desktop"
 category    = "system"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "the Oberon desktop: display space, fonts, texts, viewers"
 
 [REMOTE]

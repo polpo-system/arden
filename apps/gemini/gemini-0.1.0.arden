@@ -3,7 +3,7 @@ name        = "gemini"
 category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "gemini.Get and gemini.Show: Gemini downloads, keys trusted on first use"
 
 [REMOTE]

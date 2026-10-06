@@ -3,7 +3,7 @@ name        = "core"
 category    = "linux"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "the boot image: runtime, files, module loader and the loksh binary"
 
 [REMOTE]

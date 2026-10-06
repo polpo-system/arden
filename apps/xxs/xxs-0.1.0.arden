@@ -3,7 +3,7 @@ name        = "xxs"
 category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
-license     = "ETH Oberon"
+license     = "GPL-3"
 description = "a nano-like console editor for plain files and Oberon texts"
 
 [REMOTE]
