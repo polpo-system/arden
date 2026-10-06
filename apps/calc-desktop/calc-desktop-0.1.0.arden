@@ -1,0 +1,36 @@
+[PACKAGE]
+name        = "calc-desktop"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "Calc: the Oberon calculator in the desktop, with Calc.Tool"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/calc/dbafa40ebc51a201135e67ad716cd5273f6b6a8a"
+tag  = "dbafa40ebc51a201135e67ad716cd5273f6b6a8a"
+
+[DEPS]
+calc = "0.1.0"
+desktop = "0.1.0"
+
+[MODULES]
+all = ["Calc.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["Calc.Tool=tools/Calc.Tool", "test/CalcTest.Mod"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/CalcTest.Mod"]
+cmds = ["$compile CalcTest.Mod", "Calc.Set alpha := 33H beta := 1000H ~", "Calc.Hex alpha + beta", "Calc.Dec alpha^2 * 3", "Calc.Char \"j\" + 7", "Calc.Dec 1000*sqrt 2", "CalcTest.Log"]
+ok   = ["Calc.Hex 1033H", "Calc.Dec 7803", "Calc.Char \"q\"", "Calc.Dec 1414"]
+bad  = ["TRAP", "  err "]
+display = true
+
+[SUMS]
+"Calc.Mod" = "sha256:db71e6784927481e728fe98b9114f97794e362b14a467ea5c50136d113013603"
+"Calc.Tool" = "sha256:31af8ff6c7ccde498939eb2075d5c68ef028b1375e4f493106a477725acd0ad8"
+"test/CalcTest.Mod" = "sha256:9303c5a87122b56cbae172af957060a0fd24fb7827ac8e87f94f1b8c77d79579"

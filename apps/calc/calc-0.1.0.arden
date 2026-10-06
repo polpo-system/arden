@@ -4,36 +4,31 @@ category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
 license     = "ETH Oberon"
-description = "Calc: the Oberon desktop calculator, with Calc.Tool"
+description = "calc: the Oberon calculator in the console (calc.Dec 2^10, calc.Hex ...)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/calc/111ad03f41c73b3d8fdd222c81e8a1a458a3491b"
-tag  = "111ad03f41c73b3d8fdd222c81e8a1a458a3491b"
+uri  = "https://raw.githubusercontent.com/polpo-system/calc/dbafa40ebc51a201135e67ad716cd5273f6b6a8a"
+tag  = "dbafa40ebc51a201135e67ad716cd5273f6b6a8a"
 
 [DEPS]
-desktop = "0.1.0"
+console = "0.1.0"
 math = "0.1.0"
 
 [MODULES]
-all = ["Calc.Mod"]
+all = ["Calc0.Mod", "calc.Mod"]
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["Calc.Tool=tools/Calc.Tool", "test/CalcTest.Mod", "README.md", "LICENSE"]
+all = ["README.md", "LICENSE"]
 
-# the tests need the desktop (DISPLAY set; an Xvnc will do); MathL through Calc.Dec: Calc.Real
-# prints in another format on ARM (-1.000000000000000)
 [TESTS]
-copy = ["test/CalcTest.Mod"]
-cmds = ["$compile CalcTest.Mod", "Calc.Set alpha := 33H beta := 1000H ~", "Calc.Hex alpha + beta", "Calc.Dec alpha^2 * 3", "Calc.Char \"j\" + 7", "Calc.Dec 1000*sqrt 2", "CalcTest.Log"]
-ok   = ["Calc.Hex 1033H", "Calc.Dec 7803", "Calc.Char \"q\"", "Calc.Dec 1414"]
+cmds = ["calc.Set alpha := 33H beta := 1000H ~", "calc.Hex alpha + beta", "calc.Dec 1000*sqrt 2", "calc.Char \"j\" + 7"]
+ok   = ["Calc.Hex 1033H", "Calc.Dec 1414", "Calc.Char \"q\""]
 bad  = ["TRAP", "  err "]
-display = true
 
 [SUMS]
-"Calc.Mod" = "sha256:26ec06c45523e485278b57434ba6a0dd5011bad7bc7403ec7bbc82addec694e1"
-"Calc.Tool" = "sha256:31af8ff6c7ccde498939eb2075d5c68ef028b1375e4f493106a477725acd0ad8"
-"test/CalcTest.Mod" = "sha256:9303c5a87122b56cbae172af957060a0fd24fb7827ac8e87f94f1b8c77d79579"
-"README.md" = "sha256:f42866b5115357bcc242ee00c44e08bc54b3ac1070026cc13f69e0df3b72581f"
+"Calc0.Mod" = "sha256:b8225bb689a75b8e8f4ff1020d44cf745947bd0ac6245483b2f70845c34171f7"
+"calc.Mod" = "sha256:06b608d0d6a81a7fd0aee2aa55befa0f7cabce62f4fea3d7d44293eaae9a2081"
+"README.md" = "sha256:dbf4491c1cdcb5d73ead944a0d226e6cf93a01ffe6aad8ad83d12eb67df31c9a"
 "LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

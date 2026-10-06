@@ -1,0 +1,37 @@
+[PACKAGE]
+name        = "binhex-desktop"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "BinHex: decoding BinHex 4.0 (.hqx) files in the desktop"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/binhex/ec53df292d171b4c6f912022cac01de278d7aa38"
+tag  = "ec53df292d171b4c6f912022cac01de278d7aa38"
+
+[DEPS]
+binhex = "0.1.0"
+desktop = "0.1.0"
+
+[MODULES]
+all = ["BinHex.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/sample.bin", "test/sample.hqx", "test/BinHexTest.Mod"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/sample.bin", "test/sample.hqx", "test/BinHexTest.Mod"]
+cmds = ["BinHex.Decode out.bin sample.hqx", "$compile BinHexTest.Mod", "BinHexTest.Compare out.bin sample.bin"]
+ok   = ["BinHexTest: 2581 bytes, same"]
+bad  = ["TRAP", "  err "]
+display = true
+
+[SUMS]
+"BinHex.Mod" = "sha256:f59cdd897223154fae928817bbbbfdccfc7331aea6fdf2d03df84a2923810968"
+"test/sample.bin" = "sha256:6992b176cfe85e70bfdbed6c8b6ca2a2fe1c4da23012572720a3208005047a6b"
+"test/sample.hqx" = "sha256:4c64a634d3e9cd397ea181d893a1f70919019694870da4968e348d8917483a3c"
+"test/BinHexTest.Mod" = "sha256:8ca10f1a79a5609528b3268b19f95fbc535af44c3cc329cfc11d9e218e350fe4"
