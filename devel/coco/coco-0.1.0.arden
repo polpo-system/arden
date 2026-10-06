@@ -15,6 +15,9 @@ tag  = "32cd4e80ec11a329f1f4ef1678817b03b7cee940"
 console = "0.1.0"
 desktop = "0.1.0"
 
+[CONFLICTS]
+coco-eth = "0.1.0"
+
 [MODULES]
 all = [
   "src/common/Sets.Mod",

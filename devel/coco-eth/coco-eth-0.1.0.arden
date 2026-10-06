@@ -1,0 +1,64 @@
+[PACKAGE]
+name        = "coco-eth"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "Coco/R 2.2 of H. Moessenboeck as in Native Oberon 2.3.6, with Coco.Tool (desktop)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/coco-eth/c3f5283f5eaa4c1365ae366638c2aa3dbc5d4058"
+tag  = "c3f5283f5eaa4c1365ae366638c2aa3dbc5d4058"
+
+[DEPS]
+desktop = "0.1.0"
+
+[CONFLICTS]
+coco = "0.1.0"
+
+[MODULES]
+all = [
+  "src/Sets.Mod",
+  "src/CRS.Mod",
+  "src/CRT.Mod",
+  "src/CRA.Mod",
+  "src/CRX.Mod",
+  "src/CRP.Mod",
+  "src/Coco.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = [
+  "Parser.FRM=share/Parser.FRM",
+  "Scanner.FRM=share/Scanner.FRM",
+  "Coco.Tool=tools/Coco.Tool",
+  "CR.ATG",
+  "README.md",
+  "LICENSE",
+]
+
+# Coco/R generates its own scanner and parser, which are compiled; its messages go to the
+# log of the desktop, so the test looks for compiler errors and missing files; it needs the
+# desktop: DISPLAY set (an Xvnc will do)
+[TESTS]
+copy = ["CR.ATG"]
+cmds = ["Coco.Compile CR.ATG", "$compile CRS.Mod", "$compile CRP.Mod"]
+bad  = ["  err ", "not found", "TRAP"]
+display = true
+
+[SUMS]
+"src/Sets.Mod" = "sha256:640587a85b614cc3a3b1bbf36dec9acecae0457f667c2b5397eacadbfe853c31"
+"src/CRS.Mod" = "sha256:4fbadc9fb60b43cc20b734830defdcddfc1e965aa45101d1271737e95629b987"
+"src/CRT.Mod" = "sha256:d0e5489a110e0a3ccb1bc69ba1f58dcaf51743019751d410ddf00971744ba9f2"
+"src/CRA.Mod" = "sha256:168541fff89e520fdfc0452ae835cd0dd837e5b02cc1c80491db28f527d61ba2"
+"src/CRX.Mod" = "sha256:1a21dd1597207cac1b7ed7287991a40ec44f203ac37a340fabb3a670d224ed91"
+"src/CRP.Mod" = "sha256:5e1a28168d88753982b730918a1cf0da97df9e2750677e36968e1ff292361efe"
+"src/Coco.Mod" = "sha256:3497d069ea031816e9d40703617a782f8926e2a533ece5d86b564433f526e5f0"
+"Parser.FRM" = "sha256:791b30aafcaf9cb2d826552826a9395fd169e35069191b8910b2558aab9a222e"
+"Scanner.FRM" = "sha256:6127b5f1f219f64565ba4ce201e201c55e31ffc4ab1e63731b1d10627bef14ae"
+"Coco.Tool" = "sha256:952622a477fa36dfcc6e77c8b86f3b0e6925cd492939884fa15c44f6d0d9983e"
+"CR.ATG" = "sha256:207fe6b3d0c0ca9e82d0d3e2ff1d5e0145f7ee88f91dffaf4466cf4fca02b0b1"
+"README.md" = "sha256:3cbd209dd26efea550e4a4140617de85bc6b9b9be3984119d63ed6f18e8d6705"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
