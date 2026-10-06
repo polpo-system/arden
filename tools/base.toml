@@ -75,6 +75,13 @@ deps        = ["console", "gzip"]
 match       = ["tar"]
 files.all   = ["tools/Tar.Tool"]
 
+[fs]
+category    = "apps"
+description = "directories and files of Linux in the console: fs.Cd, Pwd, Ls, Mkdir, Rm, Rmdir, Mv, Cp"
+deps        = ["console"]
+match       = ["fs"]
+files.all   = ["tools/Fs.Tool"]
+
 [zip]
 category    = "apps"
 description = "zip archives: Zip of ETH Oberon and the console command zip"

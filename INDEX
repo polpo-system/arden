@@ -8,6 +8,7 @@ devel/polpo-tools 0.1.0
 lib/zlib 0.1.0
 apps/gzip 0.1.0
 apps/tar 0.1.0
+apps/fs 0.1.0
 apps/zip 0.1.0
 apps/zip-desktop 0.1.0
 apps/arc 0.1.0

@@ -1,0 +1,21 @@
+[PACKAGE]
+name        = "fs"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "directories and files of Linux in the console: fs.Cd, Pwd, Ls, Mkdir, Rm, Rmdir, Mv, Cp"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+
+[MODULES]
+all = ["src/cli/fs.Mod"]
+
+[FILES]
+all = ["tools/Fs.Tool"]
