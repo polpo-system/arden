@@ -1,0 +1,34 @@
+[PACKAGE]
+name        = "bdffont"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "bdffont: BDF bitmap fonts (X11, Unifont, Terminus) to Oberon screen fonts"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/bdffont/589e96f075d08f15e4e11d810b047d59013b3fd7"
+tag  = "589e96f075d08f15e4e11d810b047d59013b3fd7"
+
+[DEPS]
+console = "0.1.0"
+
+[MODULES]
+all = ["bdffont.Mod"]
+
+[FILES]
+all = ["test/sample.bdf", "test/FntTest.Mod", "README.md", "LICENSE"]
+
+[TESTS]
+copy = ["test/sample.bdf", "test/FntTest.Mod"]
+cmds = ["$compile FntTest.Mod", "bdffont.Convert sample.bdf t.Scn.Fnt", "FntTest.Check t.Scn.Fnt 8 2"]
+ok   = ["bdffont: wrote t.Scn.Fnt with 3 glyphs in 2 runs", "FntTest: 0 failed"]
+bad  = ["TRAP", "  err "]
+
+[SUMS]
+"bdffont.Mod" = "sha256:04160deed6b4f4edccabc26c2176ab6dbfa2ee4be53246adecc316e6d0f06942"
+"test/sample.bdf" = "sha256:d03c70068f25fa5e09f0f959fce58bd307ac1acc29e98ce40f4dc0f6567fec72"
+"test/FntTest.Mod" = "sha256:4069bb44e1e7b66418da13ce34d285e1735eec895f70c44cbb0593ee55afdb30"
+"README.md" = "sha256:1b2bc06828f3248e26f95c9e608999f0689421b911c475e645a07cb6145a623d"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"

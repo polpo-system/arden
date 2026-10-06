@@ -35,7 +35,7 @@ def package(path):
     if b == 'gemini': return 'gemini'
     if b == 'spartan': return 'spartan'
     if b == 'net': return 'net'
-    if b in ('bdffont', 'grep', 'rx'): return 'console-tools'
+    if b in ('grep', 'rx'): return 'console-tools'
     if d == 'src/cli/x86': return 'compiler-x86'
     if d == 'src/cli/arm': return 'compiler-arm'
     if d == 'src/cli/rop2': return 'compiler-rop2'
@@ -75,7 +75,7 @@ for arch in ARCHS: xflag.add(('src/desktop/POLPO.SXL.Display.Mod', arch))  # mak
 INFO = {
  'core': ('the boot image: runtime, files, module loader and the loksh binary', []),
  'console': ('the console: shell, texts, terminal, Oberon.Text', ['core']),
- 'console-tools': ('grep, rx (regular expressions), bdffont', ['console']),
+ 'console-tools': ('grep and rx (regular expressions)', ['console']),
  'xxs': ('a nano-like console editor for plain files and Oberon texts', ['console']),
  'compiler-x86': ('the x86 OP2 compiler, linker and browser', ['console']),
  'compiler-arm': ('the ARM OB compiler and linkers (native on ARM, cross on x86)', ['console']),
@@ -138,7 +138,7 @@ LICENSE = {'toml': 'GPL-3', 'ooc': 'LGPL-2+', 'strutils': 'GPL-3'}  # others: th
 PROVIDES = {'display-x11': ('display', 'display-sixel'), 'display-sixel': ('display', 'display-x11')}
 # packages whose sources are in another repository ([REMOTE] type = files): their recipes
 # are written by hand and only listed in the INDEX here
-EXTERNAL = [('devel', 'coco', '0.1.0'), ('devel', 'coco-eth', '0.1.0'), ('lib', 'math', '0.1.0'), ('lib', 'xyplane', '0.1.0'), ('lib', 'randomnumbers', '0.1.0'), ('apps', 'ifs', '0.1.0'), ('lib', 'bit', '0.1.0'), ('lib', 'colormodels', '0.1.0'), ('lib', 'gif', '0.1.0'), ('lib', 'jpeg', '0.1.0'), ('lib', 'bmp', '0.1.0'), ('lib', 'tga', '0.1.0'), ('lib', 'pcx', '0.1.0'), ('lib', 'ico', '0.1.0'), ('lib', 'iff', '0.1.0'), ('lib', 'xpm', '0.1.0'), ('apps', 'iris', '0.1.0'), ('apps', 'binhex', '0.1.0'), ('apps', 'calc', '0.1.0'), ('apps', 'calc-desktop', '0.1.0'), ('apps', 'binhex-desktop', '0.1.0')]
+EXTERNAL = [('devel', 'coco', '0.1.0'), ('devel', 'coco-eth', '0.1.0'), ('lib', 'math', '0.1.0'), ('lib', 'xyplane', '0.1.0'), ('lib', 'randomnumbers', '0.1.0'), ('apps', 'ifs', '0.1.0'), ('lib', 'bit', '0.1.0'), ('lib', 'colormodels', '0.1.0'), ('lib', 'gif', '0.1.0'), ('lib', 'jpeg', '0.1.0'), ('lib', 'bmp', '0.1.0'), ('lib', 'tga', '0.1.0'), ('lib', 'pcx', '0.1.0'), ('lib', 'ico', '0.1.0'), ('lib', 'iff', '0.1.0'), ('lib', 'xpm', '0.1.0'), ('apps', 'iris', '0.1.0'), ('apps', 'binhex', '0.1.0'), ('apps', 'calc', '0.1.0'), ('apps', 'calc-desktop', '0.1.0'), ('apps', 'binhex-desktop', '0.1.0'), ('apps', 'bdffont', '0.1.0')]
 
 def q(x):  # a TOML basic string
     return '"' + x.replace('\\', '\\\\').replace('"', '\\"') + '"'

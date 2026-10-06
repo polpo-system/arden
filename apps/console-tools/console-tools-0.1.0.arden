@@ -4,7 +4,7 @@ category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "grep, rx (regular expressions), bdffont"
+description = "grep and rx (regular expressions)"
 
 [REMOTE]
 type = "git"
@@ -15,7 +15,7 @@ tag  = "main"
 console = "0.1.0"
 
 [MODULES]
-x86 = ["src/cli/bdffont.Mod", "src/cli/grep.Mod", "src/cli/rx.Mod"]
+x86 = ["src/cli/grep.Mod", "src/cli/rx.Mod"]
 
 [FILES]
 all = ["tools/rx.Tool"]
