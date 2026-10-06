@@ -36,3 +36,6 @@ apps/net 0.1.0
 devel/coco 0.1.0
 devel/coco-eth 0.1.0
 lib/math 0.1.0
+lib/xyplane 0.1.0
+lib/randomnumbers 0.1.0
+apps/ifs 0.1.0

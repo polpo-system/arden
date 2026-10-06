@@ -138,7 +138,7 @@ LICENSE = {'toml': 'GPL-3', 'ooc': 'LGPL-2+', 'strutils': 'GPL-3'}  # others: th
 PROVIDES = {'display-x11': ('display', 'display-sixel'), 'display-sixel': ('display', 'display-x11')}
 # packages whose sources are in another repository ([REMOTE] type = files): their recipes
 # are written by hand and only listed in the INDEX here
-EXTERNAL = [('devel', 'coco', '0.1.0'), ('devel', 'coco-eth', '0.1.0'), ('lib', 'math', '0.1.0')]
+EXTERNAL = [('devel', 'coco', '0.1.0'), ('devel', 'coco-eth', '0.1.0'), ('lib', 'math', '0.1.0'), ('lib', 'xyplane', '0.1.0'), ('lib', 'randomnumbers', '0.1.0'), ('apps', 'ifs', '0.1.0')]
 
 def q(x):  # a TOML basic string
     return '"' + x.replace('\\', '\\\\').replace('"', '\\"') + '"'

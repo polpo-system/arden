@@ -1,0 +1,36 @@
+[PACKAGE]
+name        = "xyplane"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "XYplane: the virtual screen of Programming in Oberon, a viewer of pixels"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/xyplane/572d3a913878b364ec99977d9f1e652c316b3170"
+tag  = "572d3a913878b364ec99977d9f1e652c316b3170"
+
+[DEPS]
+desktop = "0.1.0"
+
+[MODULES]
+all = ["XYplane.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/XYTest.Mod", "README.md", "LICENSE"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/XYTest.Mod"]
+cmds = ["$compile XYTest.Mod", "XYTest.Run"]
+ok   = ["XYTest: 0 failed"]
+bad  = ["TRAP", "  err "]
+display = true
+
+[SUMS]
+"XYplane.Mod" = "sha256:834df8b2ce81c3a2564a6cf98d7bb0db3ad4eb7e89f4dd7420535c9a26302277"
+"test/XYTest.Mod" = "sha256:f2f54873f701f07b03a83aa45a2701e4c5c411ab403c9cf8bdc0a81320d211af"
+"README.md" = "sha256:4589702fc1cdce424078910d90e6f504534dfa57e0ef4ce2eb70823b162a5163"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

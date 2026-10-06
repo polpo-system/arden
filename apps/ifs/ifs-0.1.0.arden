@@ -1,0 +1,36 @@
+[PACKAGE]
+name        = "ifs"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "IFS: Barnsley's iterated function system fractals in an XYplane, with IFS.Tool"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/ifs/9059fdebab15a91e57d5cc1753ece88f3430a408"
+tag  = "9059fdebab15a91e57d5cc1753ece88f3430a408"
+
+[DEPS]
+desktop = "0.1.0"
+xyplane = "0.1.0"
+randomnumbers = "0.1.0"
+
+[MODULES]
+all = ["IFS.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["IFS.Tool=tools/IFS.Tool", "README.md", "LICENSE"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+cmds = ["IFS.Init 200 50 40 0.0 0.85 0.2 -0.15 0.0 0.04 -0.26 0.28 0.0 -0.04 0.23 0.26 0.16 0.85 0.22 0.24 0.0 0.0 0.0 0.0 0.0 1.6 1.6 0.44 0.01 0.85 0.07 0.07 ~"]
+bad  = ["TRAP", "  err "]
+display = true
+
+[SUMS]
+"IFS.Mod" = "sha256:25b2ad906d9d1a1cb8e321cc9573cf45a92d4f55b003b8e92150e6b3aa63e4a5"
+"IFS.Tool" = "sha256:979e2eb92d10746a34be0183eb8eeef3ece545d2e8bbe2f06f51190ccf87869c"
+"README.md" = "sha256:7e0393065224dbfff2168cb71a4d6bd929ebb0a2ce6c476c22e11d5ca69daad3"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
