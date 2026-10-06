@@ -1,10 +1,10 @@
 [PACKAGE]
-name        = portia
-category    = system
+name        = spartan
+category    = apps
 version     = 0.1.0
 author      = polpo
 license     = ETH Oberon
-description = "portia, the package manager"
+description = "spartan.Get and spartan.Show: Spartan downloads"
 
 [REMOTE]
 type = git
@@ -13,9 +13,7 @@ tag  = main
 
 [DEPS]
 console = 0.1.0
-toml = 0.1.0
-versions = 0.1.0
-checksums = 0.1.0
+internet = 0.1.0
 
 [MODULES]
-all = "src/cli/portia.Mod"
+all = "src/cli/spartan.Mod"

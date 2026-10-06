@@ -22,6 +22,7 @@ def package(path):
     if b == 'TOML': return 'toml'
     if b == 'Versions': return 'versions'
     if b == 'portia': return 'portia'
+    if b == 'Checksums': return 'checksums'
     if b == 'Sockets': return 'sockets'
     if b == 'DNS': return 'dns'
     if d == 'src/lib/ooc': return 'ooc'
@@ -32,6 +33,7 @@ def package(path):
     if d == 'src/lib/tls': return 'tls'
     if b == 'fetch': return 'fetch'
     if b == 'gemini': return 'gemini'
+    if b == 'spartan': return 'spartan'
     if b == 'net': return 'net'
     if b in ('bdffont', 'grep', 'rx'): return 'console-tools'
     if d == 'src/cli/x86': return 'compiler-x86'
@@ -92,7 +94,8 @@ INFO = {
  'desktop-compiler-rop2': ('the ROP2 compilers and decoders in the desktop', ['desktop-tools', 'compiler-rop2']),
  'toml': ('a small TOML reader, from github.com/norayr/toml', []),
  'versions': ('comparing version numbers like 1.2.10 and 0.3.0-rc1', []),
- 'portia': ('portia, the package manager', ['console', 'toml', 'versions']),
+ 'checksums': ('MD5 and SHA-256 of data and files', ['core']),
+ 'portia': ('portia, the package manager', ['console', 'toml', 'versions', 'checksums']),
  'sockets': ('TCP and UDP over IPv4 and IPv6', ['core']),
  'dns': ('host names to addresses: /etc/hosts and DNS over UDP, A and AAAA', ['core', 'sockets']),
  'ooc': ('oocIntStr and what it needs from the OOC library (as in voc)', []),
@@ -103,6 +106,7 @@ INFO = {
  'tls': ('TLS 1.3 in Oberon (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc', ['console', 'sockets', 'internet', 'http', 'strutils']),
  'fetch': ('fetch.Get and fetch.Show: HTTP and HTTPS downloads', ['console', 'http', 'tls']),
  'gemini': ('gemini.Get and gemini.Show: Gemini downloads, keys trusted on first use', ['console', 'tls']),
+ 'spartan': ('spartan.Get and spartan.Show: Spartan downloads', ['console', 'internet']),
  'net': ('minimal network tools: Get, Send, Echo, UDP, Lookup, Resolve, Address', ['console', 'sockets', 'dns']),
 }
 FILES = {
@@ -124,7 +128,7 @@ CATEGORY = {  # linux: produces Linux executables; system; devel: compilers; app
  'console': 'system', 'desktop-base': 'system', 'desktop': 'system', 'desktop-system': 'system',
  'display-x11': 'system', 'display-sixel': 'system', 'portia': 'system',
  'toml': 'lib', 'versions': 'lib', 'sockets': 'lib', 'dns': 'lib', 'net': 'apps',
- 'ooc': 'lib', 'strutils': 'lib', 'base64': 'lib', 'internet': 'lib', 'http': 'lib', 'tls': 'lib', 'fetch': 'apps', 'gemini': 'apps',
+ 'ooc': 'lib', 'strutils': 'lib', 'base64': 'lib', 'internet': 'lib', 'http': 'lib', 'tls': 'lib', 'fetch': 'apps', 'gemini': 'apps', 'spartan': 'apps', 'checksums': 'lib',
  'compiler-x86': 'devel', 'compiler-arm': 'devel', 'compiler-rop2': 'devel', 'compiler-riscv': 'devel',
  'compiler-mips': 'devel', 'compiler-armv7': 'devel', 'desktop-compiler-x86': 'devel',
  'desktop-compiler-arm': 'devel', 'desktop-compiler-rop2': 'devel',
@@ -132,39 +136,9 @@ CATEGORY = {  # linux: produces Linux executables; system; devel: compilers; app
 }
 LICENSE = {'toml': 'GPL-3', 'ooc': 'LGPL-2+', 'strutils': 'GPL-3'}  # others: the license of polpo
 PROVIDES = {'display-x11': ('display', 'display-sixel'), 'display-sixel': ('display', 'display-x11')}
-# packages whose sources are in another repository: [REMOTE] uri is the base of the
-# https links of the files of the package, which portia downloads when they are missing
-EXTERNAL = {
- 'coco': ('devel', '''[PACKAGE]
-name        = coco
-category    = devel
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
-description = "Coco/R 2012.01, the compiler generator of A. V. Shiryaev, for polpo"
-
-[REMOTE]
-type = files
-uri  = https://raw.githubusercontent.com/norayr/polpo-coco/master
-tag  = master
-
-[DEPS]
-console      = 0.1.0
-desktop      = 0.1.0
-
-[MODULES]
-all = "src/common/Sets.Mod src/common/CRS.Mod src/common/CRT.Mod src/common/CRA.Mod src/common/CRX.Mod src/common/CRP.Mod src/common/CRD.Mod src/cli/coco.Mod src/ui/Coco.Mod"
-
-[FILES]
-all = "CR.ATG Parser.FRM Scanner.FRM Driver.FRM"
-
-[TESTS]
-copy  = "examples/A.ATG=A.ATG examples/A.ob=A.ob Parser.FRM Scanner.FRM Driver.FRM"
-cmds  = "coco.Compile A.ATG; compiler.Compile /s AS.Mod; compiler.Compile /s AP.Mod; compiler.Compile /s ACompile.Mod; ACompile.Do A.ob"
-ok    = "0 errors"
-clean = "A.ATG A.ob Parser.FRM Scanner.FRM Driver.FRM AS.Mod AP.Mod ACompile.Mod AS AP ACompile"
-'''),
-}
+# packages whose sources are in another repository ([REMOTE] type = files): their recipes
+# are written by hand and only listed in the INDEX here
+EXTERNAL = [('devel', 'coco', '0.1.0')]
 
 os.makedirs(OUT, exist_ok=True)
 index = []
@@ -208,9 +182,9 @@ for pkg in INFO:
             f.write('%s = "%s"\n' % (k, ' '.join(out)))
     f.close()
     index.append('%s/%s 0.1.0' % (cat, pkg))
-for pkg, (cat, text) in EXTERNAL.items():
-    d = os.path.join(OUT, cat, pkg); os.makedirs(d, exist_ok=True)
-    open(os.path.join(d, pkg + '-0.1.0.arden'), 'w').write(text)
-    index.append('%s/%s 0.1.0' % (cat, pkg))
+for cat, pkg, ver in EXTERNAL:
+    if not os.path.exists(os.path.join(OUT, cat, pkg, '%s-%s.arden' % (pkg, ver))):
+        raise SystemExit('no recipe %s/%s/%s-%s.arden' % (cat, pkg, pkg, ver))
+    index.append('%s/%s %s' % (cat, pkg, ver))
 open(os.path.join(OUT, 'INDEX'), 'w').write('\n'.join(index) + '\n')
 print('\n'.join(index))

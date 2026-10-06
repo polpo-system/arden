@@ -19,6 +19,7 @@ devel/desktop-compiler-arm 0.1.0
 devel/desktop-compiler-rop2 0.1.0
 lib/toml 0.1.0
 lib/versions 0.1.0
+lib/checksums 0.1.0
 system/portia 0.1.0
 lib/sockets 0.1.0
 lib/dns 0.1.0
@@ -30,5 +31,6 @@ lib/http 0.1.0
 lib/tls 0.1.0
 apps/fetch 0.1.0
 apps/gemini 0.1.0
+apps/spartan 0.1.0
 apps/net 0.1.0
 devel/coco 0.1.0

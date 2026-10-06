@@ -1,10 +1,10 @@
 [PACKAGE]
-name        = portia
-category    = system
+name        = checksums
+category    = lib
 version     = 0.1.0
 author      = polpo
 license     = ETH Oberon
-description = "portia, the package manager"
+description = "MD5 and SHA-256 of data and files"
 
 [REMOTE]
 type = git
@@ -12,10 +12,7 @@ uri  = https://raw.githubusercontent.com/norayr/polpo/main
 tag  = main
 
 [DEPS]
-console = 0.1.0
-toml = 0.1.0
-versions = 0.1.0
-checksums = 0.1.0
+core = 0.1.0
 
 [MODULES]
-all = "src/cli/portia.Mod"
+all = "src/lib/checksums/Checksums.Mod"
