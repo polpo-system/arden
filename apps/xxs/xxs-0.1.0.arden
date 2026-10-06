@@ -1,18 +1,18 @@
 [PACKAGE]
-name        = xxs
-category    = apps
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "xxs"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "a nano-like console editor for plain files and Oberon texts"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-console = 0.1.0
+console = "0.1.0"
 
 [MODULES]
-all = "src/cli/xxs.Mod"
+all = ["src/cli/xxs.Mod"]

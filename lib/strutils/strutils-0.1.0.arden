@@ -1,18 +1,18 @@
 [PACKAGE]
-name        = strutils
-category    = lib
-version     = 0.1.0
-author      = polpo
-license     = GPL-3
+name        = "strutils"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
 description = "strTypes and strUtils, string helpers shared with voc"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-console = 0.1.0
+console = "0.1.0"
 
 [MODULES]
-all = "src/lib/strutils/strTypes.Mod src/lib/strutils/strUtils.Mod"
+all = ["src/lib/strutils/strTypes.Mod", "src/lib/strutils/strUtils.Mod"]

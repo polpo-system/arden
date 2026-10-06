@@ -1,19 +1,19 @@
 [PACKAGE]
-name        = gemini
-category    = apps
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "gemini"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "gemini.Get and gemini.Show: Gemini downloads, keys trusted on first use"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-console = 0.1.0
-tls = 0.1.0
+console = "0.1.0"
+tls = "0.1.0"
 
 [MODULES]
-all = "src/cli/gemini.Mod"
+all = ["src/cli/gemini.Mod"]

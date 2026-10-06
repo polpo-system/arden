@@ -1,20 +1,28 @@
 [PACKAGE]
-name        = desktop-compiler-arm
-category    = devel
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "desktop-compiler-arm"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "the ARM compiler, decoder and browser in the desktop"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-desktop-tools = 0.1.0
-compiler-arm = 0.1.0
+desktop-tools = "0.1.0"
+compiler-arm = "0.1.0"
 
 [MODULES]
-x86 = "src/desktop/arm/ACompiler.Mod src/desktop/arm/ADecoder.Mod src/desktop/arm/ABrowser.Mod"
-arm = "src/desktop/arm/ACompiler.Mod src/desktop/arm/ADecoder.Mod src/desktop/arm/ABrowser.Mod"
+x86 = [
+  "src/desktop/arm/ACompiler.Mod",
+  "src/desktop/arm/ADecoder.Mod",
+  "src/desktop/arm/ABrowser.Mod",
+]
+arm = [
+  "src/desktop/arm/ACompiler.Mod",
+  "src/desktop/arm/ADecoder.Mod",
+  "src/desktop/arm/ABrowser.Mod",
+]

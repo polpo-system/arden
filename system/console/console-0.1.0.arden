@@ -1,26 +1,44 @@
 [PACKAGE]
-name        = console
-category    = system
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "console"
+category    = "system"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "the console: shell, texts, terminal, Oberon.Text"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-core = 0.1.0
+core = "0.1.0"
 
 [MODULES]
-all = "src/cli/out.Mod src/common/Modules.Mod src/common/Objects0.Mod src/cli/objects.Mod src/cli/strings.Mod src/common/regex.Mod src/common/Utf8.Mod src/common/Texts0.Mod src/common/RXA.Mod src/common/Oberon0.Mod src/cli/texts.Mod src/cli/oberon.Mod src/cli/in.Mod src/cli/termios.Mod src/common/POLPO.FATFiles.Mod src/cli/shell.Mod src/cli/cat.Mod"
-x86 = "src/cli/x86/system.Mod"
-arm = "src/cli/arm/system.Mod"
-riscv = "src/cli/rop2/system.Mod"
-mips = "src/cli/rop2/system.Mod"
-armv7 = "src/cli/rop2/system.Mod"
+all = [
+  "src/cli/out.Mod",
+  "src/common/Modules.Mod",
+  "src/common/Objects0.Mod",
+  "src/cli/objects.Mod",
+  "src/cli/strings.Mod",
+  "src/common/regex.Mod",
+  "src/common/Utf8.Mod",
+  "src/common/Texts0.Mod",
+  "src/common/RXA.Mod",
+  "src/common/Oberon0.Mod",
+  "src/cli/texts.Mod",
+  "src/cli/oberon.Mod",
+  "src/cli/in.Mod",
+  "src/cli/termios.Mod",
+  "src/common/POLPO.FATFiles.Mod",
+  "src/cli/shell.Mod",
+  "src/cli/cat.Mod",
+]
+x86 = ["src/cli/x86/system.Mod"]
+arm = ["src/cli/arm/system.Mod"]
+riscv = ["src/cli/rop2/system.Mod"]
+mips = ["src/cli/rop2/system.Mod"]
+armv7 = ["src/cli/rop2/system.Mod"]
 
 [FILES]
-all = "Oberon.Text texts.md"
+all = ["Oberon.Text", "texts.md"]

@@ -1,36 +1,72 @@
 [PACKAGE]
-name        = core
-category    = linux
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "core"
+category    = "linux"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "the boot image: runtime, files, module loader and the loksh binary"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
 
 [MODULES]
-all = "src/common/Root.Mod src/common/Reals.Mod src/common/POLPO.Files.Mod src/cli/loksh.Mod"
-x86 = "src/cli/x86/Linux0.Mod src/cli/x86/Kernel.Mod src/cli/x86/Modules0.Mod"
-arm = "src/cli/arm/Linux0.Mod /x src/cli/arm/Kernel.Mod src/cli/arm/Modules0.Mod"
-riscv = "src/cli/riscv/Linux0.Mod src/cli/rop2/Kernel.Mod src/cli/rop2/Modules0.Mod"
-mips = "src/cli/rop2/Kernel.Mod src/cli/rop2/Modules0.Mod src/cli/mips/Linux0.Mod"
-armv7 = "src/cli/rop2/Kernel.Mod src/cli/rop2/Modules0.Mod src/cli/armv7/Linux0.Mod"
+all = [
+  "src/common/Root.Mod",
+  "src/common/Reals.Mod",
+  "src/common/POLPO.Files.Mod",
+  "src/cli/loksh.Mod",
+]
+x86 = ["src/cli/x86/Linux0.Mod", "src/cli/x86/Kernel.Mod", "src/cli/x86/Modules0.Mod"]
+arm = [
+  "src/cli/arm/Linux0.Mod",
+  "/x src/cli/arm/Kernel.Mod",
+  "src/cli/arm/Modules0.Mod",
+]
+riscv = [
+  "src/cli/riscv/Linux0.Mod",
+  "src/cli/rop2/Kernel.Mod",
+  "src/cli/rop2/Modules0.Mod",
+]
+mips = [
+  "src/cli/rop2/Kernel.Mod",
+  "src/cli/rop2/Modules0.Mod",
+  "src/cli/mips/Linux0.Mod",
+]
+armv7 = [
+  "src/cli/rop2/Kernel.Mod",
+  "src/cli/rop2/Modules0.Mod",
+  "src/cli/armv7/Linux0.Mod",
+]
 
 [BUILD]
-x86 = "linker.Link bin/x86/loksh2 /refs /integrate 8049000H obj/x86/Linux0 obj/x86/Kernel obj/x86/Root obj/x86/Files obj/x86/Modules0 obj/x86/loksh ~; mv bin/x86/loksh2 bin/x86/loksh"
-arm = "alinker.Link /q bin/arm/loksh.new loksh; mv bin/arm/loksh.new bin/arm/loksh"
-riscv = "rlinker.Link /v bin/riscv/loksh.new Linux0 Kernel Root Modules0 loksh; mv bin/riscv/loksh.new bin/riscv/loksh"
-mips = "rlinker.Link /m bin/mips/loksh.new Linux0 Kernel Root Modules0 loksh; mv bin/mips/loksh.new bin/mips/loksh"
-armv7 = "rlinker.Link /a bin/armv7/loksh.new Linux0 Kernel Root Modules0 loksh; mv bin/armv7/loksh.new bin/armv7/loksh"
+x86 = [
+  "linker.Link bin/x86/loksh2 /refs /integrate 8049000H obj/x86/Linux0 obj/x86/Kernel obj/x86/Root obj/x86/Files obj/x86/Modules0 obj/x86/loksh ~",
+  "mv bin/x86/loksh2 bin/x86/loksh",
+]
+arm = [
+  "alinker.Link /q bin/arm/loksh.new loksh",
+  "mv bin/arm/loksh.new bin/arm/loksh",
+]
+riscv = [
+  "rlinker.Link /v bin/riscv/loksh.new Linux0 Kernel Root Modules0 loksh",
+  "mv bin/riscv/loksh.new bin/riscv/loksh",
+]
+mips = [
+  "rlinker.Link /m bin/mips/loksh.new Linux0 Kernel Root Modules0 loksh",
+  "mv bin/mips/loksh.new bin/mips/loksh",
+]
+armv7 = [
+  "rlinker.Link /a bin/armv7/loksh.new Linux0 Kernel Root Modules0 loksh",
+  "mv bin/armv7/loksh.new bin/armv7/loksh",
+]
 
 [FILES]
-x86 = "bin/x86/loksh"
-arm = "bin/arm/loksh"
-riscv = "bin/riscv/loksh"
-mips = "bin/mips/loksh"
-armv7 = "bin/armv7/loksh"
+x86 = ["bin/x86/loksh"]
+arm = ["bin/arm/loksh"]
+riscv = ["bin/riscv/loksh"]
+mips = ["bin/mips/loksh"]
+armv7 = ["bin/armv7/loksh"]

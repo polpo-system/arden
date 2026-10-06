@@ -1,17 +1,24 @@
 [PACKAGE]
-name        = ooc
-category    = lib
-version     = 0.1.0
-author      = polpo
-license     = LGPL-2+
+name        = "ooc"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "LGPL-2+"
 description = "oocIntStr and what it needs from the OOC library (as in voc)"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
 
 [MODULES]
-all = "src/lib/ooc/oocAscii.Mod src/lib/ooc/oocCharClass.Mod src/lib/ooc/oocConvTypes.Mod src/lib/ooc/oocStrings.Mod src/lib/ooc/oocIntConv.Mod src/lib/ooc/oocIntStr.Mod"
+all = [
+  "src/lib/ooc/oocAscii.Mod",
+  "src/lib/ooc/oocCharClass.Mod",
+  "src/lib/ooc/oocConvTypes.Mod",
+  "src/lib/ooc/oocStrings.Mod",
+  "src/lib/ooc/oocIntConv.Mod",
+  "src/lib/ooc/oocIntStr.Mod",
+]

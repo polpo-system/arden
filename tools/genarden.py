@@ -140,6 +140,14 @@ PROVIDES = {'display-x11': ('display', 'display-sixel'), 'display-sixel': ('disp
 # are written by hand and only listed in the INDEX here
 EXTERNAL = [('devel', 'coco', '0.1.0')]
 
+def q(x):  # a TOML basic string
+    return '"' + x.replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+def arr(items):  # a TOML array, one element a line when it is long
+    one = '[' + ', '.join(q(x) for x in items) + ']'
+    if len(one) <= 80: return one
+    return '[\n' + ''.join('  %s,\n' % q(x) for x in items) + ']'
+
 os.makedirs(OUT, exist_ok=True)
 index = []
 for pkg in INFO:
@@ -147,29 +155,29 @@ for pkg in INFO:
     cat = CATEGORY[pkg]
     d = os.path.join(OUT, cat, pkg); os.makedirs(d, exist_ok=True)
     f = open(os.path.join(d, pkg + '-0.1.0.arden'), 'w')
-    f.write('[PACKAGE]\nname        = %s\ncategory    = %s\nversion     = 0.1.0\nauthor      = %s\nlicense     = %s\n'
-            % (pkg, cat, 'noch' if pkg == 'toml' else 'polpo', LICENSE.get(pkg, 'ETH Oberon')))
-    f.write('description = "%s"\n\n' % desc)
-    f.write('[REMOTE]\ntype = git\nuri  = https://raw.githubusercontent.com/norayr/polpo/main\ntag  = main\n\n')
+    f.write('[PACKAGE]\nname        = %s\ncategory    = %s\nversion     = "0.1.0"\nauthor      = %s\nlicense     = %s\n'
+            % (q(pkg), q(cat), q('noch' if pkg == 'toml' else 'polpo'), q(LICENSE.get(pkg, 'ETH Oberon'))))
+    f.write('description = %s\n\n' % q(desc))
+    f.write('[REMOTE]\ntype = "git"\nuri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"\ntag  = "main"\n\n')
     f.write('[DEPS]\n')
-    for dep in deps: f.write('%s = 0.1.0\n' % dep)
+    for dep in deps: f.write('%s = "0.1.0"\n' % dep)
     if pkg in PROVIDES:
-        f.write('\n[PROVIDES]\n%s = 0.1.0\n\n[CONFLICTS]\n%s = 0.1.0\n' % PROVIDES[pkg])
+        f.write('\n[PROVIDES]\n%s = "0.1.0"\n\n[CONFLICTS]\n%s = "0.1.0"\n' % PROVIDES[pkg])
     # modules, in build order: common ones under all, the rest per architecture
     f.write('\n[MODULES]\n')
     def tok(p, archs):  # "/x path" when every one of archs compiles it with /x
         return ('/x ' + p) if all((p, a) in xflag for a in archs) else p
     allm = [tok(p, ARCHS) for p, a in mods[pkg].items() if a == set(ARCHS)]
-    if allm: f.write('all = "%s"\n' % ' '.join(allm))
+    if allm: f.write('all = %s\n' % arr(allm))
     for arch in ARCHS:
         m = [tok(p, [arch]) for p, a in mods[pkg].items() if arch in a and a != set(ARCHS)]
-        if m: f.write('%s = "%s"\n' % (arch, ' '.join(m)))
+        if m: f.write('%s = %s\n' % (arch, arr(m)))
     if pkg == 'core':  # link the boot image, then move it in place
         f.write('\n[BUILD]\n')
         for arch in ARCHS:
             cmd = links[arch]
             new = re.search(r'(bin/\S+?)(\.new|2)?(\s|$)', cmd)
-            f.write('%s = "%s; mv %s bin/%s/loksh"\n' % (arch, cmd, new.group(1) + (new.group(2) or ''), arch))
+            f.write('%s = %s\n' % (arch, arr([cmd, 'mv %s bin/%s/loksh' % (new.group(1) + (new.group(2) or ''), arch)])))
     if pkg in FILES:
         f.write('\n[FILES]\n')
         for k, v in FILES[pkg].items():
@@ -179,7 +187,7 @@ for pkg in INFO:
                     out += subprocess.run(['git', '-C', POLPO, 'ls-files', w[:-2]], capture_output=True, text=True).stdout.split()
                 else:
                     out.append(w)
-            f.write('%s = "%s"\n' % (k, ' '.join(out)))
+            f.write('%s = %s\n' % (k, arr(out)))
     f.close()
     index.append('%s/%s 0.1.0' % (cat, pkg))
 for cat, pkg, ver in EXTERNAL:

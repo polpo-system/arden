@@ -1,22 +1,34 @@
 [PACKAGE]
-name        = compiler-riscv
-category    = devel
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "compiler-riscv"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "the RISC-V back end of ROP2"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-compiler-rop2 = 0.1.0
+compiler-rop2 = "0.1.0"
 
 [MODULES]
-x86 = "src/cli/riscv/VOPL.Mod src/cli/riscv/VOPC.Mod src/cli/riscv/VOPV.Mod src/cli/riscv/rvcompiler.Mod"
-riscv = "src/cli/riscv/VOPL.Mod src/cli/riscv/VOPC.Mod src/cli/riscv/VOPV.Mod src/cli/riscv/rvcompiler.Mod src/cli/riscv/compiler.Mod src/cli/riscv/linker.Mod"
+x86 = [
+  "src/cli/riscv/VOPL.Mod",
+  "src/cli/riscv/VOPC.Mod",
+  "src/cli/riscv/VOPV.Mod",
+  "src/cli/riscv/rvcompiler.Mod",
+]
+riscv = [
+  "src/cli/riscv/VOPL.Mod",
+  "src/cli/riscv/VOPC.Mod",
+  "src/cli/riscv/VOPV.Mod",
+  "src/cli/riscv/rvcompiler.Mod",
+  "src/cli/riscv/compiler.Mod",
+  "src/cli/riscv/linker.Mod",
+]
 
 [FILES]
-all = "tools/riscv.Tool"
+all = ["tools/riscv.Tool"]

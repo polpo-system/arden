@@ -1,20 +1,20 @@
 [PACKAGE]
-name        = net
-category    = apps
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "net"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "minimal network tools: Get, Send, Echo, UDP, Lookup, Resolve, Address"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-console = 0.1.0
-sockets = 0.1.0
-dns = 0.1.0
+console = "0.1.0"
+sockets = "0.1.0"
+dns = "0.1.0"
 
 [MODULES]
-all = "src/cli/net.Mod"
+all = ["src/cli/net.Mod"]

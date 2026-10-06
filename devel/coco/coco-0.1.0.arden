@@ -1,47 +1,74 @@
 [PACKAGE]
-name        = coco
-category    = devel
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "coco"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "Coco/R, the compiler generator of H. Moessenboeck, as improved by A. V. Shiryaev (2012.01)"
 
 [REMOTE]
-type = files
-uri  = https://raw.githubusercontent.com/polpo-system/polpo-coco/32cd4e80ec11a329f1f4ef1678817b03b7cee940
-tag  = 32cd4e80ec11a329f1f4ef1678817b03b7cee940
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo-coco/32cd4e80ec11a329f1f4ef1678817b03b7cee940"
+tag  = "32cd4e80ec11a329f1f4ef1678817b03b7cee940"
 
 [DEPS]
-console      = 0.1.0
-desktop      = 0.1.0
+console = "0.1.0"
+desktop = "0.1.0"
 
 [MODULES]
-all = "src/common/Sets.Mod src/common/CRS.Mod src/common/CRT.Mod src/common/CRA.Mod src/common/CRX.Mod src/common/CRP.Mod src/common/CRD.Mod src/cli/coco.Mod src/ui/Coco.Mod"
+all = [
+  "src/common/Sets.Mod",
+  "src/common/CRS.Mod",
+  "src/common/CRT.Mod",
+  "src/common/CRA.Mod",
+  "src/common/CRX.Mod",
+  "src/common/CRP.Mod",
+  "src/common/CRD.Mod",
+  "src/cli/coco.Mod",
+  "src/ui/Coco.Mod",
+]
 
+# path in the repository, or path=destination in the polpo root
 [FILES]
-all = "Parser.FRM=share/Parser.FRM Scanner.FRM=share/Scanner.FRM Driver.FRM CR.ATG examples/A.ATG examples/A.ob README.md LICENSE"
+all = [
+  "Parser.FRM=share/Parser.FRM",
+  "Scanner.FRM=share/Scanner.FRM",
+  "Driver.FRM",
+  "CR.ATG",
+  "examples/A.ATG",
+  "examples/A.ob",
+  "README.md",
+  "LICENSE",
+]
 
+# coco builds the compiler of examples/A.ATG, which is compiled and run
 [TESTS]
-copy = "examples/A.ATG examples/A.ob Driver.FRM"
-cmds = "coco.Compile A.ATG; $compile AS.Mod; $compile AP.Mod; $compile ACompile.Mod; ACompile.Do A.ob"
-ok   = "0 errors"
-bad  = "TRAP"
+copy = ["examples/A.ATG", "examples/A.ob", "Driver.FRM"]
+cmds = [
+  "coco.Compile A.ATG",
+  "$compile AS.Mod",
+  "$compile AP.Mod",
+  "$compile ACompile.Mod",
+  "ACompile.Do A.ob",
+]
+ok   = ["0 errors"]
+bad  = ["TRAP"]
 
 [SUMS]
-src/common/Sets.Mod = "sha256:7f9f5c4684934ebe7f0c04820bf560ee999c18d8efe8c16b2ac32e591a52a0a6"
-src/common/CRS.Mod = "sha256:de391acc467f02c0b603b848dcbcd0f368aa25bcf2cf360b3935261954a2e4e6"
-src/common/CRT.Mod = "sha256:59c8ae70eee7c940c299fdab9cb4c1f12a82c6efb11184e3b64aefc53484e2ea"
-src/common/CRA.Mod = "sha256:980ad76dc1929550234369125209b6da634536363cfbcdbb4d69c5ad6f7246c7"
-src/common/CRX.Mod = "sha256:43248c1e60d237b6914c8f68067628301ac0621697adabb6b326f196be368cc5"
-src/common/CRP.Mod = "sha256:c88845335ba435367dc8dc46fc7ccaaea9a13de78a3958b7b12969a1f65a2d2a"
-src/common/CRD.Mod = "sha256:fa6103520de570f0074a61500624f7648f297458736d503a05e673fd9e6ace3a"
-src/cli/coco.Mod = "sha256:492011da703ea867291c1c107a36b05b1d2e2a0d5c20d62a6e6a501a36010bfa"
-src/ui/Coco.Mod = "sha256:1d1fd7574c898216f969f2c4599d893426b98a198cc6caa1e44489c510e8ad92"
-Parser.FRM = "sha256:3bf58552f61c78e94de395c80c990d7b8cf3ea0f1348a2ef53a668ebcb8e4016"
-Scanner.FRM = "sha256:7ccd82ea7af61b5080a01521197b07dd4b0d4ae27eab2c6aa9591a1dfee0d742"
-Driver.FRM = "sha256:d7bada5ad40d790a8b35c9845ab29659d44b3629c0097f0f525d304680ab6474"
-CR.ATG = "sha256:6810d2af45c4c59e27c1eafc4cd774426f560c73bb6e678638fa8f012556632d"
-examples/A.ATG = "sha256:db13da3dfbde22c52994ac2f01783852aa9c27050b5cb47b8c813fa61820696f"
-examples/A.ob = "sha256:4903c1b5d3e1e7ee5ca507ef22ae1fae67d8238c9870096ebda41a291a4cde66"
-README.md = "sha256:a5daf89df7d3479d30c7f797377acd0be7c06d6fada9e9a7064ee4a3008b6567"
-LICENSE = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+"src/common/Sets.Mod" = "sha256:7f9f5c4684934ebe7f0c04820bf560ee999c18d8efe8c16b2ac32e591a52a0a6"
+"src/common/CRS.Mod" = "sha256:de391acc467f02c0b603b848dcbcd0f368aa25bcf2cf360b3935261954a2e4e6"
+"src/common/CRT.Mod" = "sha256:59c8ae70eee7c940c299fdab9cb4c1f12a82c6efb11184e3b64aefc53484e2ea"
+"src/common/CRA.Mod" = "sha256:980ad76dc1929550234369125209b6da634536363cfbcdbb4d69c5ad6f7246c7"
+"src/common/CRX.Mod" = "sha256:43248c1e60d237b6914c8f68067628301ac0621697adabb6b326f196be368cc5"
+"src/common/CRP.Mod" = "sha256:c88845335ba435367dc8dc46fc7ccaaea9a13de78a3958b7b12969a1f65a2d2a"
+"src/common/CRD.Mod" = "sha256:fa6103520de570f0074a61500624f7648f297458736d503a05e673fd9e6ace3a"
+"src/cli/coco.Mod" = "sha256:492011da703ea867291c1c107a36b05b1d2e2a0d5c20d62a6e6a501a36010bfa"
+"src/ui/Coco.Mod" = "sha256:1d1fd7574c898216f969f2c4599d893426b98a198cc6caa1e44489c510e8ad92"
+"Parser.FRM" = "sha256:3bf58552f61c78e94de395c80c990d7b8cf3ea0f1348a2ef53a668ebcb8e4016"
+"Scanner.FRM" = "sha256:7ccd82ea7af61b5080a01521197b07dd4b0d4ae27eab2c6aa9591a1dfee0d742"
+"Driver.FRM" = "sha256:d7bada5ad40d790a8b35c9845ab29659d44b3629c0097f0f525d304680ab6474"
+"CR.ATG" = "sha256:6810d2af45c4c59e27c1eafc4cd774426f560c73bb6e678638fa8f012556632d"
+"examples/A.ATG" = "sha256:db13da3dfbde22c52994ac2f01783852aa9c27050b5cb47b8c813fa61820696f"
+"examples/A.ob" = "sha256:4903c1b5d3e1e7ee5ca507ef22ae1fae67d8238c9870096ebda41a291a4cde66"
+"README.md" = "sha256:a5daf89df7d3479d30c7f797377acd0be7c06d6fada9e9a7064ee4a3008b6567"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

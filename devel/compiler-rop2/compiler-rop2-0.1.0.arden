@@ -1,24 +1,56 @@
 [PACKAGE]
-name        = compiler-rop2
-category    = devel
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "compiler-rop2"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "the ROP2 compiler front end and boot linker"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-console = 0.1.0
+console = "0.1.0"
 
 [MODULES]
-x86 = "src/cli/rop2/ROPM.Mod src/cli/rop2/ROPS.Mod src/cli/rop2/ROPT.Mod src/cli/rop2/ROPB.Mod src/cli/rop2/ROPP.Mod src/cli/rop2/rcompiler.Mod src/cli/rop2/rlinker.Mod"
-riscv = "src/cli/rop2/ROPM.Mod src/cli/rop2/ROPS.Mod src/cli/rop2/ROPT.Mod src/cli/rop2/ROPB.Mod src/cli/rop2/ROPP.Mod src/cli/rop2/rcompiler.Mod src/cli/rop2/rlinker.Mod"
-mips = "src/cli/rop2/ROPM.Mod src/cli/rop2/ROPS.Mod src/cli/rop2/ROPT.Mod src/cli/rop2/ROPB.Mod src/cli/rop2/ROPP.Mod src/cli/rop2/rcompiler.Mod src/cli/rop2/rlinker.Mod"
-armv7 = "src/cli/rop2/ROPM.Mod src/cli/rop2/ROPS.Mod src/cli/rop2/ROPT.Mod src/cli/rop2/ROPB.Mod src/cli/rop2/ROPP.Mod src/cli/rop2/rcompiler.Mod src/cli/rop2/rlinker.Mod"
+x86 = [
+  "src/cli/rop2/ROPM.Mod",
+  "src/cli/rop2/ROPS.Mod",
+  "src/cli/rop2/ROPT.Mod",
+  "src/cli/rop2/ROPB.Mod",
+  "src/cli/rop2/ROPP.Mod",
+  "src/cli/rop2/rcompiler.Mod",
+  "src/cli/rop2/rlinker.Mod",
+]
+riscv = [
+  "src/cli/rop2/ROPM.Mod",
+  "src/cli/rop2/ROPS.Mod",
+  "src/cli/rop2/ROPT.Mod",
+  "src/cli/rop2/ROPB.Mod",
+  "src/cli/rop2/ROPP.Mod",
+  "src/cli/rop2/rcompiler.Mod",
+  "src/cli/rop2/rlinker.Mod",
+]
+mips = [
+  "src/cli/rop2/ROPM.Mod",
+  "src/cli/rop2/ROPS.Mod",
+  "src/cli/rop2/ROPT.Mod",
+  "src/cli/rop2/ROPB.Mod",
+  "src/cli/rop2/ROPP.Mod",
+  "src/cli/rop2/rcompiler.Mod",
+  "src/cli/rop2/rlinker.Mod",
+]
+armv7 = [
+  "src/cli/rop2/ROPM.Mod",
+  "src/cli/rop2/ROPS.Mod",
+  "src/cli/rop2/ROPT.Mod",
+  "src/cli/rop2/ROPB.Mod",
+  "src/cli/rop2/ROPP.Mod",
+  "src/cli/rop2/rcompiler.Mod",
+  "src/cli/rop2/rlinker.Mod",
+]
 
 [FILES]
-all = "tools/rop2-cross.Tool"
+all = ["tools/rop2-cross.Tool"]

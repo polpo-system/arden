@@ -1,18 +1,18 @@
 [PACKAGE]
-name        = sockets
-category    = lib
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "sockets"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "TCP and UDP over IPv4 and IPv6"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-core = 0.1.0
+core = "0.1.0"
 
 [MODULES]
-all = "src/lib/sockets/Sockets.Mod"
+all = ["src/lib/sockets/Sockets.Mod"]

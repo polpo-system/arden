@@ -1,17 +1,17 @@
 [PACKAGE]
-name        = versions
-category    = lib
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "versions"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "comparing version numbers like 1.2.10 and 0.3.0-rc1"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
 
 [MODULES]
-all = "src/lib/versions/Versions.Mod"
+all = ["src/lib/versions/Versions.Mod"]

@@ -1,21 +1,35 @@
 [PACKAGE]
-name        = compiler-x86
-category    = devel
-version     = 0.1.0
-author      = polpo
-license     = ETH Oberon
+name        = "compiler-x86"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
 description = "the x86 OP2 compiler, linker and browser"
 
 [REMOTE]
-type = git
-uri  = https://raw.githubusercontent.com/norayr/polpo/main
-tag  = main
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
 
 [DEPS]
-console = 0.1.0
+console = "0.1.0"
 
 [MODULES]
-x86 = "src/cli/x86/OPM.Mod src/cli/x86/OPS.Mod src/cli/x86/OPT.Mod src/cli/x86/OPB.Mod src/cli/x86/OPA.Mod src/cli/x86/OPP.Mod src/cli/x86/OPO.Mod src/cli/x86/OPL.Mod src/cli/x86/OPC.Mod src/cli/x86/OPV.Mod src/cli/x86/compiler.Mod src/cli/x86/linker.Mod src/cli/x86/browser.Mod"
+x86 = [
+  "src/cli/x86/OPM.Mod",
+  "src/cli/x86/OPS.Mod",
+  "src/cli/x86/OPT.Mod",
+  "src/cli/x86/OPB.Mod",
+  "src/cli/x86/OPA.Mod",
+  "src/cli/x86/OPP.Mod",
+  "src/cli/x86/OPO.Mod",
+  "src/cli/x86/OPL.Mod",
+  "src/cli/x86/OPC.Mod",
+  "src/cli/x86/OPV.Mod",
+  "src/cli/x86/compiler.Mod",
+  "src/cli/x86/linker.Mod",
+  "src/cli/x86/browser.Mod",
+]
 
 [FILES]
-all = "tools/build.Tool"
+all = ["tools/build.Tool"]
