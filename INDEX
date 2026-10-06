@@ -50,3 +50,5 @@ lib/ico 0.1.0
 lib/iff 0.1.0
 lib/xpm 0.1.0
 apps/iris 0.1.0
+apps/binhex 0.1.0
+apps/calc 0.1.0
