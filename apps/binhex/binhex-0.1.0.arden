@@ -8,8 +8,8 @@ description = "binhex: decoding BinHex 4.0 (.hqx) files in the console"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/binhex/ec53df292d171b4c6f912022cac01de278d7aa38"
-tag  = "ec53df292d171b4c6f912022cac01de278d7aa38"
+uri  = "https://raw.githubusercontent.com/polpo-system/binhex/2bab81ecb658164e2dcf1ebc54e2e46df8d624d1"
+tag  = "2bab81ecb658164e2dcf1ebc54e2e46df8d624d1"
 
 [DEPS]
 console = "0.1.0"
@@ -19,20 +19,19 @@ all = ["BinHex0.Mod", "binhex.Mod"]
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["test/mkhqx.py", "test/sample.bin", "test/sample.hqx", "test/BinHexTest.Mod", "README.md", "LICENSE"]
+all = ["test/sample.bin", "test/sample.hqx", "test/BinHexTest.Mod", "README.md", "LICENSE"]
 
 [TESTS]
 copy = ["test/sample.bin", "test/sample.hqx", "test/BinHexTest.Mod"]
-cmds = ["binhex.Decode out.bin sample.hqx", "$compile BinHexTest.Mod", "BinHexTest.Compare out.bin sample.bin"]
-ok   = ["binhex: out.bin, 2581 bytes", "BinHexTest: 2581 bytes, same"]
-bad  = ["TRAP", "  err "]
+cmds = ["$compile BinHexTest.Mod", "binhex.Decode out.bin sample.hqx", "BinHexTest.Compare out.bin sample.bin", "BinHexTest.Encode sample.bin enc.hqx", "binhex.Decode out2.bin enc.hqx", "BinHexTest.Compare out2.bin sample.bin", "BinHexTest.Spoil enc.hqx bad.hqx 1000", "binhex.Decode bad.bin bad.hqx"]
+ok   = ["binhex: out.bin, 2581 bytes", "binhex: out2.bin, 2581 bytes", "binhex: bad.hqx: wrong CRC of the data"]
+bad  = ["TRAP", "  err ", "different"]
 
 [SUMS]
-"BinHex0.Mod" = "sha256:91cca2903c2453c5eb88d6272157655808d4cea92dea0a8b53ec954d25b714c4"
-"binhex.Mod" = "sha256:2faf1ba8233338cf6bad0d8cab90869f9c9499de24953590c16d3b57e4d39a39"
-"test/mkhqx.py" = "sha256:9d47dc190f45e9dd0ed4724fe415871770718629b4692084257c4bc8cc1c1e3e"
+"BinHex0.Mod" = "sha256:5e0ff2ec1685699f1831e6fefbc2069c24b83bd2c1deea25919422c18863d0d7"
+"binhex.Mod" = "sha256:bad3b682fe1fbcca5317bdf48664f000e9af754ba9fd99db03904d45b1e6ae95"
 "test/sample.bin" = "sha256:6992b176cfe85e70bfdbed6c8b6ca2a2fe1c4da23012572720a3208005047a6b"
-"test/sample.hqx" = "sha256:4c64a634d3e9cd397ea181d893a1f70919019694870da4968e348d8917483a3c"
-"test/BinHexTest.Mod" = "sha256:8ca10f1a79a5609528b3268b19f95fbc535af44c3cc329cfc11d9e218e350fe4"
-"README.md" = "sha256:220430a598e4e75fb49a9ff4f68209ae42b93da49c4680122c9d97893ccb86a7"
+"test/sample.hqx" = "sha256:8119490a1632c729217c592348b5bf0dfee152c438c11fe6ae10370f204a188c"
+"test/BinHexTest.Mod" = "sha256:ddb506fa2e2854d62415301f08b5af7ebdc6b04006422de799a3ad87b81bbac0"
+"README.md" = "sha256:15b6d9419fb9461ac888233006526553418c5f00d17375532cafdaa8e690ca1d"
 "LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
