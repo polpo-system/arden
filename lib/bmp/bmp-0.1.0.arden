@@ -1,0 +1,37 @@
+[PACKAGE]
+name        = "bmp"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "BMP: BMP pictures with a palette for Pictures and Iris"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/picture-formats/eccffe4eed5fbb165588187fcc6ac6ce77843f03"
+tag  = "eccffe4eed5fbb165588187fcc6ac6ce77843f03"
+
+[DEPS]
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/BMP.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/sample.bmp", "test/PictTest.Mod", "README.md", "LICENSE"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/sample.bmp", "test/PictTest.Mod"]
+cmds = ["$compile PictTest.Mod", "PictTest.Open sample.bmp 64 48"]
+ok   = ["PictTest: sample.bmp 64 x 48 ok"]
+bad  = ["TRAP", "  err "]
+display = true
+
+[SUMS]
+"src/BMP.Mod" = "sha256:18048596c35c78c377b4e1a5f97ab73b3deec36f1087d22a27c1ff6c504c6312"
+"test/sample.bmp" = "sha256:a769aa56f42b739a4de5ff0b3ba2fc8453d9fede6741713ed0602c60d989c5a1"
+"test/PictTest.Mod" = "sha256:7acad9b46eff042a6bffeb7ef03f33283096ec975b33a04ae85bd32d340e5142"
+"README.md" = "sha256:1a8e5a907f7695426e82fafda6b00984672a2a202e277c5d0fd49b355733b263"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

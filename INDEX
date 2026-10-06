@@ -39,3 +39,14 @@ lib/math 0.1.0
 lib/xyplane 0.1.0
 lib/randomnumbers 0.1.0
 apps/ifs 0.1.0
+lib/bit 0.1.0
+lib/colormodels 0.1.0
+lib/gif 0.1.0
+lib/jpeg 0.1.0
+lib/bmp 0.1.0
+lib/tga 0.1.0
+lib/pcx 0.1.0
+lib/ico 0.1.0
+lib/iff 0.1.0
+lib/xpm 0.1.0
+apps/iris 0.1.0

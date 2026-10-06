@@ -1,0 +1,28 @@
+[PACKAGE]
+name        = "colormodels"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "ColorModels: RGB, HSV and CMY conversions (ETH Oberon)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/picture-formats/eccffe4eed5fbb165588187fcc6ac6ce77843f03"
+tag  = "eccffe4eed5fbb165588187fcc6ac6ce77843f03"
+
+[DEPS]
+desktop = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/ColorModels.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["README.md", "LICENSE"]
+
+[SUMS]
+"src/ColorModels.Mod" = "sha256:39d73170d0cea4dcd40dd5f4b182c075fa0b4aedbb024840f6395e50dec2a200"
+"README.md" = "sha256:1a8e5a907f7695426e82fafda6b00984672a2a202e277c5d0fd49b355733b263"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

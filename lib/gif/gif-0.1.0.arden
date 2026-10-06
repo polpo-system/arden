@@ -1,0 +1,37 @@
+[PACKAGE]
+name        = "gif"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "GIF: GIF pictures for Pictures and Iris"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/picture-formats/eccffe4eed5fbb165588187fcc6ac6ce77843f03"
+tag  = "eccffe4eed5fbb165588187fcc6ac6ce77843f03"
+
+[DEPS]
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/GIF.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/sample.gif", "test/PictTest.Mod", "README.md", "LICENSE"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/sample.gif", "test/PictTest.Mod"]
+cmds = ["$compile PictTest.Mod", "PictTest.Open sample.gif 64 48"]
+ok   = ["PictTest: sample.gif 64 x 48 ok"]
+bad  = ["TRAP", "  err "]
+display = true
+
+[SUMS]
+"src/GIF.Mod" = "sha256:942f49fe00c3399d7470f47c6793955fc2d6f512f9ceaae24dc62f616095cfdf"
+"test/sample.gif" = "sha256:9757083bc37476532e25f79b87abf1b6c7b4c0e6dd53808d1b902c889c842dec"
+"test/PictTest.Mod" = "sha256:7acad9b46eff042a6bffeb7ef03f33283096ec975b33a04ae85bd32d340e5142"
+"README.md" = "sha256:1a8e5a907f7695426e82fafda6b00984672a2a202e277c5d0fd49b355733b263"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

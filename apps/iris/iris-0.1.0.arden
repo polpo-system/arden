@@ -1,0 +1,37 @@
+[PACKAGE]
+name        = "iris"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "Iris: a picture viewer for the desktop (.pic, and the picture formats installed)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/iris/51f767fa9de49cbb142bd81150a3e7135f905d64"
+tag  = "51f767fa9de49cbb142bd81150a3e7135f905d64"
+
+[DEPS]
+desktop = "0.1.0"
+
+[MODULES]
+all = ["Iris.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["Iris.Tool=tools/Iris.Tool", "test/IrisTest.Mod", "README.md", "LICENSE"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/IrisTest.Mod"]
+cmds = ["$compile IrisTest.Mod", "IrisTest.Run", "Iris.Open t.pic"]
+ok   = ["IrisTest: 0 failed"]
+bad  = ["TRAP", "  err "]
+display = true
+
+[SUMS]
+"Iris.Mod" = "sha256:77e18f15b2aa1c698b3acdd75ba9cf34975e8c0ac90ff972f84da0ac1997e4f0"
+"Iris.Tool" = "sha256:5b302f21908cd554c3148c5c2a5e8ee41acd81487c1fa7d429b200722b607b46"
+"test/IrisTest.Mod" = "sha256:091bcea7fe6b9aa8e57dc6ad23cf25d547aed6512732ebd39e714b3b080861dd"
+"README.md" = "sha256:731e0f6b0f5aabc185f4e2dcb629baaaf630e8b60e56a412d7987b0a1f082da1"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
