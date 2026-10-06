@@ -16,7 +16,11 @@ apps/asciicoder-desktop 0.1.0
 lib/checksums 0.1.0
 lib/sockets 0.1.0
 lib/dns 0.1.0
-lib/ooc 0.1.0
+lib/ooc-strings 0.1.0
+lib/ooc-math 0.1.0
+lib/ooc-conversions 0.1.0
+lib/ooc-time 0.1.0
+lib/ooc-io 0.1.0
 lib/strutils 0.1.0
 lib/base64 0.1.0
 lib/internet 0.1.0

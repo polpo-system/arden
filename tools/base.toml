@@ -126,12 +126,40 @@ description = "host names to addresses: /etc/hosts and DNS over UDP, A and AAAA"
 deps        = ["core", "sockets"]
 match       = ["DNS"]
 
-[ooc]
+[ooc-strings]
 category    = "lib"
-description = "oocIntStr and what it needs from the OOC library (as in voc)"
+description = "strings of the OOC library 1.5 (as in voc): Ascii, CharClass, oocStrings, Strings2, OakStrings"
 license     = "LGPL-2+"
 deps        = []
-match       = ["src/lib/ooc/"]
+match       = ["Ascii", "CharClass", "oocStrings", "Strings2", "OakStrings"]
+
+[ooc-math]
+category    = "lib"
+description = "real and complex math of the OOC library 1.5: LowReal, LowLReal, RealMath, LRealMath, ComplexMath, LComplexMath, OakMath, oocRandomNumbers"
+license     = "LGPL-2+"
+deps        = ["core"]
+match       = ["LowReal", "LowLReal", "RealMath", "LRealMath", "ComplexMath", "LComplexMath", "OakMath", "oocRandomNumbers"]
+
+[ooc-conversions]
+category    = "lib"
+description = "numbers to strings and back, of the OOC library 1.5: ConvTypes, IntConv, IntStr, LongInts, RealConv, LRealConv, RealStr, LRealStr"
+license     = "LGPL-2+"
+deps        = ["ooc-strings", "ooc-math"]
+match       = ["ConvTypes", "IntConv", "IntStr", "LongInts", "RealConv", "LRealConv", "RealStr", "LRealStr"]
+
+[ooc-time]
+category    = "lib"
+description = "time of the OOC library 1.5: SysClock, JulianDay, and Time on x86 (type-bound procedures)"
+license     = "LGPL-2+"
+deps        = ["core"]
+match       = ["SysClock", "JulianDay", "Time"]
+
+[ooc-io]
+category    = "lib"
+description = "channels of the OOC library 1.5, on x86 (type-bound procedures): Channel, oocFiles on Files, TextRider, BinaryRider, ProgramArgs on Oberon.Par, Msg, Filenames"
+license     = "LGPL-2+"
+deps        = ["console", "ooc-strings", "ooc-conversions", "ooc-time"]
+match       = ["Msg", "Channel", "FilesHost", "oocFiles", "ProgramArgsHost", "ProgramArgs", "TextRider", "BinaryRider", "Filenames"]
 
 [strutils]
 category    = "lib"
@@ -155,7 +183,7 @@ match       = ["Internet"]
 [http]
 category    = "lib"
 description = "an HTTP/1.1 client, shared with voc"
-deps        = ["console", "ooc", "strutils", "base64", "internet"]
+deps        = ["console", "ooc-conversions", "strutils", "base64", "internet"]
 match       = ["src/lib/http/"]
 
 [tls]

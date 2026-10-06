@@ -1,0 +1,27 @@
+[PACKAGE]
+name        = "ooc-math"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "LGPL-2+"
+description = "real and complex math of the OOC library 1.5: LowReal, LowLReal, RealMath, LRealMath, ComplexMath, LComplexMath, OakMath, oocRandomNumbers"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+core = "0.1.0"
+
+[MODULES]
+all = [
+  "src/lib/ooc/LowReal.Mod",
+  "src/lib/ooc/LowLReal.Mod",
+  "src/lib/ooc/RealMath.Mod",
+  "src/lib/ooc/LRealMath.Mod",
+  "src/lib/ooc/ComplexMath.Mod",
+  "src/lib/ooc/LComplexMath.Mod",
+  "src/lib/ooc/OakMath.Mod",
+  "src/lib/ooc/oocRandomNumbers.Mod",
+]

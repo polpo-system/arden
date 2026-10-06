@@ -1,0 +1,19 @@
+[PACKAGE]
+name        = "ooc-time"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "LGPL-2+"
+description = "time of the OOC library 1.5: SysClock, JulianDay, and Time on x86 (type-bound procedures)"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+core = "0.1.0"
+
+[MODULES]
+all = ["src/lib/ooc/SysClock.Mod", "src/lib/ooc/JulianDay.Mod"]
+x86 = ["/2 src/lib/ooc/Time.Mod"]

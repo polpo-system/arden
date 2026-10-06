@@ -1,0 +1,31 @@
+[PACKAGE]
+name        = "ooc-io"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "LGPL-2+"
+description = "channels of the OOC library 1.5, on x86 (type-bound procedures): Channel, oocFiles on Files, TextRider, BinaryRider, ProgramArgs on Oberon.Par, Msg, Filenames"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+ooc-strings = "0.1.0"
+ooc-conversions = "0.1.0"
+ooc-time = "0.1.0"
+
+[MODULES]
+x86 = [
+  "/2 src/lib/ooc/Msg.Mod",
+  "/2 src/lib/ooc/Channel.Mod",
+  "/2 src/lib/ooc/FilesHost.Mod",
+  "/2 src/lib/ooc/oocFiles.Mod",
+  "/2 src/lib/ooc/ProgramArgsHost.Mod",
+  "/2 src/lib/ooc/ProgramArgs.Mod",
+  "/2 src/lib/ooc/TextRider.Mod",
+  "/2 src/lib/ooc/BinaryRider.Mod",
+  "/2 src/lib/ooc/Filenames.Mod",
+]

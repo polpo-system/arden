@@ -1,0 +1,28 @@
+[PACKAGE]
+name        = "ooc-conversions"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "LGPL-2+"
+description = "numbers to strings and back, of the OOC library 1.5: ConvTypes, IntConv, IntStr, LongInts, RealConv, LRealConv, RealStr, LRealStr"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+ooc-strings = "0.1.0"
+ooc-math = "0.1.0"
+
+[MODULES]
+all = [
+  "src/lib/ooc/ConvTypes.Mod",
+  "src/lib/ooc/IntConv.Mod",
+  "src/lib/ooc/IntStr.Mod",
+  "src/lib/ooc/LongInts.Mod",
+  "src/lib/ooc/RealConv.Mod",
+  "src/lib/ooc/LRealConv.Mod",
+  "src/lib/ooc/RealStr.Mod",
+  "src/lib/ooc/LRealStr.Mod",
+]
