@@ -1,0 +1,40 @@
+[PACKAGE]
+name        = "math"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "ETH Oberon"
+description = "Math and MathL (sin, cos, arctan, sqrt, ln, exp) of ETH Oberon: x87 on x86, portable elsewhere"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/math/08cf2b78208dc6b547e4574371a9a079910361a6"
+tag  = "08cf2b78208dc6b547e4574371a9a079910361a6"
+
+[DEPS]
+core = "0.1.0"
+
+[MODULES]
+x86   = ["src/x86/Math.Mod", "src/x86/MathL.Mod"]
+arm   = ["src/Math.Mod", "src/MathL.Mod"]
+armv7 = ["src/Math.Mod", "src/MathL.Mod"]
+riscv = ["src/Math.Mod", "src/MathL.Mod"]
+mips  = ["src/Math.Mod", "src/MathL.Mod"]
+
+[FILES]
+all = ["test/MathTest.Mod", "README.md", "LICENSE"]
+
+[TESTS]
+copy = ["test/MathTest.Mod"]
+cmds = ["$compile MathTest.Mod", "MathTest.Run"]
+ok   = ["MathTest: 0 failed"]
+bad  = ["TRAP", "  err "]
+
+[SUMS]
+"src/Math.Mod" = "sha256:f7bbd99e5864ab6502f906f9fdbe23f368abab33d2372683812fb106536ce112"
+"src/MathL.Mod" = "sha256:b1f67714c8c94e6fdc502c4d5f181e4fdc15f71640ab5b1a3a681ce6c01f38c7"
+"src/x86/Math.Mod" = "sha256:67f0d2ad705560e9b47906b5deec9e75cf18e65bfdefcc52a3b1464b1a4fcb03"
+"src/x86/MathL.Mod" = "sha256:0a0c3c33b2225fb85bacf75bdd985cdaaa44a21a84ff255a640a8f6e81cf32b8"
+"test/MathTest.Mod" = "sha256:d984eadc514c96c34985c6022a0ff888ec60ef87c35f2b98b57e780d5e664211"
+"README.md" = "sha256:85d7a07148d83fabf87a9d9e6277d679931d112e313bec7c8ff5d9873b79b220"
+"LICENSE" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
