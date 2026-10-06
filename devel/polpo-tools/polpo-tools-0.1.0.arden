@@ -1,0 +1,19 @@
+[PACKAGE]
+name        = "polpo-tools"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "genarden (the base recipes of arden) and vocsync (modules shared with voc)"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+toml = "0.1.0"
+
+[MODULES]
+all = ["src/cli/genarden.Mod", "src/cli/vocsync.Mod"]

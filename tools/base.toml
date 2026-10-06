@@ -1,0 +1,246 @@
+# the packages of the base system of polpo, for genarden.Run (in polpo): it reads the build
+# recipes tools/*.Tool of polpo and writes a recipe for each package below, and the INDEX.
+#   match: the modules of the package: a directory (ending with "/"), a source path, or a
+#          module file name without .Mod; the first package that matches a module has it
+#   extra: sources not in the recipes, for all architectures (with their compiler options)
+#   files: by architecture or all; a directory/* is its files (not the ones remote packages install)
+
+[core]
+category    = "linux"
+description = "the boot image: runtime, files, module loader and the loksh binary"
+deps        = []
+match       = ["Linux0", "Kernel", "Root", "Reals", "POLPO.Files", "Modules0", "loksh"]
+files.x86 = ["bin/x86/loksh"]
+files.arm = ["bin/arm/loksh"]
+files.riscv = ["bin/riscv/loksh"]
+files.mips = ["bin/mips/loksh"]
+files.armv7 = ["bin/armv7/loksh"]
+
+[console]
+category    = "system"
+description = "the console: shell, texts, terminal, Oberon.Text"
+deps        = ["core"]
+match       = ["src/cli/out.Mod", "src/common/Modules.Mod", "src/common/Objects0.Mod", "src/cli/objects.Mod", "src/cli/strings.Mod", "src/common/regex.Mod", "src/common/Utf8.Mod", "src/common/Texts0.Mod", "src/common/RXA.Mod", "src/common/Oberon0.Mod", "src/cli/texts.Mod", "src/cli/oberon.Mod", "src/cli/in.Mod", "src/cli/termios.Mod", "system", "src/common/POLPO.FATFiles.Mod", "src/cli/shell.Mod", "src/cli/cat.Mod"]
+files.all = ["Oberon.Text", "texts.md"]
+
+[xxs]
+category    = "apps"
+description = "a nano-like console editor for plain files and Oberon texts"
+deps        = ["console"]
+match       = ["xxs"]
+
+[toml]
+category    = "lib"
+description = "a small TOML reader, from github.com/norayr/toml"
+author      = "noch"
+license     = "GPL-3"
+deps        = []
+match       = ["TOML"]
+
+[versions]
+category    = "lib"
+description = "comparing version numbers like 1.2.10 and 0.3.0-rc1"
+deps        = []
+match       = ["Versions"]
+
+[portia]
+category    = "system"
+description = "portia, the package manager"
+deps        = ["console", "toml", "versions", "checksums"]
+match       = ["portia"]
+
+[polpo-tools]
+category    = "devel"
+description = "genarden (the base recipes of arden) and vocsync (modules shared with voc)"
+deps        = ["console", "toml"]
+match       = ["genarden", "vocsync"]
+
+[checksums]
+category    = "lib"
+description = "MD5 and SHA-256 of data and files"
+deps        = ["core"]
+match       = ["Checksums"]
+
+[sockets]
+category    = "lib"
+description = "TCP and UDP over IPv4 and IPv6"
+deps        = ["core"]
+match       = ["Sockets"]
+
+[dns]
+category    = "lib"
+description = "host names to addresses: /etc/hosts and DNS over UDP, A and AAAA"
+deps        = ["core", "sockets"]
+match       = ["DNS"]
+
+[ooc]
+category    = "lib"
+description = "oocIntStr and what it needs from the OOC library (as in voc)"
+license     = "LGPL-2+"
+deps        = []
+match       = ["src/lib/ooc/"]
+
+[strutils]
+category    = "lib"
+description = "strTypes and strUtils, string helpers shared with voc"
+license     = "GPL-3"
+deps        = ["console"]
+match       = ["src/lib/strutils/"]
+
+[base64]
+category    = "lib"
+description = "Base64 encoding and decoding, shared with voc"
+deps        = ["console"]
+match       = ["Base64"]
+
+[internet]
+category    = "lib"
+description = "TCP by host name and port, the Internet interface of voc"
+deps        = ["console", "sockets", "dns"]
+match       = ["Internet"]
+
+[http]
+category    = "lib"
+description = "an HTTP/1.1 client, shared with voc"
+deps        = ["console", "ooc", "strutils", "base64", "internet"]
+match       = ["src/lib/http/"]
+
+[tls]
+category    = "lib"
+description = "TLS 1.3 in Oberon (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc"
+deps        = ["console", "sockets", "internet", "http", "strutils"]
+match       = ["src/lib/tls/"]
+
+[fetch]
+category    = "apps"
+description = "fetch.Get and fetch.Show: HTTP and HTTPS downloads"
+deps        = ["console", "http", "tls"]
+match       = ["fetch"]
+
+[gemini]
+category    = "apps"
+description = "gemini.Get and gemini.Show: Gemini downloads, keys trusted on first use"
+deps        = ["console", "tls"]
+match       = ["gemini"]
+
+[spartan]
+category    = "apps"
+description = "spartan.Get and spartan.Show: Spartan downloads"
+deps        = ["console", "internet"]
+match       = ["spartan"]
+
+[net]
+category    = "apps"
+description = "minimal network tools: Get, Send, Echo, UDP, Lookup, Resolve, Address"
+deps        = ["console", "sockets", "dns"]
+match       = ["net"]
+
+[console-tools]
+category    = "apps"
+description = "grep and rx (regular expressions)"
+deps        = ["console"]
+match       = ["grep", "rx"]
+files.all = ["tools/rx.Tool"]
+
+[compiler-x86]
+category    = "devel"
+description = "the x86 OP2 compiler, linker and browser"
+deps        = ["console"]
+match       = ["src/cli/x86/"]
+files.all = ["tools/build.Tool"]
+
+[compiler-arm]
+category    = "devel"
+description = "the ARM OB compiler and linkers (native on ARM, cross on x86)"
+deps        = ["console"]
+match       = ["src/cli/arm/"]
+files.all = ["tools/arm.Tool", "tools/arm-cross.Tool"]
+
+[compiler-rop2]
+category    = "devel"
+description = "the ROP2 compiler front end and boot linker"
+deps        = ["console"]
+match       = ["src/cli/rop2/"]
+files.all = ["tools/rop2-cross.Tool"]
+
+[compiler-riscv]
+category    = "devel"
+description = "the RISC-V back end of ROP2"
+deps        = ["compiler-rop2"]
+match       = ["src/cli/riscv/"]
+files.all = ["tools/riscv.Tool"]
+
+[compiler-mips]
+category    = "devel"
+description = "the MIPS back end of ROP2"
+deps        = ["compiler-rop2"]
+match       = ["src/cli/mips/"]
+files.all = ["tools/mips.Tool"]
+
+[compiler-armv7]
+category    = "devel"
+description = "the ARMv7 back end of ROP2"
+deps        = ["compiler-rop2"]
+match       = ["src/cli/armv7/"]
+files.all = ["tools/armv7.Tool"]
+
+[desktop-base]
+category    = "system"
+description = "objects and the file directory, below the display"
+deps        = ["console"]
+match       = ["POLPO.Objects", "POLPO.FileDir"]
+
+[display-x11]
+category    = "system"
+description = "Display and Input for X11"
+deps        = ["desktop-base"]
+provides    = ["display"]
+conflicts   = ["display-sixel"]
+match       = ["POLPO.Display", "POLPO.Input"]
+
+[display-sixel]
+category    = "system"
+description = "Display and Input for xterm (sixel)"
+deps        = ["desktop-base"]
+provides    = ["display"]
+conflicts   = ["display-x11"]
+match       = ["POLPO.SXL.Display", "POLPO.SXL.Input"]
+extra       = ["/x src/desktop/POLPO.SXL.Display.Mod", "src/desktop/POLPO.SXL.Input.Mod"]
+
+[desktop-tools]
+category    = "apps"
+description = "Edit, Script, Styles and other desktop tools"
+deps        = ["desktop-system"]
+match       = ["Edit", "Styles", "ScriptFrames", "Script", "Dates", "Strings", "POLPO.Compiler", "POLPO.FileTools"]
+files.all = ["tools/System.Tool", "tools/Edit.Tool", "tools/Script.Tool"]
+
+[desktop-compiler-x86]
+category    = "devel"
+description = "the x86 compiler, boot linker, decoder and browser in the desktop"
+deps        = ["desktop-tools", "compiler-x86"]
+match       = ["src/desktop/x86/"]
+
+[desktop-compiler-arm]
+category    = "devel"
+description = "the ARM compiler, decoder and browser in the desktop"
+deps        = ["desktop-tools", "compiler-arm"]
+match       = ["src/desktop/arm/"]
+
+[desktop-system]
+category    = "system"
+description = "the System module of the desktop"
+deps        = ["desktop"]
+match       = ["POLPO.System"]
+
+[desktop-compiler-rop2]
+category    = "devel"
+description = "the ROP2 compilers and decoders in the desktop"
+deps        = ["desktop-tools", "compiler-rop2"]
+match       = ["src/desktop/rop2/", "src/desktop/riscv/", "src/desktop/mips/", "src/desktop/armv7/"]
+
+[desktop]
+category    = "system"
+description = "the Oberon desktop: display space, fonts, texts, viewers"
+deps        = ["desktop-base", "display"]
+match       = ["src/desktop/"]
+files.all = ["share/*", "fonts/*", "texts/*"]
