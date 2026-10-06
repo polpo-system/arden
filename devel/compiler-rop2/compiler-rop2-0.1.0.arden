@@ -32,6 +32,7 @@ riscv = [
   "src/cli/rop2/ROPP.Mod",
   "src/cli/rop2/rcompiler.Mod",
   "src/cli/rop2/rlinker.Mod",
+  "src/cli/rop2/browser.Mod",
 ]
 mips = [
   "src/cli/rop2/ROPM.Mod",
@@ -41,6 +42,7 @@ mips = [
   "src/cli/rop2/ROPP.Mod",
   "src/cli/rop2/rcompiler.Mod",
   "src/cli/rop2/rlinker.Mod",
+  "src/cli/rop2/browser.Mod",
 ]
 armv7 = [
   "src/cli/rop2/ROPM.Mod",
@@ -50,6 +52,7 @@ armv7 = [
   "src/cli/rop2/ROPP.Mod",
   "src/cli/rop2/rcompiler.Mod",
   "src/cli/rop2/rlinker.Mod",
+  "src/cli/rop2/browser.Mod",
 ]
 
 [FILES]

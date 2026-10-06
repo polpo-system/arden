@@ -38,6 +38,7 @@ arm = [
   "src/cli/arm/OBP.Mod",
   "src/cli/arm/acompiler.Mod",
   "src/cli/arm/alinker.Mod",
+  "src/cli/arm/browser.Mod",
   "src/cli/arm/compiler.Mod",
   "src/cli/arm/linker.Mod",
 ]
