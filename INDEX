@@ -5,6 +5,14 @@ lib/toml 0.1.0
 lib/versions 0.1.0
 system/portia 0.1.0
 devel/polpo-tools 0.1.0
+lib/zlib 0.1.0
+apps/gzip 0.1.0
+apps/tar 0.1.0
+apps/zip 0.1.0
+apps/zip-desktop 0.1.0
+apps/arc 0.1.0
+apps/asciicoder 0.1.0
+apps/asciicoder-desktop 0.1.0
 lib/checksums 0.1.0
 lib/sockets 0.1.0
 lib/dns 0.1.0

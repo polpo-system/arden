@@ -1,0 +1,26 @@
+[PACKAGE]
+name        = "arc"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Oberon archives (.Arc of Compress): Compress0, the console command arc, pluggable ciphers (CompressCrypt, Crypt0)"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+
+[MODULES]
+all = [
+  "src/lib/archives/Compress0.Mod",
+  "src/lib/archives/CompressCrypt.Mod",
+  "src/lib/archives/Crypt0.Mod",
+  "src/cli/arc.Mod",
+]
+
+[FILES]
+all = ["tools/Arc.Tool"]

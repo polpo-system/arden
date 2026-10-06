@@ -1,0 +1,22 @@
+[PACKAGE]
+name        = "gzip"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "gzip files: GZReaders, GZWriters and the console command gzip"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+zlib = "0.1.0"
+
+[MODULES]
+all = ["src/lib/zlib/GZReaders.Mod", "src/lib/zlib/GZWriters.Mod", "src/cli/gzip.Mod"]
+
+[FILES]
+all = ["tools/GZip.Tool"]

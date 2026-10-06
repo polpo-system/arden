@@ -55,6 +55,59 @@ description = "genarden (the base recipes of arden) and vocsync (modules shared 
 deps        = ["console", "toml"]
 match       = ["genarden", "vocsync"]
 
+[zlib]
+category    = "lib"
+description = "the zlib of ETH Oberon: deflate and inflate, readers and writers"
+deps        = ["core"]
+match       = ["Zlib", "ZlibBuffers", "ZlibInflate", "ZlibDeflate", "ZlibReaders", "ZlibWriters"]
+
+[gzip]
+category    = "apps"
+description = "gzip files: GZReaders, GZWriters and the console command gzip"
+deps        = ["console", "zlib"]
+match       = ["GZReaders", "GZWriters", "gzip"]
+files.all   = ["tools/GZip.Tool"]
+
+[tar]
+category    = "apps"
+description = "tar archives, plain or gzip compressed: the console command tar (List, Pack, Unpack)"
+deps        = ["console", "gzip"]
+match       = ["tar"]
+files.all   = ["tools/Tar.Tool"]
+
+[zip]
+category    = "apps"
+description = "zip archives: Zip of ETH Oberon and the console command zip"
+deps        = ["console", "zlib"]
+match       = ["Zip", "zip"]
+files.all   = ["tools/Zip.Tool"]
+
+[zip-desktop]
+category    = "apps"
+description = "ZipTool: zip archives in the desktop"
+deps        = ["zip", "desktop"]
+match       = ["ZipTool"]
+
+[arc]
+category    = "apps"
+description = "Oberon archives (.Arc of Compress): Compress0, the console command arc, pluggable ciphers (CompressCrypt, Crypt0)"
+deps        = ["console"]
+match       = ["Compress0", "CompressCrypt", "Crypt0", "arc"]
+files.all   = ["tools/Arc.Tool"]
+
+[asciicoder]
+category    = "apps"
+description = "files as plain text for mail and back: AsciiCoder0 and the console command asciicoder"
+deps        = ["console"]
+match       = ["AsciiCoder0", "asciicoder"]
+files.all   = ["tools/AsciiCoder.Tool"]
+
+[asciicoder-desktop]
+category    = "apps"
+description = "AsciiCoder: coding texts and files in the desktop"
+deps        = ["asciicoder", "desktop"]
+match       = ["AsciiCoder"]
+
 [checksums]
 category    = "lib"
 description = "MD5 and SHA-256 of data and files"

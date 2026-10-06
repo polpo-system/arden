@@ -1,0 +1,22 @@
+[PACKAGE]
+name        = "tar"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "tar archives, plain or gzip compressed: the console command tar (List, Pack, Unpack)"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+gzip = "0.1.0"
+
+[MODULES]
+all = ["src/cli/tar.Mod"]
+
+[FILES]
+all = ["tools/Tar.Tool"]

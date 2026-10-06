@@ -1,0 +1,19 @@
+[PACKAGE]
+name        = "zip-desktop"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "ZipTool: zip archives in the desktop"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+zip = "0.1.0"
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/desktop/ZipTool.Mod"]

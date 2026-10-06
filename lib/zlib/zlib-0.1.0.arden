@@ -1,0 +1,25 @@
+[PACKAGE]
+name        = "zlib"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "the zlib of ETH Oberon: deflate and inflate, readers and writers"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+core = "0.1.0"
+
+[MODULES]
+all = [
+  "src/lib/zlib/Zlib.Mod",
+  "src/lib/zlib/ZlibBuffers.Mod",
+  "src/lib/zlib/ZlibInflate.Mod",
+  "src/lib/zlib/ZlibDeflate.Mod",
+  "src/lib/zlib/ZlibReaders.Mod",
+  "src/lib/zlib/ZlibWriters.Mod",
+]

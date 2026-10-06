@@ -1,0 +1,22 @@
+[PACKAGE]
+name        = "zip"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "zip archives: Zip of ETH Oberon and the console command zip"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+zlib = "0.1.0"
+
+[MODULES]
+all = ["src/lib/zlib/Zip.Mod", "src/cli/zip.Mod"]
+
+[FILES]
+all = ["tools/Zip.Tool"]

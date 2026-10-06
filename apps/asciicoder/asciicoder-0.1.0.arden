@@ -1,0 +1,21 @@
+[PACKAGE]
+name        = "asciicoder"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "files as plain text for mail and back: AsciiCoder0 and the console command asciicoder"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+
+[MODULES]
+all = ["src/lib/archives/AsciiCoder0.Mod", "src/cli/asciicoder.Mod"]
+
+[FILES]
+all = ["tools/AsciiCoder.Tool"]
