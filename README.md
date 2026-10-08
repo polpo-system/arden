@@ -3,6 +3,10 @@
 The package tree of polpo, read by portia, polpo's package manager (as vipatsar is for
 vipak and voc).
 
+polpo gets it with `portia.Sync`: the newest commit, as files, in `arden/` of the polpo
+directory. Changes are made in a git clone (next to polpo, `../arden`), tried with
+`PORTIA_TREE=../arden`, then pushed; `portia.Sync` brings them to every polpo.
+
 One directory per package in a category directory, `<category>/<name>/<name>-<version>.arden`,
 in TOML:
 
@@ -54,7 +58,8 @@ The recipes of the base system (the packages built from polpo itself) are writte
 `genarden.Run <arden dir>`, an Oberon command of polpo (package polpo-tools): it reads the
 build recipes `tools/*.Tool` of polpo and `tools/base.toml` here, which says which package a
 module belongs to, with the descriptions, dependencies and files of the packages. It also
-writes the `INDEX`, from the recipes found in the tree. Run it after changing the build
-recipes of polpo, then `portia.Check`. The recipes of remote packages are written by hand.
+writes the `INDEX`, from the recipes found in the tree, and the lists of the base system of
+each architecture, `portia.base.<arch>` in the polpo directory (the packages that come built
+with polpo). Run it after changing the build recipes of polpo, then `portia.Check`. The recipes of remote packages are written by hand.
 
 All the tools are Oberon commands; nothing here needs another language.
