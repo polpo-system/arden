@@ -4,7 +4,7 @@ category    = "devel"
 version     = "0.1.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "genarden (the base recipes of arden) and vocsync (modules shared with voc)"
+description = "genarden (the base recipes of arden)"
 
 [REMOTE]
 type = "git"
@@ -16,4 +16,4 @@ console = "0.1.0"
 toml = "0.1.0"
 
 [MODULES]
-all = ["src/cli/genarden.Mod", "src/cli/vocsync.Mod"]
+all = ["src/cli/genarden.Mod"]

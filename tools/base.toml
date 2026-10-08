@@ -51,9 +51,9 @@ match       = ["portia"]
 
 [polpo-tools]
 category    = "devel"
-description = "genarden (the base recipes of arden) and vocsync (modules shared with voc)"
+description = "genarden (the base recipes of arden)"
 deps        = ["console", "toml"]
-match       = ["genarden", "vocsync"]
+match       = ["genarden"]
 
 [zlib]
 category    = "lib"
@@ -186,6 +186,12 @@ category    = "lib"
 description = "TCP by host name and port, the Internet interface of voc"
 deps        = ["console", "sockets", "dns"]
 match       = ["Internet"]
+
+[netsystem]
+category    = "lib"
+description = "NetSystem of ETH Native Oberon over Sockets and DNS, for programs written for it; shared with voc"
+deps        = ["console", "sockets", "dns"]
+match       = ["NetSystem"]
 
 [http]
 category    = "lib"

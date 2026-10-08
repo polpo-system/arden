@@ -1,0 +1,20 @@
+[PACKAGE]
+name        = "netsystem"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "NetSystem of ETH Native Oberon over Sockets and DNS, for programs written for it; shared with voc"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+sockets = "0.1.0"
+dns = "0.1.0"
+
+[MODULES]
+all = ["src/lib/native/NetSystem.Mod"]
