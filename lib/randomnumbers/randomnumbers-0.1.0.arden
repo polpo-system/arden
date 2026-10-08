@@ -8,8 +8,8 @@ description = "RandomNumbers: uniform and exponential random numbers"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/randomnumbers/6782b533b2c2f4744d41b4c231a5c63088bd3ae1"
-tag  = "6782b533b2c2f4744d41b4c231a5c63088bd3ae1"
+uri  = "https://raw.githubusercontent.com/polpo-system/randomnumbers/8beb4fb4e037544f0da832149f4c88e6295283e9"
+tag  = "v0.1.0"
 
 [DEPS]
 desktop = "0.1.0"

@@ -8,8 +8,8 @@ description = "ColorModels: RGB, HSV and CMY conversions (ETH Oberon)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/picture-formats/5db84f8f772be2cf2812b47db32f4501454731ea"
-tag  = "5db84f8f772be2cf2812b47db32f4501454731ea"
+uri  = "https://raw.githubusercontent.com/polpo-system/picture-formats/ef0af6ec8086d9d427d09f0b020a5e53cbc176ad"
+tag  = "v0.1.0"
 
 [DEPS]
 desktop = "0.1.0"

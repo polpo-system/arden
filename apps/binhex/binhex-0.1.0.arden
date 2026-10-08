@@ -8,8 +8,8 @@ description = "binhex: decoding BinHex 4.0 (.hqx) files in the console"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/binhex/c85829e013e309779c1eb7dfa705175e770591a6"
-tag  = "c85829e013e309779c1eb7dfa705175e770591a6"
+uri  = "https://raw.githubusercontent.com/polpo-system/binhex/b8904f1c976feb3f640b2a95828110b25829862e"
+tag  = "v0.1.0"
 
 [DEPS]
 console = "0.1.0"

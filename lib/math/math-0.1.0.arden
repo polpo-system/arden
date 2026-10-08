@@ -8,8 +8,8 @@ description = "Math and MathL (sin, cos, arctan, sqrt, ln, exp) of ETH Oberon: x
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/math/4a12207d17ce74705305bcf40f06c2f8cc0082a0"
-tag  = "4a12207d17ce74705305bcf40f06c2f8cc0082a0"
+uri  = "https://raw.githubusercontent.com/polpo-system/math/54c90d2a4746914759a93d786e3753bcba6aa0b6"
+tag  = "v0.1.0"
 
 [DEPS]
 core = "0.1.0"

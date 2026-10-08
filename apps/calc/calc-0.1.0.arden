@@ -8,8 +8,8 @@ description = "calc: the Oberon calculator in the console (calc.Dec 2^10, calc.H
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/calc/33a6b50152ca7adab79b66662bbf7cd05f4fb7e5"
-tag  = "33a6b50152ca7adab79b66662bbf7cd05f4fb7e5"
+uri  = "https://raw.githubusercontent.com/polpo-system/calc/ef3c99889b54270e6cfa9882fbbed73144f33dba"
+tag  = "v0.1.0"
 
 [DEPS]
 console = "0.1.0"

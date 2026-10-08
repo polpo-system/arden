@@ -8,8 +8,8 @@ description = "IFS: Barnsley's iterated function system fractals in an XYplane, 
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/ifs/eb99679d89711909f212d71059767caa1861dbbc"
-tag  = "eb99679d89711909f212d71059767caa1861dbbc"
+uri  = "https://raw.githubusercontent.com/polpo-system/ifs/f780b1e95a3b5fa12cb07772a96e6297177ba4fc"
+tag  = "v0.1.0"
 
 [DEPS]
 desktop = "0.1.0"

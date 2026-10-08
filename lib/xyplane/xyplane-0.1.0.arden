@@ -8,8 +8,8 @@ description = "XYplane: the virtual screen of Programming in Oberon, a viewer of
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/xyplane/7144d4a4e13bfc13a5d97433c5938d0c4f36a4f1"
-tag  = "7144d4a4e13bfc13a5d97433c5938d0c4f36a4f1"
+uri  = "https://raw.githubusercontent.com/polpo-system/xyplane/d435e7185fe7f87f07ffdae13522c3304869232e"
+tag  = "v0.1.0"
 
 [DEPS]
 desktop = "0.1.0"

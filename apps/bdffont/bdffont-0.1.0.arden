@@ -8,8 +8,8 @@ description = "bdffont: BDF bitmap fonts (X11, Unifont, Terminus) to Oberon scre
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/bdffont/589e96f075d08f15e4e11d810b047d59013b3fd7"
-tag  = "589e96f075d08f15e4e11d810b047d59013b3fd7"
+uri  = "https://raw.githubusercontent.com/polpo-system/bdffont/372986e93e20520212bce65b593aaa7dacbcd0c2"
+tag  = "v0.1.0"
 
 [DEPS]
 console = "0.1.0"

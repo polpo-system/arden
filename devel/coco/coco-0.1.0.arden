@@ -8,8 +8,8 @@ description = "Coco/R, the compiler generator of H. Moessenboeck, as improved by
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/polpo-coco/b73c4d497dbc34237853ffadc43c9c0bdbcab60f"
-tag  = "b73c4d497dbc34237853ffadc43c9c0bdbcab60f"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo-coco/4229e96ad27483592777ce3e9b402a43bee6a546"
+tag  = "v0.1.0"
 
 [DEPS]
 console = "0.1.0"

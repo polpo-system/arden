@@ -11,6 +11,15 @@ in TOML:
                 (built from polpo itself, nothing to download); `type = "files"` is a remote
                 package, whose files portia downloads from `uri/<path>` (https, http, gemini,
                 spartan) into `src/pkg/<name>/`
+                The uri of a polpo-system package is the GitHub raw address of one commit
+                (`https://raw.githubusercontent.com/polpo-system/<repo>/<commit>`): a commit
+                cannot move, and `[SUMS]` checks every file. `tag` is the tag of that commit,
+                the version (`v0.1.0`), for people; portia reads only the uri. The repositories
+                are also on codeberg.org/polpo-system, but the recipes name GitHub only.
+                A change of what a package installs is a new version: a new recipe
+                (`name-0.1.1.arden`), a new tag, new sums. A change that installs nothing
+                different (README, .gitattributes) may move the uri to the new commit with the
+                version kept.
 - `[DEPS]`      packages needed, `name = version`
 - `[PROVIDES]`  virtual packages provided, e.g. `display` by display-x11 and display-sixel
 - `[CONFLICTS]` packages that cannot be installed together

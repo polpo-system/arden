@@ -8,8 +8,8 @@ description = "Iris: a picture viewer for the desktop (.pic, and the picture for
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/iris/9c84d3e3aac89d22e5e7ef392ceea111d81d4aa4"
-tag  = "9c84d3e3aac89d22e5e7ef392ceea111d81d4aa4"
+uri  = "https://raw.githubusercontent.com/polpo-system/iris/5e4df311873b535e545b64e40bec66132fac07d6"
+tag  = "v0.1.0"
 
 [DEPS]
 desktop = "0.1.0"

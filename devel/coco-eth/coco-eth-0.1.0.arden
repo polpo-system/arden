@@ -8,8 +8,8 @@ description = "Coco/R 2.2 of H. Moessenboeck as in Native Oberon 2.3.6, with Coc
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/coco-eth/7cc8ec472cc33297a787f682fd1610a6a75f56ff"
-tag  = "7cc8ec472cc33297a787f682fd1610a6a75f56ff"
+uri  = "https://raw.githubusercontent.com/polpo-system/coco-eth/72674585b50ad1a42e3bb674ea102cd480d060bf"
+tag  = "v0.1.0"
 
 [DEPS]
 desktop = "0.1.0"
