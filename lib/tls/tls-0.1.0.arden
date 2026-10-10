@@ -4,7 +4,7 @@ category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "TLS 1.3 in Oberon (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc"
+description = "TLS 1.3 in Oberon, client and server (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc"
 
 [REMOTE]
 type = "git"
@@ -51,5 +51,6 @@ all = [
   "src/lib/tls/TLSCABundle.Mod",
   "src/lib/tls/TLSNow.Mod",
   "src/lib/tls/TLS13Live.Mod",
+  "src/lib/tls/TLS13Server.Mod",
   "src/lib/tls/httpsPure.Mod",
 ]

@@ -201,7 +201,7 @@ match       = ["src/lib/http/"]
 
 [tls]
 category    = "lib"
-description = "TLS 1.3 in Oberon (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc"
+description = "TLS 1.3 in Oberon, client and server (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc"
 deps        = ["console", "sockets", "internet", "http", "strutils"]
 match       = ["src/lib/tls/"]
 
