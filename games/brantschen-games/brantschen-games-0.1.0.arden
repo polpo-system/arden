@@ -1,0 +1,50 @@
+[PACKAGE]
+name        = "brantschen-games"
+category    = "games"
+version     = "0.1.0"
+author      = "Peter Brantschen, Roland Brand, Michael Klein"
+license     = "unknown"
+description = "Tetris, Minesweeper, Tron, PacMan and Vier gewinnt: games of 1996 on the XY plane, with BrantschenGames.Tool"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/brantschen-games/f5695be48a84e3bb9f3ee6ef335a966f4976db10"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+xyplane = "0.1.0"
+randomnumbers = "0.1.0"
+
+[MODULES]
+all = [
+  "XYtop.Mod",
+  "Linie.Mod",
+  "Ziffer.Mod",
+  "Ausgabe.Mod",
+  "PBGames.Mod",
+  "Grafik.Mod",
+  "Minesweeper.Mod",
+  "RBPacMan.Mod",
+  "PBTetris.Mod",
+  "Vier.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["BrantschenGames.Tool=tools/BrantschenGames.Tool", "README.md", "games-doc.txt"]
+
+[SUMS]
+"XYtop.Mod" = "sha256:66596c129a0199bd7d3b224241b1102b1474fc9b3f999199fde4568c267c16e8"
+"Linie.Mod" = "sha256:018310a21a0cdda0b17d7a8fb8a9ec6000ed27fa6998c11164c3e98c61a5e928"
+"Ziffer.Mod" = "sha256:ae14da94b3314b792c202810fb342cb49589da2cf261073285c7a9283191af48"
+"Ausgabe.Mod" = "sha256:35740efc3a039da6e58a27c2d6732bab46b01c465a273454cd58afff49e5cfc7"
+"PBGames.Mod" = "sha256:958aa8f920dc94f89ca57e95305a48919fa08b87f206b9e9082c4f2b0a3fa56a"
+"Grafik.Mod" = "sha256:db5e2dc76ebec1a5c1d1b2750543fac50a7747985b702936a21d995cc0e03ff2"
+"Minesweeper.Mod" = "sha256:13ae32a6ab7edb456d0415ee1d8f42c714f3e7bc4dd8064a3cc88248b14de6f6"
+"RBPacMan.Mod" = "sha256:69797700455b32e82dd6ee9d45eaf23167beccd6b9f8bb40555f96ae3e39463a"
+"PBTetris.Mod" = "sha256:9d84ce80e809154fbc9fd0f0e222620b444e4f80c20619e92bf9bcae6100441b"
+"Vier.Mod" = "sha256:f94e387cfdeb497a81a6b64ea30ed995026dc1309e0af48a45bb9f369e2419b5"
+"BrantschenGames.Tool" = "sha256:a90622c84879588289ee17e8b9240766750f13eaa465f2b0901bc19c4fc75ea7"
+"README.md" = "sha256:90ec17a88be6f28299bb41bf54769e8b53d388cdae59b069fc4ed26c3e077db3"
+"games-doc.txt" = "sha256:02a47a62fff1ac719af0188b6af44743877ca130f97adf215932cbc2d98b29a7"
