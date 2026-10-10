@@ -30,6 +30,7 @@ lib/http 0.1.0
 lib/tls 0.1.0
 apps/fetch 0.1.0
 apps/gemini 0.1.0
+apps/agena 0.1.0
 apps/spartan 0.1.0
 apps/net 0.1.0
 apps/console-tools 0.1.0

@@ -217,6 +217,12 @@ description = "gemini.Get and gemini.Show: Gemini downloads, keys trusted on fir
 deps        = ["console", "tls"]
 match       = ["gemini"]
 
+[agena]
+category    = "apps"
+description = "agena.Serve: a Gemini server for a directory, over the TLS 1.3 server of tls"
+deps        = ["console", "sockets", "tls"]
+match       = ["agena"]
+
 [spartan]
 category    = "apps"
 description = "spartan.Get and spartan.Show: Spartan downloads"
