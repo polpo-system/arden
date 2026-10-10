@@ -30,7 +30,6 @@ lib/http 0.1.0
 lib/tls 0.1.0
 apps/fetch 0.1.0
 apps/gemini 0.1.0
-apps/agena 0.1.0
 apps/spartan 0.1.0
 apps/net 0.1.0
 apps/console-tools 0.1.0
@@ -49,11 +48,13 @@ devel/desktop-compiler-arm 0.1.0
 system/desktop-system 0.1.0
 devel/desktop-compiler-rop2 0.1.0
 system/desktop 0.1.0
+apps/agena 0.1.1
 apps/bdffont 0.1.0
 apps/binhex 0.1.0
 apps/binhex-desktop 0.1.0
 apps/calc 0.1.0
 apps/calc-desktop 0.1.0
+apps/cobweb 0.1.1
 apps/ifs 0.1.0
 apps/iris 0.1.0
 devel/coco 0.1.0
