@@ -41,4 +41,4 @@ mips = ["src/cli/rop2/system.Mod"]
 armv7 = ["src/cli/rop2/system.Mod"]
 
 [FILES]
-all = ["Oberon.Text", "texts.md"]
+all = ["Oberon.Text", "texts.md", "VERSION"]
