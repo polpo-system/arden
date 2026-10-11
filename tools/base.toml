@@ -95,6 +95,13 @@ description = "ZipTool: zip archives in the desktop"
 deps        = ["zip", "desktop"]
 match       = ["ZipTool"]
 
+[dcs-desktop]
+category    = "apps"
+description = "DCS: dcs in the desktop, Gemini and Spartan answers in viewers, with DCS.Tool"
+deps        = ["gemini-core", "desktop"]
+match       = ["DCS"]
+files.all = ["tools/DCS.Tool"]
+
 [arc]
 category    = "apps"
 description = "Oberon archives (.Arc of Compress): Compress0, the console command arc, pluggable ciphers (CompressCrypt, Crypt0)"
@@ -211,10 +218,16 @@ description = "fetch.Get and fetch.Show: HTTP and HTTPS downloads"
 deps        = ["console", "http", "tls"]
 match       = ["fetch"]
 
+[gemini-core]
+category    = "lib"
+description = "Gemini0 and Gemtext0: the core of the Gemini and Spartan clients (requests, links, gemtext, identities)"
+deps        = ["internet", "tls"]
+match       = ["src/lib/gemini/"]
+
 [gemini]
 category    = "apps"
 description = "gemini.Get and gemini.Show: Gemini downloads, keys trusted on first use"
-deps        = ["console", "tls"]
+deps        = ["console", "gemini-core"]
 match       = ["gemini"]
 
 
@@ -222,8 +235,14 @@ match       = ["gemini"]
 [spartan]
 category    = "apps"
 description = "spartan.Get and spartan.Show: Spartan downloads"
-deps        = ["console", "internet"]
+deps        = ["console", "gemini-core"]
 match       = ["spartan"]
+
+[dcs]
+category    = "apps"
+description = "dcs, the digital command system: a Gemini and Spartan client with identities, input, pins"
+deps        = ["console", "gemini-core"]
+match       = ["dcs"]
 
 [net]
 category    = "apps"

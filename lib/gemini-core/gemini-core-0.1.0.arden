@@ -1,0 +1,19 @@
+[PACKAGE]
+name        = "gemini-core"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Gemini0 and Gemtext0: the core of the Gemini and Spartan clients (requests, links, gemtext, identities)"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+internet = "0.1.0"
+tls = "0.1.0"
+
+[MODULES]
+all = ["src/lib/gemini/Gemini0.Mod", "src/lib/gemini/Gemtext0.Mod"]

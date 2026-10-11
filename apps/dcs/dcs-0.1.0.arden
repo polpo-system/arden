@@ -1,0 +1,19 @@
+[PACKAGE]
+name        = "dcs"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "dcs, the digital command system: a Gemini and Spartan client with identities, input, pins"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+gemini-core = "0.1.0"
+
+[MODULES]
+all = ["src/cli/dcs.Mod"]

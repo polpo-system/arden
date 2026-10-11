@@ -1,0 +1,22 @@
+[PACKAGE]
+name        = "dcs-desktop"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "DCS: dcs in the desktop, Gemini and Spartan answers in viewers, with DCS.Tool"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+gemini-core = "0.1.0"
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/desktop/DCS.Mod"]
+
+[FILES]
+all = ["tools/DCS.Tool"]

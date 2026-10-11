@@ -13,7 +13,7 @@ tag  = "main"
 
 [DEPS]
 console = "0.1.0"
-internet = "0.1.0"
+gemini-core = "0.1.0"
 
 [MODULES]
 all = ["src/cli/spartan.Mod"]
