@@ -1,0 +1,46 @@
+[PACKAGE]
+name        = "agena"
+category    = "apps"
+version     = "0.2.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "agena.Serve: a Gemini server for a directory or several virtual hosts (TOML), over the TLS 1.3 server of tls"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/agena/61b98191998aae2d150ac722f11f43803775edf0"
+tag  = "v0.2.0"
+
+[DEPS]
+console = "0.1.0"
+sockets = "0.1.0"
+tls = "0.1.0"
+
+[MODULES]
+all = ["agena.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["README.md", "LICENSE", "agena.toml.example", "test/AgenaTest.Mod", "test/cert.pem", "test/key.pem", "test/index.gmi",
+  "test/agena.toml", "test/one.gmi", "test/two.gmi", "test/x.zq"]
+
+[TESTS]
+copy = ["test/AgenaTest.Mod", "test/cert.pem", "test/key.pem", "test/index.gmi", "test/agena.toml", "test/one.gmi", "test/two.gmi", "test/x.zq"]
+cmds = ["$compile AgenaTest.Mod", "AgenaTest.Run", "AgenaTest.Hosts", "AgenaTest.Names"]
+ok   = ["status: 20 text/gemini; charset=utf-8", "body: zq test capsule", "status: 51 not found", "status: 53 proxy request refused", "the server ended",
+  "body: page one", "body: page two", "status: 20 text/x-zq", "name: xn--y9a5bft.xn--y9a3aq", "name: xn--bcher-kva.example"]
+bad  = ["TRAP", "  err ", "missing", "no connection", "did not start", "server failed"]
+
+[SUMS]
+"agena.Mod" = "sha256:0fcc3d0f9bcf5ab4cb760f27fa16527c447e9a87fa1116cc2d5606229ce2c355"
+"README.md" = "sha256:cb9e9b9619bc01183fc00d9d9f17f86c37faf6b6b4d8da922a16f5f7e7a6529b"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"agena.toml.example" = "sha256:d9313a1fccd6150c08a58758a2962b7d4d9712ad90d7695f2ccd9df95f70739d"
+"test/AgenaTest.Mod" = "sha256:6e3746b4ee47c7f4074e69c986ae61d25d59439f912bf52aed34a322416b29bc"
+"test/cert.pem" = "sha256:1c43f28dd99b2a9c77d9fbdb41cb1193d469b8237b8e6b4b98a04c0e8e774611"
+"test/key.pem" = "sha256:b8a6db35af3f4574c71ce623453475061b7459ef4add8dd63eead5773682be15"
+"test/index.gmi" = "sha256:949cb964380bf64834f5e043ec835b864482ddb4c2c8e0d2b922a8d2d176a491"
+"test/agena.toml" = "sha256:c438792ca23d48816492bd45e50ca28e309d860872ebb18102e64107e0ef95ee"
+"test/one.gmi" = "sha256:6f31f8466abdcfb2e163e0082cadc49664059f5950873b6871c8820732b5bbe2"
+"test/two.gmi" = "sha256:feb11547f5ec3a1380ab49593c19395422ee2488da1c3992104d3faef3470f30"
+"test/x.zq" = "sha256:15fe6412b98bad1211955fc702e3ddfea9625c604557317a0bf53ac1aaacd107"
