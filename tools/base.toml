@@ -102,6 +102,13 @@ deps        = ["gemini-core", "desktop"]
 match       = ["DCS"]
 files.all = ["tools/DCS.Tool"]
 
+[pishmish]
+category    = "apps"
+description = "Pishmish: a Gemini and Spartan browser in the desktop, links followed by a click, identities"
+deps        = ["gemini-core", "desktop"]
+match       = ["Pishmish"]
+files.all = ["tools/Pishmish.Tool"]
+
 [arc]
 category    = "apps"
 description = "Oberon archives (.Arc of Compress): Compress0, the console command arc, pluggable ciphers (CompressCrypt, Crypt0)"
