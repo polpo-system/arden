@@ -15,6 +15,7 @@ tag  = "v0.2.0"
 console = "0.1.0"
 sockets = "0.1.0"
 tls = "0.1.0"
+toml = "0.1.0"
 
 [MODULES]
 all = ["agena.Mod"]
