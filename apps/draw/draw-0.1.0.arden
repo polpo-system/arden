@@ -1,0 +1,51 @@
+[PACKAGE]
+name        = "draw"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Draw: the line drawing editor of ETH Oberon (lines, captions, macros, circles, splines)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/draw/a0f4c9107110b7b81b5399913289ea1630ba7c33"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/Graphics.Mod", "src/GraphicFrames.Mod", "src/Draw.Mod", "src/Rectangles.Mod", "src/Curves.Mod", "src/Splines.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["Draw.Tool=tools/Draw.Tool", "DrawGuide.Text=tools/DrawGuide.Text", "share/TTL0.Lib=share/TTL0.Lib", "share/TTL1.Lib=share/TTL1.Lib", "share/TTL0.Graph=share/TTL0.Graph", "share/TTL1.Graph=share/TTL1.Graph", "share/Elektra.Graph=share/Elektra.Graph", "fonts/Elektra.Scn.Fnt=fonts/Elektra.Scn.Fnt", "test/DrawTest.Mod", "test/sample.Graph", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/DrawTest.Mod", "test/sample.Graph"]
+cmds = ["$compile DrawTest.Mod", "DrawTest.Run sample.Graph", "DrawTest.Run TTL0.Graph"]
+ok   = ["DrawTest: sample.Graph lines 2 captions 29 macros 1 curves 3 rectangles 1 splines 1 ok", "DrawTest: TTL0.Graph lines 7 captions 65 macros 56 curves 0 rectangles 0 splines 0 ok"]
+bad  = ["TRAP", "  err ", "wrong", "does not load"]
+display = true
+
+[SUMS]
+"src/Graphics.Mod" = "sha256:3d4ee4d22c86639aac55e2a7f19f9a9a6a7b5850996862a16ce8c3cf507e84fb"
+"src/GraphicFrames.Mod" = "sha256:5984a65831303b45fb80663bffbe1a2b3fe8d2d11928c2988871c305d7e2bfec"
+"src/Draw.Mod" = "sha256:40e587ae3f92c25a32251891bcaf11a4dd073875ae4962b5c82139334be90892"
+"src/Rectangles.Mod" = "sha256:ae96665f9ab810bb07a9875fbadc73ae3483100d1a70cc62547084d1a2f88002"
+"src/Curves.Mod" = "sha256:5dba2f014a4f928ee9fa7758e24bbf64329131d24857321b090986094e30cb33"
+"src/Splines.Mod" = "sha256:52044f5009a5009dc2f22200af31ad6ea314dd631da83a7e29a8c4476a3e8643"
+"Draw.Tool" = "sha256:2cb745af297f8afd7b10a992053c983e06e178325846d1bc4c5a35727335b8a9"
+"DrawGuide.Text" = "sha256:3ad654f9a072f77ff38ddec846f0a7c90f8a37ff942ac707457000ca827e841e"
+"share/TTL0.Lib" = "sha256:c6c8660426be0fff205416af4f1f9b5f2607f24ab0216ed0dd1913e802905e8b"
+"share/TTL1.Lib" = "sha256:78701ea5c460a3559e1b6e35ad15a165109f76409b8dca9782d8a331d2fe7d1e"
+"share/TTL0.Graph" = "sha256:675b64f5df80fcb8478b7ee723ee19febe69d9bee9a4b161d74629873f8839fe"
+"share/TTL1.Graph" = "sha256:64bae73bf26840faa1c46c1129c44ce57898326aefeb381e60cbcb5cc1a689f1"
+"share/Elektra.Graph" = "sha256:4c026598ed461c4c09706db4c86a837016738d47197420a01abcb76e57997a42"
+"fonts/Elektra.Scn.Fnt" = "sha256:961f758a7650f2307a4ee952141beb3eff5ed91bfe20dcac81b0faf675d56dd4"
+"test/DrawTest.Mod" = "sha256:c92885b51838321c58d927b70ce7156aa5fece480d52c1a81d7e32569037b963"
+"test/sample.Graph" = "sha256:c8cd78968cdf52e2c6bc339486876eaf85aca998d9a64370cba51509b4bbd4fb"
+"README.md" = "sha256:e60aeed45a1cf8ec77e8787408a9b653a498c93f2c4d4fd78cf91b3282894439"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
