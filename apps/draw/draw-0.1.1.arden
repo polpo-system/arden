@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "draw"
 category    = "apps"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "Draw: the line drawing editor of ETH Oberon (lines, captions, macros, circles, splines)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/draw/a0f4c9107110b7b81b5399913289ea1630ba7c33"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/draw/c669c31ecd6abd5c71faabfd81aaab05ab013d5c"
+tag  = "v0.1.1"
 
 [DEPS]
 desktop = "0.1.0"

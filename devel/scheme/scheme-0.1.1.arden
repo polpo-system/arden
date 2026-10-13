@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "scheme"
 category    = "devel"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "Scheme: the Scheme interpreter of ETH Oberon System 3 (Erich Oswald, 2000): rationals, reals, ports"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/scheme/1bd6b64455bb057d02eaec532df74417e445274d"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/scheme/4ea7b0fa7e5aed885ad7398ff946d6fc308250e7"
+tag  = "v0.1.1"
 
 [DEPS]
 desktop = "0.1.0"

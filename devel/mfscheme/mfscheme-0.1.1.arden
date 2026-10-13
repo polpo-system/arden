@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "mfscheme"
 category    = "devel"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "MFScheme: the Scheme interpreter of Ceres Oberon (Michael Franz, ETH Zurich, 1989-1992)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/mfscheme/6a4207af9503b363a91942d40718eaea20b58205"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/mfscheme/02a5886577f2e098eb50bdc214147c6283aaa6ac"
+tag  = "v0.1.1"
 
 [DEPS]
 desktop = "0.1.0"

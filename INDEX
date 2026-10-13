@@ -59,13 +59,13 @@ apps/binhex-desktop 0.1.0
 apps/calc 0.1.0
 apps/calc-desktop 0.1.0
 apps/cobweb 0.1.1
-apps/draw 0.1.0
+apps/draw 0.1.1
 apps/ifs 0.1.0
 apps/iris 0.1.0
 devel/coco 0.1.0
 devel/coco-eth 0.1.0
-devel/mfscheme 0.1.0
-devel/scheme 0.1.0
+devel/mfscheme 0.1.1
+devel/scheme 0.1.1
 games/brantschen-games 0.1.0
 lib/bit 0.1.0
 lib/bmp 0.1.0
