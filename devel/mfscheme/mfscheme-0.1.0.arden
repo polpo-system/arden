@@ -1,0 +1,41 @@
+[PACKAGE]
+name        = "mfscheme"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "MFScheme: the Scheme interpreter of Ceres Oberon (Michael Franz, ETH Zurich, 1989-1992)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/mfscheme/6a4207af9503b363a91942d40718eaea20b58205"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/SchemeMachine.Mod", "src/SchemeInOut.Mod", "src/MFScheme.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["MFScheme.Tool=tools/MFScheme.Tool", "Scheme.Examples=share/Scheme.Examples", "test/MFSchemeTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/MFSchemeTest.Mod"]
+cmds = ["$compile MFSchemeTest.Mod", "MFSchemeTest.Run"]
+ok   = ["MFSchemeTest: 16 checks, 0 failed"]
+bad  = ["TRAP", "  err "]
+display = true
+
+[SUMS]
+"src/SchemeMachine.Mod" = "sha256:2c630ddd5ab8f839d062128b6bdeed0ff10605df21ed1e7f33f19b43064ac1b2"
+"src/SchemeInOut.Mod" = "sha256:8f96e353f02fa9dab82299a7b85f9296950db24697a2fa1d32bea2e52ae67a5c"
+"src/MFScheme.Mod" = "sha256:fdb3f91474b8ae12eeff42a17a77c4848d8f5afe0d8594500815a230a324d265"
+"MFScheme.Tool" = "sha256:695985c3c689016636eb0a423bdb62cb798aed0d77ed9e284df1968c3859c881"
+"Scheme.Examples" = "sha256:e57371af494eeecfc0c4b7d9ca4779368182613471c18efda34bfab4650e1a9e"
+"test/MFSchemeTest.Mod" = "sha256:b26ddb49f77b397f22b4b76b4e8d6f64252663804d41e3c248f7e3173fd6d423"
+"README.md" = "sha256:c0401ebd9724b975441998852bbf22285f0dcc08d2fff6b80bbd4dd2ef50c4f3"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
