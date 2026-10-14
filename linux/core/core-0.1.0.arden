@@ -17,6 +17,7 @@ tag  = "main"
 all = [
   "src/common/Root.Mod",
   "src/common/Reals.Mod",
+  "src/cli/DecReal.Mod",
   "src/common/POLPO.Files.Mod",
   "src/cli/loksh.Mod",
 ]

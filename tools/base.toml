@@ -9,7 +9,7 @@
 category    = "linux"
 description = "the boot image: runtime, files, module loader and the loksh binary"
 deps        = []
-match       = ["Linux0", "Kernel", "Root", "Reals", "POLPO.Files", "Modules0", "loksh"]
+match       = ["Linux0", "Kernel", "Root", "Reals", "DecReal", "POLPO.Files", "Modules0", "loksh"]
 files.x86 = ["bin/x86/loksh"]
 files.arm = ["bin/arm/loksh"]
 files.riscv = ["bin/riscv/loksh"]
