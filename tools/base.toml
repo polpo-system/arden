@@ -109,6 +109,12 @@ deps        = ["gemini-core", "desktop"]
 match       = ["Pishmish"]
 files.all = ["tools/Pishmish.Tool"]
 
+[randomnumbers]
+category    = "lib"
+description = "RandomNumbers of ETH Oberon: uniform and exponential random numbers, seeded by the desktop's clock"
+deps        = ["desktop", "math"]
+match       = ["RandomNumbers"]
+
 [arc]
 category    = "apps"
 description = "Oberon archives (.Arc of Compress): Compress0, the console command arc, pluggable ciphers (CompressCrypt, Crypt0)"
@@ -160,6 +166,12 @@ description = "real and complex math of the OOC library 1.5: LowReal, LowLReal, 
 license     = "LGPL-2+"
 deps        = ["core"]
 match       = ["LowReal", "LowLReal", "RealMath", "LRealMath", "ComplexMath", "LComplexMath", "OakMath", "oocRandomNumbers"]
+
+[math]
+category    = "lib"
+description = "Math and MathL of ETH Oberon (sin, cos, arctan, sqrt, ln, exp): x87 on x86, portable elsewhere"
+deps        = ["core"]
+match       = ["src/lib/math/", "src/lib/math/x86/"]
 
 [ooc-conversions]
 category    = "lib"

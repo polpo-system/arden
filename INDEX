@@ -13,6 +13,7 @@ apps/zip 0.1.0
 apps/zip-desktop 0.1.0
 apps/dcs-desktop 0.1.0
 apps/pishmish 0.1.0
+lib/randomnumbers 0.1.0
 apps/arc 0.1.0
 apps/asciicoder 0.1.0
 apps/asciicoder-desktop 0.1.0
@@ -21,6 +22,7 @@ lib/sockets 0.1.0
 lib/dns 0.1.0
 lib/ooc-strings 0.1.0
 lib/ooc-math 0.1.0
+lib/math 0.1.0
 lib/ooc-conversions 0.1.0
 lib/ooc-time 0.1.0
 lib/ooc-io 0.1.0
@@ -74,9 +76,7 @@ lib/gif 0.1.0
 lib/ico 0.1.0
 lib/iff 0.1.0
 lib/jpeg 0.1.0
-lib/math 0.1.0
 lib/pcx 0.1.0
-lib/randomnumbers 0.1.0
 lib/tga 0.1.0
 lib/xpm 0.1.0
 lib/xyplane 0.1.0
