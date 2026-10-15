@@ -1,0 +1,43 @@
+[PACKAGE]
+name        = "gadgets-games-sokoban"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Sokoban: push the boxes onto their places (Emil Zeller)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-sokoban/3d342413c7d4ca6f0f40e42e92004daa0ed663ee"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/Sokoban.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Sokoban.Data=share/Sokoban.Data", "share/Flock.Pict=share/Flock.Pict", "share/Pebbles.Pict=share/Pebbles.Pict", "share/Crochet.Pict=share/Crochet.Pict", "tools/Sokoban.Tool=tools/Sokoban.Tool", "test/SokobanTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/SokobanTest.Mod"]
+cmds = ["$compile SokobanTest.Mod", "SokobanTest.Run"]
+ok   = ["SokobanTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Sokoban.Mod = "sha256:9e9a0f5043de8c2718c11d356405b24beeacae21acd228d4979cfb910f0e2c65"
+share/Sokoban.Data = "sha256:ac0a18cf89971c87a94d97c7ba2f0c99ef3d3f67f3dcbba456f40a18e329365c"
+share/Flock.Pict = "sha256:5fbbc3be15c314ad3b9ad90f8865939920a34d662e6cc4a224a236dab1fa7fd5"
+share/Pebbles.Pict = "sha256:eff177fbeea4e8197f4863dba519a51fe5a2ec96f2e184cc061e00ec07b0ecc9"
+share/Crochet.Pict = "sha256:6a9bf466113a2035d961248f92cfda5a291957a16afa82eafc6d071b3d8fab81"
+tools/Sokoban.Tool = "sha256:23820aec28a123aae06c4cec6c784f0ec0b7581e02bc41cd51ffda35db26dec9"
+test/SokobanTest.Mod = "sha256:3077a6706fbb441eb308ca4867c07d9324eaf93f74fca5168a63ca42bccfb2de"
+README.md = "sha256:41de5ebc0880d20d86747b81f9d69b9141151cf35602223fb22f4721604eb2fe"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

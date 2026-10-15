@@ -1,0 +1,51 @@
+[PACKAGE]
+name        = "gadgets-games-tetris"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Tetris (Wolfgang Ibl)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-tetris/89a2bcee61978c1055eb2fb0a63b591a91e10f04"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-icons3 = "0.1.0"
+randomnumbers = "0.1.0"
+
+[MODULES]
+all = ["src/Tetris.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Tetris.Panel=share/Tetris.Panel", "share/Bows.Pict=share/Bows.Pict", "share/Bricks.Pict=share/Bricks.Pict", "share/Cells.Pict=share/Cells.Pict", "share/Clouds.Pict=share/Clouds.Pict", "share/Coins.Pict=share/Coins.Pict", "share/Fractal.Pict=share/Fractal.Pict", "share/Molecules.Pict=share/Molecules.Pict", "share/Spirals.Pict=share/Spirals.Pict", "share/Surface.Pict=share/Surface.Pict", "share/Textils.Pict=share/Textils.Pict", "tools/Tetris.Tool=tools/Tetris.Tool", "test/TetrisTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/TetrisTest.Mod"]
+cmds = ["$compile TetrisTest.Mod", "TetrisTest.Run"]
+ok   = ["TetrisTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Tetris.Mod = "sha256:ebc70482a36bda0a4ca1abb66eaef3ec795ceb3da375dcc2b587fda097a2d1a6"
+share/Tetris.Panel = "sha256:65faabdb70044b87e33b986ee9daab54813fc0796b99709bbff182dd23f475ab"
+share/Bows.Pict = "sha256:21daade2448986b6ee1450e8b161f254e0df2fe5d6a483c7e9fe476232c02bdd"
+share/Bricks.Pict = "sha256:b0427e283814316cb526ab8f514dc6d2c591245320533108a99cf160205b04c7"
+share/Cells.Pict = "sha256:342c1963e3cc622b79c5e2f3cb8c55b6cfc58aa648a5279cc62ac7daed788ab3"
+share/Clouds.Pict = "sha256:013329e24806d131e9353c3a747988960e25b7249db398d0b2acb73968d95619"
+share/Coins.Pict = "sha256:0667bb210306d5f67a1605fcbdbef44063eb8e619639ad890c039761f6057acb"
+share/Fractal.Pict = "sha256:85ad68ed89f350b998595a72bbea71f15c821ac77ce9ca833a4f5ce6aeebd3c7"
+share/Molecules.Pict = "sha256:2533ee1bb8e83b9ab3adbdb3d051fe4361ea50df5212b7c5930f6207e5e51dc8"
+share/Spirals.Pict = "sha256:8e46223d8b15630543679307eef04bd34f86b90e617b35a07739ad6480e6a424"
+share/Surface.Pict = "sha256:d4f8ad07932bb6d0b796f49fe6704ce97815edfc2fba3b61a0462c8165e90e35"
+share/Textils.Pict = "sha256:c73c174cde06fa16972059e0cdb953155c13b4eef2ffae9f60dbec1f6e41cb47"
+tools/Tetris.Tool = "sha256:40dd95796d142a365f26b74c031baa6c41fa6ace1f052a291f6de7eaa786affe"
+test/TetrisTest.Mod = "sha256:60cb1f00b1ef273684771579055a35007464d851e31f179419c516eb31397434"
+README.md = "sha256:f9c1db02367a64f5c8ac74281cd082c4bdc07b6a134d9fc518b67a2f0717f981"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

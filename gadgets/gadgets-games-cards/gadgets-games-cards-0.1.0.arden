@@ -1,0 +1,40 @@
+[PACKAGE]
+name        = "gadgets-games-cards"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Cards: the playing cards of Solitaire, Spider and Freecell (Patrick Saladin)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-cards/6425595b55c55dbf7ed16a87810690e0f64f8d4f"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+
+[MODULES]
+all = ["src/Cards.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Cards.Pict=share/Cards.Pict", "share/CardGames.Panel=share/CardGames.Panel", "tools/CardGames.Tool=tools/CardGames.Tool", "test/CardsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/CardsTest.Mod"]
+cmds = ["$compile CardsTest.Mod", "CardsTest.Run"]
+ok   = ["CardsTest: 4 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Cards.Mod = "sha256:61e2f46902df918580353c60f5db336b4692f5e8782be8c1bd6ffa4742de7900"
+share/Cards.Pict = "sha256:3810bd7885dead2837a86c29dad930202444bc23db0a9fbab72fc6eed1240ce8"
+share/CardGames.Panel = "sha256:25384978e333cbea849f27fc00ade8d1f976ec55fe9163bce68ccccf009b3485"
+tools/CardGames.Tool = "sha256:88a5c841a4129c3b9e807be88df9617e8d4293a83a0271e2a41d7c74d11985de"
+test/CardsTest.Mod = "sha256:d5d0ba9d360d1577cae43e41ca98137b0e3b8ee60a1e49926a7fe0a576e29b24"
+README.md = "sha256:00605337255c543ca087a06a22c2cfdb1662d9054e56d3bc5f3adf4aa7313056"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "gadgets-icons3"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Icons3.Lib of ETH Native Oberon: icons of documents (Tetris, Asteroids)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-icons3/152eaa5dc3ebdd6f2978b6f0fbda94a87b4fe278"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+
+[MODULES]
+all = []
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Icons3.Lib=share/Icons3.Lib", "tools/Icons3.Tool=tools/Icons3.Tool", "test/Icons3Test.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/Icons3Test.Mod"]
+cmds = ["$compile Icons3Test.Mod", "Icons3Test.Run"]
+ok   = ["Icons3Test: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+share/Icons3.Lib = "sha256:f964f8e89c5bb4facd4c904beb993545321239ed7afe84e5184dab5871ab41f6"
+tools/Icons3.Tool = "sha256:9875ad65913c15bba76436348dee5d9ab34a4eab002e74dd6480ad23dcd92443"
+test/Icons3Test.Mod = "sha256:55d2467b234c9565ee8d54f3766c777b7ef7fe52426beafe0214cb4ced4438cf"
+README.md = "sha256:d2ac04a13d35c7b5b21a1de9a8a0ba85c2a4c9ee5c2596ca50c6e3eed5922529"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

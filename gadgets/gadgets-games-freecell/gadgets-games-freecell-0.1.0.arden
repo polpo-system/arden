@@ -1,0 +1,40 @@
+[PACKAGE]
+name        = "gadgets-games-freecell"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Freecell (Patrick Saladin)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-freecell/b6a98b6207f5dd0e5aa3989d8b83d5bf59d5e122"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-games-cards = "0.1.0"
+gadgets-icons2 = "0.1.0"
+
+[MODULES]
+all = ["src/Freecell.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Freecell.Tool=tools/Freecell.Tool", "test/FreecellTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/FreecellTest.Mod"]
+cmds = ["$compile FreecellTest.Mod", "FreecellTest.Run"]
+ok   = ["FreecellTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Freecell.Mod = "sha256:c095d24bddfed034e5039faa5dcfa24ea37877e75800760cbeb8f27b909f13a2"
+tools/Freecell.Tool = "sha256:97e6be5a2cc9acc286e1d3c7b0de0789f5f03a203ef3153360ca2e7f39af7b1c"
+test/FreecellTest.Mod = "sha256:fd10c4757534981a8d74990259ce38ba40a6aa81fe05f7e2b6129bffd163029d"
+README.md = "sha256:362b1c7b2b96f0749def8cb551dc8260c1150cd5ddbdfe3fca4102a6f31910cb"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

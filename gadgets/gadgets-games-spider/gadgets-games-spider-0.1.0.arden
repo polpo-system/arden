@@ -1,0 +1,40 @@
+[PACKAGE]
+name        = "gadgets-games-spider"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Spider solitaire (Patrick Saladin)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-spider/65b98a486c2e2a2555e9b9d527fc3517186861ee"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-games-cards = "0.1.0"
+gadgets-icons2 = "0.1.0"
+
+[MODULES]
+all = ["src/Spider.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Spider.Tool=tools/Spider.Tool", "test/SpiderTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/SpiderTest.Mod"]
+cmds = ["$compile SpiderTest.Mod", "SpiderTest.Run"]
+ok   = ["SpiderTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Spider.Mod = "sha256:5742ee2a85bb86a76eeb49b5dafb6f30161b551eacd920df26c2a700d9e6e156"
+tools/Spider.Tool = "sha256:62b83e62ea3b19a10cfbac8d9d10923487aaea997ca838b91e4caa22824dbc95"
+test/SpiderTest.Mod = "sha256:95138a528abcc0fb28c1906d6ffe87bab461bc8aed8317bda84f39fd2e07c6b4"
+README.md = "sha256:ed7437ba147394a28dc69eea11292da5699037defc6ef25a291b1cdf71382679"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

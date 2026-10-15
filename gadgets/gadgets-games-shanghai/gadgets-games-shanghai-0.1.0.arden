@@ -1,0 +1,40 @@
+[PACKAGE]
+name        = "gadgets-games-shanghai"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Shanghai: the mahjong solitaire (Patrick Saladin)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-shanghai/b846ab5ab889ba7f9a62b1a0a38b31b0d5be8ee7"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/Shanghai.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["fonts/Shanghai.Scn.Fnt=fonts/Shanghai.Scn.Fnt", "tools/Shanghai.Tool=tools/Shanghai.Tool", "test/ShanghaiTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/ShanghaiTest.Mod"]
+cmds = ["$compile ShanghaiTest.Mod", "ShanghaiTest.Run"]
+ok   = ["ShanghaiTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Shanghai.Mod = "sha256:666c08b7dd26292bf201917fc3ad87e5fba20a1aa7b38e8fa93af3ea01c8d670"
+fonts/Shanghai.Scn.Fnt = "sha256:0cc61ea4529da66fb83cd688f1e1cf8527a8b8df16cbfc01b6b8bb1a7e3ab378"
+tools/Shanghai.Tool = "sha256:5bfff6419533cfd47a7b91a8934ff59bca68ce8fccf6e99b35d1da856b4672ca"
+test/ShanghaiTest.Mod = "sha256:2ea8871111e7a87d601617a44d22b45f90e3c94122a9d43f6d7b13c06cb652fe"
+README.md = "sha256:a040ad520baaca94a0b791cc6fb3dd5da1120a758af342192ddf0e9b3cf8f7c3"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
