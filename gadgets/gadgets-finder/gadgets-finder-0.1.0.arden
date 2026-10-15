@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "gadgets-finder"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Finder: lists the open documents and the templates (Emil Zeller)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-finder/7b8450b94499da493b47bc508eb587b76c72f422"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+
+[MODULES]
+all = ["src/Finder.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Finder.Tool=tools/Finder.Tool", "test/FinderTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/FinderTest.Mod"]
+cmds = ["$compile FinderTest.Mod", "FinderTest.Run"]
+ok   = ["FinderTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Finder.Mod = "sha256:27d2d7b798d1f6a535b03ae54544ca31fba8ba282f06cd5c3c2c821779f49614"
+tools/Finder.Tool = "sha256:903ff8cd3f491e61c7abaf93625a5996c5f20c4c87475f0476e350fbe7f13fbe"
+test/FinderTest.Mod = "sha256:ba2e9e92e30245581d153adbd723dcb443c2d38f6e22b31554df9d6f347bd5fc"
+README.md = "sha256:d53870903666cd72126ece60c01e439d35fec6621b370ad77393fadf53a5a61d"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

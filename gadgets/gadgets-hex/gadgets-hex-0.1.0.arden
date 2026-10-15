@@ -1,0 +1,39 @@
+[PACKAGE]
+name        = "gadgets-hex"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Hex: a hex dump viewer and editor (Patrick Saladin)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-hex/c7fb24b45008beafeab41c4c820faa7e3cbb8d7f"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+bit = "0.1.0"
+
+[MODULES]
+all = ["src/Hex.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Hex.Tool=tools/Hex.Tool", "test/HexTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/HexTest.Mod"]
+cmds = ["$compile HexTest.Mod", "HexTest.Run"]
+ok   = ["HexTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Hex.Mod = "sha256:7b5c28b1c4e89f8d863c40ec7563ce554cdaba955266f7a6ad8b2f6fa695dc3e"
+tools/Hex.Tool = "sha256:dc43f58b3c9c97d24e827ab88aa4558fd7da267800085964e92ffa9c44ab21bb"
+test/HexTest.Mod = "sha256:7931c77b14537148342e0209b32d136f3180a72271774d89b178eb3dd5b04522"
+README.md = "sha256:b2a50b0b5b38fb15b2c655d196a3a8149c2c008cc0baef2d5298ac6cf2439f7d"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

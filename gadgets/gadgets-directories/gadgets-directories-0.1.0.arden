@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "gadgets-directories"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Directories: a list model of a directory (Patrick Saladin)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-directories/66ae1e3c1f39f3895b38d645e1f2050793c32264"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+
+[MODULES]
+all = ["src/OLR.Directories.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Directories.Tool=tools/Directories.Tool", "test/DirectoriesTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/DirectoriesTest.Mod"]
+cmds = ["$compile DirectoriesTest.Mod", "DirectoriesTest.Run"]
+ok   = ["DirectoriesTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/OLR.Directories.Mod = "sha256:ba7f00d5a8a207fe7ef7db2a54ed121827185777e6334bd56e69b4a46b3736b8"
+tools/Directories.Tool = "sha256:7ac7ecfe3c1953623727193338d70718fadf1a9fd893fcce92e083ee2d995ea5"
+test/DirectoriesTest.Mod = "sha256:3f77feab3a06349fc8552707025d29b0fb93e86cbc606712e5962abb6c21a25d"
+README.md = "sha256:851f003ca0fc8ac443d976d9630ca1c7019e99a7934fa3d9ffb94a95e94c23a6"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
