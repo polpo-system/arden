@@ -1,0 +1,87 @@
+[PACKAGE]
+name        = "gadgets"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Gadgets of ETH Oberon System 3: the component framework, panels, documents and the standard classes"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets/54eaf38769b45c77c332023156c93c12a0c67d01"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+bit = "0.1.0"
+
+[MODULES]
+all = ["src/Attributes.Mod", "src/Display3.Mod", "src/Printer3.Mod", "src/Effects.Mod", "src/Links.Mod", "src/Gadgets.Mod", "src/BasicFigures.Mod", "src/BasicGadgets.Mod", "src/Clocks.Mod", "src/Panels.Mod", "src/TextFields.Mod", "src/RefGadgets.Mod", "src/Views.Mod", "src/ScrollViews.Mod", "src/TextGadgets0.Mod", "src/TextGadgets.Mod", "src/ListRiders.Mod", "src/Documents.Mod", "src/OLR.Desktops.Mod", "src/PanelDocs.Mod", "src/Columbus.Mod", "src/GadgetsIn.Mod", "src/GadgetsOut.Mod", "src/Gages.Mod", "src/Icons.Mod", "src/ListDags.Mod", "src/ListGadgets.Mod", "src/ListModels.Mod", "src/OLR.Lists.Mod", "src/NamePlates.Mod", "src/Navigators.Mod", "src/NoteBooks.Mod", "src/Organizers.Mod", "src/ProgressMeters.Mod", "src/Scrollbars.Mod", "src/SetGadgets.Mod", "src/TextDocs.Mod", "src/TimeStamps.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Backdrop.Pict=share/Backdrop.Pict", "share/Columbus.Lib=share/Columbus.Lib", "share/Default.Pict=share/Default.Pict", "share/Documents.Panel=share/Documents.Panel", "share/Gadgets.Panel=share/Gadgets.Panel", "share/Gadgets.Pict=share/Gadgets.Pict", "share/Icons.Lib=share/Icons.Lib", "share/Libraries.Panel=share/Libraries.Panel", "share/Symbols.Lib=share/Symbols.Lib", "share/TextDocs.Lib=share/TextDocs.Lib", "share/TextDocs.Panel=share/TextDocs.Panel", "tools/TextDocs.Tool=tools/TextDocs.Tool", "test/GadgetsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/GadgetsTest.Mod"]
+cmds = ["$compile GadgetsTest.Mod", "GadgetsTest.Run"]
+ok   = ["GadgetsTest: 23 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+"src/Attributes.Mod" = "sha256:8036af5245b57862f394800082664bf14ff17b3b36fab79516b6da0a3d3c1427"
+"src/Display3.Mod" = "sha256:710a5de3a38d522aef82cccb01f587b09388462310f2ce00f9f0da0d9aaef12b"
+"src/Printer3.Mod" = "sha256:f5bc5c0fc55f54a51b6ad3e6eadaf133b18386009500f16d292bdc907d86cb63"
+"src/Effects.Mod" = "sha256:d595a47bb920fd2a811fc110f6b93404bb50061fcd300d1ad493b7fefb787122"
+"src/Links.Mod" = "sha256:2a83bf85fd3e01c1791d09626f3809182bc7053b01cd41d5fb876d1d639abba2"
+"src/Gadgets.Mod" = "sha256:e39a68ac76b4fe08d879ab5360664743eee604d69e34a87221b680ea144f274d"
+"src/BasicFigures.Mod" = "sha256:54745423f014d5bba712b4c5bf54405e2da6b6b9cdc5675c868d2dd0d18598a2"
+"src/BasicGadgets.Mod" = "sha256:ce9f88926e4e1aa2c0149dafe63f1e2417627b96ed1b14f89b786e0012234d8d"
+"src/Clocks.Mod" = "sha256:fd9e8a5aaf5e531cdd3ada34d3f80f474d4afce8dfb9d36e173569f26b2e657c"
+"src/Panels.Mod" = "sha256:7557bb0261210902a26980f75f489e6dbb3409dbc644b4278601860784a7f1ad"
+"src/TextFields.Mod" = "sha256:c39371a10785527e2a153fc1f3ca74e24427cd199e5cd286ad08a6e7cb85409b"
+"src/RefGadgets.Mod" = "sha256:8a9a575631ffde62b71c131e83d0980704478804e2ef0c4a8ea76fff569dcd8d"
+"src/Views.Mod" = "sha256:6fec7c0a1a0219a92ba43e472f3881d8218a135bdc042a7caf174cc3e6d2a100"
+"src/ScrollViews.Mod" = "sha256:6f82f2258ef0f59660877e41cc4ebf2df826f8d68e27cb4c2f5d1d39d59e744c"
+"src/TextGadgets0.Mod" = "sha256:800ce62362fbeaec7e56dbb3a1911cb92064719a65829061a0886a9c0a255531"
+"src/TextGadgets.Mod" = "sha256:32066e6b82e89abe322c222b0539f1160592f90b57830a4dd292e7996129809a"
+"src/ListRiders.Mod" = "sha256:8b52a775b8c41fb19d0742669c43ffd2c094ecc03a5f42399e19aba6a0740807"
+"src/Documents.Mod" = "sha256:401a3af76c8b28ffb3ac4a10684787f81dceefe9b274d4ea05302641c96d7dee"
+"src/OLR.Desktops.Mod" = "sha256:bbcc44712da3f9cb66de0e36ccb6320c0e95a2115e455771995124d8394fc0ac"
+"src/PanelDocs.Mod" = "sha256:e15b46aa50659b3c62a8bae83035defdfa009b494c1018709cf87f5c34e73cf3"
+"src/Columbus.Mod" = "sha256:49407696f5ead87da9a6fac381a26a79d8c185e0d60d1e41858b626b311841b9"
+"src/GadgetsIn.Mod" = "sha256:0f4de140a11a204ed6ab7a32d3c0dd522f4cce33606eb6a6e1e1b43170f2129c"
+"src/GadgetsOut.Mod" = "sha256:8dc26a515033369e97691c79428edb50a64a2a8acd0528738857e5f71e049a6a"
+"src/Gages.Mod" = "sha256:1e4ff624bebe400657dbe0fa65ca131981cfc956e6f5f52ca3a87ccd1bbd1495"
+"src/Icons.Mod" = "sha256:e2a51bb97f3b24de861581c6c4cfc5c627ab5ec4afba5359fa2c300ede9554a5"
+"src/ListDags.Mod" = "sha256:11d1942fd64c1fded4ec339626a385fae9703b440713e316d82d95e78e9bc466"
+"src/ListGadgets.Mod" = "sha256:7adea336f8f1192fbba23ce1968bf744dc943999ccd2c157db4028c2d61bb797"
+"src/ListModels.Mod" = "sha256:71bfcf54cd027895c5f3c16852863ed5fe87b5c4d69db8501d6e3bec5ddc60b8"
+"src/OLR.Lists.Mod" = "sha256:75b0e40c346d31e2d1af7fb456acb8f1f6ac9c0fa29d70b86abfb97166af15a5"
+"src/NamePlates.Mod" = "sha256:f21cd9070cdf6c1c8201421da60e7db8c70c2d4f65ff970bac31dac641eaf1c6"
+"src/Navigators.Mod" = "sha256:aa53155dc4fb954e25afaef4c814baa1b7d6bcf15f826f706c28ff9fbe83e3c6"
+"src/NoteBooks.Mod" = "sha256:640f3ba6b8bdb6a6e15165b457075bee38ffad4023d711c33d95240caa425c65"
+"src/Organizers.Mod" = "sha256:be7e3b740f6f5f230f51f1f53bdf1b05338ad58c200c48c1afdcbcd67098616b"
+"src/ProgressMeters.Mod" = "sha256:a604fd344eaacc68c2bc52758e374cd9953dc761a672df20ebb96224c2c7b737"
+"src/Scrollbars.Mod" = "sha256:6b9596ab14574624474eed42c8bc05133aa8995b8a525fff472a1517408eb05d"
+"src/SetGadgets.Mod" = "sha256:b39075bdc50228fb028ea881db0eb524daa375dfa9b2445a028b2d71dc6dcbeb"
+"src/TextDocs.Mod" = "sha256:87a2ac388f582d2bfbc840115a05003a2dafdc06ee879f063e2700b93c41c902"
+"src/TimeStamps.Mod" = "sha256:5eb454e1a33a354870fd98c27cb76dd13e5a8a426fa89b3b27979919b1204710"
+"share/Backdrop.Pict" = "sha256:3eb43b57a99e9b0af035a943717aa2183019dcf5692d568a24765656dd0a8f41"
+"share/Columbus.Lib" = "sha256:e033dec82c4db71dd8c25672c69df5c9f03369b3989fead7201d836dfe54dc62"
+"share/Default.Pict" = "sha256:d0a27650fc046ad96b0e3e711f230ab29a84ba0f97cbbc4e88a8f4c214bcef0b"
+"share/Documents.Panel" = "sha256:d1ad8a5f719b4679a293b5f76bfe6650eb63aa7b6956f292dffad1774d9116d5"
+"share/Gadgets.Panel" = "sha256:74ca79b02c9971f7f3571c981dd93644e1b250fcf5222a7b77c0ac884883524a"
+"share/Gadgets.Pict" = "sha256:112f21145fd7fa0105ba908d177f62ce9ea365ae5472d81f1ae192b174ea2e0b"
+"share/Icons.Lib" = "sha256:a8b8cad98d1e93b488917a6367f6c6b7fd01f827cdea5e8ef888bea0116a076f"
+"share/Libraries.Panel" = "sha256:4d42a907c2d98f99a1bd32b15975e373087f30f4e5a1a7dd8a90f64326253edc"
+"share/Symbols.Lib" = "sha256:8fbe450c0e869d9da15ad728307cd69428e1fc6b401f620dfe5f786fd63851b2"
+"share/TextDocs.Lib" = "sha256:f603daf07cce81bcdac44c98482fc421c6b0417bafc9c6dff106bff02f1d95f5"
+"share/TextDocs.Panel" = "sha256:6561531741e7a0dc42e24a9adaaef81da2d71a346ccb1a112f0feac94fdc78d8"
+"tools/TextDocs.Tool" = "sha256:0b2fbbbd926f369ea29dc3b697fed307ef59b378d9b2cef58f7783d232bef668"
+"test/GadgetsTest.Mod" = "sha256:05adaab0d8229661d0920391f4751072d39cad5ad2d32116ec5d780f3c343402"
+"README.md" = "sha256:94baeaf5cbc807ab8fe604a2fe1212e25838581a35e2a226f1e3545d76210a40"
+"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
