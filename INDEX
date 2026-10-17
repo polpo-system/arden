@@ -114,11 +114,13 @@ gadgets/gadgets-hyperdoctools 0.1.0
 gadgets/gadgets-icons2 0.1.0
 gadgets/gadgets-icons3 0.1.0
 gadgets/gadgets-images 0.1.0
+gadgets/gadgets-layouts 0.1.0
 gadgets/gadgets-leodraw 0.1.0
 gadgets/gadgets-leonardo 0.1.0
 gadgets/gadgets-mime 0.1.0
 gadgets/gadgets-nettools 0.1.0
 gadgets/gadgets-objexplorer 0.1.0
+gadgets/gadgets-otsim 0.1.0
 gadgets/gadgets-outlines 0.1.0
 gadgets/gadgets-pictures 0.1.0
 gadgets/gadgets-ppm 0.1.0
@@ -132,6 +134,7 @@ gadgets/gadgets-terminalgadgets 0.1.0
 gadgets/gadgets-textpopups 0.1.0
 gadgets/gadgets-v24 0.1.1
 gadgets/gadgets-vinci 0.1.0
+gadgets/gadgets-vnc 0.1.0
 gadgets/gadgets-watson 0.1.0
 gadgets/gadgets-xbm 0.1.0
 games/brantschen-games 0.1.0
@@ -139,6 +142,7 @@ lib/bit 0.1.0
 lib/bmp 0.1.0
 lib/btrees 0.1.0
 lib/colormodels 0.1.0
+lib/des 0.1.0
 lib/gfx 0.1.0
 lib/gfx-otype 0.1.0
 lib/gfx-pkfonts 0.1.0

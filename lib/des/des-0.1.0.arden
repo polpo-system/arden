@@ -1,0 +1,35 @@
+[PACKAGE]
+name        = "des"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "DES: the DES block cipher, as VNC needs it"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/des/ab9233b2d6e1330096202f3cb6f3985633bb3fbe"
+tag  = "v0.1.0"
+
+[DEPS]
+bit = "0.1.0"
+
+[MODULES]
+all = ["src/DES.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/DESTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+[TESTS]
+copy = ["test/DESTest.Mod"]
+cmds = ["$compile DESTest.Mod", "DESTest.Run"]
+ok   = ["DESTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+
+[SUMS]
+src/DES.Mod = "sha256:8d204427a553f45e04136d46a412b5b82568cdbd13afd6b1010c5dbe213139b7"
+test/DESTest.Mod = "sha256:7fc036a478216e677ca92571f1d3eb5b07cfdff73e3981b80c22dd1ab4e4cdf5"
+README.md = "sha256:8275c4166d73cc1c9132812022f847eb06fd67750f7ef865240edeb37ee28de6"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
