@@ -1,0 +1,39 @@
+[PACKAGE]
+name        = "gfx-ps"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "GfxPS: PostScript output of Gfx"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gfx-ps/4da2e365f5372f52dc6545784784013947bbbb31"
+tag  = "v0.1.0"
+
+[DEPS]
+gfx = "0.1.0"
+bit = "0.1.0"
+
+[MODULES]
+all = ["src/OLR.GfxPS.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/GfxProlog.ps=share/GfxProlog.ps", "test/GfxPSTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/GfxPSTest.Mod"]
+cmds = ["$compile GfxPSTest.Mod", "GfxPSTest.Run"]
+ok   = ["GfxPSTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/OLR.GfxPS.Mod = "sha256:998fa962c7b515db64b5e2cff9701f1e087caadc9cf42703a75bb9fc71f91cd2"
+share/GfxProlog.ps = "sha256:f69c01ffd7892070e7fc0381a03c1a6b51d135e7a3b5c980f1e0b2fc7d8a9527"
+test/GfxPSTest.Mod = "sha256:da55bbc76c2ed46a3af7ec7971e6f3a3b97e225308cf44b097d4f455a2fc9086"
+README.md = "sha256:cb161a64ae152502d1622fec0818719592d52b3bd91ff45c0c3ccda25af441ee"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

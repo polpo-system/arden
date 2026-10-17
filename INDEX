@@ -95,11 +95,14 @@ gadgets/gadgets-games-sokoban 0.1.0
 gadgets/gadgets-games-solitaire 0.1.0
 gadgets/gadgets-games-spider 0.1.0
 gadgets/gadgets-games-tetris 0.1.0
+gadgets/gadgets-gfxdemo 0.1.0
 gadgets/gadgets-hex 0.1.0
 gadgets/gadgets-hpcalc 0.1.0
 gadgets/gadgets-icons2 0.1.0
 gadgets/gadgets-icons3 0.1.0
 gadgets/gadgets-images 0.1.0
+gadgets/gadgets-leodraw 0.1.0
+gadgets/gadgets-leonardo 0.1.0
 gadgets/gadgets-objexplorer 0.1.0
 gadgets/gadgets-outlines 0.1.0
 gadgets/gadgets-pictures 0.1.0
@@ -117,6 +120,10 @@ games/brantschen-games 0.1.0
 lib/bit 0.1.0
 lib/bmp 0.1.0
 lib/colormodels 0.1.0
+lib/gfx 0.1.0
+lib/gfx-otype 0.1.0
+lib/gfx-pkfonts 0.1.0
+lib/gfx-ps 0.1.0
 lib/gif 0.1.0
 lib/ico 0.1.0
 lib/iff 0.1.0
@@ -127,6 +134,7 @@ lib/images-jpeg 0.1.0
 lib/images-pcx 0.1.0
 lib/images-psd 0.1.0
 lib/jpeg 0.1.0
+lib/otype 0.1.0
 lib/pcx 0.1.0
 lib/terminals 0.1.0
 lib/tga 0.1.0

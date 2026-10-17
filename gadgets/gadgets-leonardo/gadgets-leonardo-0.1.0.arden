@@ -1,0 +1,66 @@
+[PACKAGE]
+name        = "gadgets-leonardo"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Leonardo: a drawing editor for structured graphics (Erich Oswald)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-leonardo/7e87874eb1649cdb00cee55e07a98b77bdca983b"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gfx = "0.1.0"
+gfx-ps = "0.1.0"
+images = "0.1.0"
+gadgets-images = "0.1.0"
+math = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/Leonardo.Mod", "src/LeoPens.Mod", "src/LeoPaths.Mod", "src/LeoOutliners.Mod", "src/LeoFrames.Mod", "src/OLR.LeoTools.Mod", "src/LeoDocs.Mod", "src/LeoCaptions.Mod", "src/LeoBasic.Mod", "src/LeoSplines.Mod", "src/LeoImages.Mod", "src/OLR.LeoPanels.Mod", "src/LeoPenEditors.Mod", "src/LeoPathEditors.Mod", "src/LeoBasicEditors.Mod", "src/LeoCaptionEditors.Mod", "src/LeoImageEditors.Mod", "src/LeoSplineEditors.Mod", "src/OLR.LeoLists.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Leonardo.Fig=share/Leonardo.Fig", "share/Leonardo.Lib=share/Leonardo.Lib", "share/Leonardo.Panel=share/Leonardo.Panel", "share/Leonardo.Text=share/Leonardo.Text", "tools/Leonardo.Tool=tools/Leonardo.Tool", "test/LeonardoTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/LeonardoTest.Mod"]
+cmds = ["$compile LeonardoTest.Mod", "LeonardoTest.Run"]
+ok   = ["LeonardoTest: 4 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Leonardo.Mod = "sha256:c67c8c323be09b991e698458e5e8f50711d7afcd5fd5bc31de0070964a7b4e97"
+src/LeoPens.Mod = "sha256:49469efeb072701be9bb5f77e30ddf06ab95d039fa9b5a9592bfce862cd03111"
+src/LeoPaths.Mod = "sha256:2f47ceeca10a508192b048ea7be2d7e9b35f63f44e8308490ddc39a0abc6cc36"
+src/LeoOutliners.Mod = "sha256:6d22f9027d1900c5770108e1a4f23dc44c983c5034624f932b074d3d5d02a2e9"
+src/LeoFrames.Mod = "sha256:34f2b4d472f463c081077f52b3ecd5b4933c8d9f5101c6415b12087b69e5d9b0"
+src/OLR.LeoTools.Mod = "sha256:8afd070ca987350ce03808c12a283446331c2da0a05e34c2d33c98ce072ef677"
+src/LeoDocs.Mod = "sha256:843707a71e9182d7e63724f786d112ea107bba27bac6313bf7949021c92565fd"
+src/LeoCaptions.Mod = "sha256:3e8dad0df65acfa8b049d597bc9576572a7ae58ab79c69719c20a4ca8868edff"
+src/LeoBasic.Mod = "sha256:631f30a26f47bda47dfabd0c37b4944df2f9117cb84cd217321befcd64ba3424"
+src/LeoSplines.Mod = "sha256:cb262d1221680547190da05f2536181bfbca8ec98d6809c3de6af3923d7ad294"
+src/LeoImages.Mod = "sha256:bc42cf457f89623fab37a6c7331c160d7bf3b563fd52d828d05be2f510869ab1"
+src/OLR.LeoPanels.Mod = "sha256:990b4c3a933b82e0bdfbe2b7fee317481e6a943b882a8f8aa33cac1a7940a661"
+src/LeoPenEditors.Mod = "sha256:24fc391ef64f3c030bf1d1561a20878bdc823fbc697639b234c37b2f91e7ca84"
+src/LeoPathEditors.Mod = "sha256:74d8c30df6343d182b696d9786c015d49e8e0f10ce8e273bdc4c7ca9aca8b285"
+src/LeoBasicEditors.Mod = "sha256:2461985fc90e90333457eb00f5d0ad5f7ffde68ca701e1894fd2d09ad7ac1be3"
+src/LeoCaptionEditors.Mod = "sha256:eddb619866bc90745aa8a0bd0d4e0b24cba99cd75bc08633c3f32c597882192c"
+src/LeoImageEditors.Mod = "sha256:dd1205b9b635d670e45f27eeb1f8aeeb8c34ded1f45f147d19e999278c9a49bd"
+src/LeoSplineEditors.Mod = "sha256:a01a7334e6913fb5bf7ee39456e205ca3ce6826c838b65dd44ca38d9ed0532be"
+src/OLR.LeoLists.Mod = "sha256:1b9f76347e3c1d485003b645b7dc232d6543a35674e3652f14ba5f827bbb348a"
+share/Leonardo.Fig = "sha256:ae6652e395ca8049e4dfa5f1731615638313e0af623d594c70ee338bf8878055"
+share/Leonardo.Lib = "sha256:8f3f61d1f5fde68173abb191077aa96b9ecf8c8277fa1ed38adc19e975e8ca41"
+share/Leonardo.Panel = "sha256:29c72da93358eabe29beba8e9b457b4e7807f7ff181d7c009a37859d114e7d99"
+share/Leonardo.Text = "sha256:c4379e3d5cba4676a1cc3ed828cc5e7e3cba879e099c9c6865512a58f9d23740"
+tools/Leonardo.Tool = "sha256:699838f80db59607924b7c674c2bb5009e8c3aeb6ebbb9101765bac3c7b1c747"
+test/LeonardoTest.Mod = "sha256:e45f393ed433ead152bc6c1dea8ac8a678c940880ce3d1dee54dbb0b8be50dcc"
+README.md = "sha256:ff6deb02d22afef0187a64f6a939d0295f1499a118ee855828671756a2ced2ad"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

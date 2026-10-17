@@ -1,0 +1,37 @@
+[PACKAGE]
+name        = "gfx-pkfonts"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "GfxPKFonts: TeX PK fonts for Gfx"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gfx-pkfonts/b81d9340c6a9bec85b5929e094e854c09dd9af41"
+tag  = "v0.1.0"
+
+[DEPS]
+gfx = "0.1.0"
+
+[MODULES]
+all = ["src/OLR.GfxPKFonts.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/GfxPKFontsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/GfxPKFontsTest.Mod"]
+cmds = ["$compile GfxPKFontsTest.Mod", "GfxPKFontsTest.Run"]
+ok   = ["GfxPKFontsTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/OLR.GfxPKFonts.Mod = "sha256:a35b7b7b1839bfdbeaa048b10f054620f4679079102ff29db7116739acfad4c2"
+test/GfxPKFontsTest.Mod = "sha256:86ab6608f716304206aed591c31798d1bb431831220f9f18d680557053957a98"
+README.md = "sha256:a319de718c5388274ecb877e366d785c22b4fcaaa8e50b54988c4aacd6cb04bb"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

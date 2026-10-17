@@ -1,0 +1,39 @@
+[PACKAGE]
+name        = "gadgets-leodraw"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "LeoDraw: Draw graphics as Leonardo documents"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-leodraw/f95fe62297e8bc84977766b98ef01b9311f3a7ac"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets-leonardo = "0.1.0"
+draw = "0.1.0"
+
+[MODULES]
+all = ["src/LeoDraw.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/LeoDraw.Tool=tools/LeoDraw.Tool", "test/LeoDrawTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/LeoDrawTest.Mod"]
+cmds = ["$compile LeoDrawTest.Mod", "LeoDrawTest.Run"]
+ok   = ["LeoDrawTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/LeoDraw.Mod = "sha256:d3024456c8479e9492844ab86b535bf32e79e590631d28ec1d9ded915c734afa"
+tools/LeoDraw.Tool = "sha256:57af406cc9ef2fc3be1b37af394ae0ab648317fc94a3807cfb3f53249747a605"
+test/LeoDrawTest.Mod = "sha256:0932c5362507b30483a301bbf2ebacc7f6741e91a2d22392ca2fc56a06a51f20"
+README.md = "sha256:f1e930034c8e830c4fbeb419c48bdd84e3e10fbb1abcfaccd8335704e3e03e61"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

@@ -1,0 +1,39 @@
+[PACKAGE]
+name        = "gadgets-gfxdemo"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "GfxDemo: a gadget drawing with Gfx"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-gfxdemo/f2f6dd38a01b936f1fa2e99e9d72db88657dd280"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gfx = "0.1.0"
+
+[MODULES]
+all = ["src/GfxDemo.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/GfxDemo.Tool=tools/GfxDemo.Tool", "test/GfxDemoTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/GfxDemoTest.Mod"]
+cmds = ["$compile GfxDemoTest.Mod", "GfxDemoTest.Run"]
+ok   = ["GfxDemoTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/GfxDemo.Mod = "sha256:e7050ddbaf053d09b1d146a9a33bc2531a7a0183644d3aae8e33251b04d95d20"
+tools/GfxDemo.Tool = "sha256:6f55b56175d9f20ee3b551aecb3eecba7426fdf5058788a14d325f1c6924c119"
+test/GfxDemoTest.Mod = "sha256:b29d73cbb97e8fba18004d58c95510daa3975b1b6dd75046a72613fc5e9741c6"
+README.md = "sha256:a32aede8b315f9e37cabbae4d6bb7a3d57b4fda2491982d457ceae0ea40aedd3"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

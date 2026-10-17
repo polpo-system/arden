@@ -1,0 +1,53 @@
+[PACKAGE]
+name        = "gfx"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Gfx of ETH Oberon: two-dimensional graphics for screen, images and printers"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gfx/cc259e33cdf8e6321d2b41d94be19d15f4484861"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+desktop-tools = "0.1.0"
+math = "0.1.0"
+images = "0.1.0"
+
+[MODULES]
+all = ["src/GfxMatrix.Mod", "src/GfxImages.Mod", "src/GfxPaths.Mod", "src/GfxRegions.Mod", "src/OLR.GfxFonts0.Mod", "src/GfxFonts.Mod", "src/Gfx.Mod", "src/GfxRaster.Mod", "src/GfxDisplay.Mod", "src/GfxPrinter.Mod", "src/GfxBuffer.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/GfxHowto.html=share/GfxHowto.html", "share/GfxOverview.html=share/GfxOverview.html", "tools/Gfx.Tool=tools/Gfx.Tool", "test/GfxDrawTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/GfxDrawTest.Mod"]
+cmds = ["$compile GfxDrawTest.Mod", "GfxDrawTest.Run"]
+ok   = ["GfxDrawTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/GfxMatrix.Mod = "sha256:cf972248d7aebb27383475116217462b7ebad62541fb69ae94ebb9df8f19db83"
+src/GfxImages.Mod = "sha256:f9d2fc9ac988bbad0857909dd8db049fbb4a0df0a45139b62298c4c53c62ce4b"
+src/GfxPaths.Mod = "sha256:52a67d652611a72357beadc68046a1075a7fd193f0fbb9f621b047bf597f98cc"
+src/GfxRegions.Mod = "sha256:f718a18e9bb766427dd1b6a59f99593da2a7f947ee040159b70bea733a128d4a"
+src/OLR.GfxFonts0.Mod = "sha256:e1e73ff67af45ae1434665114664b7c5f7c7a407d44bdf295c2716bccdf078b7"
+src/GfxFonts.Mod = "sha256:04565e060b0f841349ac3f887396facbe1e542a2b38546ceeb4ca665a19a525a"
+src/Gfx.Mod = "sha256:e7ccbc2dcac53dd9945eb4b93db5ff8b31f813fd4e4d69ffaf5a24b9971077cb"
+src/GfxRaster.Mod = "sha256:0484d5e53680f21198c05133ab44e14ee0ee1a387364ccecb5cba4ea6bbef100"
+src/GfxDisplay.Mod = "sha256:19da41c77d5d69af65e2cf20c8ebd80c9b90e8d463dabec250120807748fec21"
+src/GfxPrinter.Mod = "sha256:522927670914d0379864260638fd1a05df38de0961aad072d19b2715afbd692a"
+src/GfxBuffer.Mod = "sha256:5d44a54c9e67abbe62c96b171a69af704cd952194cfd755d020fc3aa75633046"
+share/GfxHowto.html = "sha256:2df5b27d1d067d56487e6d30cd2dcc2e3cda70e62c232a8fcc21f31badd65485"
+share/GfxOverview.html = "sha256:aebeb390106d9c4233db99ae9b4a3dae5534190ba2b310334e93b737f10266e6"
+tools/Gfx.Tool = "sha256:a74e814493be86e3b5d9a3a419ea41982441c2bc7c47739564e723a5939306a3"
+test/GfxDrawTest.Mod = "sha256:5ab778673272dc60973052e143885c6d576bbd08b8ef976e8da29fa45cbd56d3"
+README.md = "sha256:a4930a4888cbdef877717b9f6163f22c90f9790ff0632217e8f578c30bbb6e0f"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

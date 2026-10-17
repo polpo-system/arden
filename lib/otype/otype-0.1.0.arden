@@ -1,0 +1,44 @@
+[PACKAGE]
+name        = "otype"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "OpenType for Oberon: TrueType and OpenType fonts (Erich Oswald)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/otype/a1cf1ef90ff3bd83c899241688c3a24bda5a2c8a"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+desktop-tools = "0.1.0"
+math = "0.1.0"
+
+[MODULES]
+all = ["src/OTInt.Mod", "src/OTScan.Mod", "src/OType.Mod", "src/OTFonts.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/OType.Text=share/OType.Text", "tools/OType.Tool=tools/OType.Tool", "test/OTypeTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/OTypeTest.Mod"]
+cmds = ["$compile OTypeTest.Mod", "OTypeTest.Run"]
+ok   = ["OTypeTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/OTInt.Mod = "sha256:c07ec39fc0b9e132626af69325179af17d2f4b6727c27f547c82e7ca9cb09b61"
+src/OTScan.Mod = "sha256:5b59bcb45ae904a1367569c7afb2a40eba36a9785fbef88744eab205f1b15426"
+src/OType.Mod = "sha256:b3d2521136e33750a0fa14e46ffcd78e777abe59eb22fb7a83c4ac874c517adf"
+src/OTFonts.Mod = "sha256:c09466da5876b274578bd7d11b99b7b21e0a9e829a773b6ff460ea91d34e2a06"
+share/OType.Text = "sha256:5343f221bca01346c29497d39c5bf7a0f0a6d4f8b4b01b3a33246ab231dee5d0"
+tools/OType.Tool = "sha256:15b9cdc65128157401fc6511fee4a51ba18ca894eb5bd0eeaacf709c46189087"
+test/OTypeTest.Mod = "sha256:ae23f6c3d4a76e7193fd82f7d8a7d074ca4d592dd6dd52ed08c7bda839ef387c"
+README.md = "sha256:efac90e37323b4d606d32127057fd1531e2889a8b4fd821bbef4800d53bdc577"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
