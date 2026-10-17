@@ -1,0 +1,39 @@
+[PACKAGE]
+name        = "gadgets-hyperdoctools"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "HyperDocTools: tools for the links of HyperDocs (Emil Zeller)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-hyperdoctools/384d4cd014071b35ec981a537ed6417e782d669b"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-hyperdocs = "0.1.0"
+
+[MODULES]
+all = ["src/HyperDocTools.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/HyperDocTools.Tool=tools/HyperDocTools.Tool", "test/HyperDocToolsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/HyperDocToolsTest.Mod"]
+cmds = ["$compile HyperDocToolsTest.Mod", "HyperDocToolsTest.Run"]
+ok   = ["HyperDocToolsTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/HyperDocTools.Mod = "sha256:92ceadc5586b878db6e78e0a3413752f90c86e60af654b03bbc10db7f2da59ff"
+tools/HyperDocTools.Tool = "sha256:83ebfd9a5923af78a8d654e6c5c807de718373efd98da1c1844d40d5a8003c12"
+test/HyperDocToolsTest.Mod = "sha256:27546dad50f4e202a2d70fda4896e4e2e13c87306404498288383983c5eb1309"
+README.md = "sha256:e6294e3fe626c13bd9ae19695d315af46b450d32de15348ba71a5a952740d5ff"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

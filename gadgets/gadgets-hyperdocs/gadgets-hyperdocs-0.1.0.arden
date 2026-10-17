@@ -1,0 +1,43 @@
+[PACKAGE]
+name        = "gadgets-hyperdocs"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "HyperDocs: hypertext links in documents (Emil Zeller)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-hyperdocs/feb1b1a6f4fa392cb3f64791dfb6a000b68e9dc2"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+btrees = "0.1.0"
+gadgets-mime = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/HyperDocs.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/HyperDocs.Panel=share/HyperDocs.Panel", "share/HyperLinks.Panel=share/HyperLinks.Panel", "tools/HyperDocs.Tool=tools/HyperDocs.Tool", "test/HyperDocsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/HyperDocsTest.Mod"]
+cmds = ["$compile HyperDocsTest.Mod", "HyperDocsTest.Run"]
+ok   = ["HyperDocsTest: 4 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/HyperDocs.Mod = "sha256:8673a91f70133041d4cfafadfde162776e3135003a0d16b97cb43cdf12c0c886"
+share/HyperDocs.Panel = "sha256:78d67a078c0a80821d3beedb39a71c9d7c452de4cc7513f6a18c5b18df24dd28"
+share/HyperLinks.Panel = "sha256:0504b87bb3b95fdadd0072bca1e4ead8e70481587cda0718e7b6bc3ecd1e63d9"
+tools/HyperDocs.Tool = "sha256:cc638692df1f9c90f11397638f1fcd89bad692dbd5b71b08d45c16ccecc68ac7"
+test/HyperDocsTest.Mod = "sha256:95d17c59debd463f3ee3e10ada2ca36d7f29869cf2bbb33805f0546792d6396e"
+README.md = "sha256:60a2be4c0a23429ab43a6d5a86b7ea5a1929187744a359ef7ab3ce682c7a2593"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

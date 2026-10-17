@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "gadgets-htmltables"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "HTMLTables: tables in HTML documents"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-htmltables/3c5e3caf8c505f9cdea88e7269ff0a0f8c4fa09e"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-htmldocs = "0.1.0"
+
+[MODULES]
+all = ["src/HTMLTables.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/HTMLTablesTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/HTMLTablesTest.Mod"]
+cmds = ["$compile HTMLTablesTest.Mod", "HTMLTablesTest.Run"]
+ok   = ["HTMLTablesTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/HTMLTables.Mod = "sha256:4ece694f93a28b3bfc197cd2d6def95c17525a2a78d83c133795c8e577e1581b"
+test/HTMLTablesTest.Mod = "sha256:761471c6b41b472f0c86d0ba17e97314ec9bf53d6dabf47848593854fc0c96e0"
+README.md = "sha256:2359f3d060474ecc315bc71756dcd8e868bad38e623a70753ac0e4b39b9747b4"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

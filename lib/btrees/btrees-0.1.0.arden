@@ -1,0 +1,35 @@
+[PACKAGE]
+name        = "btrees"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "BTrees of ETH Oberon: B-trees in files"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/btrees/e88a61075945a638d2f8523859131bbdf1efeca3"
+tag  = "v0.1.0"
+
+[DEPS]
+console = "0.1.0"
+
+[MODULES]
+all = ["src/BTrees.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/BTreesTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+[TESTS]
+copy = ["test/BTreesTest.Mod"]
+cmds = ["$compile BTreesTest.Mod", "BTreesTest.Run"]
+ok   = ["BTreesTest: 4 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+
+[SUMS]
+src/BTrees.Mod = "sha256:a30a89d3d5b8aa08ca82d3d887bf0d4e3dcdb1e5e7c0666022e0cc2f72451f60"
+test/BTreesTest.Mod = "sha256:c378982881cf96c5c18bf5cf898c0d7439f654bd6c077935f0a8e4b66321ef5b"
+README.md = "sha256:ee1a2cb0f0ffe1c50ec1cacf15d1e0513637237266015aaf4a85813b9714085d"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

@@ -1,0 +1,39 @@
+[PACKAGE]
+name        = "streams"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Streams of ETH Oberon: streams on files and texts"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/streams/f2a33d505275b445a2dc180606ca2b0b23c56fe8"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/Streams.Mod", "src/TextStreams.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/StreamsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/StreamsTest.Mod"]
+cmds = ["$compile StreamsTest.Mod", "StreamsTest.Run"]
+ok   = ["StreamsTest: 3 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Streams.Mod = "sha256:089bbb2f3b8c4752974dfdddc01916b1059bebfbb33224790bf67937020483da"
+src/TextStreams.Mod = "sha256:cfded71b7573fec40846e6b83709fe3787397bf299dcfc6db4fa730360850fff"
+test/StreamsTest.Mod = "sha256:71e7f183f9e9ffcb246ab7bf1aa61f7db005464e47454615f0fac7ea59401c55"
+README.md = "sha256:88a9697e234a1e98fb381dd4cebe4d4b2c0f9aa6ae2dbb8cdb8d6fc5bfcac0e4"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

@@ -1,0 +1,41 @@
+[PACKAGE]
+name        = "gadgets-httpdocs"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "HTTPDocs: the web browser of ETH Oberon, HTTP 1.0 (Emil Zeller)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-httpdocs/b7f411b4d7ce7833611afada84e3e70f99a5d618"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-htmldocs = "0.1.0"
+gadgets-nettools = "0.1.0"
+gadgets-mime = "0.1.0"
+
+[MODULES]
+all = ["src/HTTPDocs.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/HTTPDocs.Tool=tools/HTTPDocs.Tool", "test/HTTPDocsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/HTTPDocsTest.Mod"]
+cmds = ["$compile HTTPDocsTest.Mod", "HTTPDocsTest.Run"]
+ok   = ["HTTPDocsTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/HTTPDocs.Mod = "sha256:41b2586eb259d630cb2f5a27d4b7e2f4bbbd8948a9d768cad26a737a76bfa7d6"
+tools/HTTPDocs.Tool = "sha256:ffce3e5a49a9abc40aa50c92c4703f84fe7f57236554b461cfe0c8504549793f"
+test/HTTPDocsTest.Mod = "sha256:4b5bb13d539cbe2857139968021c59094f93a5388b8cfc9d2826855d9298844e"
+README.md = "sha256:38c68feccf7ee550eeeb692f6157d8eca8f1cca336fc8f497106e542bb8537a8"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
