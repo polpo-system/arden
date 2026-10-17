@@ -1,0 +1,50 @@
+[PACKAGE]
+name        = "gadgets-watson"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Watson: the definitions of modules from their symbol files (x86)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-watson/26c88f59973cbb1cbcce21ba3b48b60ceada9f64"
+tag  = "v0.1.0"
+
+[DEPS]
+
+# only x86 has the modules
+[DEPS.x86]
+gadgets = "0.1.0"
+compiler-x86 = "0.1.0"
+gadgets-compress = "0.1.0"
+
+[MODULES]
+x86 = ["src/OLR.Watson0.Mod", "src/OLR.Watson.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+x86 = ["share/Watson.Lib=share/Watson.Lib", "share/Watson.Panel=share/Watson.Panel", "tools/Watson.Tool=tools/Watson.Tool"]
+all = ["test/WatsonTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/WatsonTest.Mod"]
+ok   = ["WatsonTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+# only x86 has the modules
+[TESTS.x86]
+cmds = ["$compile WatsonTest.Mod", "WatsonTest.Run"]
+
+[SUMS]
+src/OLR.Watson0.Mod = "sha256:769100142284f85ff70cddae3dc01a0c171c9fcd6f939715e2882fb11f85cd26"
+src/OLR.Watson.Mod = "sha256:4356318f36b6e95ea09eca756714b5bea3664afb055a5210d6f1b072cf916473"
+test/WatsonTest.Mod = "sha256:ea6b587ceb14b6106129b3c889a1fb0bb0008d404c9856c7271f2c5126d645fe"
+README.md = "sha256:f5f83a3e2b18c13331caf442fcbd1d569821c5f59b71b7d97ca4744d19b4b6fa"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+share/Watson.Lib = "sha256:49db45b57f712de4fb562a0411a15ea905e576377ad10528f4beb09c421f6ff2"
+share/Watson.Panel = "sha256:8972a35cab9e8215f5b4fbd2833ee89c591c8aded6561a6b333ea6a24c8c5098"
+tools/Watson.Tool = "sha256:1872bcc4fa21201cb02593fdb973b14c88495fbce29c5cd0451797c1b5c26afa"

@@ -1,0 +1,47 @@
+[PACKAGE]
+name        = "gadgets-builder"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Builder: a front end of the compiler, with error markers (x86)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-builder/ea1045f1a058ff2533cec28738e00b366498442f"
+tag  = "v0.1.0"
+
+[DEPS]
+
+# only x86 has the modules
+[DEPS.x86]
+gadgets = "0.1.0"
+compiler-x86 = "0.1.0"
+desktop-compiler-x86 = "0.1.0"
+
+[MODULES]
+x86 = ["src/OLR.Builder.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+x86 = ["tools/Builder.Tool=tools/Builder.Tool"]
+all = ["test/BuilderTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/BuilderTest.Mod"]
+ok   = ["BuilderTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+# only x86 has the modules
+[TESTS.x86]
+cmds = ["$compile BuilderTest.Mod", "BuilderTest.Run"]
+
+[SUMS]
+src/OLR.Builder.Mod = "sha256:77135e20a5b1796a4bc3fc166033a55f0a52d1ef7f53cd649adbb9f5db5986ba"
+test/BuilderTest.Mod = "sha256:c52fb831b38a2360bd67e939019c3e3f735d234ed5532a5450038dbbe8a47abc"
+README.md = "sha256:94c357293448449fe99fab7801741a8fb1a21bc082e0fe3f48455638b01a5dfd"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+tools/Builder.Tool = "sha256:ec2f61604a0a9183ff955bc9110e9d2805d78bd8189305573dd61fec860809c7"

@@ -1,0 +1,40 @@
+[PACKAGE]
+name        = "gadgets-v24"
+category    = "gadgets"
+version     = "0.1.1"
+author      = "polpo"
+license     = "GPL-3"
+description = "V24Gadgets: a terminal on a serial port"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-v24/5da25abe1c2870cd238d8e22cd5083b7e383dd68"
+tag  = "v0.1.1"
+
+[DEPS]
+gadgets = "0.1.0"
+terminals = "0.1.0"
+gadgets-terminalgadgets = "0.1.0"
+
+[MODULES]
+all = ["src/V24Gadgets.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/V24.Tool=tools/V24.Tool", "test/V24GadgetsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/V24GadgetsTest.Mod"]
+cmds = ["$compile V24GadgetsTest.Mod", "V24GadgetsTest.Run"]
+ok   = ["V24GadgetsTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/V24Gadgets.Mod = "sha256:f642889b151d65887883ddf0191cac68b315093d0b74361c4f2fb7d22b7f75c4"
+tools/V24.Tool = "sha256:c5bd67d24dfc5f0518945418952f186cc9fee889ff3017567b101e1ad5b92ba4"
+test/V24GadgetsTest.Mod = "sha256:cda57975b80ac786f481e10923dddc8d8f79654f14a386b52f34ff3347c16777"
+README.md = "sha256:2613e49181abac128500967d39ab09b91d2f990cea55e443999e827b885bf5b8"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

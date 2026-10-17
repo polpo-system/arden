@@ -1,0 +1,41 @@
+[PACKAGE]
+name        = "gadgets-fonteditor"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "FontEditor: an editor of Oberon raster fonts"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-fonteditor/7c1386445fb82dac8d8f2ee53a91d746d86f8dbe"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-rembrandt = "0.1.0"
+
+[MODULES]
+all = ["src/OLR.FontEditor.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/FontEditor.Panel=share/FontEditor.Panel", "share/FontEditorObjs.Lib=share/FontEditorObjs.Lib", "tools/FontEditor.Tool=tools/FontEditor.Tool", "test/FontEditorTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/FontEditorTest.Mod"]
+cmds = ["$compile FontEditorTest.Mod", "FontEditorTest.Run"]
+ok   = ["FontEditorTest: 3 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/OLR.FontEditor.Mod = "sha256:ca1376a4a842d56167088423669a9f1323ceccaf3074e52338d8c962cc9558df"
+share/FontEditor.Panel = "sha256:8734ca1b1d77fbcc74812cf4d4eca072a680adb7d3b5d1190805d90b040adba0"
+share/FontEditorObjs.Lib = "sha256:efe355083979a3e407f84a69be16a5a9d641196e8406c50970e2bd3bd2a10e2c"
+tools/FontEditor.Tool = "sha256:c11c452710062fb752d440995b4cf8db8cf0491db5abc88a2ac52782b293427d"
+test/FontEditorTest.Mod = "sha256:af0dbad6bc9982a79e117e30a8a28ea0aeb80b4f0fa6665adb74c7e08bda3e75"
+README.md = "sha256:a3a7993ee6293d2c4d286d1caf68545dcf68e2119de7801c5ac73983034e4911"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

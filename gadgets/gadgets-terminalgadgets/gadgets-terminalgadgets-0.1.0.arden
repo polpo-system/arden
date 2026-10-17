@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "gadgets-terminalgadgets"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "TerminalGadgets: a gadget showing a VT100 terminal"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-terminalgadgets/f96b8f2cc6559aaf9b8ee5a0add75ff8f986b8e9"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+terminals = "0.1.0"
+
+[MODULES]
+all = ["src/TerminalGadgets.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/TerminalGadgetsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/TerminalGadgetsTest.Mod"]
+cmds = ["$compile TerminalGadgetsTest.Mod", "TerminalGadgetsTest.Run"]
+ok   = ["TerminalGadgetsTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/TerminalGadgets.Mod = "sha256:2a5e930ea82d7754eee8d108327a20e8040495c5c668f4528ddced47b7ceae54"
+test/TerminalGadgetsTest.Mod = "sha256:4d5037de9def472162179bbf5933eaa5d435477ea1ef3125e6ca7d42f724e5ec"
+README.md = "sha256:4cef962801912e6cfd6ff961df9ee0f303b9dc48a90fee3860221c143b5bbcda"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

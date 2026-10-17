@@ -1,0 +1,47 @@
+[PACKAGE]
+name        = "gadgets-textpopups"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "TextPopups: popup menus in text documents (x86)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-textpopups/0d389f86cb4dce8742c21297f5f605145297cdf4"
+tag  = "v0.1.0"
+
+[DEPS]
+
+# only x86 has the modules
+[DEPS.x86]
+gadgets = "0.1.0"
+compiler-x86 = "0.1.0"
+
+[MODULES]
+x86 = ["src/TextPopups.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+x86 = ["share/TextPopups.Text=share/TextPopups.Text", "tools/TextPopups.Tool=tools/TextPopups.Tool"]
+all = ["test/TextPopupsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/TextPopupsTest.Mod"]
+ok   = ["TextPopupsTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+# only x86 has the modules
+[TESTS.x86]
+cmds = ["$compile TextPopupsTest.Mod", "TextPopupsTest.Run"]
+
+[SUMS]
+src/TextPopups.Mod = "sha256:fb3e9dffed5c29077cd32b666ec4867c83317580cad79b9ef6734ad5ade3df0f"
+test/TextPopupsTest.Mod = "sha256:2733e6a2d7df173cce8b31e39cb88008cff3f8f6de08fe976667797988c124b6"
+README.md = "sha256:6f94b1078fd5c20ef2bc4e1bf9d86c890645389455e51abe9c6007b3e90d10ee"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+share/TextPopups.Text = "sha256:1c0d07916c21a86d93722ea42e1b8995ede7c65d35b8df3ece8445e607b7ef4d"
+tools/TextPopups.Tool = "sha256:3c17407b29e4d31b2fdeec7195966dbb1d6f9636780131e26e399c0ea07ef60c"
