@@ -1,0 +1,57 @@
+[PACKAGE]
+name        = "gadgets-dim3"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Dim3: a 3D engine for scenes of polygons (David Ulrich)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-dim3/02d4fcf80136b5baf7fa31156bf5bc8d8c04ce5e"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+math = "0.1.0"
+desktop-tools = "0.1.0"
+gadgets-pictures = "0.1.0"
+
+[MODULES]
+all = ["src/Dim3Base.Mod", "src/Dim3Paint.Mod", "src/Dim3Engine.Mod", "src/Dim3Read.Mod", "src/Dim3Frames.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/City.poly=share/City.poly", "share/Cube.poly=share/Cube.poly", "share/Dim3.Panel=share/Dim3.Panel", "share/Dim3Guide.Text=share/Dim3Guide.Text", "share/Example.poly=share/Example.poly", "share/Gadgets.poly=share/Gadgets.poly", "share/Room.poly=share/Room.poly", "share/Sphere.poly=share/Sphere.poly", "share/Tetra.poly=share/Tetra.poly", "share/Tree.poly=share/Tree.poly", "share/X29Plane.poly=share/X29Plane.poly", "share/XMas.poly=share/XMas.poly", "tools/Dim3.Tool=tools/Dim3.Tool", "test/Dim3Test.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/Dim3Test.Mod"]
+cmds = ["$compile Dim3Test.Mod", "Dim3Test.Run"]
+ok   = ["Dim3Test: 3 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Dim3Base.Mod = "sha256:e476c9c4b4e4daf03abed2a60f4fec4a23ab91904cedbcaedc0b728453e120ee"
+src/Dim3Paint.Mod = "sha256:c2b8447cdd4df5ee90c2eb2731a0a751fdc6273a65600c4ec56f8392422f7614"
+src/Dim3Engine.Mod = "sha256:35c5f751af28c62465b4044cfce66aaceb9a3cfbd6c6aff05be56c757759d4c3"
+src/Dim3Read.Mod = "sha256:647144ebcd9a5c2ca6e7a6212374d640011cca7a8d2b929f5506dfbbee95bb42"
+src/Dim3Frames.Mod = "sha256:1b9d2d5777b33c7182af7ff08c28d934035825358d3b8f7fb02de20314abd8f0"
+share/City.poly = "sha256:9c65876d620ce03ea96ef2d5775d1a43eec13cecaddf24a0b874b92dbcca28e5"
+share/Cube.poly = "sha256:3309e7e79a4d86389e8c8a988f3240e12f6eed84b087115f3fdceb64243f05a1"
+share/Dim3.Panel = "sha256:1a811dc96b27793a90903da5ee516f8f8c408c4051617e3827d040ac07c9085b"
+share/Dim3Guide.Text = "sha256:0c2a01621bdce825bd2d119ee711d87727f35b3317d0f589e115d92defab663b"
+share/Example.poly = "sha256:d6e88959a9f12878ee48e5808e86490530aa87a0dceb291c9d44d23d1f8664c9"
+share/Gadgets.poly = "sha256:732d11e2b00d0abdc524d7b11fd437e2f2719218d3c66efa7a5f4d5a3a396429"
+share/Room.poly = "sha256:79025d0e2a70f1a8956ef7acda77810572c7f5b414d037a566cf35ae7819c4c1"
+share/Sphere.poly = "sha256:ee45177b28b9d503040c859f0271fbb50aed906ef3a432a91c0419f557d9e167"
+share/Tetra.poly = "sha256:8b6435da97f6ea373245b5d560ae7f0794f2601ed07b7a3eefb773bfc4739321"
+share/Tree.poly = "sha256:045ff0a79b8c0750e04308c3ba67b2ef1911ae2bfd895a4fe7484386597dd33e"
+share/X29Plane.poly = "sha256:bafb7a1836eb6ae0fbd6368098fdd1d208c4a10478b596772ab53e8828056259"
+share/XMas.poly = "sha256:ff0b115c5e4c5eafc0c12ce6315836a36b3c33cd5a7348eb7e1848e83c43f15b"
+tools/Dim3.Tool = "sha256:4368a9a5e151c00e2eea1e85a142af3282060058d2da0e3832f0d99233a345bc"
+test/Dim3Test.Mod = "sha256:e0c0b0914900f15b4af580f88ded2daedee210ff9bbc50bd533e407104a5ae0a"
+README.md = "sha256:3b438b5e681aa75315dd756e097bfe2d142b0541b284079fa050403ac1f3e830"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

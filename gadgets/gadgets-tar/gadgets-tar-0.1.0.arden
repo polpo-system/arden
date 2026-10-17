@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "gadgets-tar"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Tar: a tar archive as a document (Jacques Supcik)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-tar/0536b9c2493d2a3ec0a7392abd1c6731f3e70cda"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+
+[MODULES]
+all = ["src/Tar.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Tar.Tool=tools/Tar.Tool", "test/TarTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/TarTest.Mod"]
+cmds = ["$compile TarTest.Mod", "TarTest.Run"]
+ok   = ["TarTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Tar.Mod = "sha256:9658e0e3c0aa96ab7e1ea6e0efc50813dc9f1d016b2cd8cdc729396eb6be6563"
+tools/Tar.Tool = "sha256:a1718516833ea31d6ade4ed3473fa35f3ed5482213e0382f73f6cc99bfaacaea"
+test/TarTest.Mod = "sha256:e3d0a0d1f9c3cd50302a8c5cc214807485c2dff9eddb2033558ccb7973413cd5"
+README.md = "sha256:0cab950cd4e89598fa848dce29f21f98af8bd06ba2452aab4c76cdab2d8faacf"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

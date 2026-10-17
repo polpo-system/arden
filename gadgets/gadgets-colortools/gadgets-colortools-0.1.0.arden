@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "gadgets-colortools"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "ColorTools: a colour picker gadget (Johannes Marais)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-colortools/e858d12d6cbd2b8e103bec1332e5f1a2af3cadc6"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+
+[MODULES]
+all = ["src/ColorTools.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/ColorTools.Tool=tools/ColorTools.Tool", "test/ColorToolsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/ColorToolsTest.Mod"]
+cmds = ["$compile ColorToolsTest.Mod", "ColorToolsTest.Run"]
+ok   = ["ColorToolsTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/ColorTools.Mod = "sha256:3edbc79a1ec658fc7fd6be2ccdaeb8421b8d1d44b3ffb599437b48f9593ec5a4"
+tools/ColorTools.Tool = "sha256:73174c927f0c161785e34450eca781b35db935b031122c52bc1c2df76f1fe4dc"
+test/ColorToolsTest.Mod = "sha256:eb60fc01ab26c97a1defbca26bbd4b9ab5d8bfbe1e1bd237119a958f0b12c12b"
+README.md = "sha256:da55ddd8e240eaffaf0db835ce09db7339f7d1bd09e418dea68a8849e77ac0f3"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

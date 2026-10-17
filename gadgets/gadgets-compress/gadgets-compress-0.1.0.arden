@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "gadgets-compress"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Compress: the archives of ETH Oberon, .Arc (Emil Zeller)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-compress/23b04f3b4c4dfae9de913ac010597fa4f357863d"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+
+[MODULES]
+all = ["src/Compress.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Compress.Tool=tools/Compress.Tool", "test/CompressTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/CompressTest.Mod"]
+cmds = ["$compile CompressTest.Mod", "CompressTest.Run"]
+ok   = ["CompressTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Compress.Mod = "sha256:942edf70ecc5f494ee77461a334bb8bf31d2f1996dcb4d94c1bb87647ed07bba"
+tools/Compress.Tool = "sha256:e3eea5f54afd1bd6ef1fea3f420e678a8c7e734f1fe50b1453560ba54ac4c4ca"
+test/CompressTest.Mod = "sha256:216edb8e416092a5b48c1310141187359445ac89c2d02500354b02ec54adcd03"
+README.md = "sha256:62015f7e6ec2cef41c4c2bd1b4fb5c6b546ca613c90c2fb6e47a89d8bc3d7a82"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
