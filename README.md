@@ -24,7 +24,7 @@ in TOML:
                 (`name-0.1.1.arden`), a new tag, new sums. A change that installs nothing
                 different (README, .gitattributes) may move the uri to the new commit with the
                 version kept.
-- `[DEPS]`      packages needed, `name = version`
+- `[DEPS]`      packages needed, `name = version`; `[DEPS.<arch>]` only on that architecture
 - `[PROVIDES]`  virtual packages provided, e.g. `display` by display-x11 and display-sixel
 - `[CONFLICTS]` packages that cannot be installed together
 - `[MODULES]`   Oberon sources in build order; `all` for every architecture, `x86`, `arm`,
@@ -36,7 +36,8 @@ in TOML:
 - `[TESTS]`     Oberon commands run after building (`portia.Test`, `Install /t`): `copy` files to
                 a new directory, `cmds` (`$compile` is the compiler of the architecture), `ok`
                 lines expected in the output, `bad` texts refused; `display = true` for tests
-                that need the desktop. `[TESTS.<arch>] cmds` run after the common ones
+                that need the desktop. `[TESTS.<arch>] cmds` run after the common ones. A
+                package whose tests fail is removed again and not recorded
 
 `INDEX` lists the packages as `category/name version`. Package names are unique across the
 tree; portia finds a package by name or by category/name.
