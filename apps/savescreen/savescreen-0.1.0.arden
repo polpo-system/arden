@@ -1,0 +1,39 @@
+[PACKAGE]
+name        = "savescreen"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "SaveScreen: a small screen saver with faders of their own (Ben Smith-Mannschott)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/savescreen/338654f790c49d083ea30a1577919440861af1b9"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/SaveScreen.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/SaveScreen.Text=share/SaveScreen.Text", "tools/SaveScreen.Tool=tools/SaveScreen.Tool", "test/SaveScreenTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/SaveScreenTest.Mod"]
+cmds = ["$compile SaveScreenTest.Mod", "SaveScreenTest.Run"]
+ok   = ["SaveScreenTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/SaveScreen.Mod = "sha256:b4ecaf097139f4509aab8a63255de957560a68a3f7b57a84c6832ab1e677d2bc"
+share/SaveScreen.Text = "sha256:5104cd517329988f433fc44d2428b340305a356dc48b003da9aaf1e3c14e70c2"
+tools/SaveScreen.Tool = "sha256:63b982f90d73a5ee3916704fb8f4bbf41b484bc0950369e0d4a8e77bb1e4c13d"
+test/SaveScreenTest.Mod = "sha256:954d69013bfb181c282e102d7cd042e2a3cad70669138ea6065056a35995da2a"
+README.md = "sha256:6a1b7f0435b8856d69847b4dd8e53aab95d343b0e0a1e83fd41cd9efdaee153b"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

@@ -1,0 +1,64 @@
+[PACKAGE]
+name        = "gadgets-vinci"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Vinci: a language for describing graphics (Erich Oswald)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-vinci/15763c0447d2cc9c57ffe088a28462f5cba336d2"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-leonardo = "0.1.0"
+gfx = "0.1.0"
+gfx-ps = "0.1.0"
+images = "0.1.0"
+scheme = "0.1.0"
+math = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/OLR.Vinci.Mod", "src/VinciGadgets.Mod", "src/VinciShapes.Mod", "src/VinciPens.Mod", "src/VinciEditors.Mod", "src/VinciDocs.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Clip.Vinci=share/Clip.Vinci", "share/CoordSys.Shape=share/CoordSys.Shape", "share/Distance.Shape=share/Distance.Shape", "share/Labels.Vinci=share/Labels.Vinci", "share/NGon.Shape=share/NGon.Shape", "share/Rect2.Shape=share/Rect2.Shape", "share/Smiley.Vinci=share/Smiley.Vinci", "share/Stars.Vinci=share/Stars.Vinci", "share/Test.Vinci=share/Test.Vinci", "share/Test1.Vinci=share/Test1.Vinci", "share/Test2.Vinci=share/Test2.Vinci", "share/Vinci.Init=share/Vinci.Init", "share/Vinci.Text=share/Vinci.Text", "share/YinYang.Shape=share/YinYang.Shape", "tools/Vinci.Tool=tools/Vinci.Tool", "test/VinciTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/VinciTest.Mod"]
+cmds = ["$compile VinciTest.Mod", "VinciTest.Run"]
+ok   = ["VinciTest: 3 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/OLR.Vinci.Mod = "sha256:d39f5138e5829bd1ac87480d46bb0f5dffff78fb9fb2fd49804d7d2af2ac1c05"
+src/VinciGadgets.Mod = "sha256:6905ee25920403bcdc83b01fd5fb3d9149419c07e0dce021ce6d0a2ddfc7a197"
+src/VinciShapes.Mod = "sha256:44be6ee49d7fe0bae85887dece95b89fd268fe44cf01eb928ccea146ecafd9a3"
+src/VinciPens.Mod = "sha256:c6776853ffdae31a6952a7763274df0cce536672ae68f11ab13e22db2129a626"
+src/VinciEditors.Mod = "sha256:2027809012fa7c096fa8d3a263aac4861fdd0d8dfc96a045c6924b98445a0e64"
+src/VinciDocs.Mod = "sha256:9eaa636e50f95217daff0b21d89c9411b7b5c4fa231597c2bab179df818c55dd"
+share/Clip.Vinci = "sha256:e694f007eb75734c80d295dfdc6f84704669575a76400ef111b2dafee5160c7e"
+share/CoordSys.Shape = "sha256:7466e01182758ad0c8dc695a849827c41b3eef739af7ff33d0b1c73133902adc"
+share/Distance.Shape = "sha256:385944a5629fd3ddd98ffc4e8b77865cc12abde49aff30ba8ff36e901e84eb81"
+share/Labels.Vinci = "sha256:f7756f43cd3e30c47c1d1624196bc7e9bf4886e23de016c170809fea5f1bd6bd"
+share/NGon.Shape = "sha256:c1a5e0b1fee8bad3c9578bc5d92599b774a0d58003f3dd3457b358be9754ea2b"
+share/Rect2.Shape = "sha256:5f6b8e97a4c6decc4622ad54e911c452c6f9f4998564423c3a4a5a0c0f911daf"
+share/Smiley.Vinci = "sha256:15e6279430e7e0bd189c852f8ca6df45ff7faf1eda74af53d2faea4e090b6b5c"
+share/Stars.Vinci = "sha256:c5d2c01552c8f4f703720d1f580da6ec65e3c09912d049fff1883a9c2044fb32"
+share/Test.Vinci = "sha256:837cd91421e071037b7e35f2d5b6f3c2eec8777608eef00937f5a201995468da"
+share/Test1.Vinci = "sha256:3ca4b220470aa154cef44db88372af8b98fcf2a9edb45c5b013a0e8fe4b5b425"
+share/Test2.Vinci = "sha256:41b67594cfedb647ee89ad5cd9b1597e5063d2bc3a163fcb596674962f752b67"
+share/Vinci.Init = "sha256:4741136739d8359d76fe5c9120ff0a7a5c3f3295d53d6629a97ab6132e898896"
+share/Vinci.Text = "sha256:d3957062c62a92a090a14f41ea5d1b2326f17e6070b72aba76564eeea5abc42a"
+share/YinYang.Shape = "sha256:3d6143f0ecec6bdf453efbbf2746ab13339ef9a854309a277d41b7da85c79d11"
+tools/Vinci.Tool = "sha256:b45016c684d343f87176f7e56d8f29032f18e062a2404c7294e03f5a995c1ef7"
+test/VinciTest.Mod = "sha256:d747ce810c4edc05e093ec1c6ba1900cdc8ec4683af695eca829988f9ba7100e"
+README.md = "sha256:3995ddfe97eceedf756dedc86e5f27630f27149cd64714c3cfbcde658cf588ee"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

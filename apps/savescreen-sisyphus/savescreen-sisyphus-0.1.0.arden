@@ -1,0 +1,39 @@
+[PACKAGE]
+name        = "savescreen-sisyphus"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "SaveSisyphus: a fader of SaveScreen"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/savescreen-sisyphus/10aef0fad4bca84692230a7f8e699e67736ce690"
+tag  = "v0.1.0"
+
+[DEPS]
+savescreen = "0.1.0"
+math = "0.1.0"
+gadgets-sisiphus = "0.1.0"
+
+[MODULES]
+all = ["src/SaveSisyphus.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/SaveSisyphusTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/SaveSisyphusTest.Mod"]
+cmds = ["$compile SaveSisyphusTest.Mod", "SaveSisyphusTest.Run"]
+ok   = ["SaveSisyphusTest: 1 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/SaveSisyphus.Mod = "sha256:2886602b043613bb4cfc4545e0eecc9771b5b55dc5636cd889bf92cc8d98af55"
+test/SaveSisyphusTest.Mod = "sha256:3edad7775f10764077a9df1df4e728ec34d24c7f9a2b93bcf0a2e362c73c85d8"
+README.md = "sha256:6e51b27ab7dcf87920d91023af5a364c214aa5aa3730be7fa2b7036b4d300e5b"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
