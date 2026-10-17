@@ -1,0 +1,41 @@
+[PACKAGE]
+name        = "images"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "the Images package of ETH Oberon: raster images, colours, the Oberon picture format"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/images/8c66d6b1a998513e2b7697fb7cae5da1f5242c91"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/OLR.Displays.Colors.Mod", "src/OLR.Images.Mod", "src/PictImages.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Images.Tool=tools/Images.Tool", "test/ImagesTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/ImagesTest.Mod"]
+cmds = ["$compile ImagesTest.Mod", "ImagesTest.Run"]
+ok   = ["ImagesTest: 3 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/OLR.Displays.Colors.Mod = "sha256:096043e03b29040213c86ac17e7d295eca149405965cad3911d2382a0207847d"
+src/OLR.Images.Mod = "sha256:365e1c39c1e26939e3f17e9b55f34a123d68dca73893b5b74e435061f7249d54"
+src/PictImages.Mod = "sha256:4cc0692b7bc164fb6e0c02413f0f71fa6c928c64e64d56c085bae0356d70f193"
+tools/Images.Tool = "sha256:41c76f08d55c1511519ae3a5ff5cd1196003349ed7b14d3fceb27b5444a94139"
+test/ImagesTest.Mod = "sha256:5397b1a549be996c394e5db15d435fbbc0a5d5c614fbedf860a3e110f1b46164"
+README.md = "sha256:fe0595a5c2ce398d29c9e81bd0a906bc9ec81660841c370134b366c73cccbd8a"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

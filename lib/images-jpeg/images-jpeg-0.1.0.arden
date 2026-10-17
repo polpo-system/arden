@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "images-jpeg"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "JPEGImages: the JPEG reader of Images"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/images-jpeg/712319332934a83cd83251a988576eaf26608fbe"
+tag  = "v0.1.0"
+
+[DEPS]
+images = "0.1.0"
+
+[MODULES]
+all = ["src/OLR.JPEGImages.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/JPEGImagesTest.Mod", "test/zq_test.jpg", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/JPEGImagesTest.Mod", "test/zq_test.jpg"]
+cmds = ["$compile JPEGImagesTest.Mod", "JPEGImagesTest.Run"]
+ok   = ["JPEGImagesTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/OLR.JPEGImages.Mod = "sha256:720843d5dc96bd72929e1abb74e372ec6d46d79dfe24536006a24759cb352725"
+test/JPEGImagesTest.Mod = "sha256:3f92ceba94a9ca44a1b86e0257768b4ab771dea7a7a914960dc72af67735f5c3"
+test/zq_test.jpg = "sha256:be1c07996218c345e4eb7ac00b3e9e02eab17a1d7b4313f374bff61082753bdf"
+README.md = "sha256:653d310041a94b366aca93f5d42115577c2d1186c16b3c6ae265f22717e719ff"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

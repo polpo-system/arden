@@ -72,6 +72,7 @@ devel/scheme 0.1.1
 gadgets/gadgets 0.1.0
 gadgets/gadgets-audio 0.1.0
 gadgets/gadgets-builder 0.1.0
+gadgets/gadgets-colors 0.1.0
 gadgets/gadgets-colorsystem 0.1.0
 gadgets/gadgets-colortools 0.1.0
 gadgets/gadgets-colorwells 0.1.0
@@ -98,6 +99,7 @@ gadgets/gadgets-hex 0.1.0
 gadgets/gadgets-hpcalc 0.1.0
 gadgets/gadgets-icons2 0.1.0
 gadgets/gadgets-icons3 0.1.0
+gadgets/gadgets-images 0.1.0
 gadgets/gadgets-objexplorer 0.1.0
 gadgets/gadgets-outlines 0.1.0
 gadgets/gadgets-pictures 0.1.0
@@ -118,6 +120,12 @@ lib/colormodels 0.1.0
 lib/gif 0.1.0
 lib/ico 0.1.0
 lib/iff 0.1.0
+lib/images 0.1.0
+lib/images-bmp 0.1.0
+lib/images-gif 0.1.0
+lib/images-jpeg 0.1.0
+lib/images-pcx 0.1.0
+lib/images-psd 0.1.0
 lib/jpeg 0.1.0
 lib/pcx 0.1.0
 lib/terminals 0.1.0

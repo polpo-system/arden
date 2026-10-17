@@ -1,0 +1,37 @@
+[PACKAGE]
+name        = "images-gif"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "GIFImages: the GIF reader of Images"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/images-gif/84e46a87cb12015d39908ad73e6dfb810f909ba6"
+tag  = "v0.1.0"
+
+[DEPS]
+images = "0.1.0"
+
+[MODULES]
+all = ["src/GIFImages.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/GIFImagesTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/GIFImagesTest.Mod"]
+cmds = ["$compile GIFImagesTest.Mod", "GIFImagesTest.Run"]
+ok   = ["GIFImagesTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/GIFImages.Mod = "sha256:f898bf7bb1db1865d9c783b484a128d1d3ac897c1d4febeac2352bbd00d944ac"
+test/GIFImagesTest.Mod = "sha256:25cff7eda274ec7c44c9be2280d0b04a3bcfdf00c4267161d7398c8260bd98f8"
+README.md = "sha256:31d9e0b5364a545d84bd99121fd6e05fb3cfb395dab7d1204b5eb7438ff5684c"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

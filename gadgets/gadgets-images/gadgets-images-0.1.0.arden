@@ -1,0 +1,41 @@
+[PACKAGE]
+name        = "gadgets-images"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "ImageGadgets and ImageDocs: images as gadgets and documents"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-images/404b5417853b058a61303ec1dab0140e61445529"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+images = "0.1.0"
+gadgets-pictures = "0.1.0"
+
+[MODULES]
+all = ["src/ImageGadgets.Mod", "src/ImageDocs.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/ImageDocs.Tool=tools/ImageDocs.Tool", "test/ImageGadgetsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/ImageGadgetsTest.Mod"]
+cmds = ["$compile ImageGadgetsTest.Mod", "ImageGadgetsTest.Run"]
+ok   = ["ImageGadgetsTest: 2 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/ImageGadgets.Mod = "sha256:5a623002308dab456c5f0bb746604235e2b4e2f2a73c12704d7aa51501b572e3"
+src/ImageDocs.Mod = "sha256:8d46f14fcdc15770f1a583cb29f04c2b84d5101e03b1a002486f2dbb96ac70fe"
+tools/ImageDocs.Tool = "sha256:e7e0bd416911c369b9eacecc7db9e51202f899b1dc0d63700bb963a312316d22"
+test/ImageGadgetsTest.Mod = "sha256:2d234bfa5e1f3ed8ec9654ef269ceebf9c01d21a2b33f95e713a5750271ef5ba"
+README.md = "sha256:518b0a02191a3d1317d914f54000056269d5bdb5c895a01204e750f1666eb7fb"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
