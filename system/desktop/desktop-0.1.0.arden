@@ -23,6 +23,7 @@ all = [
   "src/desktop/Oberon.Mod",
   "src/desktop/POLPO.In.Mod",
   "src/desktop/MenuViewers.Mod",
+  "src/desktop/TextComplete.Mod",
   "src/desktop/POLPO.TextFrames.Mod",
   "src/desktop/POLPO.Bitmaps.Mod",
   "src/desktop/Out.Mod",
