@@ -42,3 +42,4 @@ mipsbe = [
   "src/desktop/mips/M2Decoder.Mod",
   "src/desktop/rop2/RBrowser.Mod",
 ]
+ppc = ["src/desktop/rop2/RCompiler.Mod", "src/desktop/rop2/RBrowser.Mod"]

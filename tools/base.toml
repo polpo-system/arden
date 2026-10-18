@@ -311,6 +311,13 @@ deps        = ["compiler-rop2"]
 match       = ["src/cli/mips/", "src/cli/mipsbe/compiler.Mod"]
 files.all = ["tools/mips.Tool", "tools/mipsbe.Tool"]
 
+[compiler-ppc]
+category    = "devel"
+description = "the PowerPC (32-bit) back end of ROP2"
+deps        = ["compiler-rop2"]
+match       = ["src/cli/ppc/"]
+files.all = ["tools/ppc.Tool"]
+
 [compiler-armv7]
 category    = "devel"
 description = "the ARMv7 back end of ROP2"

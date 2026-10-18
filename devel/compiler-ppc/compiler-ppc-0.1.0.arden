@@ -1,0 +1,34 @@
+[PACKAGE]
+name        = "compiler-ppc"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "the PowerPC (32-bit) back end of ROP2"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+compiler-rop2 = "0.1.0"
+
+[MODULES]
+x86 = [
+  "src/cli/ppc/POPL.Mod",
+  "src/cli/ppc/POPC.Mod",
+  "src/cli/ppc/POPV.Mod",
+  "src/cli/ppc/pcompiler.Mod",
+]
+ppc = [
+  "src/cli/ppc/POPL.Mod",
+  "src/cli/ppc/POPC.Mod",
+  "src/cli/ppc/POPV.Mod",
+  "src/cli/ppc/pcompiler.Mod",
+  "src/cli/ppc/compiler.Mod",
+  "src/cli/ppc/linker.Mod",
+]
+
+[FILES]
+all = ["tools/ppc.Tool"]

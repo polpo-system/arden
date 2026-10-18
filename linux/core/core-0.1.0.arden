@@ -47,6 +47,11 @@ mipsbe = [
   "src/cli/rop2/Modules0.Mod",
   "src/cli/mipsbe/Linux0.Mod",
 ]
+ppc = [
+  "src/cli/rop2/Kernel.Mod",
+  "src/cli/rop2/Modules0.Mod",
+  "src/cli/ppc/Linux0.Mod",
+]
 
 [BUILD]
 x86 = [
@@ -72,6 +77,10 @@ armv7 = [
 mipsbe = [
   "rlinker.Link /b bin/mipsbe/loksh.new Linux0 Kernel Root Modules0 loksh",
   "mv bin/mipsbe/loksh.new bin/mipsbe/loksh",
+]
+ppc = [
+  "rlinker.Link /w bin/ppc/loksh.new Linux0 Kernel Root Modules0 loksh",
+  "mv bin/ppc/loksh.new bin/ppc/loksh",
 ]
 
 [FILES]

@@ -44,6 +44,7 @@ devel/compiler-arm 0.1.0
 devel/compiler-rop2 0.1.0
 devel/compiler-riscv 0.1.0
 devel/compiler-mips 0.1.0
+devel/compiler-ppc 0.1.0
 devel/compiler-armv7 0.1.0
 system/desktop-base 0.1.0
 system/display-x11 0.1.0

@@ -64,6 +64,16 @@ mipsbe = [
   "src/cli/rop2/rlinker.Mod",
   "src/cli/rop2/browser.Mod",
 ]
+ppc = [
+  "src/cli/rop2/ROPM.Mod",
+  "src/cli/rop2/ROPS.Mod",
+  "src/cli/rop2/ROPT.Mod",
+  "src/cli/rop2/ROPB.Mod",
+  "src/cli/rop2/ROPP.Mod",
+  "src/cli/rop2/rcompiler.Mod",
+  "src/cli/rop2/rlinker.Mod",
+  "src/cli/rop2/browser.Mod",
+]
 
 [FILES]
 all = ["tools/rop2-cross.Tool"]
