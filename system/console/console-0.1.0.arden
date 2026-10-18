@@ -27,6 +27,7 @@ all = [
   "src/common/RXA.Mod",
   "src/common/Oberon0.Mod",
   "src/cli/texts.Mod",
+  "src/cli/logs.Mod",
   "src/cli/oberon.Mod",
   "src/cli/in.Mod",
   "src/cli/termios.Mod",
