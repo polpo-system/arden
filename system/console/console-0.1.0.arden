@@ -13,6 +13,7 @@ tag  = "main"
 
 [DEPS]
 core = "0.1.0"
+ooc-strings = "0.1.0"
 
 [MODULES]
 all = [
@@ -20,7 +21,6 @@ all = [
   "src/common/Modules.Mod",
   "src/common/Objects0.Mod",
   "src/cli/objects.Mod",
-  "src/cli/strings.Mod",
   "src/common/regex.Mod",
   "src/common/Utf8.Mod",
   "src/common/Texts0.Mod",
@@ -29,7 +29,7 @@ all = [
   "src/cli/texts.Mod",
   "src/cli/logs.Mod",
   "src/cli/oberon.Mod",
-  "src/cli/in.Mod",
+  "src/cli/stdin.Mod",
   "src/cli/termios.Mod",
   "src/common/POLPO.FATFiles.Mod",
   "src/common/Complete0.Mod",

@@ -15,9 +15,9 @@ tag  = "main"
 
 [MODULES]
 all = [
+  "src/lib/ooc/oocStrings.Mod",
   "src/lib/ooc/Ascii.Mod",
   "src/lib/ooc/CharClass.Mod",
-  "src/lib/ooc/oocStrings.Mod",
   "src/lib/ooc/Strings2.Mod",
   "src/lib/ooc/OakStrings.Mod",
 ]
