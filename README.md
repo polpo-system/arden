@@ -18,8 +18,7 @@ in TOML:
                 The uri of a polpo-system package is the GitHub raw address of one commit
                 (`https://raw.githubusercontent.com/polpo-system/<repo>/<commit>`): a commit
                 cannot move, and `[SUMS]` checks every file. `tag` is the tag of that commit,
-                the version (`v0.1.0`), for people; portia reads only the uri. The repositories
-                are also on codeberg.org/polpo-system, but the recipes name GitHub only.
+                the version (`v0.1.0`), for people; portia reads only the uri.
                 A change of what a package installs is a new version: a new recipe
                 (`name-0.1.1.arden`), a new tag, new sums. A change that installs nothing
                 different (README, .gitattributes) may move the uri to the new commit with the
