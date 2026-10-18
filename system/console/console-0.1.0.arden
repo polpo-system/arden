@@ -33,6 +33,7 @@ all = [
   "src/common/POLPO.FATFiles.Mod",
   "src/common/Complete0.Mod",
   "src/cli/shell.Mod",
+  "src/cli/boot.Mod",
   "src/cli/cat.Mod",
 ]
 x86 = ["src/cli/x86/system.Mod"]
@@ -40,6 +41,7 @@ arm = ["src/cli/arm/system.Mod"]
 riscv = ["src/cli/rop2/system.Mod"]
 mips = ["src/cli/rop2/system.Mod"]
 armv7 = ["src/cli/rop2/system.Mod"]
+mipsbe = ["src/cli/rop2/system.Mod"]
 
 [FILES]
 all = ["Oberon.Text", "texts.md", "VERSION"]

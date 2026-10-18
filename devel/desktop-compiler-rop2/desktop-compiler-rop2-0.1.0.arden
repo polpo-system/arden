@@ -37,3 +37,8 @@ armv7 = [
   "src/desktop/armv7/A32Decoder.Mod",
   "src/desktop/rop2/RBrowser.Mod",
 ]
+mipsbe = [
+  "src/desktop/rop2/RCompiler.Mod",
+  "src/desktop/mips/M2Decoder.Mod",
+  "src/desktop/rop2/RBrowser.Mod",
+]

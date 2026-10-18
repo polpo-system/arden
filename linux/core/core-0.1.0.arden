@@ -42,6 +42,11 @@ armv7 = [
   "src/cli/rop2/Modules0.Mod",
   "src/cli/armv7/Linux0.Mod",
 ]
+mipsbe = [
+  "src/cli/rop2/Kernel.Mod",
+  "src/cli/rop2/Modules0.Mod",
+  "src/cli/mipsbe/Linux0.Mod",
+]
 
 [BUILD]
 x86 = [
@@ -63,6 +68,10 @@ mips = [
 armv7 = [
   "rlinker.Link /a bin/armv7/loksh.new Linux0 Kernel Root Modules0 loksh",
   "mv bin/armv7/loksh.new bin/armv7/loksh",
+]
+mipsbe = [
+  "rlinker.Link /b bin/mipsbe/loksh.new Linux0 Kernel Root Modules0 loksh",
+  "mv bin/mipsbe/loksh.new bin/mipsbe/loksh",
 ]
 
 [FILES]

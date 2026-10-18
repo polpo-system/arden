@@ -4,7 +4,7 @@ category    = "devel"
 version     = "0.1.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "the MIPS back end of ROP2"
+description = "the MIPS back end of ROP2, both byte orders"
 
 [REMOTE]
 type = "git"
@@ -20,6 +20,7 @@ x86 = [
   "src/cli/mips/MOPC.Mod",
   "src/cli/mips/MOPV.Mod",
   "src/cli/mips/mcompiler.Mod",
+  "src/cli/mips/mbcompiler.Mod",
 ]
 mips = [
   "src/cli/mips/MOPL.Mod",
@@ -29,6 +30,14 @@ mips = [
   "src/cli/mips/compiler.Mod",
   "src/cli/mips/linker.Mod",
 ]
+mipsbe = [
+  "src/cli/mips/MOPL.Mod",
+  "src/cli/mips/MOPC.Mod",
+  "src/cli/mips/MOPV.Mod",
+  "src/cli/mips/mbcompiler.Mod",
+  "src/cli/mips/linker.Mod",
+  "src/cli/mipsbe/compiler.Mod",
+]
 
 [FILES]
-all = ["tools/mips.Tool"]
+all = ["tools/mips.Tool", "tools/mipsbe.Tool"]
