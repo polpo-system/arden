@@ -20,8 +20,6 @@ all = [
   "src/desktop/Styles.Mod",
   "src/desktop/ScriptFrames.Mod",
   "src/desktop/Script.Mod",
-  "src/desktop/Dates.Mod",
-  "src/desktop/Strings.Mod",
   "src/desktop/POLPO.Compiler.Mod",
   "src/desktop/POLPO.FileTools.Mod",
 ]
