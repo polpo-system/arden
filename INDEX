@@ -72,7 +72,7 @@ apps/savescreen-particles 0.1.0
 apps/savescreen-sisyphus 0.1.0
 apps/savescreen-tiles 0.1.0
 apps/telnet 0.1.0
-devel/coco 0.1.0
+devel/coco 0.1.1
 devel/coco-eth 0.1.0
 devel/mfscheme 0.1.1
 devel/scheme 0.1.1

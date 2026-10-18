@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "coco"
 category    = "devel"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "Coco/R, the compiler generator of H. Moessenboeck, as improved by A. V. Shiryaev (2012.01)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/polpo-coco/4229e96ad27483592777ce3e9b402a43bee6a546"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo-coco/23370018edfcdf9d4f578d09ef691e09580e0555"
+tag  = "v0.1.1"
 
 [DEPS]
 console = "0.1.0"
@@ -66,7 +66,7 @@ bad  = ["TRAP"]
 "src/common/CRX.Mod" = "sha256:43248c1e60d237b6914c8f68067628301ac0621697adabb6b326f196be368cc5"
 "src/common/CRP.Mod" = "sha256:c88845335ba435367dc8dc46fc7ccaaea9a13de78a3958b7b12969a1f65a2d2a"
 "src/common/CRD.Mod" = "sha256:fa6103520de570f0074a61500624f7648f297458736d503a05e673fd9e6ace3a"
-"src/cli/coco.Mod" = "sha256:492011da703ea867291c1c107a36b05b1d2e2a0d5c20d62a6e6a501a36010bfa"
+"src/cli/coco.Mod" = "sha256:4380a3223e00402331a92fa1ee9b79dd8ebfb1684d1e34f6a5d89a72c117d602"
 "src/ui/Coco.Mod" = "sha256:1d1fd7574c898216f969f2c4599d893426b98a198cc6caa1e44489c510e8ad92"
 "Parser.FRM" = "sha256:3bf58552f61c78e94de395c80c990d7b8cf3ea0f1348a2ef53a668ebcb8e4016"
 "Scanner.FRM" = "sha256:7ccd82ea7af61b5080a01521197b07dd4b0d4ae27eab2c6aa9591a1dfee0d742"
