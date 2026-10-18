@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "agena"
 category    = "apps"
-version     = "0.3.1"
+version     = "0.3.2"
 author      = "polpo"
 license     = "GPL-3"
 description = "agena.Serve: a Gemini server for a directory or several virtual hosts (TOML), on chosen IPv4 and IPv6 addresses, over the TLS 1.3 server of tls"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/agena/d3bfb6197b00425dd6a5bc93fd5cf640267f5eca"
-tag  = "v0.3.1"
+uri  = "https://raw.githubusercontent.com/polpo-system/agena/b7d9e9ca106c040fc94701be61247474ba89b84f"
+tag  = "v0.3.2"
 
 [DEPS]
 console = "0.1.0"
@@ -34,15 +34,15 @@ ok   = ["status: 20 text/gemini; charset=utf-8", "body: zq test capsule", "statu
 bad  = ["TRAP", "  err ", "missing", "no connection", "did not start", "server failed"]
 
 [SUMS]
-"agena.Mod" = "sha256:db95dc4d2f10335abf5bceebc066b90d8272f99d0b7add96a6c8659aa421c45b"
-"README.md" = "sha256:a3aa9d8bd008d6e3f693f841e179c6414b5b1ac6cf8baf745d554b89717e6532"
-"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
-"agena.toml.example" = "sha256:13b0e59b0510a7a7ad0674e3633033f770d17b60fca79c1c044dde49e844fa45"
-"test/AgenaTest.Mod" = "sha256:676f2860c7a14cbfe9f9e5e373b95594f6a3d02e9feba68f2c1b26d5a702906f"
-"test/cert.pem" = "sha256:1c43f28dd99b2a9c77d9fbdb41cb1193d469b8237b8e6b4b98a04c0e8e774611"
-"test/key.pem" = "sha256:b8a6db35af3f4574c71ce623453475061b7459ef4add8dd63eead5773682be15"
-"test/index.gmi" = "sha256:949cb964380bf64834f5e043ec835b864482ddb4c2c8e0d2b922a8d2d176a491"
-"test/agena.toml" = "sha256:c438792ca23d48816492bd45e50ca28e309d860872ebb18102e64107e0ef95ee"
-"test/one.gmi" = "sha256:6f31f8466abdcfb2e163e0082cadc49664059f5950873b6871c8820732b5bbe2"
-"test/two.gmi" = "sha256:feb11547f5ec3a1380ab49593c19395422ee2488da1c3992104d3faef3470f30"
-"test/x.zq" = "sha256:15fe6412b98bad1211955fc702e3ddfea9625c604557317a0bf53ac1aaacd107"
+agena.Mod = "sha256:7394662f3aab0b45779915992f843fb40e23c88bb80e3502c73e1f0fd4f41d2c"
+README.md = "sha256:a3aa9d8bd008d6e3f693f841e179c6414b5b1ac6cf8baf745d554b89717e6532"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+agena.toml.example = "sha256:13b0e59b0510a7a7ad0674e3633033f770d17b60fca79c1c044dde49e844fa45"
+test/AgenaTest.Mod = "sha256:676f2860c7a14cbfe9f9e5e373b95594f6a3d02e9feba68f2c1b26d5a702906f"
+test/cert.pem = "sha256:1c43f28dd99b2a9c77d9fbdb41cb1193d469b8237b8e6b4b98a04c0e8e774611"
+test/key.pem = "sha256:b8a6db35af3f4574c71ce623453475061b7459ef4add8dd63eead5773682be15"
+test/index.gmi = "sha256:949cb964380bf64834f5e043ec835b864482ddb4c2c8e0d2b922a8d2d176a491"
+test/agena.toml = "sha256:c438792ca23d48816492bd45e50ca28e309d860872ebb18102e64107e0ef95ee"
+test/one.gmi = "sha256:6f31f8466abdcfb2e163e0082cadc49664059f5950873b6871c8820732b5bbe2"
+test/two.gmi = "sha256:feb11547f5ec3a1380ab49593c19395422ee2488da1c3992104d3faef3470f30"
+test/x.zq = "sha256:15fe6412b98bad1211955fc702e3ddfea9625c604557317a0bf53ac1aaacd107"

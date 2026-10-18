@@ -54,7 +54,7 @@ devel/desktop-compiler-arm 0.1.0
 system/desktop-system 0.1.0
 devel/desktop-compiler-rop2 0.1.0
 system/desktop 0.1.0
-apps/agena 0.3.1
+apps/agena 0.3.2
 apps/bdffont 0.1.0
 apps/binhex 0.1.0
 apps/binhex-desktop 0.1.0
