@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "gadgets"
 category    = "gadgets"
-version     = "0.2.0"
+version     = "0.2.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "Gadgets of ETH Oberon System 3: the component framework, panels, documents and the standard classes"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/gadgets/d71f41d2d084ca728869e7ded822c0fcf61af74c"
-tag  = "v0.2.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets/18d4099928f38801b280d8ac76c12c6525f5aced"
+tag  = "v0.2.1"
 
 [DEPS]
 desktop = "0.1.0"
@@ -51,7 +51,7 @@ src/TextGadgets0.Mod = "sha256:800ce62362fbeaec7e56dbb3a1911cb92064719a65829061a
 src/TextGadgets.Mod = "sha256:32066e6b82e89abe322c222b0539f1160592f90b57830a4dd292e7996129809a"
 src/ListRiders.Mod = "sha256:8b52a775b8c41fb19d0742669c43ffd2c094ecc03a5f42399e19aba6a0740807"
 src/Documents.Mod = "sha256:401a3af76c8b28ffb3ac4a10684787f81dceefe9b274d4ea05302641c96d7dee"
-src/OLR.Desktops.Mod = "sha256:bbcc44712da3f9cb66de0e36ccb6320c0e95a2115e455771995124d8394fc0ac"
+src/OLR.Desktops.Mod = "sha256:756c2f7c739f79b2390324422af015ad927b16ed001caf005c904dba5f60a1df"
 src/PanelDocs.Mod = "sha256:e15b46aa50659b3c62a8bae83035defdfa009b494c1018709cf87f5c34e73cf3"
 src/Columbus.Mod = "sha256:49407696f5ead87da9a6fac381a26a79d8c185e0d60d1e41858b626b311841b9"
 src/GadgetsIn.Mod = "sha256:0f4de140a11a204ed6ab7a32d3c0dd522f4cce33606eb6a6e1e1b43170f2129c"
