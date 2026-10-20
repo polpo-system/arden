@@ -25,6 +25,7 @@ all = [
   "src/desktop/TextComplete.Mod",
   "src/desktop/POLPO.TextFrames.Mod",
   "src/desktop/Windows.Mod",
+  "src/desktop/Workspaces.Mod",
   "src/desktop/POLPO.Bitmaps.Mod",
   "src/desktop/Pictures.Mod",
   "src/desktop/POLPO.Centronics.Mod",
