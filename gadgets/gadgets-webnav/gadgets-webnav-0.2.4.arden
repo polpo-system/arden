@@ -1,7 +1,7 @@
 [PACKAGE]
 name        = "gadgets-webnav"
 category    = "gadgets"
-version     = "0.2.3"
+version     = "0.2.4"
 author      = "polpo"
 license     = "GPL-3"
 description = "WebNavigator: an HTML 4 browser with style sheets, http and https (Bruno Eberhard, ETH)"
@@ -9,7 +9,7 @@ description = "WebNavigator: an HTML 4 browser with style sheets, http and https
 [REMOTE]
 type = "files"
 uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-webnav/c779d5a0c69fb108e7a45e6b23e7171802e57924"
-tag  = "v0.2.3"
+tag  = "v0.2.4"
 
 [DEPS]
 gadgets = "0.1.0"
@@ -19,6 +19,8 @@ gadgets-nettools = "0.1.0"
 netsystem = "0.1.0"
 http = "0.1.0"
 tls = "0.1.0"
+gif = "0.1.0"
+jpeg = "0.1.0"
 
 [MODULES]
 all = ["src/WebUtils.Mod", "src/WebPieces.Mod", "src/WebSGMLScanner.Mod", "src/WebSGML.Mod", "src/WebHTML4Scanner.Mod", "src/WebHTML4.Mod", "src/WebCSS2Scanner.Mod", "src/WebCSS2.Mod", "src/WebCSS2P.Mod", "src/WebNetwork.Mod", "src/WebCSS2Format.Mod", "src/WebCSS2B.Mod", "src/WebNavDocs.Mod", "src/WebNavigators.Mod"]
