@@ -1,18 +1,19 @@
 [PACKAGE]
 name        = "gadgets-webnav"
 category    = "gadgets"
-version     = "0.2.1"
+version     = "0.2.3"
 author      = "polpo"
 license     = "GPL-3"
 description = "WebNavigator: an HTML 4 browser with style sheets, http and https (Bruno Eberhard, ETH)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-webnav/c3fc4b3194b08b6f5db6da21cb0016522e5d46e6"
-tag  = "v0.2.1"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-webnav/c779d5a0c69fb108e7a45e6b23e7171802e57924"
+tag  = "v0.2.3"
 
 [DEPS]
 gadgets = "0.1.0"
+gadgets-finder = "0.1.3"
 gadgets-htmldocs = "0.1.0"
 gadgets-nettools = "0.1.0"
 netsystem = "0.1.0"
@@ -24,7 +25,7 @@ all = ["src/WebUtils.Mod", "src/WebPieces.Mod", "src/WebSGMLScanner.Mod", "src/W
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["share/WebHTML4.CSS=share/WebHTML4.CSS", "share/WebHTML4Loose.SGML=share/WebHTML4Loose.SGML", "share/WebNav.gif=share/WebNav.gif", "share/WebNavSmall.gif=share/WebNavSmall.gif", "share/WebNavFonts.html=share/WebNavFonts.html", "share/WebNavTables.html=share/WebNavTables.html", "share/WebNavigatorAbout.html=share/WebNavigatorAbout.html", "share/WebNotFound.html=share/WebNotFound.html", "share/WebNotSupported.html=share/WebNotSupported.html", "share/WebNavigator.Text=share/WebNavigator.Text", "tools/WebNavigator.Tool=tools/WebNavigator.Tool", "test/WebNavTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+all = ["share/WebHTML4.CSS=share/WebHTML4.CSS", "share/WebHTML4Loose.SGML=share/WebHTML4Loose.SGML", "share/WebNav.gif=share/WebNav.gif", "share/WebNavSmall.gif=share/WebNavSmall.gif", "share/WebNavFonts.html=share/WebNavFonts.html", "share/WebNavTables.html=share/WebNavTables.html", "share/WebNavigatorAbout.html=share/WebNavigatorAbout.html", "share/WebNotFound.html=share/WebNotFound.html", "share/WebNotSupported.html=share/WebNotSupported.html", "share/WebNavigator.Text=share/WebNavigator.Text", "share/WebNavStart.html=share/WebNavStart.html", "share/WebNavigator.Finder=share/WebNavigator.Finder", "tools/WebNavigator.Tool=tools/WebNavigator.Tool", "test/WebNavTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
 
 # the tests need the desktop (DISPLAY set; an Xvnc will do)
 [TESTS]
@@ -47,7 +48,7 @@ src/WebCSS2P.Mod = "sha256:2c4314da06225a921e9736258b54146d6ab2c0cb07a1211209616
 src/WebNetwork.Mod = "sha256:6c2dc4dd31d2fb32d343650a572efd492330a2728c841b65de51de3aabc1d199"
 src/WebCSS2Format.Mod = "sha256:40ba2176b886cad4276e27290827de87c93aa215f759d462c426dc9232811d67"
 src/WebCSS2B.Mod = "sha256:03052f5fc221c0c92d3704cc043e7c4da090dced50dc667f1e00d9c475912475"
-src/WebNavDocs.Mod = "sha256:ce2afabc51673851ad58f2b4417742abefdaed5b30ebdfae3726429c55909ca2"
+src/WebNavDocs.Mod = "sha256:857ff601574a38089bceec4645dd97a1981b0a7225f516b84b6c77fbd36d9d18"
 src/WebNavigators.Mod = "sha256:e3342a1aea5b361d7913d51913e270fec888ff33135aa9340f1dd87a298344c1"
 share/WebHTML4.CSS = "sha256:eec8bcb0e2311a29d07e26fc501068ce79f3968f35c78687962df08051fd2ccc"
 share/WebHTML4Loose.SGML = "sha256:00929f49b8d794a79bf9d01a3c0372204ea9ca3cba59bc2affa5c25247233ef5"
@@ -59,8 +60,10 @@ share/WebNavigatorAbout.html = "sha256:1973c3c3acbad75cde6c533d605e9d3fd1be60335
 share/WebNotFound.html = "sha256:b16a1e5ee91a747316e5c1b4cfcbeaa40078c72949448ebc4f5d340080152012"
 share/WebNotSupported.html = "sha256:cc9d233d2b945b3ed3d72fcaa7efac1cc8d4c7a0a4d85d49554ccc752c9fba75"
 share/WebNavigator.Text = "sha256:501e1bcf05358ec56d96cc902f8c5dad86744f14afbe4bc52220f76db35d4d8d"
+share/WebNavStart.html = "sha256:ea4c7bce6b9a0892eede3f051c49be8628b9507f9ecf164a1eb498e64be369eb"
+share/WebNavigator.Finder = "sha256:b867b41fcc868f1cfd1a8ca1ca92119193fba55993ef793968249e2440fa0519"
 tools/WebNavigator.Tool = "sha256:87c623f871e678c0193c9ac97ef7145f5a7107062d5982e624944bd5ea35f838"
 test/WebNavTest.Mod = "sha256:91ce436b359f7db5d872e6f5a3f34b3ba17e090123d4adf6832e607c4fbcd2c1"
-README.md = "sha256:92533ded8a4d4172cfc5714f3ac70abf0bd21b10f09c3ceb1ac7105455cc8b73"
+README.md = "sha256:5d1d3217a16d66dbe1251c509be6498507da2ecdc90f28b3900e291209ff2962"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
 LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
