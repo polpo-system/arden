@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "gadgets-finder"
 category    = "gadgets"
-version     = "0.1.1"
+version     = "0.1.2"
 author      = "polpo"
 license     = "GPL-3"
 description = "Finder: lists the open documents and the templates (Emil Zeller)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-finder/e7a2aceab5fe7c2a6ec33b7d105db0ab7dd72d3c"
-tag  = "v0.1.1"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-finder/887acf64c6968c1ee1c300e8caba34bb7fc77b49"
+tag  = "v0.1.2"
 
 [DEPS]
 gadgets = "0.1.0"
@@ -30,9 +30,9 @@ bad  = ["TRAP", "  err ", "FAIL"]
 display = true
 
 [SUMS]
-src/Finder.Mod = "sha256:e41932b312a73f404773cbad34cf0c316dec5cc78d16d854fd200c0d10a61890"
-tools/Finder.Tool = "sha256:903ff8cd3f491e61c7abaf93625a5996c5f20c4c87475f0476e350fbe7f13fbe"
+src/Finder.Mod = "sha256:ea38d92d28acce2d1e39b5852763e4d3ebec173f1e419be96669f4add3f7738e"
+tools/Finder.Tool = "sha256:8855f65bce8df9f0b921d9f35fbce314c50479e8f5071c73252aceee99d24dcd"
 test/FinderTest.Mod = "sha256:ba2e9e92e30245581d153adbd723dcb443c2d38f6e22b31554df9d6f347bd5fc"
-README.md = "sha256:d53870903666cd72126ece60c01e439d35fec6621b370ad77393fadf53a5a61d"
+README.md = "sha256:573efa1ce61808beafeec872d94377890ce484775e5b07857930157105b2f049"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
 LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
