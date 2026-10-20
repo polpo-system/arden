@@ -1,0 +1,64 @@
+[PACKAGE]
+name        = "gadgets-webnav"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "WebNavigator: an HTML 4 browser with style sheets (Bruno Eberhard, ETH)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-webnav/7334b0402432b142492df12390fb88a033463230"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-htmldocs = "0.1.0"
+gadgets-nettools = "0.1.0"
+netsystem = "0.1.0"
+
+[MODULES]
+all = ["src/WebUtils.Mod", "src/WebPieces.Mod", "src/WebSGMLScanner.Mod", "src/WebSGML.Mod", "src/WebHTML4Scanner.Mod", "src/WebHTML4.Mod", "src/WebCSS2Scanner.Mod", "src/WebCSS2.Mod", "src/WebCSS2P.Mod", "src/WebNetwork.Mod", "src/WebCSS2Format.Mod", "src/WebCSS2B.Mod", "src/WebNavDocs.Mod", "src/WebNavigators.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/WebHTML4.CSS=share/WebHTML4.CSS", "share/WebHTML4Loose.SGML=share/WebHTML4Loose.SGML", "share/WebNav.gif=share/WebNav.gif", "share/WebNavSmall.gif=share/WebNavSmall.gif", "share/WebNavFonts.html=share/WebNavFonts.html", "share/WebNavTables.html=share/WebNavTables.html", "share/WebNavigatorAbout.html=share/WebNavigatorAbout.html", "share/WebNotFound.html=share/WebNotFound.html", "share/WebNotSupported.html=share/WebNotSupported.html", "share/WebNavigator.Text=share/WebNavigator.Text", "tools/WebNavigator.Tool=tools/WebNavigator.Tool", "test/WebNavTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/WebNavTest.Mod"]
+cmds = ["$compile WebNavTest.Mod", "WebNavTest.Run"]
+ok   = ["WebNavTest: 19 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/WebUtils.Mod = "sha256:425030499eb7ce9f5a9b7de08198eff4999ac5357fd368df9002bc62a920a334"
+src/WebPieces.Mod = "sha256:8dc16792153594c53039d47fb3e150145f51c93e12869a5f28901844e50f31bf"
+src/WebSGMLScanner.Mod = "sha256:e4f1ad65af928f8815155f33dd62b8e987a312266366b83504fe6b86998ba1b3"
+src/WebSGML.Mod = "sha256:ff9c31d6fdc00f2ae110ad1ca9a8f9e1fec1c51524436a91acf6d91d4b2f9e3e"
+src/WebHTML4Scanner.Mod = "sha256:e7fef3991d892e75034e178f6b79236ed6f2f129b39016adbaec552adea4d19d"
+src/WebHTML4.Mod = "sha256:bf0a74bfdc381fea76313083f879a31113af5f963b6890d4eec26d5a1957fe83"
+src/WebCSS2Scanner.Mod = "sha256:229af770b62a61a9d9074155b9cecff448974363240e418d3f308efd3c2f3dac"
+src/WebCSS2.Mod = "sha256:f78d554c839f88f467c604f1b355e3b11f454dace407befb730fa9294d39c600"
+src/WebCSS2P.Mod = "sha256:2c4314da06225a921e9736258b54146d6ab2c0cb07a1211209616658dc0b3d82"
+src/WebNetwork.Mod = "sha256:a95d6c47b450f66399f6b7f9431fa9e6bae700d2d8fe1ab4f42d5ebcff9466a3"
+src/WebCSS2Format.Mod = "sha256:40ba2176b886cad4276e27290827de87c93aa215f759d462c426dc9232811d67"
+src/WebCSS2B.Mod = "sha256:03052f5fc221c0c92d3704cc043e7c4da090dced50dc667f1e00d9c475912475"
+src/WebNavDocs.Mod = "sha256:ce2afabc51673851ad58f2b4417742abefdaed5b30ebdfae3726429c55909ca2"
+src/WebNavigators.Mod = "sha256:e3342a1aea5b361d7913d51913e270fec888ff33135aa9340f1dd87a298344c1"
+share/WebHTML4.CSS = "sha256:eec8bcb0e2311a29d07e26fc501068ce79f3968f35c78687962df08051fd2ccc"
+share/WebHTML4Loose.SGML = "sha256:00929f49b8d794a79bf9d01a3c0372204ea9ca3cba59bc2affa5c25247233ef5"
+share/WebNav.gif = "sha256:1571ed2796a039cc26dded55708d7a0b6f3f27a48be5af80715850aa6e113c31"
+share/WebNavSmall.gif = "sha256:b4414b29f64116f35ac5b1c99288adc6161ff330d0b1a11a1894d736dccc9149"
+share/WebNavFonts.html = "sha256:16283a3505db34fc96711db4ed4ce7c7919b4a88a2096c1e1f69bf29c7229c63"
+share/WebNavTables.html = "sha256:ee2d0d9a3616e20133a54620c1ff7123aed3a7e43b6e5d92d95f23de89a1d68f"
+share/WebNavigatorAbout.html = "sha256:1973c3c3acbad75cde6c533d605e9d3fd1be6033500002e4e253f567ba77bcb6"
+share/WebNotFound.html = "sha256:b16a1e5ee91a747316e5c1b4cfcbeaa40078c72949448ebc4f5d340080152012"
+share/WebNotSupported.html = "sha256:cc9d233d2b945b3ed3d72fcaa7efac1cc8d4c7a0a4d85d49554ccc752c9fba75"
+share/WebNavigator.Text = "sha256:501e1bcf05358ec56d96cc902f8c5dad86744f14afbe4bc52220f76db35d4d8d"
+tools/WebNavigator.Tool = "sha256:a7f3fda50dc62151e1097ecea2183c402f481eedb5c287502b33d65e0667c905"
+test/WebNavTest.Mod = "sha256:bca4139807c1aba7bc154a66bdaadaebdba11861ae772fd33c06f8528a0fc4fd"
+README.md = "sha256:51fa93dc4ada7a385c368db97f2cffcd5b8d6f9c3c0fd19a49c1f15213991f15"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
