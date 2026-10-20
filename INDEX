@@ -74,6 +74,7 @@ apps/savescreen-tiles 0.1.0
 apps/telnet 0.1.0
 devel/coco 0.1.1
 devel/coco-eth 0.1.0
+devel/lisp 0.1.0
 devel/mfscheme 0.1.1
 devel/scheme 0.1.1
 gadgets/gadgets 0.2.1
