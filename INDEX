@@ -1,4 +1,5 @@
 linux/core 0.1.0
+system/console-base 0.1.0
 system/console 0.1.0
 apps/xxs 0.1.0
 lib/toml 0.1.0
@@ -46,8 +47,7 @@ devel/compiler-riscv 0.1.0
 devel/compiler-mips 0.1.0
 devel/compiler-ppc 0.1.0
 devel/compiler-armv7 0.1.0
-system/desktop-base 0.1.0
-system/display-x11 0.1.0
+system/display 0.1.0
 system/display-sixel 0.1.0
 apps/desktop-tools 0.1.0
 devel/desktop-compiler-x86 0.1.0

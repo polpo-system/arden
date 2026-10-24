@@ -4,7 +4,7 @@ category    = "system"
 version     = "0.1.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "the console: shell, texts, terminal, Oberon.Text"
+description = "the console: shell, Texts and fonts, terminal, Oberon.Text"
 
 [REMOTE]
 type = "git"
@@ -12,21 +12,13 @@ uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
 tag  = "main"
 
 [DEPS]
-core = "0.1.0"
-ooc-strings = "0.1.0"
+console-base = "0.1.0"
+display = "0.1.0"
 
 [MODULES]
 all = [
-  "src/cli/out.Mod",
-  "src/common/Modules.Mod",
-  "src/common/Objects0.Mod",
-  "src/cli/objects.Mod",
-  "src/common/regex.Mod",
-  "src/common/Utf8.Mod",
-  "src/common/Texts0.Mod",
-  "src/common/RXA.Mod",
-  "src/common/Oberon0.Mod",
-  "src/cli/texts.Mod",
+  "src/desktop/POLPO.Fonts.Mod",
+  "src/desktop/POLPO.Texts.Mod",
   "src/cli/logs.Mod",
   "src/common/Out.Mod",
   "src/common/In.Mod",

@@ -12,13 +12,11 @@ uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
 tag  = "main"
 
 [DEPS]
-desktop-base = "0.1.0"
+console = "0.1.0"
 display = "0.1.0"
 
 [MODULES]
 all = [
-  "src/desktop/POLPO.Fonts.Mod",
-  "src/desktop/POLPO.Texts.Mod",
   "src/desktop/Viewers.Mod",
   "src/desktop/Oberon.Mod",
   "src/desktop/MenuViewers.Mod",
