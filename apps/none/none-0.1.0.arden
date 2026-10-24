@@ -1,10 +1,10 @@
 [PACKAGE]
-name        = "xxs"
+name        = "none"
 category    = "apps"
 version     = "0.1.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "a nano-like console editor for plain files and Oberon texts"
+description = "a nano-like console editor for plain files and Oberon texts (was xxs)"
 
 [REMOTE]
 type = "git"
@@ -15,4 +15,4 @@ tag  = "main"
 console = "0.1.0"
 
 [MODULES]
-all = ["src/cli/xxs.Mod"]
+all = ["src/cli/none.Mod"]

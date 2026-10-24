@@ -29,11 +29,11 @@ deps        = ["console-base", "display"]
 match       = ["POLPO.Fonts", "POLPO.Texts", "src/cli/logs.Mod", "src/common/Out.Mod", "src/common/In.Mod", "src/common/Dates.Mod", "src/common/Strings.Mod", "src/cli/oberon.Mod", "src/cli/stdin.Mod", "src/cli/termios.Mod", "system", "src/common/POLPO.FATFiles.Mod", "src/common/Complete0.Mod", "src/cli/shell.Mod", "src/cli/boot.Mod", "src/cli/cat.Mod"]
 files.all = ["Oberon.Text", "texts.md", "VERSION"]
 
-[xxs]
+[none]
 category    = "apps"
-description = "a nano-like console editor for plain files and Oberon texts"
+description = "a nano-like console editor for plain files and Oberon texts (was xxs)"
 deps        = ["console"]
-match       = ["xxs"]
+match       = ["none"]
 
 [toml]
 category    = "lib"

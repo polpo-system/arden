@@ -1,7 +1,7 @@
 linux/core 0.1.0
 system/console-base 0.1.0
 system/console 0.1.0
-apps/xxs 0.1.0
+apps/none 0.1.0
 lib/toml 0.1.0
 lib/versions 0.1.0
 system/portia 0.1.0
