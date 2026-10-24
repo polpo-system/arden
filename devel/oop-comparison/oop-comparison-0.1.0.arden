@@ -1,0 +1,48 @@
+[PACKAGE]
+name        = "oop-comparison"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "none (sources), GPL-3 (polpo's files)"
+description = "the Oberon-2 example of Henderson and Zorn's comparison of object-oriented languages (1993), on x86 (type-bound procedures)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/oop-comparison/6988f80c22fb3711f4b08bb4769335e6fbdc57da"
+tag  = "v0.1.0"
+
+[DEPS]
+console = "0.1.0"
+desktop = "0.1.0"
+
+[MODULES]
+x86 = [
+  "/2 src/Personnel.Mod",
+  "/2 src/Student.Mod",
+  "/2 src/Teacher.Mod",
+  "/2 src/Database.Mod",
+  "/2 src/Testit.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/OOPComparison.Tool=tools/OOPComparison.Tool", "test/OOPComparisonTest.Mod", "README.md", "LICENSE"]
+
+[TESTS]
+copy = ["test/OOPComparisonTest.Mod"]
+ok   = ["OOPComparisonTest: 8 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+
+[TESTS.x86]
+cmds = ["$compile /2 OOPComparisonTest.Mod", "OOPComparisonTest.Run"]
+
+[SUMS]
+src/Personnel.Mod = "sha256:f7c69235e5f06ddbd5f779be65838fa0ec256149493136d5e573b96d4a8f1d6f"
+src/Student.Mod = "sha256:25ec9a13ea49d9088da9b66244f6f697b48f11a559a71e76b27ec4be0b3e2cf1"
+src/Teacher.Mod = "sha256:de6088fe17284ec295b520822434ad7dbb71ec256f002c6dd9712216916d632e"
+src/Database.Mod = "sha256:4904a037fac4af9dfe6152aa56079e5b5481c5c0f67c04b48895bbbdbd26205e"
+src/Testit.Mod = "sha256:132789c407f500066aceb17b54c96485434de1139763690006dfc77712389652"
+tools/OOPComparison.Tool = "sha256:4cdba9b7ac26dabdbd1a5f7b80c83998182cda4cb6332088c4a2a383d4a963e6"
+test/OOPComparisonTest.Mod = "sha256:daa6c69327bc3d507019c1d814f17721f5142e36c609d9fbb1fe2a7a928fca85"
+README.md = "sha256:97a522268e5068d95fbecf9a5ed682c181e6413ac8cc536c8a919692ac8ac898"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
