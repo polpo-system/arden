@@ -1,0 +1,35 @@
+[PACKAGE]
+name        = "ooc-uri"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "LGPL-2+"
+description = "URI references of ooc-libxml (RFC 2396), on x86 (type-bound procedures): URIParser, URI, schemes file, memory and mailto"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+ooc-io = "0.1.0"
+
+[MODULES]
+x86 = [
+  "/2 src/lib/ooc/URICharClass.Mod",
+  "/2 src/lib/ooc/URIString.Mod",
+  "/2 src/lib/ooc/URIError.Mod",
+  "/2 src/lib/ooc/URI.Mod",
+  "/2 src/lib/ooc/URIAuthorityUnparsed.Mod",
+  "/2 src/lib/ooc/URIQueryUnparsed.Mod",
+  "/2 src/lib/ooc/URIAuthorityRegistryBased.Mod",
+  "/2 src/lib/ooc/URIAuthorityServerBased.Mod",
+  "/2 src/lib/ooc/URIFragmentUnparsed.Mod",
+  "/2 src/lib/ooc/URISchemeHierarchical.Mod",
+  "/2 src/lib/ooc/URISchemeOpaque.Mod",
+  "/2 src/lib/ooc/URISchemeCurrentDoc.Mod",
+  "/2 src/lib/ooc/URIParser.Mod",
+  "/2 src/lib/ooc/URISchemeFile.Mod",
+  "/2 src/lib/ooc/URISchemeMemory.Mod",
+  "/2 src/lib/ooc/URISchemeMailTo.Mod",
+]

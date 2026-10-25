@@ -161,10 +161,10 @@ match       = ["DNS"]
 
 [ooc-strings]
 category    = "lib"
-description = "strings of the OOC library 1.5 (as in voc): Ascii, CharClass, oocStrings, Strings2, OakStrings"
+description = "strings of the OOC library 1.5 (as in voc): Ascii, CharClass, oocStrings, Strings2, OakStrings; LongStrings for UTF-16 code units (oocUnicode.LONGCHAR)"
 license     = "LGPL-2+"
 deps        = []
-match       = ["Ascii", "CharClass", "oocStrings", "Strings2", "OakStrings"]
+match       = ["Ascii", "CharClass", "oocStrings", "Strings2", "OakStrings", "oocUnicode", "LongStrings"]
 
 [ooc-math]
 category    = "lib"
@@ -195,10 +195,17 @@ match       = ["SysClock", "JulianDay", "Time"]
 
 [ooc-io]
 category    = "lib"
-description = "channels of the OOC library 1.5, on x86 (type-bound procedures): Channel, oocFiles on Files, TextRider, BinaryRider, ProgramArgs on Oberon.Par, Msg, Filenames"
+description = "channels of the OOC library 1.5, on x86 (type-bound procedures): Channel, oocFiles on Files, IOMemory (files in memory), TextRider, BinaryRider, ProgramArgs on Oberon.Par, Msg, Filenames"
 license     = "LGPL-2+"
 deps        = ["console", "ooc-strings", "ooc-conversions", "ooc-time"]
-match       = ["Msg", "Channel", "FilesHost", "oocFiles", "ProgramArgsHost", "ProgramArgs", "TextRider", "BinaryRider", "Filenames"]
+match       = ["Msg", "Channel", "IOMemory", "FilesHost", "oocFiles", "ProgramArgsHost", "ProgramArgs", "TextRider", "BinaryRider", "Filenames"]
+
+[ooc-uri]
+category    = "lib"
+description = "URI references of ooc-libxml (RFC 2396), on x86 (type-bound procedures): URIParser, URI, schemes file, memory and mailto"
+license     = "LGPL-2+"
+deps        = ["ooc-io"]
+match       = ["URICharClass", "URIString", "URIError", "URI", "URIAuthorityUnparsed", "URIQueryUnparsed", "URIAuthorityRegistryBased", "URIAuthorityServerBased", "URIFragmentUnparsed", "URISchemeHierarchical", "URISchemeOpaque", "URISchemeCurrentDoc", "URIParser", "URISchemeFile", "URISchemeMemory", "URISchemeMailTo"]
 
 [strutils]
 category    = "lib"

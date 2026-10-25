@@ -4,7 +4,7 @@ category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
 license     = "LGPL-2+"
-description = "strings of the OOC library 1.5 (as in voc): Ascii, CharClass, oocStrings, Strings2, OakStrings"
+description = "strings of the OOC library 1.5 (as in voc): Ascii, CharClass, oocStrings, Strings2, OakStrings; LongStrings for UTF-16 code units (oocUnicode.LONGCHAR)"
 
 [REMOTE]
 type = "git"
@@ -20,4 +20,6 @@ all = [
   "src/lib/ooc/CharClass.Mod",
   "src/lib/ooc/Strings2.Mod",
   "src/lib/ooc/OakStrings.Mod",
+  "src/lib/ooc/oocUnicode.Mod",
+  "src/lib/ooc/LongStrings.Mod",
 ]

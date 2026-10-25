@@ -27,6 +27,7 @@ lib/math 0.1.0
 lib/ooc-conversions 0.1.0
 lib/ooc-time 0.1.0
 lib/ooc-io 0.1.0
+lib/ooc-uri 0.1.0
 lib/strutils 0.1.0
 lib/base64 0.1.0
 lib/internet 0.1.0
