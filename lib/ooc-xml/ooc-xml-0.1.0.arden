@@ -1,0 +1,213 @@
+[PACKAGE]
+name        = "ooc-xml"
+category    = "lib"
+version     = "0.1.0"
+author      = "Michael van Acken (ooc-libxml); the voc port; polpo"
+license     = "LGPL-2+"
+description = "XML of ooc-libxml 3.2.0 (Michael van Acken), by way of the voc port: parser, DTD validation, namespaces, codecs, writer; xmlcheck; on x86 (type-bound procedures)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/ooc-xml/4153a3cf611ebd8e39fe6fb238ab77db97f47f1c"
+tag  = "v0.1.0"
+
+[DEPS]
+console = "0.1.0"
+ooc-strings = "0.1.0"
+ooc-io = "0.1.0"
+ooc-uri = "0.1.0"
+
+[MODULES]
+x86 = [
+  "/2 src/XML/UnicodeCodec.Mod",
+  "/2 src/XML/UnicodeCodec/ASCII.Mod",
+  "/2 src/XML/UnicodeCodec/Latin1.Mod",
+  "/2 src/XML/UnicodeCodec/UTF8.Mod",
+  "/2 src/XML/UnicodeCodec/UTF16.Mod",
+  "/2 src/XML/UnicodeCodec/ImportAll.Mod",
+  "/2 src/XML/Limits.Mod",
+  "/2 src/XML/InputBuffer.Mod",
+  "/2 src/XML/UnicodeBuffer.Mod",
+  "/2 src/XML/DTD.Mod",
+  "/2 src/XML/EntityResolver.Mod",
+  "/2 src/XML/Error.Mod",
+  "/2 src/XML/Locator.Mod",
+  "/2 src/XML/Builder.Mod",
+  "/2 src/XML/Parser.Mod",
+  "/2 src/XML/Builder/Namespaces.Mod",
+  "/2 src/XML/Regexp.Mod",
+  "/2 src/XML/Builder/Validation.Mod",
+  "/2 src/XML/Writer.Mod",
+  "/2 src/XML/Builder/Canonical.Mod",
+  "/2 src/XML/Builder/ParserProtocol.Mod",
+  "/2 src/XML/Basic/Element.Mod",
+  "/2 src/XML/Basic/DataType.Mod",
+  "/2 src/XML/Basic/Parser.Mod",
+  "/2 polpo/src/XMLCheck0.Mod",
+  "/2 polpo/src/xmlcheck.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["polpo/tools/XMLCheck.Tool=tools/XMLCheck.Tool", "README.md", "COPYING",
+  "tests/voc/TestUnicodeCodecs.Mod",
+  "tests/voc/TestUnicodeMessages.Mod",
+  "tests/voc/TestMemoryBuffers.Mod",
+  "tests/voc/TestDTDResolver.Mod",
+  "tests/voc/TestParser.Mod",
+  "tests/voc/TestNamespaces.Mod",
+  "tests/voc/TestValidation.Mod",
+  "tests/voc/TestWriter.Mod",
+  "tests/voc/TestBasic.Mod",
+  "tests/voc/TestProtocol.Mod",
+  "tests/voc/TestEntityPolicy.Mod",
+  "tests/voc/TestLimits.Mod",
+  "polpo/test/TestCodecVectors.Mod",
+  "polpo/test/XMLTests.Mod",
+  "polpo/test/XMLConformance.Mod",
+  "polpo/test/XMLStress.Mod",
+  "polpo/test/wf.list",
+  "polpo/test/canonical.list",
+  "polpo/test/validation.list",
+  "polpo/test/misc.list",
+  "polpo/test/protocol.list",
+  "polpo/test/namespaces-protocol.list",
+  "polpo/test/local.tar.gz",
+  "tests/3rd-party-archives/xmltest.tar.gz",
+  "tests/3rd-party-archives/ibm.tar.gz",
+  "tests/3rd-party-archives/sun.tar.gz",
+  "tests/3rd-party-archives/oasis.tar.gz"
+]
+
+[TESTS]
+copy = [
+  "tests/voc/TestUnicodeCodecs.Mod",
+  "tests/voc/TestUnicodeMessages.Mod",
+  "tests/voc/TestMemoryBuffers.Mod",
+  "tests/voc/TestDTDResolver.Mod",
+  "tests/voc/TestParser.Mod",
+  "tests/voc/TestNamespaces.Mod",
+  "tests/voc/TestValidation.Mod",
+  "tests/voc/TestWriter.Mod",
+  "tests/voc/TestBasic.Mod",
+  "tests/voc/TestProtocol.Mod",
+  "tests/voc/TestEntityPolicy.Mod",
+  "tests/voc/TestLimits.Mod",
+  "polpo/test/TestCodecVectors.Mod",
+  "polpo/test/XMLTests.Mod",
+  "polpo/test/XMLConformance.Mod",
+  "polpo/test/XMLStress.Mod",
+  "polpo/test/wf.list",
+  "polpo/test/canonical.list",
+  "polpo/test/validation.list",
+  "polpo/test/misc.list",
+  "polpo/test/protocol.list",
+  "polpo/test/namespaces-protocol.list",
+  "polpo/test/local.tar.gz",
+  "tests/3rd-party-archives/xmltest.tar.gz",
+  "tests/3rd-party-archives/ibm.tar.gz",
+  "tests/3rd-party-archives/sun.tar.gz",
+  "tests/3rd-party-archives/oasis.tar.gz",
+]
+ok   = ["XMLTests: 13 test modules passed",
+  "XMLConformance wf.list: 384 checks, 0 failed",
+  "XMLConformance canonical.list: 339 checks, 0 failed",
+  "XMLConformance validation.list: 1808 checks, 0 failed",
+  "XMLConformance misc.list: 126 checks, 0 failed",
+  "XMLConformance ../protocol.list: 6 checks, 0 failed",
+  "XMLConformance ../namespaces-protocol.list: 24 checks, 0 failed",
+  "XMLStress.Fuzz: 2845 checks, 0 failed",
+  "XMLStress.Limits: 53 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+
+[TESTS.x86]
+cmds = [
+  "$compile /2 TestUnicodeCodecs.Mod",
+  "$compile /2 TestCodecVectors.Mod",
+  "$compile /2 TestUnicodeMessages.Mod",
+  "$compile /2 TestMemoryBuffers.Mod",
+  "$compile /2 TestDTDResolver.Mod",
+  "$compile /2 TestParser.Mod",
+  "$compile /2 TestNamespaces.Mod",
+  "$compile /2 TestValidation.Mod",
+  "$compile /2 TestWriter.Mod",
+  "$compile /2 TestBasic.Mod",
+  "$compile /2 TestProtocol.Mod",
+  "$compile /2 TestEntityPolicy.Mod",
+  "$compile /2 TestLimits.Mod",
+  "$compile /2 XMLTests.Mod",
+  "$compile /2 XMLConformance.Mod",
+  "$compile /2 XMLStress.Mod",
+  "XMLTests.Run",
+  "tar.Unpack xmltest.tar.gz .",
+  "tar.Unpack ibm.tar.gz .",
+  "tar.Unpack sun.tar.gz .",
+  "tar.Unpack oasis.tar.gz .",
+  "tar.Unpack local.tar.gz .",
+  "XMLConformance.Run wf.list canonical.list validation.list misc.list",
+  "fs.Cd protocol",
+  "XMLConformance.Run ../protocol.list",
+  "fs.Cd ../namespaces",
+  "XMLConformance.Run ../namespaces-protocol.list",
+  "fs.Cd ..",
+  "XMLStress.Fuzz",
+  "XMLStress.Limits",
+]
+
+[SUMS]
+src/XML/UnicodeCodec.Mod = "sha256:b0cb067018143a88c72c63e67e91cf4f5ef37e98878e50483ea428ff5ea1e309"
+src/XML/UnicodeCodec/ASCII.Mod = "sha256:c9304baf4066caad370fe90542f328e9325ff93b40ff56e59cb69ea03fb952a1"
+src/XML/UnicodeCodec/Latin1.Mod = "sha256:9a2d0b6fda870e0e9a3f9bee71ee87c833cf190bc5c75832f99716a12a160d3e"
+src/XML/UnicodeCodec/UTF8.Mod = "sha256:4eaa5b3b6bbee8bbb10ddd571ea4336474cd0d2a9e18c3a4f662e84642646e43"
+src/XML/UnicodeCodec/UTF16.Mod = "sha256:d55f5eea8b1e23f1150856d1fe12fc7a6581b9845b2e1d435834ed931c34351d"
+src/XML/UnicodeCodec/ImportAll.Mod = "sha256:5f4a379af61b56109356e2e5a09967364f997fb1eb84eac85072bbcdb36881b4"
+src/XML/Limits.Mod = "sha256:712b5a39cef525c683adcb8b11998af8edd6d6443d03ac0dd481a33dd7cceefe"
+src/XML/InputBuffer.Mod = "sha256:1b2d794e60d3456ecf0088376b14caf77ca4d9cb70fa1f4adfb1c03116457464"
+src/XML/UnicodeBuffer.Mod = "sha256:8f24b441bd673d0a795c4f43c9bc054480a2613759b51279013d4a1f86a0e717"
+src/XML/DTD.Mod = "sha256:6abb62a4a4009e6946c620a130965a2ce5df68522675726b09b46cdc4a439c77"
+src/XML/EntityResolver.Mod = "sha256:a535e8d9752f5086b4802b0b10c39cebda027ba5242ad049460538a985e11969"
+src/XML/Error.Mod = "sha256:f640d8e112ec8a4813fb849090d77bb65186126ce55db0014a5aadb07872505e"
+src/XML/Locator.Mod = "sha256:7284da078bdaf3c046aa5ed7213c0dc7b1265bdce094bb41342562f8efc26332"
+src/XML/Builder.Mod = "sha256:aa343c05fac3696d54ac01c29c4a9a6d60f938a261955f7e4226e7327628f1b2"
+src/XML/Parser.Mod = "sha256:762d7f915c369f884e08e4b55e0969baafbdf85e6840bfd7c13c054e21659beb"
+src/XML/Builder/Namespaces.Mod = "sha256:01c1d43ff3eb81c87d2d4ce0c71879c6b866f33a4bbb7417818d34f314327d27"
+src/XML/Regexp.Mod = "sha256:84e6e3679fb271e4ef6c7716f58d7c13cbfdc022d6736a48bb43d24af10ee22c"
+src/XML/Builder/Validation.Mod = "sha256:411a93582855243d31600fc80e0c08226fb9edb8a1cf246a87b20b6be180477d"
+src/XML/Writer.Mod = "sha256:bcf6ed1752c32dc4708c1bce7e4062cb6b419c61e6837580f4400ca9909019c5"
+src/XML/Builder/Canonical.Mod = "sha256:e080983d212555e14b5015458365de3729d5d4be07e94e74a6c27c71e8556a1a"
+src/XML/Builder/ParserProtocol.Mod = "sha256:47ef4becad0535e932d274820ee09b5e49497a8723447cca928fa66de7a98594"
+src/XML/Basic/Element.Mod = "sha256:9ae32b95dcd27b2723362a3817f7041f0cd2a5202734b1994df28118e6fbca6b"
+src/XML/Basic/DataType.Mod = "sha256:a8ec68b3d166f88669457b0d26449b87aa9d3992e6bc446725a5fe43556435cc"
+src/XML/Basic/Parser.Mod = "sha256:1dfc265f9746e6897a6ccebd0783448e75db30af7012b9478996a05238ad7bf0"
+polpo/src/XMLCheck0.Mod = "sha256:30fa1e08ddc58c834fe62054e2838020958dd00496ed99769d745416bb29f6d3"
+polpo/src/xmlcheck.Mod = "sha256:f7b300e98928e2c12e252d9e7d77c0842ae1047798920fdb7f08bd2c91ce7864"
+polpo/tools/XMLCheck.Tool = "sha256:5534602a205bbbdbe732bbaaf7967b72d13afddcc5f5d90be475d14359b9217c"
+README.md = "sha256:229c9cfa63587676486589545048a7f512659190bef47668f1b871fbe7f8e1fb"
+COPYING = "sha256:9e9e8608c4cdda51a78cc3a385f4ec9a2e4c96d5ecad74ac8bca5fca3e563b7d"
+tests/voc/TestUnicodeCodecs.Mod = "sha256:04e4b8495f71de9d96a6d3cb36a96abd83037f0f27bec4c8948ff6ec4da3eb91"
+tests/voc/TestUnicodeMessages.Mod = "sha256:18ade03ccdd7d76438aeca1431e838058457fada48e0c2da3b639d51554f330b"
+tests/voc/TestMemoryBuffers.Mod = "sha256:b99bdf7eb3374600bac3af931a99955680e1b526827a44818e96822384b3e137"
+tests/voc/TestDTDResolver.Mod = "sha256:3bbea5452f689978e9dddabfc678103f199f8e4f0f0bb2328642c7f6efc65203"
+tests/voc/TestParser.Mod = "sha256:2da3b2f66a99fdae6b96e4a87664514fb84f21cd77a755ca21ec2bb5aa605b01"
+tests/voc/TestNamespaces.Mod = "sha256:196449d12f371c9bf519d27002caffc54fa55e93efa9786ff5723f461538b2bf"
+tests/voc/TestValidation.Mod = "sha256:375e372b50bb0413f4f115c5928f6fb17492c5baafc2e75598e69abd2c97d62d"
+tests/voc/TestWriter.Mod = "sha256:9ebb972d72649ba1f3fe9b1746b263cb7e33b5d3662c97120042307ed19350a5"
+tests/voc/TestBasic.Mod = "sha256:a60a0cb0bdf1ad20c3c33d96c820680f66c87a2308b14a8abda2764b28899aea"
+tests/voc/TestProtocol.Mod = "sha256:0d779f7717d26a389847d07a2901331d7ddaf2e0bf4d87c416ddac198c261298"
+tests/voc/TestEntityPolicy.Mod = "sha256:d8aa4fc8b9fb504a24f66eb628e714d0d602d7ddfdfef77c492170f955514fda"
+tests/voc/TestLimits.Mod = "sha256:345a01f811f97ce129e9d62f7dde41e895f0bf772313f08cab63eb0134a884fe"
+polpo/test/TestCodecVectors.Mod = "sha256:38ae592f5f42014c6a8f78dd9426f3ae3dced56d02d3a3d0164ea2679080318b"
+polpo/test/XMLTests.Mod = "sha256:e5a74614709205442adc8fb6a78333f70955634b2c94dd9ae08388340054319c"
+polpo/test/XMLConformance.Mod = "sha256:ef60d2b1680de52e978c0c4400028d21251c38f4c0b97dbbe5a8171228c3de77"
+polpo/test/XMLStress.Mod = "sha256:3bcb304ba2f2581d0bb993b372fcfb6d88b5b250caba0e7b0f2c3b04d6971726"
+polpo/test/wf.list = "sha256:cacde935ae220e3168478d6f2ff40a7277fa2a1be91b7fcb90554edfc5526426"
+polpo/test/canonical.list = "sha256:ef5c0ae4c4c7c518755d9cc3eb86b4f27f9c7a48dd5ff43dcfd3b4880fbb2633"
+polpo/test/validation.list = "sha256:f56b52653ac153fa50e3cc471d76660d5990f7288900a46ab4360967d47c91de"
+polpo/test/misc.list = "sha256:87ff570076d8a63032f2349e3b783647dbb48f8b35c536acac784a01937d122c"
+polpo/test/protocol.list = "sha256:9b436910e1179f5b450cca4eaeec249bfe6e9048c1a4060ae5163102ae25a76d"
+polpo/test/namespaces-protocol.list = "sha256:b41608d865e12b1e155c6c0d02b5967e5e368dc40c669a5677177784d606a6d1"
+polpo/test/local.tar.gz = "sha256:8560906d64561d5e96b6c271ec961d4a1ee0eaad2fbe14413a4301e48decbf6c"
+tests/3rd-party-archives/xmltest.tar.gz = "sha256:e8fbf6ae9e86d7b624d7762181576adc8b410d4c8c4d69e4d11c9f6fdb0a4220"
+tests/3rd-party-archives/ibm.tar.gz = "sha256:9c46b2e362cf43d0575ccf0733e05f2702653cfa7f0fdd016a6c99100eb42f58"
+tests/3rd-party-archives/sun.tar.gz = "sha256:b28951a9b09efb5cd054fea71e00492dd9405b0fb4a4963f5e025aa19d6d8b4b"
+tests/3rd-party-archives/oasis.tar.gz = "sha256:6cb86b9a1f948388ca1d805cd53ad29f27458428cc3c12003e430147bd563473"

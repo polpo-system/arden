@@ -163,6 +163,7 @@ lib/images-jpeg 0.1.0
 lib/images-pcx 0.1.0
 lib/images-psd 0.1.0
 lib/jpeg 0.1.0
+lib/ooc-xml 0.1.0
 lib/otype 0.1.0
 lib/pcx 0.1.0
 lib/streams 0.1.0
