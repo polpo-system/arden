@@ -29,6 +29,7 @@ all = [
   "src/cli/termios.Mod",
   "src/common/POLPO.FATFiles.Mod",
   "src/common/Complete0.Mod",
+  "src/cli/traps.Mod",
   "src/cli/shell.Mod",
   "src/cli/boot.Mod",
   "src/cli/cat.Mod",
