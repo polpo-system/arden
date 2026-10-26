@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "ooc-xml"
 category    = "lib"
-version     = "0.1.0"
+version     = "0.2.0"
 author      = "Michael van Acken (ooc-libxml); the voc port; polpo"
 license     = "LGPL-2+"
-description = "XML of ooc-libxml 3.2.0 (Michael van Acken), by way of the voc port: parser, DTD validation, namespaces, codecs, writer; xmlcheck; on x86 (type-bound procedures)"
+description = "XML of ooc-libxml 3.2.0 (Michael van Acken), by way of the voc port: parser, DTD validation, namespaces, codecs, writer, element streams (XMPP); xmlcheck; on x86 (type-bound procedures)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/ooc-xml/4153a3cf611ebd8e39fe6fb238ab77db97f47f1c"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/ooc-xml/af8e87347baec466957029e6a36a3959c3685458"
+tag  = "v0.2.0"
 
 [DEPS]
 console = "0.1.0"
@@ -43,6 +43,7 @@ x86 = [
   "/2 src/XML/Basic/Element.Mod",
   "/2 src/XML/Basic/DataType.Mod",
   "/2 src/XML/Basic/Parser.Mod",
+  "/2 src/XML/Stream.Mod",
   "/2 polpo/src/XMLCheck0.Mod",
   "/2 polpo/src/xmlcheck.Mod",
 ]
@@ -62,6 +63,7 @@ all = ["polpo/tools/XMLCheck.Tool=tools/XMLCheck.Tool", "README.md", "COPYING",
   "tests/voc/TestProtocol.Mod",
   "tests/voc/TestEntityPolicy.Mod",
   "tests/voc/TestLimits.Mod",
+  "tests/voc/TestStream.Mod",
   "polpo/test/TestCodecVectors.Mod",
   "polpo/test/XMLTests.Mod",
   "polpo/test/XMLConformance.Mod",
@@ -93,6 +95,7 @@ copy = [
   "tests/voc/TestProtocol.Mod",
   "tests/voc/TestEntityPolicy.Mod",
   "tests/voc/TestLimits.Mod",
+  "tests/voc/TestStream.Mod",
   "polpo/test/TestCodecVectors.Mod",
   "polpo/test/XMLTests.Mod",
   "polpo/test/XMLConformance.Mod",
@@ -109,7 +112,7 @@ copy = [
   "tests/3rd-party-archives/sun.tar.gz",
   "tests/3rd-party-archives/oasis.tar.gz",
 ]
-ok   = ["XMLTests: 13 test modules passed",
+ok   = ["XMLTests: 14 test modules passed",
   "XMLConformance wf.list: 384 checks, 0 failed",
   "XMLConformance canonical.list: 339 checks, 0 failed",
   "XMLConformance validation.list: 1808 checks, 0 failed",
@@ -135,6 +138,7 @@ cmds = [
   "$compile /2 TestProtocol.Mod",
   "$compile /2 TestEntityPolicy.Mod",
   "$compile /2 TestLimits.Mod",
+  "$compile /2 TestStream.Mod",
   "$compile /2 XMLTests.Mod",
   "$compile /2 XMLConformance.Mod",
   "$compile /2 XMLStress.Mod",
@@ -153,6 +157,7 @@ cmds = [
   "XMLStress.Fuzz",
   "XMLStress.Limits",
 ]
+
 
 [SUMS]
 src/XML/UnicodeCodec.Mod = "sha256:b0cb067018143a88c72c63e67e91cf4f5ef37e98878e50483ea428ff5ea1e309"
@@ -179,10 +184,11 @@ src/XML/Builder/ParserProtocol.Mod = "sha256:47ef4becad0535e932d274820ee09b5e494
 src/XML/Basic/Element.Mod = "sha256:9ae32b95dcd27b2723362a3817f7041f0cd2a5202734b1994df28118e6fbca6b"
 src/XML/Basic/DataType.Mod = "sha256:a8ec68b3d166f88669457b0d26449b87aa9d3992e6bc446725a5fe43556435cc"
 src/XML/Basic/Parser.Mod = "sha256:1dfc265f9746e6897a6ccebd0783448e75db30af7012b9478996a05238ad7bf0"
+src/XML/Stream.Mod = "sha256:98c6d8aeccf0e35a7d2f99374470555176cde2b120b0452644c712331fd90af7"
 polpo/src/XMLCheck0.Mod = "sha256:30fa1e08ddc58c834fe62054e2838020958dd00496ed99769d745416bb29f6d3"
 polpo/src/xmlcheck.Mod = "sha256:f7b300e98928e2c12e252d9e7d77c0842ae1047798920fdb7f08bd2c91ce7864"
 polpo/tools/XMLCheck.Tool = "sha256:5534602a205bbbdbe732bbaaf7967b72d13afddcc5f5d90be475d14359b9217c"
-README.md = "sha256:229c9cfa63587676486589545048a7f512659190bef47668f1b871fbe7f8e1fb"
+README.md = "sha256:7ff56a1eca48d6952d73466a92c1753d0344171646ec585c6bfedac08187d785"
 COPYING = "sha256:9e9e8608c4cdda51a78cc3a385f4ec9a2e4c96d5ecad74ac8bca5fca3e563b7d"
 tests/voc/TestUnicodeCodecs.Mod = "sha256:04e4b8495f71de9d96a6d3cb36a96abd83037f0f27bec4c8948ff6ec4da3eb91"
 tests/voc/TestUnicodeMessages.Mod = "sha256:18ade03ccdd7d76438aeca1431e838058457fada48e0c2da3b639d51554f330b"
@@ -196,8 +202,9 @@ tests/voc/TestBasic.Mod = "sha256:a60a0cb0bdf1ad20c3c33d96c820680f66c87a2308b14a
 tests/voc/TestProtocol.Mod = "sha256:0d779f7717d26a389847d07a2901331d7ddaf2e0bf4d87c416ddac198c261298"
 tests/voc/TestEntityPolicy.Mod = "sha256:d8aa4fc8b9fb504a24f66eb628e714d0d602d7ddfdfef77c492170f955514fda"
 tests/voc/TestLimits.Mod = "sha256:345a01f811f97ce129e9d62f7dde41e895f0bf772313f08cab63eb0134a884fe"
+tests/voc/TestStream.Mod = "sha256:91e895cb4daf9e0764975a2d8958476e9af0d6323a59b35633745a6784334c06"
 polpo/test/TestCodecVectors.Mod = "sha256:38ae592f5f42014c6a8f78dd9426f3ae3dced56d02d3a3d0164ea2679080318b"
-polpo/test/XMLTests.Mod = "sha256:e5a74614709205442adc8fb6a78333f70955634b2c94dd9ae08388340054319c"
+polpo/test/XMLTests.Mod = "sha256:9292dfa906fe6fc95dca973a9e96456971e699e62bee07ba65f41a981bab375e"
 polpo/test/XMLConformance.Mod = "sha256:ef60d2b1680de52e978c0c4400028d21251c38f4c0b97dbbe5a8171228c3de77"
 polpo/test/XMLStress.Mod = "sha256:3bcb304ba2f2581d0bb993b372fcfb6d88b5b250caba0e7b0f2c3b04d6971726"
 polpo/test/wf.list = "sha256:cacde935ae220e3168478d6f2ff40a7277fa2a1be91b7fcb90554edfc5526426"
