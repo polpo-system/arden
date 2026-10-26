@@ -1,0 +1,55 @@
+[PACKAGE]
+name        = "punycode"
+category    = "lib"
+version     = "0.1.0"
+author      = "Norayr Chilingarian (agena); the voc port; polpo"
+license     = "GPL-3; Unicode and IDNA data: Unicode License, BSD-3-Clause"
+description = "RFC 3492 Punycode, Unicode 16.0 NFC and IDNA host names (UTS #46, IDNA2008): IDNA.Names, from agena by way of the voc port"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/punycode/a7b639742ab6dd22fa85dc3c59e0f1dc9c1d80b8"
+tag  = "v0.1.0"
+
+[DEPS]
+console = "0.1.0"
+
+[MODULES]
+all = ["Punycode.Mod", "polpo/src/IDNAMapping.Mod", "polpo/src/IDNAData.Mod", "UnicodeNFC.Mod", "IDNA.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["polpo/data/IDNAMapping.txt=share/IDNAMapping.txt", "polpo/data/IDNAData.txt=share/IDNAData.txt",
+  "polpo/tools/IDNATables.Mod", "README.md", "LICENSE", "NOTICE", "NOTICE-IDNA", "NOTICE-UNICODE",
+  "tests/TestPunycode.Mod", "polpo/test/TestIDNA.Mod", "polpo/test/PunycodeTests.Mod",
+  "polpo/test/PunycodeVectors.Mod", "polpo/test/vectors.tar.gz"]
+
+[TESTS]
+copy = ["tests/TestPunycode.Mod", "polpo/test/TestIDNA.Mod", "polpo/test/PunycodeTests.Mod",
+  "polpo/test/PunycodeVectors.Mod", "polpo/test/vectors.tar.gz"]
+cmds = ["$compile TestPunycode.Mod", "$compile TestIDNA.Mod", "$compile PunycodeTests.Mod",
+  "$compile PunycodeVectors.Mod", "PunycodeTests.Run", "tar.Unpack vectors.tar.gz .",
+  "PunycodeVectors.Run requests.txt output.txt"]
+ok   = ["Punycode and Unicode NFC checks passed", "IDNA UTF-8 name checks passed: 38",
+  "PunycodeTests: 2 test modules passed", "PunycodeVectors: 47844 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL", "not found"]
+
+[SUMS]
+Punycode.Mod = "sha256:1c64cb4054c4691d9dc7d4c9a694c89c7778a5fff3c4194401722f119ec4e820"
+polpo/src/IDNAMapping.Mod = "sha256:1e9b0f38ddcf7c9c5de251163a37c3727b473ef87cb7a2b6ad4be3abbc35e29d"
+polpo/src/IDNAData.Mod = "sha256:b2fdc0e10f9af3ba1d56edf45828443dbc553e820ae5fd6070eba3ad5b6fda79"
+UnicodeNFC.Mod = "sha256:7c6a97f89a611dd3de345ff479c8bff36a64893b46c9d5a98d6dacc9a6dbdffb"
+IDNA.Mod = "sha256:cc253efab981d6ae0cc8a88c99dd0251b046e1b0878b924faf1a2a0b81ed0609"
+polpo/data/IDNAMapping.txt = "sha256:f007e6492cd79f2eecb535ee1cde825e0e6b7e3485bf4beab712531c30c21e55"
+polpo/data/IDNAData.txt = "sha256:112c3696ac21113c9aa43f1c3cf375facd9c2ade14279c25ad9ef0542bc9ea7a"
+polpo/tools/IDNATables.Mod = "sha256:e14fba6188ec2ef0b1d65b1bef3be8ea4e3883020af78bb2fa86f45664097266"
+README.md = "sha256:81d8056ae5a388b6bd6d8db99d98051ab7ccf03dbf42773310885abdf18e2611"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+NOTICE = "sha256:058102a97d82dfd12bd715e94f43b37c3140bb7a25fcc56f55c77103d5141e53"
+NOTICE-IDNA = "sha256:b7a336abf3b04e180ec065cdd16e705d079e1cc7a14f910aa6e9187f36b9cd87"
+NOTICE-UNICODE = "sha256:e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+tests/TestPunycode.Mod = "sha256:48fa8502dc1683f5181c486b36bfd717209982a012a02b50bfc167e0b46b8292"
+polpo/test/TestIDNA.Mod = "sha256:7af7dbb4364c5cfc63446b45cf752e422e9dbb80190c54b7ee83972c3299ef04"
+polpo/test/PunycodeTests.Mod = "sha256:566959b1ce69ffa571b7bd245f8b53f49c9d194d44ba8ed4801cad6d4ac16c48"
+polpo/test/PunycodeVectors.Mod = "sha256:8a89e36859e49b60f8fef6c1d5df86e4e6fee6f720367f663e5f131cef34a0bf"
+polpo/test/vectors.tar.gz = "sha256:85fe9e4ca98801356fc89a9e0159aa1340b97e00ab123e77d08f1e573ead19d3"
