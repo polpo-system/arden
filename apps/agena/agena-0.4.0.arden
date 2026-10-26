@@ -1,21 +1,22 @@
 [PACKAGE]
 name        = "agena"
 category    = "apps"
-version     = "0.3.2"
+version     = "0.4.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "agena.Serve: a Gemini server for a directory or several virtual hosts (TOML), on chosen IPv4 and IPv6 addresses, over the TLS 1.3 server of tls"
+description = "agena.Serve: a Gemini server for a directory or several virtual hosts (TOML), on chosen IPv4 and IPv6 addresses, over the TLS 1.3 server of tls; host names through IDNA (punycode)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/agena/b7d9e9ca106c040fc94701be61247474ba89b84f"
-tag  = "v0.3.2"
+uri  = "https://raw.githubusercontent.com/polpo-system/agena/9914e8671dde0afef03c3d561eed90dd9b5a8de4"
+tag  = "v0.4.0"
 
 [DEPS]
 console = "0.1.0"
 sockets = "0.1.0"
 tls = "0.1.0"
 toml = "0.1.0"
+punycode = "0.1.0"
 
 [MODULES]
 all = ["agena.Mod"]
@@ -29,16 +30,16 @@ all = ["README.md", "LICENSE", "agena.toml.example", "test/AgenaTest.Mod", "test
 copy = ["test/AgenaTest.Mod", "test/cert.pem", "test/key.pem", "test/index.gmi", "test/agena.toml", "test/one.gmi", "test/two.gmi", "test/x.zq"]
 cmds = ["$compile AgenaTest.Mod", "AgenaTest.Run", "AgenaTest.Hosts", "AgenaTest.Names", "AgenaTest.Listen"]
 ok   = ["status: 20 text/gemini; charset=utf-8", "body: zq test capsule", "status: 51 not found", "status: 53 proxy request refused", "the server ended",
-  "body: page one", "body: page two", "status: 20 text/x-zq", "name: xn--y9a5bft.xn--y9a3aq", "name: xn--bcher-kva.example",
+  "body: page one", "body: page two", "status: 20 text/x-zq", "name: xn--y9a5bft.xn--y9a3aq", "name: xn--bcher-kva.example", "name: xn--fa-hia.de", "status: 59 bad request",
   "not listening: 127.0.0.1 on the port of ::1"]
 bad  = ["TRAP", "  err ", "missing", "no connection", "did not start", "server failed"]
 
 [SUMS]
-agena.Mod = "sha256:7394662f3aab0b45779915992f843fb40e23c88bb80e3502c73e1f0fd4f41d2c"
-README.md = "sha256:a3aa9d8bd008d6e3f693f841e179c6414b5b1ac6cf8baf745d554b89717e6532"
+agena.Mod = "sha256:519644d1dee530dcaa052843fb7c0b286aa3f157b120866c768053a7bd971619"
+README.md = "sha256:a11d227e0b8f8f744a2d26eb3f4a4df32b24ce7143f4e10b86b1293477e89296"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
 agena.toml.example = "sha256:13b0e59b0510a7a7ad0674e3633033f770d17b60fca79c1c044dde49e844fa45"
-test/AgenaTest.Mod = "sha256:676f2860c7a14cbfe9f9e5e373b95594f6a3d02e9feba68f2c1b26d5a702906f"
+test/AgenaTest.Mod = "sha256:2e985a87db032703f63a810fc6b35b2905865331fa6c2c982f1d0ceeb714d43b"
 test/cert.pem = "sha256:1c43f28dd99b2a9c77d9fbdb41cb1193d469b8237b8e6b4b98a04c0e8e774611"
 test/key.pem = "sha256:b8a6db35af3f4574c71ce623453475061b7459ef4add8dd63eead5773682be15"
 test/index.gmi = "sha256:949cb964380bf64834f5e043ec835b864482ddb4c2c8e0d2b922a8d2d176a491"
