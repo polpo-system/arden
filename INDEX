@@ -159,7 +159,7 @@ lib/iff 0.1.0
 lib/images 0.1.0
 lib/images-bmp 0.1.0
 lib/images-gif 0.1.0
-lib/images-jpeg 0.1.0
+lib/images-jpeg 0.2.0
 lib/images-pcx 0.1.0
 lib/images-psd 0.1.0
 lib/jpeg 0.1.0
