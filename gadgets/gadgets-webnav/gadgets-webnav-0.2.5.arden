@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "gadgets-webnav"
 category    = "gadgets"
-version     = "0.2.4"
+version     = "0.2.5"
 author      = "polpo"
 license     = "GPL-3"
 description = "WebNavigator: an HTML 4 browser with style sheets, http and https (Bruno Eberhard, ETH)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-webnav/c779d5a0c69fb108e7a45e6b23e7171802e57924"
-tag  = "v0.2.4"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-webnav/910ffa222a60c4f1f7af76ff6f6947c2301b4673"
+tag  = "v0.2.5"
 
 [DEPS]
 gadgets = "0.1.0"
@@ -21,6 +21,7 @@ http = "0.1.0"
 tls = "0.1.0"
 gif = "0.1.0"
 jpeg = "0.1.0"
+png = "0.1.0"
 
 [MODULES]
 all = ["src/WebUtils.Mod", "src/WebPieces.Mod", "src/WebSGMLScanner.Mod", "src/WebSGML.Mod", "src/WebHTML4Scanner.Mod", "src/WebHTML4.Mod", "src/WebCSS2Scanner.Mod", "src/WebCSS2.Mod", "src/WebCSS2P.Mod", "src/WebNetwork.Mod", "src/WebCSS2Format.Mod", "src/WebCSS2B.Mod", "src/WebNavDocs.Mod", "src/WebNavigators.Mod"]
@@ -33,12 +34,12 @@ all = ["share/WebHTML4.CSS=share/WebHTML4.CSS", "share/WebHTML4Loose.SGML=share/
 [TESTS]
 copy = ["test/WebNavTest.Mod"]
 cmds = ["$compile WebNavTest.Mod", "WebNavTest.Run"]
-ok   = ["WebNavTest: 21 checks, 0 failed"]
+ok   = ["WebNavTest: 24 checks, 0 failed"]
 bad  = ["TRAP", "  err ", "FAIL"]
 display = true
 
 [SUMS]
-src/WebUtils.Mod = "sha256:425030499eb7ce9f5a9b7de08198eff4999ac5357fd368df9002bc62a920a334"
+src/WebUtils.Mod = "sha256:fd750a45a5795c69785556cdcbc459e2a56e051a39870f91210b4226756ae489"
 src/WebPieces.Mod = "sha256:8dc16792153594c53039d47fb3e150145f51c93e12869a5f28901844e50f31bf"
 src/WebSGMLScanner.Mod = "sha256:e4f1ad65af928f8815155f33dd62b8e987a312266366b83504fe6b86998ba1b3"
 src/WebSGML.Mod = "sha256:ff9c31d6fdc00f2ae110ad1ca9a8f9e1fec1c51524436a91acf6d91d4b2f9e3e"
@@ -65,7 +66,7 @@ share/WebNavigator.Text = "sha256:501e1bcf05358ec56d96cc902f8c5dad86744f14afbe4b
 share/WebNavStart.html = "sha256:ea4c7bce6b9a0892eede3f051c49be8628b9507f9ecf164a1eb498e64be369eb"
 share/WebNavigator.Finder = "sha256:b867b41fcc868f1cfd1a8ca1ca92119193fba55993ef793968249e2440fa0519"
 tools/WebNavigator.Tool = "sha256:87c623f871e678c0193c9ac97ef7145f5a7107062d5982e624944bd5ea35f838"
-test/WebNavTest.Mod = "sha256:91ce436b359f7db5d872e6f5a3f34b3ba17e090123d4adf6832e607c4fbcd2c1"
-README.md = "sha256:5d1d3217a16d66dbe1251c509be6498507da2ecdc90f28b3900e291209ff2962"
+test/WebNavTest.Mod = "sha256:9f2ec9bf63375e92aa82a75e0a77761ecd5ad9c41c1a684493ebdf1d08e1fb35"
+README.md = "sha256:886502cd5355002c1246562e792df6aa132b7d72492aa374f3860f7c2cc01b14"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
 LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
