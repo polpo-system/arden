@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "images-png"
 category    = "lib"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "PNGImages: PNG pictures for Images, read and written"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/png-codec/335a528ba1b22cb9f6b212f4163cd0bd029440e0"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/png-codec/3c51353b6d6302e07ce73cde5c6d8731300826fa"
+tag  = "v0.1.1"
 
 [DEPS]
 images = "0.1.0"
@@ -34,5 +34,5 @@ display = true
 
 [SUMS]
 desktop/PNGImages.Mod = "sha256:36cf63217f63eace9c11b545a59a3ef032a06869a2f1c8a0a615abf1faf19d09"
-test/PNGImagesTest.Mod = "sha256:d9fcbb7ef2ccd6820feca11da5cb874f1fa754b3c6ef47a800f0f9b183fb0568"
+test/PNGImagesTest.Mod = "sha256:7acd08bae03a6068f95d61a1706fe5b0049517f97584e2f9af2b99ad9bfbe958"
 test/PngSuite-2017jul19.tgz = "sha256:0294b244c95a8342c01b00010cf34abdcabc7c6a34fd0fe1bd963917537bfdc8"
