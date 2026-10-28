@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "ooc-xml"
 category    = "lib"
-version     = "0.2.0"
+version     = "0.3.0"
 author      = "Michael van Acken (ooc-libxml); the voc port; polpo"
 license     = "LGPL-2+"
 description = "XML of ooc-libxml 3.2.0 (Michael van Acken), by way of the voc port: parser, DTD validation, namespaces, codecs, writer, element streams (XMPP); xmlcheck; on x86 (type-bound procedures)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/ooc-xml/af8e87347baec466957029e6a36a3959c3685458"
-tag  = "v0.2.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/ooc-xml/4e13e18dd729481f8b2fe8e423f119ddbb3e77ba"
+tag  = "v0.3.0"
 
 [DEPS]
 console = "0.1.0"
@@ -175,7 +175,7 @@ src/XML/Error.Mod = "sha256:f640d8e112ec8a4813fb849090d77bb65186126ce55db0014a5a
 src/XML/Locator.Mod = "sha256:7284da078bdaf3c046aa5ed7213c0dc7b1265bdce094bb41342562f8efc26332"
 src/XML/Builder.Mod = "sha256:aa343c05fac3696d54ac01c29c4a9a6d60f938a261955f7e4226e7327628f1b2"
 src/XML/Parser.Mod = "sha256:762d7f915c369f884e08e4b55e0969baafbdf85e6840bfd7c13c054e21659beb"
-src/XML/Builder/Namespaces.Mod = "sha256:01c1d43ff3eb81c87d2d4ce0c71879c6b866f33a4bbb7417818d34f314327d27"
+src/XML/Builder/Namespaces.Mod = "sha256:788699ec156022ed04ead3cd1dfa3e5a67c5a5a828a3768d14d21c69a27dceb1"
 src/XML/Regexp.Mod = "sha256:84e6e3679fb271e4ef6c7716f58d7c13cbfdc022d6736a48bb43d24af10ee22c"
 src/XML/Builder/Validation.Mod = "sha256:411a93582855243d31600fc80e0c08226fb9edb8a1cf246a87b20b6be180477d"
 src/XML/Writer.Mod = "sha256:bcf6ed1752c32dc4708c1bce7e4062cb6b419c61e6837580f4400ca9909019c5"
@@ -195,7 +195,7 @@ tests/voc/TestUnicodeMessages.Mod = "sha256:18ade03ccdd7d76438aeca1431e838058457
 tests/voc/TestMemoryBuffers.Mod = "sha256:b99bdf7eb3374600bac3af931a99955680e1b526827a44818e96822384b3e137"
 tests/voc/TestDTDResolver.Mod = "sha256:3bbea5452f689978e9dddabfc678103f199f8e4f0f0bb2328642c7f6efc65203"
 tests/voc/TestParser.Mod = "sha256:2da3b2f66a99fdae6b96e4a87664514fb84f21cd77a755ca21ec2bb5aa605b01"
-tests/voc/TestNamespaces.Mod = "sha256:196449d12f371c9bf519d27002caffc54fa55e93efa9786ff5723f461538b2bf"
+tests/voc/TestNamespaces.Mod = "sha256:1f723ea96aa77fefcbd27f889d6d5a16bda83475d0964ae5ba3c38bde24856e2"
 tests/voc/TestValidation.Mod = "sha256:375e372b50bb0413f4f115c5928f6fb17492c5baafc2e75598e69abd2c97d62d"
 tests/voc/TestWriter.Mod = "sha256:9ebb972d72649ba1f3fe9b1746b263cb7e33b5d3662c97120042307ed19350a5"
 tests/voc/TestBasic.Mod = "sha256:a60a0cb0bdf1ad20c3c33d96c820680f66c87a2308b14a8abda2764b28899aea"
