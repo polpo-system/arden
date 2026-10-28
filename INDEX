@@ -153,12 +153,13 @@ lib/gfx 0.1.0
 lib/gfx-otype 0.1.0
 lib/gfx-pkfonts 0.1.0
 lib/gfx-ps 0.1.0
-lib/gif 0.1.0
+lib/gif 0.2.0
+lib/gif-codec 0.1.0
 lib/ico 0.1.0
 lib/iff 0.1.0
 lib/images 0.1.0
 lib/images-bmp 0.1.0
-lib/images-gif 0.1.0
+lib/images-gif 0.2.0
 lib/images-jpeg 0.3.0
 lib/images-pcx 0.1.0
 lib/images-png 0.1.1

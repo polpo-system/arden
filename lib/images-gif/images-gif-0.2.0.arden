@@ -1,0 +1,36 @@
+[PACKAGE]
+name        = "images-gif"
+category    = "lib"
+version     = "0.2.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "GIFImages: GIF pictures for Images, read and written"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gif-codec/c36c17a56afe5e87a2c4c62c840559aeeb59c985"
+tag  = "v0.1.0"
+
+[DEPS]
+images = "0.1.0"
+gif-codec = "0.1.0"
+
+[MODULES]
+all = ["desktop/GIFImages.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/GIFImagesTest.Mod", "test/gifsuite.tgz"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/GIFImagesTest.Mod", "test/gifsuite.tgz"]
+cmds = ["tar.Unpack gifsuite.tgz .", "$compile GIFImagesTest.Mod", "GIFImagesTest.Run"]
+ok   = ["GIFImagesTest: 6 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+desktop/GIFImages.Mod = "sha256:aba6893856a348501a3b5fc6bd4ac99e0e8341f10b0201168b8103c48e011045"
+test/GIFImagesTest.Mod = "sha256:88a7928eedc9add29483b5abec2bee3b8a057bb2cc745346505d31059803c5fa"
+test/gifsuite.tgz = "sha256:19c0e116cfc2fda6fc323bb7e663362fd2eb8c0d133d0225e9d8fa37d9a6abc3"

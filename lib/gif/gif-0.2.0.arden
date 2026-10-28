@@ -1,0 +1,37 @@
+[PACKAGE]
+name        = "gif"
+category    = "lib"
+version     = "0.2.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "GIF: GIF pictures for Pictures, WebNav and Iris; GIF.Store writes them"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gif-codec/c36c17a56afe5e87a2c4c62c840559aeeb59c985"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+gif-codec = "0.1.0"
+png = "0.1.0"
+
+[MODULES]
+all = ["desktop/GIF.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["test/GIFPicturesTest.Mod", "test/gifsuite.tgz"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/GIFPicturesTest.Mod", "test/gifsuite.tgz"]
+cmds = ["tar.Unpack gifsuite.tgz .", "$compile GIFPicturesTest.Mod", "GIFPicturesTest.Run"]
+ok   = ["GIFPicturesTest: 3 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+desktop/GIF.Mod = "sha256:b20315fad182e97580819d827716e40f74e18fe7e7cdc5bc05043212ad6df8f4"
+test/GIFPicturesTest.Mod = "sha256:caa765215725a0f0d75f182624bcf26ccb1f84f69081f0359d3431b0ebc1caf0"
+test/gifsuite.tgz = "sha256:19c0e116cfc2fda6fc323bb7e663362fd2eb8c0d133d0225e9d8fa37d9a6abc3"
