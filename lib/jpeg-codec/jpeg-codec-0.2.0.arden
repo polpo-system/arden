@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "jpeg-codec"
 category    = "lib"
-version     = "0.1.0"
+version     = "0.2.0"
 author      = "polpo"
 license     = "GPL-3"
 description = "JPEG0: JPEG pictures decoded (baseline, progressive) and encoded (baseline) on Files; the jpeg commands"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/jpeg-codec/84e0c1078089fdd7bed496fa423b2d22c8372c7e"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/jpeg-codec/38a1801ad4e05f2b49f08ab4c922d56e42d038c8"
+tag  = "v0.2.0"
 
 [DEPS]
 console = "0.1.0"
@@ -20,19 +20,20 @@ all = ["src/JPEG0.Mod", "src/jpeg.Mod"]
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["README.md", "LICENSE", "test/JPEGTest.Mod", "test/jpegsuite.list", "test/jpegsuite.tgz"]
+all = ["README.md", "LICENSE", "test/JPEGTest.Mod", "test/JPEGMemoryTest.Mod", "test/jpegsuite.list", "test/jpegsuite.tgz"]
 
 [TESTS]
-copy = ["test/JPEGTest.Mod", "test/jpegsuite.list", "test/jpegsuite.tgz"]
-cmds = ["tar.Unpack jpegsuite.tgz .", "$compile JPEGTest.Mod", "JPEGTest.Run jpegsuite.list"]
-ok   = ["JPEGTest: 70 checks, 0 failed"]
+copy = ["test/JPEGTest.Mod", "test/jpegsuite.list", "test/jpegsuite.tgz", "test/JPEGMemoryTest.Mod"]
+cmds = ["tar.Unpack jpegsuite.tgz .", "$compile JPEGTest.Mod", "JPEGTest.Run jpegsuite.list", "$compile JPEGMemoryTest.Mod", "JPEGMemoryTest.Run", "JPEGMemoryTest.Fixtures jpegsuite.list"]
+ok   = ["JPEGTest: 70 checks, 0 failed", "JPEGMemoryTest: 15 checks, 0 failed", "JPEGMemoryTest fixtures: 255 checks, 0 failed"]
 bad  = ["TRAP", "  err ", "FAIL"]
 
 [SUMS]
-src/JPEG0.Mod = "sha256:69e3d8ab614a50bc92642612cf235717f0725b576bb84357118a3e354ed3b4aa"
+src/JPEG0.Mod = "sha256:95361c16c02b5dd997ff4f215fbf15a8ed2a234dd754bde450ee6c1cfcbf0a53"
 src/jpeg.Mod = "sha256:926685d48c88487380b25b6cae1fc29c7046d40fa3561ce24b44509df323052c"
-README.md = "sha256:076c459b4a16b99577b8e953e9a1f2107fece215db3bd4b04442848a35311d7a"
+README.md = "sha256:349cde77c1d1596a133ae7b19277f6de146e9634d3038bee1ba30619a56097d9"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
 test/JPEGTest.Mod = "sha256:f97c4639632d50ceb47aadf6cbe47a1ab1a8dbe32425a876281d09425c47872f"
+test/JPEGMemoryTest.Mod = "sha256:e45a7d5d27b93d63cc40381bf86af382895db0ff72d45b4cd9945b2b99f95122"
 test/jpegsuite.list = "sha256:d06dc828f8dc6574b8472e2c28a96a0187ab106458369d0ea702ac0a138d227c"
 test/jpegsuite.tgz = "sha256:0a42f0906eebc4f81655671c695e709050408dfe4a5f94fcee5f9b76e1feff89"
