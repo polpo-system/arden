@@ -17,18 +17,18 @@ ooc-strings = "0.1.0"
 
 [MODULES]
 all = [
-  "src/cli/out.Mod",
   "src/common/Modules.Mod",
   "src/common/Objects0.Mod",
   "src/cli/objects.Mod",
   "src/common/regex.Mod",
   "src/common/Utf8.Mod",
   "src/common/Texts0.Mod",
+  "src/common/Out.Mod",
+  "src/cli/out.Mod",
   "src/common/RXA.Mod",
   "src/common/Oberon0.Mod",
   "src/cli/texts.Mod",
   "src/desktop/POLPO.Objects.Mod",
-  "src/common/Out.Mod",
   "src/common/In.Mod",
   "src/common/Dates.Mod",
   "src/common/Strings.Mod",
