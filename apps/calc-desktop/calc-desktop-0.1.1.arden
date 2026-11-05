@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "calc-desktop"
 category    = "apps"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "Calc: the Oberon calculator in the desktop, with Calc.Tool"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/calc/ef3c99889b54270e6cfa9882fbbed73144f33dba"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/calc/e7a376c877a72b2b9033e2b53bd08fdeb1c00292"
+tag  = "v0.1.1"
 
 [DEPS]
 calc = "0.1.0"
@@ -31,6 +31,6 @@ bad  = ["TRAP", "  err "]
 display = true
 
 [SUMS]
-"Calc.Mod" = "sha256:db71e6784927481e728fe98b9114f97794e362b14a467ea5c50136d113013603"
-"Calc.Tool" = "sha256:31af8ff6c7ccde498939eb2075d5c68ef028b1375e4f493106a477725acd0ad8"
-"test/CalcTest.Mod" = "sha256:9303c5a87122b56cbae172af957060a0fd24fb7827ac8e87f94f1b8c77d79579"
+Calc.Mod = "sha256:db71e6784927481e728fe98b9114f97794e362b14a467ea5c50136d113013603"
+Calc.Tool = "sha256:31af8ff6c7ccde498939eb2075d5c68ef028b1375e4f493106a477725acd0ad8"
+test/CalcTest.Mod = "sha256:1b56d07460fe2036809bf76fd47c22f4395ae0c6f441f682b4ce86c061d79e08"

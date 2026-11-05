@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "ooc-xml"
 category    = "lib"
-version     = "0.3.0"
+version     = "0.3.1"
 author      = "Michael van Acken (ooc-libxml); the voc port; polpo"
 license     = "LGPL-2+"
 description = "XML of ooc-libxml 3.2.0 (Michael van Acken), by way of the voc port: parser, DTD validation, namespaces, codecs, writer, element streams (XMPP); xmlcheck; on x86 (type-bound procedures)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/ooc-xml/4e13e18dd729481f8b2fe8e423f119ddbb3e77ba"
-tag  = "v0.3.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/ooc-xml/721b8d4fa9a89ef1a7ab3c77326ce16607ca0194"
+tag  = "v0.3.1"
 
 [DEPS]
 console = "0.1.0"
@@ -186,7 +186,7 @@ src/XML/Basic/DataType.Mod = "sha256:a8ec68b3d166f88669457b0d26449b87aa9d3992e6b
 src/XML/Basic/Parser.Mod = "sha256:1dfc265f9746e6897a6ccebd0783448e75db30af7012b9478996a05238ad7bf0"
 src/XML/Stream.Mod = "sha256:98c6d8aeccf0e35a7d2f99374470555176cde2b120b0452644c712331fd90af7"
 polpo/src/XMLCheck0.Mod = "sha256:30fa1e08ddc58c834fe62054e2838020958dd00496ed99769d745416bb29f6d3"
-polpo/src/xmlcheck.Mod = "sha256:f7b300e98928e2c12e252d9e7d77c0842ae1047798920fdb7f08bd2c91ce7864"
+polpo/src/xmlcheck.Mod = "sha256:b911387793e2b34c677fd724bdfd3483670ab0ccddd324d4d19771db63742a21"
 polpo/tools/XMLCheck.Tool = "sha256:5534602a205bbbdbe732bbaaf7967b72d13afddcc5f5d90be475d14359b9217c"
 README.md = "sha256:7ff56a1eca48d6952d73466a92c1753d0344171646ec585c6bfedac08187d785"
 COPYING = "sha256:9e9e8608c4cdda51a78cc3a385f4ec9a2e4c96d5ecad74ac8bca5fca3e563b7d"
@@ -204,9 +204,9 @@ tests/voc/TestEntityPolicy.Mod = "sha256:d8aa4fc8b9fb504a24f66eb628e714d0d602d7d
 tests/voc/TestLimits.Mod = "sha256:345a01f811f97ce129e9d62f7dde41e895f0bf772313f08cab63eb0134a884fe"
 tests/voc/TestStream.Mod = "sha256:91e895cb4daf9e0764975a2d8958476e9af0d6323a59b35633745a6784334c06"
 polpo/test/TestCodecVectors.Mod = "sha256:38ae592f5f42014c6a8f78dd9426f3ae3dced56d02d3a3d0164ea2679080318b"
-polpo/test/XMLTests.Mod = "sha256:9292dfa906fe6fc95dca973a9e96456971e699e62bee07ba65f41a981bab375e"
-polpo/test/XMLConformance.Mod = "sha256:ef60d2b1680de52e978c0c4400028d21251c38f4c0b97dbbe5a8171228c3de77"
-polpo/test/XMLStress.Mod = "sha256:3bcb304ba2f2581d0bb993b372fcfb6d88b5b250caba0e7b0f2c3b04d6971726"
+polpo/test/XMLTests.Mod = "sha256:9ae4b2dbc539852f3793e80391acf245a555f8472ccc10dd458cdefe75d0b83d"
+polpo/test/XMLConformance.Mod = "sha256:9c990e2442f2b771775e7afe5ef9308bf2ed5f58594030ac49b623b30353da4a"
+polpo/test/XMLStress.Mod = "sha256:00fe231c2baa44351aaece56c7a97c4f5b055fb147ee89fa61b3cd354795183e"
 polpo/test/wf.list = "sha256:cacde935ae220e3168478d6f2ff40a7277fa2a1be91b7fcb90554edfc5526426"
 polpo/test/canonical.list = "sha256:ef5c0ae4c4c7c518755d9cc3eb86b4f27f9c7a48dd5ff43dcfd3b4880fbb2633"
 polpo/test/validation.list = "sha256:f56b52653ac153fa50e3cc471d76660d5990f7288900a46ab4360967d47c91de"

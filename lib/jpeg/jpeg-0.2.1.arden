@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "jpeg"
 category    = "lib"
-version     = "0.2.0"
+version     = "0.2.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "JPEG: JPEG pictures (baseline, progressive) for Pictures, WebNav and Iris; JPEG.Store writes them"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/jpeg-codec/84e0c1078089fdd7bed496fa423b2d22c8372c7e"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/jpeg-codec/1ce905472f177fa4a995078f799d7d296565611d"
+tag  = "v0.2.1"
 
 [DEPS]
 desktop = "0.1.0"
@@ -33,5 +33,5 @@ display = true
 
 [SUMS]
 desktop/JPEG.Mod = "sha256:bb11edef9c94cc74d6fd640e45b9ce216deecd406b55df931ecad8a6f55019ff"
-test/JPEGPicturesTest.Mod = "sha256:3e77e63367e836793320887ef13de92bf82d367cc1c291404c12d3379a5aecf7"
+test/JPEGPicturesTest.Mod = "sha256:c4c2d2bc006070fdf1d30270f3dc4ed5817ee2d33825a6af4310a3fb407f4b79"
 test/jpegsuite.tgz = "sha256:0a42f0906eebc4f81655671c695e709050408dfe4a5f94fcee5f9b76e1feff89"

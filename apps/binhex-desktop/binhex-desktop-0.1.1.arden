@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "binhex-desktop"
 category    = "apps"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "BinHex: decoding BinHex 4.0 (.hqx) files in the desktop"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/binhex/b8904f1c976feb3f640b2a95828110b25829862e"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/binhex/5e80b68f4749fd6c7e5da6e7b9cdfd9e1fa26c10"
+tag  = "v0.1.1"
 
 [DEPS]
 binhex = "0.1.0"
@@ -31,7 +31,7 @@ bad  = ["TRAP", "  err "]
 display = true
 
 [SUMS]
-"BinHex.Mod" = "sha256:f8847438619089040c448fefc6cf61237c0e2d6d591152b6c75d4ed1c869ff65"
-"test/sample.bin" = "sha256:6992b176cfe85e70bfdbed6c8b6ca2a2fe1c4da23012572720a3208005047a6b"
-"test/sample.hqx" = "sha256:8119490a1632c729217c592348b5bf0dfee152c438c11fe6ae10370f204a188c"
-"test/BinHexTest.Mod" = "sha256:ddb506fa2e2854d62415301f08b5af7ebdc6b04006422de799a3ad87b81bbac0"
+BinHex.Mod = "sha256:f8847438619089040c448fefc6cf61237c0e2d6d591152b6c75d4ed1c869ff65"
+test/sample.bin = "sha256:6992b176cfe85e70bfdbed6c8b6ca2a2fe1c4da23012572720a3208005047a6b"
+test/sample.hqx = "sha256:8119490a1632c729217c592348b5bf0dfee152c438c11fe6ae10370f204a188c"
+test/BinHexTest.Mod = "sha256:1e9a35c2478f861abe80d22df803e67a2c5c57c02f1ad4b88a19de8a7b1d5966"

@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "gif-codec"
 category    = "lib"
-version     = "0.2.0"
+version     = "0.2.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "GIF0: GIF pictures decoded (the first image) and encoded (one image, up to 256 colours chosen) on Files; the gif commands"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/gif-codec/7b03ef5a04f9879b2c1248baa09783649dd03a11"
-tag  = "v0.2.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/gif-codec/5609b782bbce5b94d2cc4fadb0875d9a73a6f3ae"
+tag  = "v0.2.1"
 
 [DEPS]
 console = "0.1.0"
@@ -30,11 +30,11 @@ bad  = ["TRAP", "  err ", "FAIL"]
 
 [SUMS]
 src/GIF0.Mod = "sha256:97d317a8313216174253bde7012ed1281290cdbfd804937a3499a72e7c1e75ca"
-src/gif.Mod = "sha256:c707d9873da5e4d113c484c99666ed867c560ee875a9a3d913cdafe8c73bb37b"
+src/gif.Mod = "sha256:a832f539323dc35e2698921910988956b372d044911fd2c0f2410c9d8a42521e"
 README.md = "sha256:f11b55097d701d1952846906c2e6f04c8a4468f0d9c88b785f8d7980faae9591"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
-test/GIFTest.Mod = "sha256:71c67ca67b50ad0b8d5dd9c74841ba4a4111f2a6c171476d8642433fabfde1ee"
-test/GIFMemoryTest.Mod = "sha256:81a51d909472d8c0f0f974388deaf571834b9fefbe3363508a98c373d78a64ba"
+test/GIFTest.Mod = "sha256:27719b76c18cd9d65bac991b2c29d2fae8d3d3add8ac05bc972172422e983c56"
+test/GIFMemoryTest.Mod = "sha256:c257b4429545c4437093aa40d3ffa7566c09514526d283545cf8d61fe1336334"
 test/gifsuite.list = "sha256:fe3d7785a6c26dc6fccb537b3e432526599059d97ebe10c56b61cb05e70d1456"
 test/gifsuite.tgz = "sha256:19c0e116cfc2fda6fc323bb7e663362fd2eb8c0d133d0225e9d8fa37d9a6abc3"
 test/PngSuite.LICENSE = "sha256:71e1f5bf865131b5d9996e76a78372146283e5089e50f900ae927a6458b62101"

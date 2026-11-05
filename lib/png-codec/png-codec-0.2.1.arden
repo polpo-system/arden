@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "png-codec"
 category    = "lib"
-version     = "0.2.0"
+version     = "0.2.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "PNG0: PNG pictures decoded (every kind) and encoded (8-bit RGB, RGBA) on Files and zlib; the png commands"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/png-codec/96f6dc298841b05b4b080906e555d3b1aaf81316"
-tag  = "v0.2.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/png-codec/8ef9bcd037c2ebc8878ac98b23cd73912a9f4822"
+tag  = "v0.2.1"
 
 [DEPS]
 console = "0.1.0"
@@ -30,11 +30,11 @@ bad  = ["TRAP", "  err ", "FAIL"]
 
 [SUMS]
 src/PNG0.Mod = "sha256:aecaefcb86093e25c9deda472b5569202ae06f704755031001d4d81ac8ed9665"
-src/png.Mod = "sha256:01ae29fd6052716bffd0e6275f0e2f457dba06b431e088b534909fc5b2406af3"
+src/png.Mod = "sha256:f0ce2c3cdfdc3d8df9392562bf3dc6ab3b9cc414cd2f01311a944178559e6465"
 README.md = "sha256:0dfef89aad6ee387709cce8f4b08517439ce052e14f52655b452543472e60e0a"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
-test/PNGTest.Mod = "sha256:858623e10c9aa136abafc06fa219ac7b565bc78630f84224e4090345318b6a71"
-test/PNGMemoryTest.Mod = "sha256:56374e199f836b96c8c6aefa1f7b3a6ef46e243de7b138dafc06b34b375f15fc"
+test/PNGTest.Mod = "sha256:c9cf8dd3063f2755f9f8723e310d00144c9fccdabfe9e25a801597dbdbbd7217"
+test/PNGMemoryTest.Mod = "sha256:98d15680dbfea518912a67a04194058ae329d802d3670a28ed51a665964574c7"
 test/pngsuite.list = "sha256:835a14cf345789690750b224b0444175d74ed04966e5cb05726ba1314f8e3657"
 test/PngSuite-2017jul19.tgz = "sha256:0294b244c95a8342c01b00010cf34abdcabc7c6a34fd0fe1bd963917537bfdc8"
 test/PngSuite.LICENSE = "sha256:71e1f5bf865131b5d9996e76a78372146283e5089e50f900ae927a6458b62101"

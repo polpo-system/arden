@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "binhex"
 category    = "apps"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "binhex: decoding BinHex 4.0 (.hqx) files in the console"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/binhex/b8904f1c976feb3f640b2a95828110b25829862e"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/binhex/5e80b68f4749fd6c7e5da6e7b9cdfd9e1fa26c10"
+tag  = "v0.1.1"
 
 [DEPS]
 console = "0.1.0"
@@ -28,11 +28,11 @@ ok   = ["binhex: out.bin, 2581 bytes", "binhex: out2.bin, 2581 bytes", "binhex: 
 bad  = ["TRAP", "  err ", "different"]
 
 [SUMS]
-"BinHex0.Mod" = "sha256:5e0ff2ec1685699f1831e6fefbc2069c24b83bd2c1deea25919422c18863d0d7"
-"binhex.Mod" = "sha256:bad3b682fe1fbcca5317bdf48664f000e9af754ba9fd99db03904d45b1e6ae95"
-"test/sample.bin" = "sha256:6992b176cfe85e70bfdbed6c8b6ca2a2fe1c4da23012572720a3208005047a6b"
-"test/sample.hqx" = "sha256:8119490a1632c729217c592348b5bf0dfee152c438c11fe6ae10370f204a188c"
-"test/BinHexTest.Mod" = "sha256:ddb506fa2e2854d62415301f08b5af7ebdc6b04006422de799a3ad87b81bbac0"
-"README.md" = "sha256:1d85051394b8849c898e7ee386db0791550fa19e697ac8c4443b72dba0a6b1b1"
-"LICENSE" = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
-"LICENSE.ETH" = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
+BinHex0.Mod = "sha256:5e0ff2ec1685699f1831e6fefbc2069c24b83bd2c1deea25919422c18863d0d7"
+binhex.Mod = "sha256:69870a50d623326bf7ac825bd47c06648aa18937ec3fae80df4127979745c334"
+test/sample.bin = "sha256:6992b176cfe85e70bfdbed6c8b6ca2a2fe1c4da23012572720a3208005047a6b"
+test/sample.hqx = "sha256:8119490a1632c729217c592348b5bf0dfee152c438c11fe6ae10370f204a188c"
+test/BinHexTest.Mod = "sha256:1e9a35c2478f861abe80d22df803e67a2c5c57c02f1ad4b88a19de8a7b1d5966"
+README.md = "sha256:1d85051394b8849c898e7ee386db0791550fa19e697ac8c4443b72dba0a6b1b1"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

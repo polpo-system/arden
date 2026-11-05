@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "png"
 category    = "lib"
-version     = "0.1.1"
+version     = "0.1.2"
 author      = "polpo"
 license     = "GPL-3"
 description = "PNG: PNG pictures for Pictures (Pictures.Open, WebNav), RGBPictures, PNG.Store"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/png-codec/3c51353b6d6302e07ce73cde5c6d8731300826fa"
-tag  = "v0.1.1"
+uri  = "https://raw.githubusercontent.com/polpo-system/png-codec/8ef9bcd037c2ebc8878ac98b23cd73912a9f4822"
+tag  = "v0.2.1"
 
 [DEPS]
 desktop = "0.1.0"
@@ -35,5 +35,5 @@ display = true
 [SUMS]
 desktop/RGBPictures.Mod = "sha256:ed9faac00aa9fc06bf793a2e8871b0a867cc272689baa79750b24afa2e62de2a"
 desktop/PNG.Mod = "sha256:53d5b99e0831a6d18f2dbd342952b5b4bc04948b09cdd170318c522e8c5926b9"
-test/PNGPicturesTest.Mod = "sha256:d0b792faa92d3a2108cea0514995422d9cf3b65bf5c34f262a85d8b2361e8fe2"
+test/PNGPicturesTest.Mod = "sha256:332f5a3a2eeee6ab018a748013a4b95723dcbfcdd12c34483750dc8ec43f1974"
 test/PngSuite-2017jul19.tgz = "sha256:0294b244c95a8342c01b00010cf34abdcabc7c6a34fd0fe1bd963917537bfdc8"

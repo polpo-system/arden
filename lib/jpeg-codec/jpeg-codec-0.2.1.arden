@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "jpeg-codec"
 category    = "lib"
-version     = "0.2.0"
+version     = "0.2.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "JPEG0: JPEG pictures decoded (baseline, progressive) and encoded (baseline) on Files; the jpeg commands"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/jpeg-codec/38a1801ad4e05f2b49f08ab4c922d56e42d038c8"
-tag  = "v0.2.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/jpeg-codec/1ce905472f177fa4a995078f799d7d296565611d"
+tag  = "v0.2.1"
 
 [DEPS]
 console = "0.1.0"
@@ -30,10 +30,10 @@ bad  = ["TRAP", "  err ", "FAIL"]
 
 [SUMS]
 src/JPEG0.Mod = "sha256:95361c16c02b5dd997ff4f215fbf15a8ed2a234dd754bde450ee6c1cfcbf0a53"
-src/jpeg.Mod = "sha256:926685d48c88487380b25b6cae1fc29c7046d40fa3561ce24b44509df323052c"
+src/jpeg.Mod = "sha256:72e359aa02421f8545718182415cf3d6b7d559dec7017804f7b228e783829610"
 README.md = "sha256:349cde77c1d1596a133ae7b19277f6de146e9634d3038bee1ba30619a56097d9"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
-test/JPEGTest.Mod = "sha256:f97c4639632d50ceb47aadf6cbe47a1ab1a8dbe32425a876281d09425c47872f"
-test/JPEGMemoryTest.Mod = "sha256:e45a7d5d27b93d63cc40381bf86af382895db0ff72d45b4cd9945b2b99f95122"
+test/JPEGTest.Mod = "sha256:ed8989916ad7d7630cf2f53cb1fd7ef16f4cd77eed13670c672f26c8fee8337c"
+test/JPEGMemoryTest.Mod = "sha256:9fee16f6071e1152385a2c41685274f46df10a145b99f99694ab5a49961164f0"
 test/jpegsuite.list = "sha256:d06dc828f8dc6574b8472e2c28a96a0187ab106458369d0ea702ac0a138d227c"
 test/jpegsuite.tgz = "sha256:0a42f0906eebc4f81655671c695e709050408dfe4a5f94fcee5f9b76e1feff89"
