@@ -37,6 +37,7 @@ mips = ["src/cli/rop2/system.Mod"]
 armv7 = ["src/cli/rop2/system.Mod"]
 mipsbe = ["src/cli/rop2/system.Mod"]
 ppc = ["src/cli/rop2/system.Mod"]
+m68k = ["src/cli/rop2/system.Mod"]
 
 [FILES]
 all = ["Oberon.Text", "texts.md", "VERSION"]

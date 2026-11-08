@@ -53,6 +53,11 @@ ppc = [
   "src/cli/rop2/Modules0.Mod",
   "src/cli/ppc/Linux0.Mod",
 ]
+m68k = [
+  "src/cli/rop2/Kernel.Mod",
+  "src/cli/rop2/Modules0.Mod",
+  "src/cli/m68k/Linux0.Mod",
+]
 
 [BUILD]
 x86 = [
@@ -82,6 +87,10 @@ mipsbe = [
 ppc = [
   "rlinker.Link /w bin/ppc/loksh.new Linux0 Kernel Root Modules0 loksh",
   "mv bin/ppc/loksh.new bin/ppc/loksh",
+]
+m68k = [
+  "rlinker.Link /k bin/m68k/loksh.new Linux0 Kernel Root Modules0 loksh",
+  "mv bin/m68k/loksh.new bin/m68k/loksh",
 ]
 
 [FILES]

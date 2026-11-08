@@ -331,6 +331,13 @@ deps        = ["compiler-rop2"]
 match       = ["src/cli/ppc/"]
 files.all = ["tools/ppc.Tool"]
 
+[compiler-m68k]
+category    = "devel"
+description = "the 68020 back end of ROP2 (68020 and later, with an FPU)"
+deps        = ["compiler-rop2"]
+match       = ["src/cli/m68k/"]
+files.all = ["tools/m68k.Tool"]
+
 [compiler-armv7]
 category    = "devel"
 description = "the ARMv7 back end of ROP2"
@@ -383,7 +390,7 @@ match       = ["POLPO.System"]
 category    = "devel"
 description = "the ROP2 compilers and decoders in the desktop"
 deps        = ["desktop-tools", "compiler-rop2"]
-match       = ["src/desktop/rop2/", "src/desktop/riscv/", "src/desktop/mips/", "src/desktop/armv7/"]
+match       = ["src/desktop/rop2/", "src/desktop/riscv/", "src/desktop/mips/", "src/desktop/armv7/", "src/desktop/m68k/"]
 
 [desktop]
 category    = "system"

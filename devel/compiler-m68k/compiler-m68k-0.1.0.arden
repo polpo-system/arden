@@ -1,0 +1,34 @@
+[PACKAGE]
+name        = "compiler-m68k"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "the 68020 back end of ROP2 (68020 and later, with an FPU)"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+compiler-rop2 = "0.1.0"
+
+[MODULES]
+x86 = [
+  "src/cli/m68k/KOPL.Mod",
+  "src/cli/m68k/KOPC.Mod",
+  "src/cli/m68k/KOPV.Mod",
+  "src/cli/m68k/kcompiler.Mod",
+]
+m68k = [
+  "src/cli/m68k/KOPL.Mod",
+  "src/cli/m68k/KOPC.Mod",
+  "src/cli/m68k/KOPV.Mod",
+  "src/cli/m68k/kcompiler.Mod",
+  "src/cli/m68k/compiler.Mod",
+  "src/cli/m68k/linker.Mod",
+]
+
+[FILES]
+all = ["tools/m68k.Tool"]

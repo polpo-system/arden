@@ -47,6 +47,7 @@ devel/compiler-rop2 0.1.0
 devel/compiler-riscv 0.1.0
 devel/compiler-mips 0.1.0
 devel/compiler-ppc 0.1.0
+devel/compiler-m68k 0.1.0
 devel/compiler-armv7 0.1.0
 system/display 0.1.0
 system/display-sixel 0.1.0

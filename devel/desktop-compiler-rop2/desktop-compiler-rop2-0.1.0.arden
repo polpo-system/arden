@@ -21,6 +21,7 @@ x86 = [
   "src/desktop/riscv/VDecoder.Mod",
   "src/desktop/mips/M2Decoder.Mod",
   "src/desktop/armv7/A32Decoder.Mod",
+  "src/desktop/m68k/KDecoder.Mod",
 ]
 riscv = [
   "src/desktop/rop2/RCompiler.Mod",
@@ -43,3 +44,8 @@ mipsbe = [
   "src/desktop/rop2/RBrowser.Mod",
 ]
 ppc = ["src/desktop/rop2/RCompiler.Mod", "src/desktop/rop2/RBrowser.Mod"]
+m68k = [
+  "src/desktop/rop2/RCompiler.Mod",
+  "src/desktop/m68k/KDecoder.Mod",
+  "src/desktop/rop2/RBrowser.Mod",
+]
