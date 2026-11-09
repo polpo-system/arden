@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "gadgets"
 category    = "gadgets"
-version     = "0.2.1"
+version     = "0.2.2"
 author      = "polpo"
 license     = "GPL-3"
 description = "Gadgets of ETH Oberon System 3: the component framework, panels, documents and the standard classes"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/gadgets/18d4099928f38801b280d8ac76c12c6525f5aced"
-tag  = "v0.2.1"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets/4130194b82a2cbc931f744edaf34c6bfb6ba8bdd"
+tag  = "v0.2.2"
 
 [DEPS]
 desktop = "0.1.0"
@@ -36,7 +36,7 @@ display = true
 src/Attributes.Mod = "sha256:8036af5245b57862f394800082664bf14ff17b3b36fab79516b6da0a3d3c1427"
 src/Display3.Mod = "sha256:710a5de3a38d522aef82cccb01f587b09388462310f2ce00f9f0da0d9aaef12b"
 src/Printer3.Mod = "sha256:f5bc5c0fc55f54a51b6ad3e6eadaf133b18386009500f16d292bdc907d86cb63"
-src/Effects.Mod = "sha256:d595a47bb920fd2a811fc110f6b93404bb50061fcd300d1ad493b7fefb787122"
+src/Effects.Mod = "sha256:992866f98c639c64ce5cb7696398abb9379c7bc08d320411b35007a78d356382"
 src/Links.Mod = "sha256:2a83bf85fd3e01c1791d09626f3809182bc7053b01cd41d5fb876d1d639abba2"
 src/Gadgets.Mod = "sha256:e39a68ac76b4fe08d879ab5360664743eee604d69e34a87221b680ea144f274d"
 src/BasicFigures.Mod = "sha256:54745423f014d5bba712b4c5bf54405e2da6b6b9cdc5675c868d2dd0d18598a2"
@@ -85,7 +85,7 @@ share/TextDocs.Lib = "sha256:f603daf07cce81bcdac44c98482fc421c6b0417bafc9c6dff10
 share/TextDocs.Panel = "sha256:6561531741e7a0dc42e24a9adaaef81da2d71a346ccb1a112f0feac94fdc78d8"
 tools/TextDocs.Tool = "sha256:0b2fbbbd926f369ea29dc3b697fed307ef59b378d9b2cef58f7783d232bef668"
 test/GadgetsTest.Mod = "sha256:05adaab0d8229661d0920391f4751072d39cad5ad2d32116ec5d780f3c343402"
-README.md = "sha256:b5ce4d7c97a29520f2aabbbc91e4a7a1018035e4d3cf9ca6412dc816c7e72bb1"
+README.md = "sha256:6c68044fb640367d925490f861e1947c5299fa5a2d687564fa94babafba11f1f"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
 LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
 tools/DocWindows.Tool = "sha256:2a70037a88e31bb427ff53f94302dd3a76fc990cbd9a85384fdbbf68eadd8d04"
