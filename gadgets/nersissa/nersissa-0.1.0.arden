@@ -1,0 +1,42 @@
+[PACKAGE]
+name        = "nersissa"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Nersissa: the package manager of the desktop, a panel of gadgets over portia (categories, packages, descriptions; install, remove, upgrade)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/nersissa/cbe412e58b7375387140b4f5844e33c0b17c4466"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.2.0"
+desktop = "0.1.0"
+portia = "0.1.0"
+versions = "0.1.0"
+
+[MODULES]
+all = [
+  "src/Nersissa.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Nersissa.Tool=tools/Nersissa.Tool", "test/NersissaTest.Mod", "README.md", "LICENSE"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/NersissaTest.Mod"]
+cmds = ["$compile NersissaTest.Mod", "NersissaTest.Run"]
+ok   = ["NersissaTest: 13 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Nersissa.Mod = "sha256:1f97c3e066d3d1431d496891e24e2161e56d65953b15a3b269a3bc5ddd1df6f3"
+tools/Nersissa.Tool = "sha256:37bae0661fd4fbc341e7dcc47fa2ea495d312208d765a9ffb18554719f8d372f"
+test/NersissaTest.Mod = "sha256:58dcb0b47587a0a091a3ffe4050fe01785b2bf98f058bbd2858009bb9c501766"
+README.md = "sha256:b081180fe71247ccb28caa42afdb7cc6f15685cf1413d6ba79e0831cb82f846d"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
