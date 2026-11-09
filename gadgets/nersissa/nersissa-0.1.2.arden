@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "nersissa"
 category    = "gadgets"
-version     = "0.1.1"
+version     = "0.1.2"
 author      = "polpo"
 license     = "GPL-3"
 description = "Nersissa: the package manager of the desktop, a panel of gadgets over portia (categories, packages, descriptions; install, remove, upgrade)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/nersissa/5c1b183a3206317a147f485e328c8ad4982b1171"
-tag  = "v0.1.1"
+uri  = "https://raw.githubusercontent.com/polpo-system/nersissa/27c60af84af359d4064ab00cd0592ef0e033ddf2"
+tag  = "v0.1.2"
 
 [DEPS]
 gadgets = "0.2.0"
@@ -30,13 +30,13 @@ all = ["tools/Nersissa.Tool=tools/Nersissa.Tool", "test/NersissaTest.Mod", "READ
 [TESTS]
 copy = ["test/NersissaTest.Mod"]
 cmds = ["$compile NersissaTest.Mod", "NersissaTest.Run"]
-ok   = ["NersissaTest: 13 checks, 0 failed"]
+ok   = ["NersissaTest: 14 checks, 0 failed"]
 bad  = ["TRAP", "  err ", "FAIL"]
 display = true
 
 [SUMS]
-src/Nersissa.Mod = "sha256:04c69796fa3fc917c3893504fa544a783964a922188f2fddea27590b47aaf644"
-tools/Nersissa.Tool = "sha256:37bae0661fd4fbc341e7dcc47fa2ea495d312208d765a9ffb18554719f8d372f"
-test/NersissaTest.Mod = "sha256:58dcb0b47587a0a091a3ffe4050fe01785b2bf98f058bbd2858009bb9c501766"
-README.md = "sha256:b081180fe71247ccb28caa42afdb7cc6f15685cf1413d6ba79e0831cb82f846d"
+src/Nersissa.Mod = "sha256:56e669e8f4d91ab483272c26c3d76e6a3eb8193e55418fc6ba01554fc35f5833"
+tools/Nersissa.Tool = "sha256:8f64f3bb78e33d29428d0a9918c1bf29f08bbf03b6cb9f895e9f512a2a8b7f59"
+test/NersissaTest.Mod = "sha256:20d21c31eac0279a0671d2ef93332f3e586cc5adcc43b829a59af69cb57f215a"
+README.md = "sha256:6f4efa6944bc8b8a3cc43c21cdeb7c4fb328fbf83a7e4106490a8d80a4193c36"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
