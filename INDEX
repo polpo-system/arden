@@ -6,6 +6,7 @@ lib/toml 0.1.0
 lib/versions 0.1.0
 system/portia 0.1.0
 devel/polpo-tools 0.1.0
+devel/program 0.1.0
 lib/zlib 0.1.0
 apps/gzip 0.1.0
 apps/tar 0.1.0

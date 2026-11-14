@@ -1,0 +1,18 @@
+[PACKAGE]
+name        = "program"
+category    = "devel"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "program.Make: static Linux programs of Oberon modules, for this port or another"
+
+[REMOTE]
+type = "git"
+uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
+tag  = "main"
+
+[DEPS]
+console = "0.1.0"
+
+[MODULES]
+all = ["src/cli/program.Mod"]
