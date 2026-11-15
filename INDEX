@@ -7,6 +7,7 @@ lib/versions 0.1.0
 system/portia 0.1.0
 devel/polpo-tools 0.1.0
 devel/program 0.1.0
+lib/voc-compat 0.1.0
 lib/zlib 0.1.0
 apps/gzip 0.1.0
 apps/tar 0.1.0
@@ -67,6 +68,7 @@ apps/calc-desktop 0.1.1
 apps/cobweb 0.1.4
 apps/draw 0.1.1
 apps/ifs 0.1.0
+apps/irc-bot 0.1.0
 apps/iris 0.1.2
 apps/savescreen 0.1.0
 apps/savescreen-decay 0.1.0
@@ -167,9 +169,12 @@ lib/images-jpeg 0.3.1
 lib/images-pcx 0.1.0
 lib/images-png 0.1.2
 lib/images-psd 0.1.0
+lib/irc 0.1.0
 lib/jpeg 0.2.1
 lib/jpeg-codec 0.2.1
+lib/lists 1.0.1
 lib/ooc-xml 0.3.1
+lib/opts 1.0.1
 lib/otype 0.1.0
 lib/pcx 0.1.0
 lib/png 0.1.2

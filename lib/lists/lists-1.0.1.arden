@@ -1,0 +1,44 @@
+[PACKAGE]
+name        = "lists"
+category    = "lib"
+version     = "1.0.1"
+author      = "Norayr Chilingarian"
+license     = "LGPL-3"
+description = "List and StringList, linked lists with their operations in the records (norayr/lists)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/lists/6aeab9407c33bdf7dfefdb1a9c8b9125c0ab0e88"
+tag  = "v1.0.1"
+
+[DEPS]
+console = "0.1.0"
+strutils = "0.1.0"
+
+[MODULES]
+all = [
+  "src/List.Mod",
+  "src/StringList.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["README.md", "LICENSE", "COPYING", "test/TestListLinks.Mod", "test/testList.Mod", "polpo/test/ListsTest.Mod"]
+
+[TESTS]
+copy = ["test/TestListLinks.Mod", "polpo/test/ListsTest.Mod"]
+cmds = ["$compile TestListLinks.Mod", "$compile ListsTest.Mod", "ListsTest.Run"]
+ok   = ["list link tests passed", "ListsTest: passed"]
+bad  = ["TRAP", "  err "]
+
+
+
+[SUMS]
+src/List.Mod = "sha256:efc4dbefe71f5d5b3c466d29a76ecd5622dfdd5cb31ea7dfaa5c89803b1ed91a"
+src/StringList.Mod = "sha256:b310ca67f110d531fcb129f5d025095cbce855bcc58e27390de909e48641cf08"
+README.md = "sha256:6c485a008cc0b41dfd34dbc4ddffcaab7a4358322166953b8243fdceda20280b"
+LICENSE = "sha256:3779d676fc5c23049c7c5643815a8fe8c6233b3df39d42970b62a79b56cb2e4e"
+COPYING = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+test/TestListLinks.Mod = "sha256:8c2eef0c5a76195c69e94a658ec2b45a5586e567ae6c89e215653c2aeab57c39"
+test/testList.Mod = "sha256:51f30f2b5cd66dd6ed4a7a48c5806f85c750a64495df4bd04293f1bd62aeb893"
+polpo/test/ListsTest.Mod = "sha256:4b55a3ae35e0d28e818f86614fab59a51a75812f9b84e7671a21fb596e0a06a2"

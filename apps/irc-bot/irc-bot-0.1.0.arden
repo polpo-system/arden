@@ -1,0 +1,47 @@
+[PACKAGE]
+name        = "irc-bot"
+category    = "apps"
+version     = "0.1.0"
+author      = "Norayr Chilingarian"
+license     = "GPL-3"
+description = "vocbot, an IRC bot that logs a room and answers requests for its history; a program made with program.Make (norayr/irc_bot)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/irc-bot/d04d8498a1a36c54cc40b19a64e6cc3748727e1b"
+tag  = "v0.1.0"
+
+[DEPS]
+irc = "0.1.0"
+opts = "1.0.1"
+lists = "1.0.1"
+strutils = "0.1.0"
+ooc-strings = "0.1.0"
+ooc-conversions = "0.1.0"
+voc-compat = "0.1.0"
+program = "0.1.0"
+
+# vocbot runs in its module body: compiled here, it is made into a program with program.Make vocbot
+[MODULES]
+all = [
+  "src/vocbot.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["README.md", "LICENSE", "polpo/test/VocbotTest.Mod"]
+
+# the test makes vocbot with program.Make and runs it where programs of the machine can be started;
+# the number of checks differs, so a failed check (FAIL) or a trap fails the test
+[TESTS]
+copy = ["src/vocbot.Mod", "polpo/test/VocbotTest.Mod"]
+cmds = ["$compile VocbotTest.Mod", "VocbotTest.Run"]
+bad  = ["TRAP", "  err ", "FAIL"]
+
+
+
+[SUMS]
+src/vocbot.Mod = "sha256:10e5387a936fe0ec3604dea2881e4db518e0869cac794e56f6a23d614414984c"
+README.md = "sha256:be14901a4bfe47c871bcd25f47887ac85d56f6c716efc46fb10bf61123d7edb6"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+polpo/test/VocbotTest.Mod = "sha256:698eba1928c856531312fcd27b7d8446116c34910c55afc9c6177e8453e25b15"

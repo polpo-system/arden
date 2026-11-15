@@ -1,0 +1,53 @@
+[PACKAGE]
+name        = "irc"
+category    = "lib"
+version     = "0.1.0"
+author      = "Norayr Chilingarian"
+license     = "LGPL-3"
+description = "an IRC client library: parser, registration, CAP and SASL, bounded queues, reconnecting; TCP and TLS 1.3 transports (norayr/irc)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/irc/65307bffff53d0c444fad5071aeb550312a8c519"
+tag  = "v0.1.0"
+
+[DEPS]
+console = "0.1.0"
+voc-compat = "0.1.0"
+ooc-strings = "0.1.0"
+sockets = "0.1.0"
+dns = "0.1.0"
+tls = "0.1.0"
+ooc-conversions = "0.1.0"
+
+[MODULES]
+all = [
+  "src/IRC.Mod",
+  "src/IRCTCP.Mod",
+  "src/IRCTLS.Mod",
+  "src/irctest.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["README.md", "LICENSE", "COPYING", "tests/TestIRC.Mod", "tests/IRCProbe.Mod", "polpo/test/IRCTests.Mod"]
+
+[TESTS]
+copy = ["tests/TestIRC.Mod", "polpo/test/IRCTests.Mod"]
+cmds = ["$compile TestIRC.Mod", "$compile IRCTests.Mod", "IRCTests.Run"]
+ok   = ["PASS: parser, tags, partial I/O, queue bounds, lifecycle, ISUPPORT and SASL policy", "IRCTests: passed, 7 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+
+
+
+[SUMS]
+src/IRC.Mod = "sha256:627214ddd5c70d0aeeb3c3fae42f1a63da1fef63c4436bf01765f6c0b92a2491"
+src/IRCTCP.Mod = "sha256:29d0825391ad388053d3f3a81a8a4a8d50fdec0f9d3d9171fb8910eca12a4ce6"
+src/IRCTLS.Mod = "sha256:c5cc400ffa980f431ebd17701798d88ec5f8ef48768354977c28ac0181cf4b48"
+src/irctest.Mod = "sha256:d98bd96e8a77484e4ed764dd4ecd50ac954fe0a0199cd63d79a9661b022c0fd0"
+README.md = "sha256:b948532fd80bd86f76fac47168f30b9b539d675f51af1195083b6b8a13d84ba8"
+LICENSE = "sha256:473c6d57b306d336c5e9d0ef42c699d4e2ac1d9ec24727882de9e3508a25e6bb"
+COPYING = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+tests/TestIRC.Mod = "sha256:0c777cadbc8ea9168183684cb83459debf461a9baf42e4aff3f7c48fa73ab563"
+tests/IRCProbe.Mod = "sha256:ab06ae2774c6c776a76186352fdb303cf4e05604ec091c324aa2f168f362339c"
+polpo/test/IRCTests.Mod = "sha256:2fbee6f7dc6ece18b265a8a8eb3920e941a8f5f58a2c7f9046b6d8df3a5fa8a7"

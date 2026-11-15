@@ -67,6 +67,12 @@ description = "program.Make: static Linux programs of Oberon modules, for this p
 deps        = ["console"]
 match       = ["src/cli/program.Mod"]
 
+[voc-compat]
+category    = "lib"
+description = "Platform and Args with the interfaces of voc, for the modules shared with voc"
+deps        = ["console"]
+match       = ["src/cli/Platform.Mod", "src/cli/Args.Mod"]
+
 [zlib]
 category    = "lib"
 description = "the zlib of ETH Oberon: deflate and inflate, readers and writers"

@@ -1,0 +1,46 @@
+[PACKAGE]
+name        = "opts"
+category    = "lib"
+version     = "1.0.1"
+author      = "Norayr Chilingarian"
+license     = "LGPL-3"
+description = "opts, the options of a program: short and long names, values, required options, positional arguments (norayr/opts)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/opts/5bb844f3178e72c5a5325b1e253794838fa6fbd4"
+tag  = "v1.0.1"
+
+[DEPS]
+console = "0.1.0"
+voc-compat = "0.1.0"
+program = "0.1.0"
+
+[MODULES]
+all = [
+  "src/optsos.Mod",
+  "src/opts.Mod",
+]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["readme.md", "LICENSE", "COPYING", "test/testopts.Mod", "test/TestLongOption.Mod", "polpo/test/OptsTest.Mod"]
+
+# the tests make programs with program.Make and run them where programs of the machine can be started;
+# the number of checks differs, so a failed check (FAIL) or a trap fails the tests
+[TESTS]
+copy = ["test/testopts.Mod", "test/TestLongOption.Mod", "polpo/test/OptsTest.Mod"]
+cmds = ["$compile OptsTest.Mod", "OptsTest.Run"]
+bad  = ["TRAP", "  err ", "FAIL"]
+
+
+
+[SUMS]
+src/optsos.Mod = "sha256:ee5200ab4ca375c0b224ab23f313ab45230c14b64c65637f15a3680c0fca762e"
+src/opts.Mod = "sha256:40283f246f2b77ead11e17bfb13ac457b2e123847752bfbeffa82a1fabe53787"
+readme.md = "sha256:72b410b084d23a2a91a2440d5be1df40e078a3a2c7a8089c32cc3f3f0faff83b"
+LICENSE = "sha256:3779d676fc5c23049c7c5643815a8fe8c6233b3df39d42970b62a79b56cb2e4e"
+COPYING = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+test/testopts.Mod = "sha256:f6e6f09b94a027bf0832762e035bd2281493e550430a039245fe036967ed6bfd"
+test/TestLongOption.Mod = "sha256:482be214d6d6240b66a5bd47ead28d23d0c3740cae1b276d3b5536725b2615cf"
+polpo/test/OptsTest.Mod = "sha256:64696b64e68b91a48d03e8a692f9ed8fde92bb37fb25533348cf82acd25935c7"
