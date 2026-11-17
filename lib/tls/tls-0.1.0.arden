@@ -4,7 +4,7 @@ category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
 license     = "LGPL-3"
-description = "TLS 1.3 in Oberon, client and server (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains) and https over http, shared with voc"
+description = "TLS 1.3 in Oberon, client and server (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains), Ed25519 signatures and https over http, shared with voc"
 
 [REMOTE]
 type = "git"
@@ -35,6 +35,7 @@ all = [
   "src/lib/tls/TLSASN1.Mod",
   "src/lib/tls/TLSX509.Mod",
   "src/lib/tls/TLSSHA512.Mod",
+  "src/lib/tls/TLSEd25519.Mod",
   "src/lib/tls/TLSNum.Mod",
   "src/lib/tls/TLSECDSA.Mod",
   "src/lib/tls/TLSRSA.Mod",
@@ -48,6 +49,7 @@ all = [
   "src/lib/tls/TLS13ClientFinished.Mod",
   "src/lib/tls/TLS13Application.Mod",
   "src/lib/tls/TLS13Random.Mod",
+  "src/lib/tls/TLSEd25519Keys.Mod",
   "src/lib/tls/TLSCABundle.Mod",
   "src/lib/tls/TLSNow.Mod",
   "src/lib/tls/TLSIdentity.Mod",
