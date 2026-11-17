@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "gadgets-webnav"
 category    = "gadgets"
-version     = "0.2.5"
+version     = "0.2.6"
 author      = "polpo"
 license     = "GPL-3"
 description = "WebNavigator: an HTML 4 browser with style sheets, http and https (Bruno Eberhard, ETH)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-webnav/910ffa222a60c4f1f7af76ff6f6947c2301b4673"
-tag  = "v0.2.5"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-webnav/4991a6e979fe52a1f90ea58f0b330c0e5339cba2"
+tag  = "v0.2.6"
 
 [DEPS]
 gadgets = "0.1.0"
@@ -17,6 +17,7 @@ gadgets-finder = "0.1.3"
 gadgets-htmldocs = "0.1.0"
 gadgets-nettools = "0.1.0"
 netsystem = "0.1.0"
+internet = "0.1.0"
 http = "0.1.0"
 tls = "0.1.0"
 gif = "0.1.0"
@@ -48,7 +49,7 @@ src/WebHTML4.Mod = "sha256:fc856db892c83e802a4527778ee702dba508c4ec1abf2101cc029
 src/WebCSS2Scanner.Mod = "sha256:229af770b62a61a9d9074155b9cecff448974363240e418d3f308efd3c2f3dac"
 src/WebCSS2.Mod = "sha256:f78d554c839f88f467c604f1b355e3b11f454dace407befb730fa9294d39c600"
 src/WebCSS2P.Mod = "sha256:2c4314da06225a921e9736258b54146d6ab2c0cb07a1211209616658dc0b3d82"
-src/WebNetwork.Mod = "sha256:6c2dc4dd31d2fb32d343650a572efd492330a2728c841b65de51de3aabc1d199"
+src/WebNetwork.Mod = "sha256:39c2f9a70e6e06ee75ed464772fff73c21bc6c197a3c82e7c20449f8d6cfe954"
 src/WebCSS2Format.Mod = "sha256:40ba2176b886cad4276e27290827de87c93aa215f759d462c426dc9232811d67"
 src/WebCSS2B.Mod = "sha256:03052f5fc221c0c92d3704cc043e7c4da090dced50dc667f1e00d9c475912475"
 src/WebNavDocs.Mod = "sha256:857ff601574a38089bceec4645dd97a1981b0a7225f516b84b6c77fbd36d9d18"
@@ -67,6 +68,6 @@ share/WebNavStart.html = "sha256:ea4c7bce6b9a0892eede3f051c49be8628b9507f9ecf164
 share/WebNavigator.Finder = "sha256:b867b41fcc868f1cfd1a8ca1ca92119193fba55993ef793968249e2440fa0519"
 tools/WebNavigator.Tool = "sha256:87c623f871e678c0193c9ac97ef7145f5a7107062d5982e624944bd5ea35f838"
 test/WebNavTest.Mod = "sha256:9f2ec9bf63375e92aa82a75e0a77761ecd5ad9c41c1a684493ebdf1d08e1fb35"
-README.md = "sha256:886502cd5355002c1246562e792df6aa132b7d72492aa374f3860f7c2cc01b14"
+README.md = "sha256:a81b4c717330ce6a9f629b6e3e596c0ac88608d1eacb09e228b9022e6acfd787"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
 LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
