@@ -53,6 +53,7 @@ all = [
   "src/lib/tls/TLSCABundle.Mod",
   "src/lib/tls/TLSNow.Mod",
   "src/lib/tls/TLSIdentity.Mod",
+  "src/lib/tls/TLS13Auth.Mod",
   "src/lib/tls/TLSCertGen.Mod",
   "src/lib/tls/TLS13Live.Mod",
   "src/lib/tls/TLS13Server.Mod",
