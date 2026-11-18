@@ -1,0 +1,38 @@
+[PACKAGE]
+name        = "base64"
+category    = "lib"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Base64 of ETH Oberon: files as Base64 text (RFC 1421) and back, in the desktop"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/base64/60def3e386c34fa78c0d157ebe811f750eaea3fe"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/Base64.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/Base64.Tool=tools/Base64.Tool", "test/Base64Test.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/Base64Test.Mod"]
+cmds = ["$compile Base64Test.Mod", "Base64Test.Run"]
+ok   = ["Base64Test: 18 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Base64.Mod = "sha256:a2e9741e2b378abc8f3d18255240e66908620599d7fa0de8f984a2b1ee8814a0"
+tools/Base64.Tool = "sha256:b80db3686f0d578121989b1cae5f87590621740f32946d1470041ebd0e303367"
+test/Base64Test.Mod = "sha256:cce4f7191cb47b8dd3fe91b359cfbc9cdafabea77ca5671d6a85eb2984fcb72e"
+README.md = "sha256:165d2ee5c6555ef21a5af1da6d22157f804e079c16b91926c989e3ff03eadb39"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

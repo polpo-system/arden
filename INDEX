@@ -150,6 +150,7 @@ gadgets/gadgets-webnav 0.2.6
 gadgets/gadgets-xbm 0.1.0
 gadgets/nersissa 0.1.2
 games/brantschen-games 0.1.0
+lib/base64 0.1.0
 lib/bit 0.1.0
 lib/bmp 0.1.0
 lib/btrees 0.1.0
