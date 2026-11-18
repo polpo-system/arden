@@ -159,16 +159,22 @@ description = "MD5 and SHA-256 of data and files"
 deps        = ["core"]
 match       = ["Checksums"]
 
+[unixnet]
+category    = "lib"
+description = "the system calls of the voc module unixNet on Linux0, for the network modules shared with voc"
+deps        = ["core"]
+match       = ["unixNet"]
+
 [sockets]
 category    = "lib"
 description = "TCP and UDP over IPv4 and IPv6"
-deps        = ["core"]
+deps        = ["core", "unixnet"]
 match       = ["Sockets"]
 
 [dns]
 category    = "lib"
 description = "host names to addresses: /etc/hosts and DNS over UDP, A and AAAA"
-deps        = ["core", "sockets"]
+deps        = ["core", "unixnet", "sockets"]
 match       = ["DNS"]
 
 [ooc-strings]
@@ -226,35 +232,35 @@ license     = "GPL-3"
 deps        = ["console"]
 match       = ["src/lib/strutils/"]
 
-[base64]
+[stringbase64]
 category    = "lib"
-description = "Base64 encoding and decoding, shared with voc"
+description = "Base64 encoding and decoding of strings (StringBase64), shared with voc"
 deps        = ["console"]
-match       = ["Base64"]
+match       = ["StringBase64"]
 
 [internet]
 category    = "lib"
 description = "TCP by host name and port, the Internet interface of voc"
-deps        = ["console", "sockets", "dns"]
+deps        = ["console", "unixnet", "sockets", "dns"]
 match       = ["Internet"]
 
 [netsystem]
 category    = "lib"
 description = "NetSystem of ETH Native Oberon over Sockets and DNS, for programs written for it; shared with voc"
-deps        = ["console", "sockets", "dns"]
+deps        = ["console", "unixnet", "sockets", "dns"]
 match       = ["NetSystem"]
 
 [http]
 category    = "lib"
 description = "an HTTP/1.1 client, shared with voc"
-deps        = ["console", "ooc-conversions", "strutils", "base64", "internet"]
+deps        = ["console", "ooc-conversions", "strutils", "stringbase64", "internet"]
 match       = ["src/lib/http/"]
 
 [tls]
 category    = "lib"
 description = "TLS 1.3 in Oberon, client and server (AES-128-GCM, X25519 and P-256, RSA and ECDSA chains), Ed25519 signatures and https over http, shared with voc"
 license     = "LGPL-3"
-deps        = ["console", "sockets", "internet", "http", "strutils"]
+deps        = ["console", "unixnet", "sockets", "internet", "http", "strutils"]
 match       = ["src/lib/tls/"]
 
 [fetch]

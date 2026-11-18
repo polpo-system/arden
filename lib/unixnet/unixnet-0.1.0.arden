@@ -1,10 +1,10 @@
 [PACKAGE]
-name        = "base64"
+name        = "unixnet"
 category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "Base64 encoding and decoding, shared with voc"
+description = "the system calls of the voc module unixNet on Linux0, for the network modules shared with voc"
 
 [REMOTE]
 type = "git"
@@ -12,7 +12,7 @@ uri  = "https://raw.githubusercontent.com/polpo-system/polpo/main"
 tag  = "main"
 
 [DEPS]
-console = "0.1.0"
+core = "0.1.0"
 
 [MODULES]
-all = ["src/lib/base64/Base64.Mod"]
+all = ["src/lib/unixnet/unixNet.Mod"]

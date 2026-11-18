@@ -13,6 +13,7 @@ tag  = "main"
 
 [DEPS]
 core = "0.1.0"
+unixnet = "0.1.0"
 sockets = "0.1.0"
 
 [MODULES]

@@ -13,6 +13,7 @@ tag  = "main"
 
 [DEPS]
 console = "0.1.0"
+unixnet = "0.1.0"
 sockets = "0.1.0"
 internet = "0.1.0"
 http = "0.1.0"
