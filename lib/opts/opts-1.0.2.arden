@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "opts"
 category    = "lib"
-version     = "1.0.1"
+version     = "1.0.2"
 author      = "Norayr Chilingarian"
 license     = "LGPL-3"
 description = "opts, the options of a program: short and long names, values, required options, positional arguments (norayr/opts)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/opts/5bb844f3178e72c5a5325b1e253794838fa6fbd4"
-tag  = "v1.0.1"
+uri  = "https://raw.githubusercontent.com/polpo-system/opts/73b4ea1eca4116d6435125fe11832f52feed1076"
+tag  = "v1.0.2"
 
 [DEPS]
 console = "0.1.0"
@@ -36,8 +36,8 @@ bad  = ["TRAP", "  err ", "FAIL"]
 
 
 [SUMS]
-src/optsos.Mod = "sha256:ee5200ab4ca375c0b224ab23f313ab45230c14b64c65637f15a3680c0fca762e"
-src/opts.Mod = "sha256:40283f246f2b77ead11e17bfb13ac457b2e123847752bfbeffa82a1fabe53787"
+src/optsos.Mod = "sha256:74d829902ec9badca04d818042a4454088fd6b9a7a7d6b7d5a453619674f4d57"
+src/opts.Mod = "sha256:85dff8c9dea0bc2325d6f279985cc23da89a681f8927657ce694abe6495a0e54"
 readme.md = "sha256:72b410b084d23a2a91a2440d5be1df40e078a3a2c7a8089c32cc3f3f0faff83b"
 LICENSE = "sha256:3779d676fc5c23049c7c5643815a8fe8c6233b3df39d42970b62a79b56cb2e4e"
 COPYING = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"

@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "lists"
 category    = "lib"
-version     = "1.0.1"
+version     = "1.0.2"
 author      = "Norayr Chilingarian"
 license     = "LGPL-3"
 description = "List and StringList, linked lists with their operations in the records (norayr/lists)"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/lists/6aeab9407c33bdf7dfefdb1a9c8b9125c0ab0e88"
-tag  = "v1.0.1"
+uri  = "https://raw.githubusercontent.com/polpo-system/lists/ae8db9e20aa958232f1b4b7114af4466b114c1a4"
+tag  = "v1.0.2"
 
 [DEPS]
 console = "0.1.0"
@@ -35,7 +35,7 @@ bad  = ["TRAP", "  err "]
 
 [SUMS]
 src/List.Mod = "sha256:efc4dbefe71f5d5b3c466d29a76ecd5622dfdd5cb31ea7dfaa5c89803b1ed91a"
-src/StringList.Mod = "sha256:b310ca67f110d531fcb129f5d025095cbce855bcc58e27390de909e48641cf08"
+src/StringList.Mod = "sha256:987f469a691f963d59cf79c1af83ca5b2022c63c9a75aafe3a9183308ff6a807"
 README.md = "sha256:6c485a008cc0b41dfd34dbc4ddffcaab7a4358322166953b8243fdceda20280b"
 LICENSE = "sha256:3779d676fc5c23049c7c5643815a8fe8c6233b3df39d42970b62a79b56cb2e4e"
 COPYING = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
