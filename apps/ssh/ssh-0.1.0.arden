@@ -1,0 +1,46 @@
+[PACKAGE]
+name        = "ssh"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "ssh.Exec and ssh.Connect: an SSH client (curve25519-sha256, Ed25519/ECDSA/RSA host keys, aes128-gcm, Ed25519 keys and passwords) on the tls library"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/ssh/e8558fb9ef696a67f164f6b7b60a63a6054a7c80"
+tag  = "v0.1.0"
+
+[DEPS]
+console = "0.1.0"
+unixnet = "0.1.0"
+internet = "0.1.0"
+tls = "0.1.0"
+
+[MODULES]
+all = ["src/SSHWire.Mod", "src/SSHKeys.Mod", "src/SSHTransport.Mod", "src/SSHAuth.Mod", "src/SSHChannels.Mod", "src/ssh.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["README.md", "LICENSE", "test/SSHTest.Mod", "test/msg.txt", "test/msg-ed25519.sig", "test/msg-ecdsa.sig", "test/msg-rsa.sig"]
+
+[TESTS]
+copy = ["test/SSHTest.Mod", "test/msg.txt", "test/msg-ed25519.sig", "test/msg-ecdsa.sig", "test/msg-rsa.sig"]
+cmds = ["$compile SSHTest.Mod", "SSHTest.Run"]
+ok   = ["SSHTest: 39 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+
+[SUMS]
+src/SSHWire.Mod = "sha256:db97d6072b6f00d338cc9465562d8dbcaf39af0bb851fa881d554cacb443f251"
+src/SSHKeys.Mod = "sha256:e81f76dc10ad8ca75e5396c4acc0373db8da12cefac77d80025dbc842abdf619"
+src/SSHTransport.Mod = "sha256:053c22f2c53075e34e18be4eeb28c4c62cbf028b92c3c18a1d898fcb7faf3e64"
+src/SSHAuth.Mod = "sha256:e989b6ff912837768505337780a315fab0d52cf7686eee9d3be516d95239dd8c"
+src/SSHChannels.Mod = "sha256:f70d1b86b7b555233b040fbf9ad43a45e4f2a3e90188b5658b0d7cccdb371c5a"
+src/ssh.Mod = "sha256:3bd0c73cb77d7a5a8249693c22c88647488e4c7271fc655e83644faf536ae6f2"
+README.md = "sha256:226304025fb4b60f43d8edc91f51fe2b156f0ee7da44a93fdca312f700a99f5c"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+test/SSHTest.Mod = "sha256:653d46761e09c32325a7b774dfe7bc81b79467fbc0b7d017acf6755c178bc2eb"
+test/msg.txt = "sha256:136e777ad590b227a76b1e12968d1a6fc3a5f358ba3c02dcc1727908a3868963"
+test/msg-ed25519.sig = "sha256:32a992d3b4bcf83572a8b2ff9e01fafe02bd98c8ac8282be2372a943ac5f5712"
+test/msg-ecdsa.sig = "sha256:225030c7eb75b6cca93fffbe32009b2f8d802de4b389864e4b2338ecb4ae0478"
+test/msg-rsa.sig = "sha256:258cf837d799bb2736ee2e21fbd835089b986bc29777e6149d68d5eb389b1d09"
