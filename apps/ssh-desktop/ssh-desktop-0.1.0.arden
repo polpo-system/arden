@@ -1,0 +1,37 @@
+[PACKAGE]
+name        = "ssh-desktop"
+category    = "apps"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "SSH.Open: a shell of an SSH server in a viewer of the desktop, a VT100 terminal"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/ssh/4966230996a30e78cb4fc782758f5a39a4ded04d"
+tag  = "v0.2.0"
+
+[DEPS]
+ssh = "0.1.0"
+terminals = "0.1.0"
+desktop = "0.1.0"
+
+[MODULES]
+all = ["src/SSH.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["tools/SSH.Tool=tools/SSH.Tool", "test/SSHDesktopTest.Mod"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/SSHDesktopTest.Mod"]
+cmds = ["$compile SSHDesktopTest.Mod", "SSHDesktopTest.Run"]
+ok   = ["SSHDesktopTest: 3 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/SSH.Mod = "sha256:6a62e22e9f06b27789aab99025b3f0c577730f334818c70bbda8319e449d85d3"
+tools/SSH.Tool = "sha256:92adbcf5264a679588dd46bc0e62aa5527c8838748bc22e3b1d609475e0646b5"
+test/SSHDesktopTest.Mod = "sha256:7f2963638e17a0b9b0eed04366079f3b45535ea79db504f5a10cfd5f40386d57"
