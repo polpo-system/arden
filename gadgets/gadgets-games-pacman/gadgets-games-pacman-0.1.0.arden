@@ -15,6 +15,7 @@ tag  = "v0.1.0"
 gadgets = "0.1.0"
 desktop-tools = "0.1.0"
 gif = "0.2.0"
+randomnumbers = "0.1.0"
 
 [MODULES]
 all = ["src/Sprites.Mod", "src/Stacks.Mod", "src/PacMan.Mod"]

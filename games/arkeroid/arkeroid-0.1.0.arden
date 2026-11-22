@@ -16,6 +16,7 @@ desktop = "0.1.0"
 gfx = "0.1.0"
 images-bmp = "0.1.0"
 images-jpeg = "0.1.0"
+randomnumbers = "0.1.0"
 
 [MODULES]
 all = ["src/Arkeroid.Mod"]
