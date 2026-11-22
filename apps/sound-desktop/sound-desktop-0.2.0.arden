@@ -1,24 +1,24 @@
 [PACKAGE]
 name        = "sound-desktop"
 category    = "apps"
-version     = "0.1.0"
+version     = "0.2.0"
 author      = "polpo"
 license     = "GPL-3"
-description = "Sound of Native Oberon on Sound0, its WAV recorder and player (Wave.Panel) and a mixer panel"
+description = "Player (WAV and MP3 files while the desktop goes on), Sound of Native Oberon on Sound0, its WAV recorder and player (Wave.Panel), a mixer panel"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/sound/c8fc2edb05659c97ff7246a1d3ef7d91b8acbad6"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/sound/45f00ba3910b4af0998ffb047c111d39f78b3844"
+tag  = "v0.2.0"
 
 [DEPS]
-sound = "0.1.0"
+sound = "0.2.0"
 desktop = "0.1.0"
 gadgets = "0.2.3"
 gadgets-audio = "0.1.0"
 
 [MODULES]
-all = ["src/Sound.Mod", "src/MixerPanel.Mod", "src/Wave.Mod"]
+all = ["src/Sound.Mod", "src/MixerPanel.Mod", "src/Wave.Mod", "src/Player.Mod"]
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
@@ -28,7 +28,7 @@ all = ["share/Wave.Panel=share/Wave.Panel", "tools/Sound.Tool=tools/Sound.Tool",
 [TESTS]
 copy = ["test/SoundDesktopTest.Mod"]
 cmds = ["$compile SoundDesktopTest.Mod", "SoundDesktopTest.Run"]
-ok   = ["SoundDesktopTest: 11 checks, 0 failed"]
+ok   = ["SoundDesktopTest: 12 checks, 0 failed"]
 bad  = ["TRAP", "  err ", "FAIL"]
 display = true
 
@@ -36,6 +36,7 @@ display = true
 src/Sound.Mod = "sha256:94d827b6495139089cdb33d1194437ba6513a9b90454920c87dc9119cd3abfea"
 src/MixerPanel.Mod = "sha256:851e0c8f54a72891039ea5829726e9335bcd710682523792df1ce2fa574dbf61"
 src/Wave.Mod = "sha256:32da4d43e5857f4442a22e22af1da120ba2da239d06c305cb7ba057a6de0cfc1"
+src/Player.Mod = "sha256:a8cd75443ce4fe93843a4d9d0e9712747217c80097fb13bdd2180aa1ef513cdb"
 share/Wave.Panel = "sha256:cd91951535ce4a1b285a7adefa29e2dc67fe31fe6b6abe7dbdf0ce54c0d9c81f"
-tools/Sound.Tool = "sha256:7fe474ee4e7c6b6fb07894813cd3541255649dfb1db0815ebc035f5d346e56b8"
-test/SoundDesktopTest.Mod = "sha256:94d65a39f81f2be164d22d67526b20edd0b07591c468e28d8dff31f07637d28c"
+tools/Sound.Tool = "sha256:7e4834b2316804b73dfee6d10e1ffee8bb969d1645c32f80666322ad9b868605"
+test/SoundDesktopTest.Mod = "sha256:b7e45b5c1f7127b5a1221ec1c05abd73d428709407ef52a6fbbbee89b71fb803"
