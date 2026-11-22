@@ -1,0 +1,95 @@
+[PACKAGE]
+name        = "arkeroid"
+category    = "games"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Arkeroid: break the bricks with the ball, ten rounds drawn with Gfx over the screen (C. Hatz and D. Frank)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/arkeroid/4e6000aefbd800bc2dae0db3e835d6d16f85e8a7"
+tag  = "v0.1.0"
+
+[DEPS]
+desktop = "0.1.0"
+gfx = "0.1.0"
+images-bmp = "0.1.0"
+images-jpeg = "0.1.0"
+
+[MODULES]
+all = ["src/Arkeroid.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Arkb0001.bmp=share/Arkb0001.bmp", "share/Arkb0002.bmp=share/Arkb0002.bmp", "share/Arkb0003.bmp=share/Arkb0003.bmp", "share/Arkb0004.bmp=share/Arkb0004.bmp", "share/Arkb0005.bmp=share/Arkb0005.bmp", "share/Arkb0006.bmp=share/Arkb0006.bmp", "share/Arkb0007.bmp=share/Arkb0007.bmp", "share/Arkb0008.bmp=share/Arkb0008.bmp", "share/Arkb0009.bmp=share/Arkb0009.bmp", "share/Arkb0010.bmp=share/Arkb0010.bmp", "share/Arkb0011.bmp=share/Arkb0011.bmp", "share/Arkc0001.bmp=share/Arkc0001.bmp", "share/Arkc0002.bmp=share/Arkc0002.bmp", "share/Arkc0003.bmp=share/Arkc0003.bmp", "share/Arkc0004.bmp=share/Arkc0004.bmp", "share/Arkc0005.bmp=share/Arkc0005.bmp", "share/Arkc0010.bmp=share/Arkc0010.bmp", "share/Arkc0011.bmp=share/Arkc0011.bmp", "share/Arkc0012.bmp=share/Arkc0012.bmp", "share/Arkc0013.bmp=share/Arkc0013.bmp", "share/Arkc0020.bmp=share/Arkc0020.bmp", "share/Arkc0021.bmp=share/Arkc0021.bmp", "share/Arkc0022.bmp=share/Arkc0022.bmp", "share/Arkc0023.bmp=share/Arkc0023.bmp", "share/Arkc0024.bmp=share/Arkc0024.bmp", "share/Arkc0025.bmp=share/Arkc0025.bmp", "share/Arkc0026.bmp=share/Arkc0026.bmp", "share/Arkc0027.bmp=share/Arkc0027.bmp", "share/Arkc0028.bmp=share/Arkc0028.bmp", "share/Arkc0029.bmp=share/Arkc0029.bmp", "share/Arkc0030.bmp=share/Arkc0030.bmp", "share/Arkccub2.bmp=share/Arkccub2.bmp", "share/Arkccube.bmp=share/Arkccube.bmp", "share/Arkdeskt.jpg=share/Arkdeskt.jpg", "share/Arkeroid.Data=share/Arkeroid.Data", "share/Arkgameo.jpg=share/Arkgameo.jpg", "share/Arklcd0.bmp=share/Arklcd0.bmp", "share/Arklcd1.bmp=share/Arklcd1.bmp", "share/Arklcd2.bmp=share/Arklcd2.bmp", "share/Arklcd3.bmp=share/Arklcd3.bmp", "share/Arklcd4.bmp=share/Arklcd4.bmp", "share/Arklcd5.bmp=share/Arklcd5.bmp", "share/Arklcd6.bmp=share/Arklcd6.bmp", "share/Arklcd7.bmp=share/Arklcd7.bmp", "share/Arklcd8.bmp=share/Arklcd8.bmp", "share/Arklcd9.bmp=share/Arklcd9.bmp", "share/Arkp0030.bmp=share/Arkp0030.bmp", "share/Arkp0060.bmp=share/Arkp0060.bmp", "share/Arkp0090.bmp=share/Arkp0090.bmp", "share/Arkp0120.bmp=share/Arkp0120.bmp", "share/Arkpause.bmp=share/Arkpause.bmp", "share/Arkquit.bmp=share/Arkquit.bmp", "share/Arkrecor.jpg=share/Arkrecor.jpg", "share/Arkstart.jpg=share/Arkstart.jpg", "tools/Arkeroid.Tool=tools/Arkeroid.Tool", "test/ArkeroidTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/ArkeroidTest.Mod"]
+cmds = ["$compile ArkeroidTest.Mod", "ArkeroidTest.Run"]
+ok   = ["ArkeroidTest: 4 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Arkeroid.Mod = "sha256:a4a82b452835a44e9b0065663250d3a0e149d160d08f1aecdb5af6387351754f"
+share/Arkb0001.bmp = "sha256:d5140bd2c41800f9ba9ce66b3317ba596bee16d06285a05b312c06a8646aefa0"
+share/Arkb0002.bmp = "sha256:1c939a81c107844aeb606796caacd381ba54edaf1d4883eeb4a23aa1c2244dcc"
+share/Arkb0003.bmp = "sha256:306afcd8e813b3e1f9e73b485b183ff7ca79161243e99d9763d48e82d86005f9"
+share/Arkb0004.bmp = "sha256:029952b4070898c149959a84cd4199694ebd1dc1642f42c069949dab57b4c02a"
+share/Arkb0005.bmp = "sha256:9f41b0854b9840cec32f625f0b615118f02e7c3746d883c4d0ae28356152374c"
+share/Arkb0006.bmp = "sha256:a675ed322184735ab0031ac3e1a6cedf9dc98ff43b79848f220e3ae008a1e729"
+share/Arkb0007.bmp = "sha256:a52f7bf1c9845b17f3fb3b7f609a1bb5482a913ad3707002100087f77884fd33"
+share/Arkb0008.bmp = "sha256:47a877686a5d9f422ee33b656ea6a8ef5ce663c5e0382c9ccc4f196eb78e2d8c"
+share/Arkb0009.bmp = "sha256:2ae012e4048904f0700273e62394e932f1ac89b928741024c36aba8286d613a2"
+share/Arkb0010.bmp = "sha256:d02359991de699562ffd9e38baaefb3efc9ec46a10d5fb2ef48456f73946e1ac"
+share/Arkb0011.bmp = "sha256:6959edf9735e1ea3ca960c1e061c3e80ddf61e7d124c8d57c7d424e60efba8aa"
+share/Arkc0001.bmp = "sha256:967014f32b0fe279fa957e3de9e9ae6365ff762817bcc521705d57d06ed96588"
+share/Arkc0002.bmp = "sha256:415eeb0cee54f5c81ff2a100b6fb15b81d46b0853495e5ed522e3337da5ea237"
+share/Arkc0003.bmp = "sha256:abbaa2f8ebd35c992423e37f937c8bd3afa89e2f2e5499b7882f5a0e3ae606a1"
+share/Arkc0004.bmp = "sha256:2769b1ff81f687143bf28fa5eb02a6b3c78f63fc279bc837b7d6b276a8487043"
+share/Arkc0005.bmp = "sha256:9ceeb903d3998ed20d15998101d094545475249e70af5f4ef18ef8b42100759d"
+share/Arkc0010.bmp = "sha256:c6d919645a753e03c0f095a129e872f4953363e1ea2f789cbdb7a419a07b835c"
+share/Arkc0011.bmp = "sha256:149d3225e6e380bb64b9bca256cf10a05c41089bb2ed113ab237e77d62c55f9f"
+share/Arkc0012.bmp = "sha256:181a87c37158b64f7960fb0cd3220933d57fcf77ed70bd873645f52f04544405"
+share/Arkc0013.bmp = "sha256:c6f2eaa220a6076f0ca62929cf26bf57d12e1a20b9bf109e101d48ae599d97a2"
+share/Arkc0020.bmp = "sha256:624ea8d940b1ce40ae82e19d9d3eed9e74d9d83d7f9095f206dba592d66591a4"
+share/Arkc0021.bmp = "sha256:b4e5f75efdc6194544bc90e5b2d938a49464cd7d624158da54cf16d0965389fa"
+share/Arkc0022.bmp = "sha256:f4410cf243e0bffa48d02f9acc6e27fbb71739e87a14be49dc1a8e5d632cb6aa"
+share/Arkc0023.bmp = "sha256:a882a5f36b226cc1231be7b4809eb9cc7b8db578c723691e0124596fb0097aa7"
+share/Arkc0024.bmp = "sha256:5be4bc2d10be3c2baf8c476fdb8b8ddfff626c01f1c31c00d10977a227a89974"
+share/Arkc0025.bmp = "sha256:46d098d016ffe9a0d09be92aeff21180663ee537b323373377bd39c52c6e393f"
+share/Arkc0026.bmp = "sha256:a5cb056a534e8587b31278ac0e0a3c3c52bf3772b676f2b2cdc7aad5b9a0488a"
+share/Arkc0027.bmp = "sha256:824b13838e81cc023fca5aba3dac834b571a43cd671e8514677872aeb68e741b"
+share/Arkc0028.bmp = "sha256:da84d3dc40c909edf3780a5d559394800468496b229adb51054984a6571ea83c"
+share/Arkc0029.bmp = "sha256:ec9f064e23091bc952aff434908daf522ec477a09354907fe677ea516c253a84"
+share/Arkc0030.bmp = "sha256:5124f3b90a1cd12dcfaa3e9fdb6544798a9c42605f6ece1de96a5529e73d2f28"
+share/Arkccub2.bmp = "sha256:b354009b1e8e45c2c62567210e1a8f864d9b41f0e741299dff1fc8f9c1e94b36"
+share/Arkccube.bmp = "sha256:994b6eb99e0afb30f12216834192ff647acce22017aa1a9856fad76967a901eb"
+share/Arkdeskt.jpg = "sha256:30731e1bc2de1ea38866cd77f533c917f0dd09f61ec477c82e428abda54d92f5"
+share/Arkeroid.Data = "sha256:585fbe90117206e045dcc5908a0fb9f3485368b77d37f1f25fb733cd984934ba"
+share/Arkgameo.jpg = "sha256:d64d6dee3b15a0775c02595e9c1708f514802168c901e2046d5fd6d065159397"
+share/Arklcd0.bmp = "sha256:fcee4c1ac9fb4c5f43603b83f1240b3b706b21d91148b3d06e9fd07c80a2dd92"
+share/Arklcd1.bmp = "sha256:3959bd64f822b41e2ae695105493ab19496eac1e230fe1494dae09cf0d0eaa98"
+share/Arklcd2.bmp = "sha256:2daa8e3826933d30878cb8d904566643cc1e3e5871033cb461cead54265d4579"
+share/Arklcd3.bmp = "sha256:be80bf6a7a15cf1d77064eb8ebc091f4c6eb8b7b51d193edc43d2c3f0c995078"
+share/Arklcd4.bmp = "sha256:661268410fd2dddc39c91da260a5f238e07b5a469039285d82aeae373e60a40a"
+share/Arklcd5.bmp = "sha256:409ac76a9ba32ec92403cbd2042f80d6825e25f38515d4f8ca0b0a86660a6b09"
+share/Arklcd6.bmp = "sha256:0c0c1fa8ee829a011453c6f49b22ae384ec8f5ae94559500c8c7304a6a4e1512"
+share/Arklcd7.bmp = "sha256:27828a48628a67e5b14f6b1b273dae3482c963c66ec1292043f9bb25049c9075"
+share/Arklcd8.bmp = "sha256:510c249b53f71dbfebf3ed74ee402d1c5c22bc86c452c2c896d4e77b8b7709bf"
+share/Arklcd9.bmp = "sha256:28f62d9c9c9154a3edbb8dd2c00f195b291beed7c929e776226035ced3d9654f"
+share/Arkp0030.bmp = "sha256:b212ce594060dde16f409b6de9c16ef8a89d4c49892af81733cc79a79b2f8be4"
+share/Arkp0060.bmp = "sha256:6014c01d65a2b53428f6a62d65047ca2242bf00186bac27db7871f169d7bfea6"
+share/Arkp0090.bmp = "sha256:b657ede301bb8fddf36695684b4a730d9b4e6e9f5fac25c664f016f00eb4acfa"
+share/Arkp0120.bmp = "sha256:9a53ec57c6468e41b5deb845985f4d50442e59b9832b97471bf00841307bbd72"
+share/Arkpause.bmp = "sha256:37841adc880544de0c43b73c7ea9233dca92bee7da38d5ed372fc759ce066d72"
+share/Arkquit.bmp = "sha256:409d0ce1bc63f0c69d72a87f2f86db29eabfdb8e0a8924d9d95cf4851551a1f4"
+share/Arkrecor.jpg = "sha256:932de22884d91f348e3047a559c2e245dd278033379128cce90bdc29f8b18a4d"
+share/Arkstart.jpg = "sha256:7e66d7ce7608de5460b769baac2ca06a0a9cd8b4ce024e5bed7766960a85f143"
+tools/Arkeroid.Tool = "sha256:946cc7d60d4182ffff04509dfbb954bfa43f2d9f813eda52283851bbf4de5434"
+test/ArkeroidTest.Mod = "sha256:380a0a42c422103a647c67b51eb4ec525cfc04d509691b1a201e7436818b23fa"
+README.md = "sha256:68e28d359585ee01a2686c0533c1fd948c390f6bdc21b5cb1647eb42341e9e89"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

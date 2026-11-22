@@ -1,0 +1,47 @@
+[PACKAGE]
+name        = "gadgets-games-pacman"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "PacMan: eat the dots of the maze and keep away from the ghosts (John Drake)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-pacman/ce0a0419a0d404fdee7b0fab0cdd6c0d3993caf9"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+desktop-tools = "0.1.0"
+gif = "0.2.0"
+
+[MODULES]
+all = ["src/Sprites.Mod", "src/Stacks.Mod", "src/PacMan.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/PacData.Text=share/PacData.Text", "share/PacMaze.gif=share/PacMaze.gif", "share/PacPictures.Text=share/PacPictures.Text", "share/PacSprites.gif=share/PacSprites.gif", "share/RetPath.Text=share/RetPath.Text", "tools/PacMan.Tool=tools/PacMan.Tool", "test/PacManTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/PacManTest.Mod"]
+cmds = ["$compile PacManTest.Mod", "PacManTest.Run"]
+ok   = ["PacManTest: 4 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Sprites.Mod = "sha256:322dde76518d85f9c1d446954fbe0b13d2d73540daa4990fe754744bfbc37a1d"
+src/Stacks.Mod = "sha256:20fc184385b0211cb6d0054458d43a93459d253aaa550ea7d26bec0dcf016b95"
+src/PacMan.Mod = "sha256:7e358adbe7da4e4944d482a8738c8bc6fa103ecbdc10bc354a4cdb4ccd2ff136"
+share/PacData.Text = "sha256:9a23e9ece10ea08694fda5ecbba46cbee51f7c7f2889d483eb2c6e4e45e4aaf7"
+share/PacMaze.gif = "sha256:3be7a4fa0761feff504f5ecf9178a34eb2913b36e2fc02f9009fc31b43032c3c"
+share/PacPictures.Text = "sha256:03f9d349cb7684a0047bd34d7db0f57b7e4399725fc30bffa671ba8b799840e6"
+share/PacSprites.gif = "sha256:caa35e31a80d9c03b96aaf4ec6dab899d3f4e3147555781b86ef5bfe03aa48de"
+share/RetPath.Text = "sha256:654c592cf32cb3d29e5ece8f7c40d87d85e620df34a16bec56c14be0db9877f7"
+tools/PacMan.Tool = "sha256:5233bae85a4a0059f2632956616f932fcdbf1f2a1a495e5758d2bee37032fc2e"
+test/PacManTest.Mod = "sha256:5338bd286bfd3500581e55d1819ad20de73a6b1883b7479471b14f4dbab88bd8"
+README.md = "sha256:27f76504be9974888e915dbae6e87f454fcdb1070ecb0e426cc0e8bdd8c9b7b3"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

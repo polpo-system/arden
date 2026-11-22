@@ -1,0 +1,42 @@
+[PACKAGE]
+name        = "gadgets-games-fivetoone"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "FiveToOne (521): make every box of the grid show 1, a puzzle on nine boxes (Damien Guichard)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-fivetoone/f815a172a829aef259adf32229e20f5259d95269"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/ButtonField.Mod", "src/FiveToOne.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/FiveToOne.Panel=share/FiveToOne.Panel", "share/FiveToOne.Text=share/FiveToOne.Text", "tools/FiveToOne.Tool=tools/FiveToOne.Tool", "test/FiveToOneTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/FiveToOneTest.Mod"]
+cmds = ["$compile FiveToOneTest.Mod", "FiveToOneTest.Run"]
+ok   = ["FiveToOneTest: 3 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/ButtonField.Mod = "sha256:719cc4f81c1712944c72624110bf2beee18c87417de1be762116a7eaf971a2a8"
+src/FiveToOne.Mod = "sha256:c0ef3c0383cfe82d44f163dfae71fb63c4e2419039db6c8730ca354c60d50959"
+share/FiveToOne.Panel = "sha256:d2ac8229f503a5ba76a8b6d937f5b4890a848d235cf4a7c90d717f663f9befb9"
+share/FiveToOne.Text = "sha256:aff09e517a305ee2c667f272d12ab01b31742876c6dd33a27b25609e1e1fadec"
+tools/FiveToOne.Tool = "sha256:a53aff47a694a3d933d9cc15384346aab2ad3c8577f4ebb9652588fcef3a1856"
+test/FiveToOneTest.Mod = "sha256:17698240a8387818dbc27bc213951c27c0997d6a948796bec180467a3848ba59"
+README.md = "sha256:6d28aa9a040e281771218b84a292846db01f07aa91829adea362e1898f1dc320"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

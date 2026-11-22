@@ -1,0 +1,64 @@
+[PACKAGE]
+name        = "gadgets-games-sepins"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Sepins: a maze game in the line of Boulder Dash, with a level editor and a sprite editor (Jaco Geldenhuys)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-sepins/bf337f146212da6238d4e3c7fc977ffd75f70690"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+desktop-tools = "0.1.0"
+
+[MODULES]
+all = ["src/SepinsA.Mod", "src/SepinsB.Mod", "src/SepinsC.Mod", "src/SepinsD.Mod", "src/Sepins1.Mod", "src/Sepins2.Mod", "src/SepinsData.Mod", "src/Sepins.Mod", "src/SepinsEd.Mod", "src/SepinsBits.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Sepins.Data=share/Sepins.Data", "share/Sepins.Text=share/Sepins.Text", "share/Sepins001.Data=share/Sepins001.Data", "share/Sepins002.Data=share/Sepins002.Data", "share/Sepins003.Data=share/Sepins003.Data", "share/Sepins004.Data=share/Sepins004.Data", "share/Sepins005.Data=share/Sepins005.Data", "share/Sepins006.Data=share/Sepins006.Data", "share/Sepins007.Data=share/Sepins007.Data", "share/Sepins008.Data=share/Sepins008.Data", "share/Sepins009.Data=share/Sepins009.Data", "share/Sepins010.Data=share/Sepins010.Data", "share/Sepins011.Data=share/Sepins011.Data", "share/Sepins012.Data=share/Sepins012.Data", "share/Sepins013.Data=share/Sepins013.Data", "share/Sepins014.Data=share/Sepins014.Data", "tools/Sepins.Tool=tools/Sepins.Tool", "test/SepinsTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/SepinsTest.Mod"]
+cmds = ["$compile SepinsTest.Mod", "SepinsTest.Run"]
+ok   = ["SepinsTest: 6 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/SepinsA.Mod = "sha256:4345ba5497aca3eb3c0f9392150ad9aff6f002ffd01446ee930d874c5ab78f30"
+src/SepinsB.Mod = "sha256:3c9d139980cf7a47300c3aa97d82f5615ff94423b50110306ff05416b85fc48c"
+src/SepinsC.Mod = "sha256:a704549050c75601605dc7561c17a69f20465ea4f0f997fe2c48d59b6a74a5a0"
+src/SepinsD.Mod = "sha256:67a2db2e7a90a2ea927bb253599ce214ac083f7e7beca20ce7d9ccb785143a62"
+src/Sepins1.Mod = "sha256:31e59e1c9f8e2d3ffa760abdc2aae05a13ac0ea98725ef9e4d4831741a21c338"
+src/Sepins2.Mod = "sha256:bef0d6cb8497f70c523dd2349cda9ad362e571840c77f65d971076aa618580b6"
+src/SepinsData.Mod = "sha256:fdd955f9266c18c27ae614409db501ae93b2dfc9d441c6a35382068e6da606fc"
+src/Sepins.Mod = "sha256:08cf335aa7fb907503483e02a97b8fac302099bb8ba59a9baf68535ffadbc585"
+src/SepinsEd.Mod = "sha256:d488dbf1ccac78d0718f2a6a9014f69b7495f10bf4b81f1c96dc359be669b19b"
+src/SepinsBits.Mod = "sha256:85727393a83f884bb046706beb47396b3c54229d434ae34e1febe5dd58607154"
+share/Sepins.Data = "sha256:21182ed53bee91fb9e5a841eb372bb4d96b3377897b81d6a466616feedd88805"
+share/Sepins.Text = "sha256:01174b9b1853451980e366424f53fa264ce70f76bc0702e98f578ead721388e2"
+share/Sepins001.Data = "sha256:872fabbf1989c1d37a17dbd4018a55491bda70ab4936a4da198d84b0af6d2ed7"
+share/Sepins002.Data = "sha256:0373865346ff23cdca7f5017d75c0cc51352d53b7ad44445192f3551a651c2b7"
+share/Sepins003.Data = "sha256:10bd992877f6a03cbdf66a5642276955859cb3b00ff7212f8d8106d4171bdfc9"
+share/Sepins004.Data = "sha256:3b6e683922984867ff0cfe9e282704ced270fe63f2a631804c0b00a6079fdef7"
+share/Sepins005.Data = "sha256:2f2f3d5cb96bb0aa9c6160dcebe00c0a02d89342dcb086967b0f9338adc0307c"
+share/Sepins006.Data = "sha256:f26399ff95063c9b6ce30ff9173b175b3dc5f4a4f38753869f1053fa4ed4a38d"
+share/Sepins007.Data = "sha256:a5861bda5256625f709cb694cf0bcf79914fddd99dee90659070ff6ce7bb8bc7"
+share/Sepins008.Data = "sha256:c041330568ffaf2417bb84ee6756db3dc5af22f1a1ccb95d7bc5fb2c426dfd18"
+share/Sepins009.Data = "sha256:fa451b07b192f3f97222ae8af15ebbc9ef799e49ac48d654d8551cbaf137ede2"
+share/Sepins010.Data = "sha256:60ae9bb70591925f164f32c48fc1c245c6f936449f8a1a307c2ba056c7d0f866"
+share/Sepins011.Data = "sha256:3b2b3398b84a98d83be92f67cce066e11bc06d756d53300cc10d66567463eeeb"
+share/Sepins012.Data = "sha256:e9f076704b3be13f16900c9038a564aef9626d12ace78ab200a0d3b459a4c15e"
+share/Sepins013.Data = "sha256:b9ae8bc243027b3a3eb79039936efc297f0ecf584016440f2d5add7b90f35e4f"
+share/Sepins014.Data = "sha256:bd58580d11406557b1ffb0a274a02446a85473ece901952003d32f73ca590ba4"
+tools/Sepins.Tool = "sha256:16acd9de38e90de1557c9debc093b259b15f3bead2c34da75212abd401b08e13"
+test/SepinsTest.Mod = "sha256:70f542705739fd8ba8298cd7779d81732e2be47608b18113d7ffed8ab4bedd41"
+README.md = "sha256:f62eef2a2ca6792c3e270f692a6a58aee0f05604efe01af25195cad6cf8135db"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

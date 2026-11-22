@@ -107,9 +107,12 @@ gadgets/gadgets-finder 0.1.3
 gadgets/gadgets-fonteditor 0.1.0
 gadgets/gadgets-games-asteroids 0.1.0
 gadgets/gadgets-games-cards 0.1.0
+gadgets/gadgets-games-fivetoone 0.1.0
 gadgets/gadgets-games-freecell 0.1.0
 gadgets/gadgets-games-minesweeper 0.1.0
+gadgets/gadgets-games-pacman 0.1.0
 gadgets/gadgets-games-scramble 0.1.1
+gadgets/gadgets-games-sepins 0.1.0
 gadgets/gadgets-games-shanghai 0.1.0
 gadgets/gadgets-games-sokoban 0.1.0
 gadgets/gadgets-games-solitaire 0.1.0
@@ -153,6 +156,7 @@ gadgets/gadgets-watson 0.1.0
 gadgets/gadgets-webnav 0.2.6
 gadgets/gadgets-xbm 0.1.0
 gadgets/nersissa 0.1.2
+games/arkeroid 0.1.0
 games/brantschen-games 0.1.0
 lib/base64 0.1.0
 lib/bit 0.1.0
