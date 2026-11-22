@@ -1,15 +1,15 @@
 [PACKAGE]
 name        = "gfx"
 category    = "lib"
-version     = "0.1.0"
+version     = "0.1.1"
 author      = "polpo"
 license     = "GPL-3"
 description = "Gfx of ETH Oberon: two-dimensional graphics for screen, images and printers"
 
 [REMOTE]
 type = "files"
-uri  = "https://raw.githubusercontent.com/polpo-system/gfx/cc259e33cdf8e6321d2b41d94be19d15f4484861"
-tag  = "v0.1.0"
+uri  = "https://raw.githubusercontent.com/polpo-system/gfx/27c524a74ab133bacadaaedee3aad642278c3846"
+tag  = "v0.1.1"
 
 [DEPS]
 desktop = "0.1.0"
@@ -22,13 +22,13 @@ all = ["src/GfxMatrix.Mod", "src/GfxImages.Mod", "src/GfxPaths.Mod", "src/GfxReg
 
 # path in the repository, or path=destination in the polpo root
 [FILES]
-all = ["share/GfxHowto.html=share/GfxHowto.html", "share/GfxOverview.html=share/GfxOverview.html", "tools/Gfx.Tool=tools/Gfx.Tool", "test/GfxDrawTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+all = ["share/GfxHowto.html=share/GfxHowto.html", "share/Oberon.MTF=share/Oberon.MTF", "share/OberonBold.MTF=share/OberonBold.MTF", "share/OberonItalic.MTF=share/OberonItalic.MTF", "share/GfxOverview.html=share/GfxOverview.html", "tools/Gfx.Tool=tools/Gfx.Tool", "test/GfxDrawTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
 
 # the tests need the desktop (DISPLAY set; an Xvnc will do)
 [TESTS]
 copy = ["test/GfxDrawTest.Mod"]
 cmds = ["$compile GfxDrawTest.Mod", "GfxDrawTest.Run"]
-ok   = ["GfxDrawTest: 2 checks, 0 failed"]
+ok   = ["GfxDrawTest: 3 checks, 0 failed"]
 bad  = ["TRAP", "  err ", "FAIL"]
 display = true
 
@@ -45,9 +45,12 @@ src/GfxDisplay.Mod = "sha256:19da41c77d5d69af65e2cf20c8ebd80c9b90e8d463dabec2501
 src/GfxPrinter.Mod = "sha256:522927670914d0379864260638fd1a05df38de0961aad072d19b2715afbd692a"
 src/GfxBuffer.Mod = "sha256:5d44a54c9e67abbe62c96b171a69af704cd952194cfd755d020fc3aa75633046"
 share/GfxHowto.html = "sha256:2df5b27d1d067d56487e6d30cd2dcc2e3cda70e62c232a8fcc21f31badd65485"
+share/Oberon.MTF = "sha256:84cd71d08b38dbbf312b5acce19bc6bffa47b4d6e1a1d263c9e7dd9984ca9d68"
+share/OberonBold.MTF = "sha256:6d0996433b24ead88c956280276c94691bac92f636fbe95a0a0ca99806994e0f"
+share/OberonItalic.MTF = "sha256:e74324b3c2585d73b2f14f0db9d60702a28176fa50097db292cb26c83251fe17"
 share/GfxOverview.html = "sha256:aebeb390106d9c4233db99ae9b4a3dae5534190ba2b310334e93b737f10266e6"
 tools/Gfx.Tool = "sha256:a74e814493be86e3b5d9a3a419ea41982441c2bc7c47739564e723a5939306a3"
-test/GfxDrawTest.Mod = "sha256:5ab778673272dc60973052e143885c6d576bbd08b8ef976e8da29fa45cbd56d3"
-README.md = "sha256:a4930a4888cbdef877717b9f6163f22c90f9790ff0632217e8f578c30bbb6e0f"
+test/GfxDrawTest.Mod = "sha256:c180d2b89545e5b7040df85522198496714d0f57c98089056a891b1a64fe45dd"
+README.md = "sha256:e23f984280f2a2710a0ea3647f08f93eb7789449cadfeb7ffc3e49fea2454a9d"
 LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
 LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
