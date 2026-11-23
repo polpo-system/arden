@@ -1,0 +1,43 @@
+[PACKAGE]
+name        = "gadgets-games-mastermind"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Master Mind: find a code of four pegs in six colours, or watch the computer find one (Andre Fischer)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-mastermind/532775f10a65793d074d1b4b4fcd6c6d2dbd5076"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-layla = "0.1.0"
+randomnumbers = "0.1.0"
+
+[MODULES]
+all = ["src/MasterMind.Mod", "src/MasterMindG.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/MasterMind.Desc=share/MasterMind.Desc", "share/MasterMindG.Desc=share/MasterMindG.Desc", "tools/MasterMind.Tool=tools/MasterMind.Tool", "test/MasterMindTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/MasterMindTest.Mod"]
+cmds = ["$compile MasterMindTest.Mod", "MasterMindTest.Run"]
+ok   = ["MasterMindTest: 7 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/MasterMind.Mod = "sha256:841e648bd443920239d40d9520118a89440589a9696b0f639d547361446f6a21"
+src/MasterMindG.Mod = "sha256:45d643513db0404be4594d17c59357ab740fba05bf8d57e657a469a3512eebd9"
+share/MasterMind.Desc = "sha256:4523a3e45286e93815007f67be547f7564ce7a66670b5bf4c3850b57bd251a16"
+share/MasterMindG.Desc = "sha256:37826ccd8ebbcdadc8cd9d1a540ada85d8bfd68c63eed5697deb88ae1a4178ae"
+tools/MasterMind.Tool = "sha256:73106ede374676f7ee92c659fb0b2d61a3f6f80a70233862909be7c6bf995801"
+test/MasterMindTest.Mod = "sha256:5e1718b53994bc9b47ceab2205616e34359cce81cb20b7050d2579ba2ae99d75"
+README.md = "sha256:da46a35a52f0c279c0c1ef3f3be509f3437b103cecb243ef0a14b7ce90381793"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

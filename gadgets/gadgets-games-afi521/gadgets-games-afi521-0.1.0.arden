@@ -1,0 +1,44 @@
+[PACKAGE]
+name        = "gadgets-games-afi521"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "521: make every tile of a grid show 1, with buttons or large digits as tiles (Andre Fischer)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-afi521/3f25b0b56442e334b7d193dd63f1611a3c687446"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-layla = "0.1.0"
+gadgets-buttonfield = "0.1.0"
+randomnumbers = "0.1.0"
+
+[MODULES]
+all = ["src/Afi521.Mod", "src/Afi521Big.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Afi521.Desc=share/Afi521.Desc", "share/Afi521Big.Desc=share/Afi521Big.Desc", "tools/Afi521.Tool=tools/Afi521.Tool", "test/Afi521Test.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/Afi521Test.Mod"]
+cmds = ["$compile Afi521Test.Mod", "Afi521Test.Run"]
+ok   = ["Afi521Test: 11 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Afi521.Mod = "sha256:699700353db7ee823e20e7840ebd6b9f0c315334f58baffdf2c0f946eecf12c8"
+src/Afi521Big.Mod = "sha256:f6b5a3e12db8c2518576ae9cd29e98003ee5d50b4c81ec8a948c2b791027fd80"
+share/Afi521.Desc = "sha256:9c2d624a67afb49368ffc883c87a739189c385c81690631f79d8d2be77f600b2"
+share/Afi521Big.Desc = "sha256:b22440ccce9b4258decfdc35285d69d223377a4e82f41b74347f953e2c25449a"
+tools/Afi521.Tool = "sha256:c676cb9fccc7ac2b3f9ec58d21da3993523ace8b06f4f81cb35cede4e4a86244"
+test/Afi521Test.Mod = "sha256:995f5fe11dfa53c90046b8a7c16d90d1fc57022d2c2f606f5ade77e0be239072"
+README.md = "sha256:647af3c55b9e18ce74c9b405ddb5d526960e19c91a80ed9a90f88870a19abfb2"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

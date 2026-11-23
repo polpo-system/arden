@@ -1,0 +1,50 @@
+[PACKAGE]
+name        = "gadgets-layla"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "LayLa: panels of gadgets described as text and made by a command (Joerg Derungs)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-layla/4c48b16a0999751b4917280d6bd408075ca3b2fd"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-layouts = "0.1.0"
+
+[MODULES]
+all = ["src/LayLaS.Mod", "src/LayLa.Mod", "src/LayLa2S.Mod", "src/LayLa2.Mod", "src/LayLaDemo.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/LayLa.Guide.Eng.Text=share/LayLa.Guide.Eng.Text", "share/LayLa.QuickGuide.Text=share/LayLa.QuickGuide.Text", "share/LayLa.Demo.Config=share/LayLa.Demo.Config", "share/LayLa.Include.Config=share/LayLa.Include.Config", "share/LayLa2.Demo.Config=share/LayLa2.Demo.Config", "share/LayLa2.Include.Config=share/LayLa2.Include.Config", "share/LayLaTest.Lib=share/LayLaTest.Lib", "tools/LayLa.Tool=tools/LayLa.Tool", "test/LayLaTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/LayLaTest.Mod"]
+cmds = ["$compile LayLaTest.Mod", "LayLaTest.Run"]
+ok   = ["LayLaTest: 13 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/LayLaS.Mod = "sha256:9a37b4eeb56bdd27b315094ccaf0a83cc0734bda334efa8a701555af45027bc6"
+src/LayLa.Mod = "sha256:478e4a8309ce58af7d2d76f6dd5f265cc604ff6e8c331b9fd7e45200d22c7c3d"
+src/LayLa2S.Mod = "sha256:58f7a4f36774e52314ee372577cda7dd9238d1ca8a5e7c5425eca314c16d59b1"
+src/LayLa2.Mod = "sha256:502b4b4d1b5d1a023dfd51747eff4f4be7362f4fd10d2dae128cace40e8a9656"
+src/LayLaDemo.Mod = "sha256:3e7f5ad07a3e2f05c5579cd2fe5c81da86adc58bacae6f99bd4f4189fbc5ee4e"
+share/LayLa.Guide.Eng.Text = "sha256:c2c757ca9ae1f115b4c8825b5e2ac808af687508525bcecd9708c128bc879e49"
+share/LayLa.QuickGuide.Text = "sha256:09f1dfb4a1901e0fe464e70cf3464d8504adbcb1f9418355ac62f12bc6d62961"
+share/LayLa.Demo.Config = "sha256:80a3755f5b77011c774a0a97b15a2fb92917017feee113619caec174e8988d60"
+share/LayLa.Include.Config = "sha256:c397b4dc2c394973150f0e1344574a0118cc224273d38419dd82306d0a5cc8b6"
+share/LayLa2.Demo.Config = "sha256:febdb0b8ade218b9a74b7f3cc4927edce53ffa59eb81ed340ee799b2d6cf7508"
+share/LayLa2.Include.Config = "sha256:4c86bb962cd6a5cd7ad81a13c2e267d1cee9591c467fad16226e4ec8433071b7"
+share/LayLaTest.Lib = "sha256:3d498f21aad08c5c49419b66930687ed01d48ae225d7f65de0ffdd1827cf9f2f"
+tools/LayLa.Tool = "sha256:e92d83e92c215cc509c32e2500eef3343dbc4395991d1cf03a1020843483edd8"
+test/LayLaTest.Mod = "sha256:ef8af0dc7619cee2811ab4aeb4b3d71a489dee5f3f12434b817222465aa06d04"
+README.md = "sha256:b0772c000c3ac67d5d958da9166272df4ba06a55eab6025c7465127eb4f94239"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

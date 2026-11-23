@@ -1,0 +1,47 @@
+[PACKAGE]
+name        = "gadgets-games-puzzlexy"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "PuzzleXY: the sliding puzzle on boards of any size, numbers or a picture, and a board maker (Andre Fischer)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-puzzlexy/792b2e02f22813502a4d3aa288b0d0a253934da6"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-layla = "0.1.0"
+gadgets-buttonfield = "0.1.0"
+gadgets-rembrandt = "0.1.0"
+jpeg = "0.1.0"
+randomnumbers = "0.1.0"
+
+[MODULES]
+all = ["src/PuzzleXY.Mod", "src/PuzzleLayLaP.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/PuzzleLayLaP.Desc=share/PuzzleLayLaP.Desc", "share/Egypt.Pict=share/Egypt.Pict", "share/l038102.jpg=share/l038102.jpg", "tools/PuzzleXY.Tool=tools/PuzzleXY.Tool", "test/PuzzleXYTest.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/PuzzleXYTest.Mod"]
+cmds = ["$compile PuzzleXYTest.Mod", "PuzzleXYTest.Run"]
+ok   = ["PuzzleXYTest: 9 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/PuzzleXY.Mod = "sha256:d51403b517606507ad7fb28174a5991ac82781bc24bf3d887bd2d8f84d16af3f"
+src/PuzzleLayLaP.Mod = "sha256:19302c06c528bdbf863b21f75d0d144198312ef60224dfc97ff2304e53a035fa"
+share/PuzzleLayLaP.Desc = "sha256:5e64b0df24f3fdde16f6d357f8dcb51fff95361da5700cefdd146f5682c62750"
+share/Egypt.Pict = "sha256:136ccc189ba5fa75acab229d296937f78ca051e1d4b94d9f6215f1caef80f166"
+share/l038102.jpg = "sha256:fab123898a6a52cf9b101b2ec071f86583144cd8d12fdbe265650d7dc9b8c841"
+tools/PuzzleXY.Tool = "sha256:8ea52d6a758250e06dea0d5e0fcbd2d8cc7bbf6dee56d90609d44c1121d1c4dc"
+test/PuzzleXYTest.Mod = "sha256:8027c1e3e0856ac7d80e935a2393469bb69b06361bb6a0b96923161051958b27"
+README.md = "sha256:adb569a8e9e1e607004df9e2a83ad4421d1dd6bcebacc1d7f9ee89098821a6e4"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"

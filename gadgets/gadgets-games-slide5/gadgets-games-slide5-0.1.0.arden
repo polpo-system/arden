@@ -1,0 +1,42 @@
+[PACKAGE]
+name        = "gadgets-games-slide5"
+category    = "gadgets"
+version     = "0.1.0"
+author      = "polpo"
+license     = "GPL-3"
+description = "Slide5: five in a line on a board of 5 by 5, against a person or the computer (Andre Fischer)"
+
+[REMOTE]
+type = "files"
+uri  = "https://raw.githubusercontent.com/polpo-system/gadgets-games-slide5/7ee09be408c9a6f6dd3b5629b07a93e2559addcc"
+tag  = "v0.1.0"
+
+[DEPS]
+gadgets = "0.1.0"
+gadgets-layla = "0.1.0"
+randomnumbers = "0.1.0"
+
+[MODULES]
+all = ["src/Slide5.Mod"]
+
+# path in the repository, or path=destination in the polpo root
+[FILES]
+all = ["share/Slide5.Desc=share/Slide5.Desc", "share/Connect4.Lib=share/Connect4.Lib", "tools/Slide5.Tool=tools/Slide5.Tool", "test/Slide5Test.Mod", "README.md", "LICENSE", "LICENSE.ETH"]
+
+# the tests need the desktop (DISPLAY set; an Xvnc will do)
+[TESTS]
+copy = ["test/Slide5Test.Mod"]
+cmds = ["$compile Slide5Test.Mod", "Slide5Test.Run"]
+ok   = ["Slide5Test: 5 checks, 0 failed"]
+bad  = ["TRAP", "  err ", "FAIL"]
+display = true
+
+[SUMS]
+src/Slide5.Mod = "sha256:cff998b53a2737592822d7736d6da45ddf6eccd23b428dceab85dfa0b6f91a26"
+share/Slide5.Desc = "sha256:5e8b1b44fa37e3fd0b588ca938201c1d58968c5a77c67b494d9d758d15b2e49a"
+share/Connect4.Lib = "sha256:ca5fc55e25eaa63d5719d4658c0d5b71fb127b722d0ea6867612a82fb2c608b9"
+tools/Slide5.Tool = "sha256:71e877b082942e3a3e885217151c9aca8f28a79c5a9e68175c4ecb858cb08b4c"
+test/Slide5Test.Mod = "sha256:4762da4ad5995ab75402dbd5551c1f7ba91eca808c66bcc2579468e5024ff611"
+README.md = "sha256:48bfc443ceba8a98718bbb64fc2a4ad4128483e539b548e1c1156cdf4ccb2e0e"
+LICENSE = "sha256:3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+LICENSE.ETH = "sha256:4b6e996eef6dad163e58932a117f614bc171916883e0d9c776d6247dee8b2d81"
