@@ -4,7 +4,7 @@ category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
 license     = "LGPL-2+"
-description = "channels of the OOC library 1.5, on x86 (type-bound procedures): Channel, oocFiles on Files, IOMemory (files in memory), TextRider, BinaryRider, ProgramArgs on Oberon.Par, Msg, Filenames"
+description = "channels of the OOC library 1.5: Channel, oocFiles on Files, IOMemory (files in memory), TextRider, BinaryRider, ProgramArgs on Oberon.Par, Msg, Filenames"
 
 [REMOTE]
 type = "git"
@@ -29,4 +29,88 @@ x86 = [
   "/2 src/lib/ooc/TextRider.Mod",
   "/2 src/lib/ooc/BinaryRider.Mod",
   "/2 src/lib/ooc/Filenames.Mod",
+]
+arm = [
+  "src/lib/ooc/Msg.Mod",
+  "src/lib/ooc/Channel.Mod",
+  "src/lib/ooc/IOMemory.Mod",
+  "src/lib/ooc/FilesHost.Mod",
+  "src/lib/ooc/oocFiles.Mod",
+  "src/lib/ooc/ProgramArgsHost.Mod",
+  "src/lib/ooc/ProgramArgs.Mod",
+  "src/lib/ooc/TextRider.Mod",
+  "src/lib/ooc/BinaryRider.Mod",
+  "src/lib/ooc/Filenames.Mod",
+]
+riscv = [
+  "src/lib/ooc/Msg.Mod",
+  "src/lib/ooc/Channel.Mod",
+  "src/lib/ooc/IOMemory.Mod",
+  "src/lib/ooc/FilesHost.Mod",
+  "src/lib/ooc/oocFiles.Mod",
+  "src/lib/ooc/ProgramArgsHost.Mod",
+  "src/lib/ooc/ProgramArgs.Mod",
+  "src/lib/ooc/TextRider.Mod",
+  "src/lib/ooc/BinaryRider.Mod",
+  "src/lib/ooc/Filenames.Mod",
+]
+mips = [
+  "src/lib/ooc/Msg.Mod",
+  "src/lib/ooc/Channel.Mod",
+  "src/lib/ooc/IOMemory.Mod",
+  "src/lib/ooc/FilesHost.Mod",
+  "src/lib/ooc/oocFiles.Mod",
+  "src/lib/ooc/ProgramArgsHost.Mod",
+  "src/lib/ooc/ProgramArgs.Mod",
+  "src/lib/ooc/TextRider.Mod",
+  "src/lib/ooc/BinaryRider.Mod",
+  "src/lib/ooc/Filenames.Mod",
+]
+armv7 = [
+  "src/lib/ooc/Msg.Mod",
+  "src/lib/ooc/Channel.Mod",
+  "src/lib/ooc/IOMemory.Mod",
+  "src/lib/ooc/FilesHost.Mod",
+  "src/lib/ooc/oocFiles.Mod",
+  "src/lib/ooc/ProgramArgsHost.Mod",
+  "src/lib/ooc/ProgramArgs.Mod",
+  "src/lib/ooc/TextRider.Mod",
+  "src/lib/ooc/BinaryRider.Mod",
+  "src/lib/ooc/Filenames.Mod",
+]
+mipsbe = [
+  "src/lib/ooc/Msg.Mod",
+  "src/lib/ooc/Channel.Mod",
+  "src/lib/ooc/IOMemory.Mod",
+  "src/lib/ooc/FilesHost.Mod",
+  "src/lib/ooc/oocFiles.Mod",
+  "src/lib/ooc/ProgramArgsHost.Mod",
+  "src/lib/ooc/ProgramArgs.Mod",
+  "src/lib/ooc/TextRider.Mod",
+  "src/lib/ooc/BinaryRider.Mod",
+  "src/lib/ooc/Filenames.Mod",
+]
+ppc = [
+  "src/lib/ooc/Msg.Mod",
+  "src/lib/ooc/Channel.Mod",
+  "src/lib/ooc/IOMemory.Mod",
+  "src/lib/ooc/FilesHost.Mod",
+  "src/lib/ooc/oocFiles.Mod",
+  "src/lib/ooc/ProgramArgsHost.Mod",
+  "src/lib/ooc/ProgramArgs.Mod",
+  "src/lib/ooc/TextRider.Mod",
+  "src/lib/ooc/BinaryRider.Mod",
+  "src/lib/ooc/Filenames.Mod",
+]
+m68k = [
+  "src/lib/ooc/Msg.Mod",
+  "src/lib/ooc/Channel.Mod",
+  "src/lib/ooc/IOMemory.Mod",
+  "src/lib/ooc/FilesHost.Mod",
+  "src/lib/ooc/oocFiles.Mod",
+  "src/lib/ooc/ProgramArgsHost.Mod",
+  "src/lib/ooc/ProgramArgs.Mod",
+  "src/lib/ooc/TextRider.Mod",
+  "src/lib/ooc/BinaryRider.Mod",
+  "src/lib/ooc/Filenames.Mod",
 ]

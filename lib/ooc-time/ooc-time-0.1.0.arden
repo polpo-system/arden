@@ -4,7 +4,7 @@ category    = "lib"
 version     = "0.1.0"
 author      = "polpo"
 license     = "LGPL-2+"
-description = "time of the OOC library 1.5: SysClock, JulianDay, and Time on x86 (type-bound procedures)"
+description = "time of the OOC library 1.5: SysClock, JulianDay, Time"
 
 [REMOTE]
 type = "git"
@@ -17,3 +17,10 @@ core = "0.1.0"
 [MODULES]
 all = ["src/lib/ooc/SysClock.Mod", "src/lib/ooc/JulianDay.Mod"]
 x86 = ["/2 src/lib/ooc/Time.Mod"]
+arm = ["src/lib/ooc/Time.Mod"]
+riscv = ["src/lib/ooc/Time.Mod"]
+mips = ["src/lib/ooc/Time.Mod"]
+armv7 = ["src/lib/ooc/Time.Mod"]
+mipsbe = ["src/lib/ooc/Time.Mod"]
+ppc = ["src/lib/ooc/Time.Mod"]
+m68k = ["src/lib/ooc/Time.Mod"]

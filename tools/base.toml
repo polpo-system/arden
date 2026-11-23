@@ -206,21 +206,21 @@ match       = ["ConvTypes", "IntConv", "IntStr", "LongInts", "RealConv", "LRealC
 
 [ooc-time]
 category    = "lib"
-description = "time of the OOC library 1.5: SysClock, JulianDay, and Time on x86 (type-bound procedures)"
+description = "time of the OOC library 1.5: SysClock, JulianDay, Time"
 license     = "LGPL-2+"
 deps        = ["core"]
 match       = ["SysClock", "JulianDay", "Time"]
 
 [ooc-io]
 category    = "lib"
-description = "channels of the OOC library 1.5, on x86 (type-bound procedures): Channel, oocFiles on Files, IOMemory (files in memory), TextRider, BinaryRider, ProgramArgs on Oberon.Par, Msg, Filenames"
+description = "channels of the OOC library 1.5: Channel, oocFiles on Files, IOMemory (files in memory), TextRider, BinaryRider, ProgramArgs on Oberon.Par, Msg, Filenames"
 license     = "LGPL-2+"
 deps        = ["console", "ooc-strings", "ooc-conversions", "ooc-time"]
 match       = ["Msg", "Channel", "IOMemory", "FilesHost", "oocFiles", "ProgramArgsHost", "ProgramArgs", "TextRider", "BinaryRider", "Filenames"]
 
 [ooc-uri]
 category    = "lib"
-description = "URI references of ooc-libxml (RFC 2396), on x86 (type-bound procedures): URIParser, URI, schemes file, memory and mailto"
+description = "URI references of ooc-libxml (RFC 2396): URIParser, URI, schemes file, memory and mailto"
 license     = "LGPL-2+"
 deps        = ["ooc-io"]
 match       = ["URICharClass", "URIString", "URIError", "URI", "URIAuthorityUnparsed", "URIQueryUnparsed", "URIAuthorityRegistryBased", "URIAuthorityServerBased", "URIFragmentUnparsed", "URISchemeHierarchical", "URISchemeOpaque", "URISchemeCurrentDoc", "URIParser", "URISchemeFile", "URISchemeMemory", "URISchemeMailTo"]
