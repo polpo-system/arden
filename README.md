@@ -37,6 +37,9 @@ in TOML:
                 lines expected in the output, `bad` texts refused; `display = true` for tests
                 that need the desktop. `[TESTS.<arch>] cmds` run after the common ones. A
                 package whose tests fail is removed again and not recorded
+- `[MESSAGES]`  lines portia shows the user: `before` under the package in the list of what it
+                is going to do, `after` once the package is installed and has passed its tests;
+                `[MESSAGES.<arch>]` adds lines on that architecture
 
 `INDEX` lists the packages as `category/name version`. Package names are unique across the
 tree; portia finds a package by name or by category/name.
