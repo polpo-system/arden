@@ -191,7 +191,7 @@ lib/irc 0.1.0
 lib/jpeg 0.2.1
 lib/jpeg-codec 0.2.1
 lib/lists 1.0.2
-lib/ooc-xml 0.3.1
+lib/ooc-xml 0.4.0
 lib/opts 1.0.2
 lib/otype 0.1.1
 lib/pcx 0.1.0
